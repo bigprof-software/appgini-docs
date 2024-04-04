@@ -56,3 +56,7 @@ To uninstall AppGini, you can use the 'Add or remove programs' feature in Window
 
    After uninstalling AppGini, you can delete the installation folder to remove any remaining files.
 
+## Related topics
+
+- [Installing AppGini on MacOS or Linux](https://bigprof.com/appgini/tips-and-tutorials/install-appgini-on-ubuntu-linux)
+- [Installing AppGini on a remotely-hosted Windows VM](https://bigprof.com/appgini/easy-way-to-use-appgini-on-mac-osx-and-linux)
