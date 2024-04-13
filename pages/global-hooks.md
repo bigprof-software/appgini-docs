@@ -10,24 +10,11 @@ Global hook functions are defined in the generated `hooks/__global.php` file. Th
   
 _The following hook functions are defined in this file:_
 
-- [`login_ok()`](#login_ok)
-	- [Parameters:](#parameters)
-	- [Return value:](#return-value)
-	- [Example:](#example)
-- [`login_failed()`](#login_failed)
-	- [Parameters:](#parameters-1)
-	- [Return value:](#return-value-1)
-	- [Example:](#example-1)
-- [`member_activity()`](#member_activity)
-	- [Parameters:](#parameters-2)
-	- [Return value:](#return-value-2)
-	- [Example:](#example-2)
-- [`sendmail_handler()`](#sendmail_handler)
-	- [Parameters:](#parameters-3)
-	- [Return value:](#return-value-3)
-- [`child_records_config()`](#child_records_config)
-	- [Parameters:](#parameters-4)
-	- [Return value:](#return-value-4)
+* [`login_ok()`](#login_ok)
+* [`login_failed()`](#login_failed)
+* [`member_activity()`](#member_activity)
+* [`sendmail_handler()`](#sendmail_handler)
+* [`child_records_config()`](#child_records_config)
 
 ## `login_ok()`
 
