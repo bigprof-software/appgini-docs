@@ -3,7 +3,7 @@
 # Script to extract content from specified URLs and append it to local Markdown files
 
 # full path to current script
-script_path=$(realpath "$0")
+script_path=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 
 # List of URLs and their corresponding local file paths
 urls=(
