@@ -2,7 +2,7 @@
 
 title: Working with styles
 linkTitle: Working with styles
-slug: help/
+slug: help/working-with-projects/working-with-styles
 
 ---
 

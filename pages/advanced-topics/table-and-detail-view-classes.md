@@ -1,8 +1,8 @@
 ---
 
-title: 
-linkTitle: 
-slug: help/
+title: Table and detail view classes
+linkTitle: Table and detail view classes
+slug: help/advanced-topics/table-and-detail-view-classes
 
 ---
 

@@ -1,8 +1,8 @@
 ---
 
-title: 
-linkTitle: 
-slug: help/
+title: Setup
+linkTitle: Setup
+slug: help/working-with-generated-web-database-application/setup
 
 ---
 

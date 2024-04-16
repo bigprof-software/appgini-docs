@@ -1,8 +1,8 @@
 ---
 
-title: 
-linkTitle: 
-slug: help/
+title: Table-specific hooks
+linkTitle: Table-specific hooks
+slug: help/advanced-topics/hooks/table-specific-hooks
 
 ---
 
