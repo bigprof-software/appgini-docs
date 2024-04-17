@@ -48,8 +48,8 @@ Enabling the LDAP extension in Windows is done through the `php.ini` file. Follo
 4.  Remove the semicolon to enable the extension. It should look like this:
     
     ```
-	extension=ldap
-	```
+    extension=ldap
+    ```
     
 5.  Save the `php.ini` file and restart your web server for the changes to take effect.
 

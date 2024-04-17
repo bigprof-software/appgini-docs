@@ -75,18 +75,18 @@ If you're having issues with automatic file uploading, please check the followin
     _**Tip:**_ You can view the secret upload key stored in the `file-uploader.php` file by opening it in a text editor. Line 2 contains the key, like so:
     
     ```php
-	<?php
+    <?php
        define('UPLOAD_KEY', '2DF5367D046FFE742277D04B107CF46B');
-	```
+    ```
     
 *   **Is curl installed on your PC?**. The automatic file uploader uses curl to upload files to your server. Curl is installed by default on modern Windows machines, Linux and MacOS. On older Windows PCs, you can download curl from the [official curl website](https://curl.se/windows/).
 *   **Do you have modsecurity or a similar web application firewall (WAF) installed on your server?** This might prevent the automatic file uploader from working. If you have a WAF installed on your server, you can try adding an exception for the `file-uploader.php` file to the WAF configuration. For modsecurity, you can try adding this code to a new file inside `/etc/apache/mods-enabled/` (maybe name it `appgini.conf`) or similar, then restart apache:
     
     ```apache
-	<IfModule mod_security2.c>
+    <IfModule mod_security2.c>
        SecRule REQUEST_URI "/file-uploader.php$" id:300001,allow
     </IfModule>
-	```
+    ```
     
     _**Hint:**_ Check your server error logs to see if modsecurity is blocking requests to `file-uploader.php` or not.
     
@@ -116,23 +116,23 @@ Automatic file uploading is a great feature, but it's important to understand th
     If you're using Apache, you can add this rule to your `.htaccess` file or your site's Apache configuration file:
     
     ```
-	<Files "file-uploader.php">
-		Order allow,deny
-		Deny from all
-		Allow from 124.233.112.210
-	</Files>
-	```
+    <Files "file-uploader.php">
+        Order allow,deny
+        Deny from all
+        Allow from 124.233.112.210
+    </Files>
+    ```
     
     Replace `124.233.112.210` with the external IP address of the PC you're using to upload your app.
     
     For nginx, you can use this rule instead:
     
     ```
-	location ~* ^/file-uploader\.php$ {
+    location ~* ^/file-uploader\.php$ {
       allow 124.233.112.210;
       deny all;
     }
-	```
+    ```
     
     You could also specify a range of IP addresses in the above rules by using [CIDR notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#IPv4_CIDR_blocks) instead of a single IP address.
     

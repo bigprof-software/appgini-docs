@@ -133,10 +133,10 @@ function member_activity($memberInfo, $activity, &$args){
 
 *   `$memberInfo` is an associative array containing details of the member who signed up. Please refer to [`memberInfo`](/appgini/help/advanced-topics/hooks/memberInfo-array) for more details.
 *   `$activity` is a string indicating the type of activity. It can be one of the following values:
-	* `pending`: the member signed up but his account is pending approval by the admin.
-	* `automatic`: the member signed up and his account is automatically approved.
-	* `profile`: the member updated his profile.
-	* `password`: the member changed his password.
+    * `pending`: the member signed up but his account is pending approval by the admin.
+    * `automatic`: the member signed up and his account is automatically approved.
+    * `profile`: the member updated his profile.
+    * `password`: the member changed his password.
 *   `$args` is currently not implemented but is reserved for future use.
 
 ### Return value:

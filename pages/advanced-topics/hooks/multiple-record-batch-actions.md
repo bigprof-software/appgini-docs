@@ -61,8 +61,8 @@ function customers_batch_actions(&$args){
             'title' => 'Print mail labels',
             'function' => 'print_mail_labels',
             'icon' => 'th-list'
-		]
-	];
+        ]
+    ];
 }
 ```
 
@@ -148,7 +148,7 @@ Finally, let's write the server-side `mail-labels.php` script. Based on the code
     $cs_ids = substr($cs_ids, 0, -1); /* remove last comma */
      
     /* retrieve the records and display mail labels */
-	$eo = ['silentErrors' => true];
+    $eo = ['silentErrors' => true];
     $res = sql("select * from customers " .
                "where CustomerID in ({$cs_ids})", $eo);
     while($row = db_fetch_assoc($res)){

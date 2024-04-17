@@ -23,19 +23,19 @@ The hooks folder is where all your custom-defined code should be placed. AppGini
     
 *   **links-home.php**: You can add custom links in the home page of your application by appending them to this file. The format for each link is:
 
-	```php
-	$homeLinks[] = [
-		'url' => 'path/to/link', 
-		'title' => 'Link title', 
-		'description' => 'Link text',
-		'groups' => ['group1', 'group2'],
-		'grid_column_classes' => '',
-		'panel_classes' => '',
-		'link_classes' => '',
-		'icon' => 'path/to/icon',
-		'table_group' => ''
-	];
-	```
+    ```php
+    $homeLinks[] = [
+        'url' => 'path/to/link', 
+        'title' => 'Link title', 
+        'description' => 'Link text',
+        'groups' => ['group1', 'group2'],
+        'grid_column_classes' => '',
+        'panel_classes' => '',
+        'link_classes' => '',
+        'icon' => 'path/to/icon',
+        'table_group' => ''
+    ];
+    ```
     *   `groups` defines the groups allowed to see this link. Set to `['*']` if you want to show the link to all groups.
     *   `grid_column_classes` (optional) lists CSS classes to apply to the link block to control its width in different screen sizes. Example valid classes: `col-lg-4`, `col-sm-6`, ... etc. See: [getbootstrap.com/css/#grid](https://getbootstrap.com/css/#grid).
     *   `panel_classes` (optional) lists CSS classes to apply to the panel. Example valid classes: `panel-warning`, `panel-success`, ... etc. See: [getbootstrap.com/components/#panels](https://getbootstrap.com/components/#panels).
@@ -44,15 +44,15 @@ The hooks folder is where all your custom-defined code should be placed. AppGini
     *   `table_group` is the ***name*** of the table group you wish to add the link to (if you are using table groups). The value should be set to the exact name of the group. If the table group name contains non-Latin characters, you should convert them to html entities. For example, the character ૫ should be written as `&#2795;`
 *   **links-navmenu.php**: You can add custom links to the navigation menu ("Jump to" menu) of your application by appending them to this file. The format for each link is:
 
-	```php
-	$navLinks[] = [
-		'url' => 'path/to/link', 
-		'title' => 'Link title', 
-		'groups' => ['group1', 'group2'],
-		'icon' => 'path/to/icon',
-		'table_group' => 0
-	];
-	```
+    ```php
+    $navLinks[] = [
+        'url' => 'path/to/link', 
+        'title' => 'Link title', 
+        'groups' => ['group1', 'group2'],
+        'icon' => 'path/to/icon',
+        'table_group' => 0
+    ];
+    ```
     *   `groups` defines the groups allowed to see this link. Set to `['*']` if you want to show the link to all groups.
     *   `icon` is the path to an optional icon to use with the link.
     *   `table_group` is the ***index*** of table group, default is `0` (first table group).
