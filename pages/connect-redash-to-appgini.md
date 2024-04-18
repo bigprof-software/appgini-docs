@@ -11,10 +11,7 @@ slug: help/connect-redash-to-appgini
 - [What is Redash?](#what-is-redash)
 - [Installing Redash on your server](#installing-redash-on-your-server)
 - [Connecting Redash to your AppGini application](#connecting-redash-to-your-appgini-application)
-    - [Here is a screencast showing the above steps](#here-is-a-screencast-showing-the-above-steps)
 - [Creating a query in Redash](#creating-a-query-in-redash)
-    - [Here is a screencast showing the above steps](#here-is-a-screencast-showing-the-above-steps-1)
-        - [HINT! You can use the DataTalk plugin for AppGini to create the queries you need in Redash. The plugin allows you to create queries by just describing them in plain English. Here is a video showing how it works:](#hint-you-can-use-the-datatalk-plugin-for-appgini-to-create-the-queries-you-need-in-redash-the-plugin-allows-you-to-create-queries-by-just-describing-them-in-plain-english-here-is-a-video-showing-how-it-works)
 - [Creating a dashboard in Redash](#creating-a-dashboard-in-redash)
 - [Creating alerts in Redash](#creating-alerts-in-redash)
 - [Dive deeper into Redash](#dive-deeper-into-redash)
@@ -91,7 +88,9 @@ Once you've connected Redash to your AppGini database, you can start creating qu
 Your browser does not support the video tag.
 </video>
 
-#### HINT! You can use the [DataTalk plugin for AppGini](https://bigprof.com/appgini/applications/datatalk-plugin) to create the queries you need in Redash. The plugin allows you to create queries by just describing them in plain English. Here is a video showing how it works:
+> **HINT!** You can use the [DataTalk plugin for AppGini](https://bigprof.com/appgini/applications/datatalk-plugin) to create the queries you need in Redash.
+
+The plugin allows you to create queries by just describing them in plain English. Here is a video showing how it works:
 
 <video style="width: 100%; height: auto;" controls="" fullscreen="">
 <source src="https://cdn.bigprof.com/screencasts/use-datatalk-plugin-to-create-redash-queries.mp4" type="video/mp4">
