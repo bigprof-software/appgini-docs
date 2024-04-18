@@ -6,7 +6,7 @@ slug: help/calculated-fields
 
 ---
 
-Calculated fields feature is available in AppGini 5.80 and above.
+> Calculated fields feature is available in AppGini 5.80 and above.
 
 ## What are calculated fields?
 
