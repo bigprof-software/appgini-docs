@@ -84,6 +84,8 @@ Of course, using calculated fields requires some knowledge of SQL language, spec
 
 In the screencast below, we create a new 'Sales' field in the clients table, and configure it as a calculated field that displays the total of sales made to each client, by retrieving the sum of her paid invoices total. We use the _Query helper_ window to quickly and precisely write the query, including the join between the clients and invoices tables.
 
+<iframe width="706" height="397" src="https://www.youtube.com/embed/oERXyqM3zew?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
 ## Debugging your query
 
 You can easily debug your SQL query using [phpMyAdmin](https://www.phpmyadmin.net/) or any similar MySQL admin utility. Select your database, then go to the SQL tab, where you can type or paste your SQL query. Replace `%ID%` with the primary key value of the record you wish to test. Also replace any other variables with their values, if needed. Then execute the query. The query should return a single value, and that should be the value you expect in your calculated field. If this is not the case, or if you see any error messages, you should edit the query and retry until no errors are shown and the expected value is returned.
