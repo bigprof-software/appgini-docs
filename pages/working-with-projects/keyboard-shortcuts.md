@@ -20,7 +20,7 @@ There are several keyboard shortcuts in AppGini that will help you work even fas
   > Tip: Hold **` Ctrl `**** while clicking the "Generate AppGini app" icon to generate your application using the most recent options you selected before (last output folder and file overwriting settings) without showing the options dialogs.
 
 * **` F3 `**: Show the project properties pane.
-* **` Shift ` + **` F3 `**: Show the application theme selector window.
+* **` Shift `** + **` F3 `**: Show the application theme selector window.
 * **` F1 `**: Show/hide the context help pane.
 * **` F4 `**: Navigate between the project browser (left pane), the properties pane (right pane), and the project search box.
 
