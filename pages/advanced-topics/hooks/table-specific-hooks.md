@@ -546,7 +546,7 @@ function tablename_before_update(&$data, $memberInfo, &$args) {
 ```
 
 *Don't forget to replace `tablename` at line 5 above, with the actual
-name of your table.* []{#tablename_after_update}
+name of your table.*
 
 
 ## `tablename_after_update()`
