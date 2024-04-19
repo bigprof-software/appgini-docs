@@ -17,7 +17,7 @@ There are several keyboard shortcuts in AppGini that will help you work even fas
 * **` F2 `**: Rename the selected table or field.
 * **` F5 `**: Generate the application.
   
-  > Tip: Hold **` Ctrl `**** while clicking the "Generate AppGini app" icon to generate your application using the most recent options you selected before (last output folder and file overwriting settings) without showing the options dialogs.
+  > Tip: Hold **` Ctrl `** while clicking the "Generate AppGini app" icon to generate your application using the most recent options you selected before (last output folder and file overwriting settings) without showing the options dialogs.
 
 * **` F3 `**: Show the project properties pane.
 * **` Shift `** + **` F3 `**: Show the application theme selector window.
