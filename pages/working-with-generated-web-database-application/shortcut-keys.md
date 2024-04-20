@@ -46,12 +46,8 @@ link.
 -   **` SHIFT `** + **` F2 `** : First button in the buttons bar above the table.
 -   **` ALT `** + **` F2 `** : First element in the bottom navigation bar.
 -   **` CTRL `** + **` F2 `** : First record selector checkbox.
-    
-    You can then navigate to other records using **` CTRL `** + **` ↑ `**
-    and **` CTRL `** + **` ↓ `**.
-    
-    **Tip:** to open the currently highlighted record in the detail
-    view, press **` TAB `** then **` ENTER `**.    
+    - You can then navigate to other records using **` CTRL `** + **` ↑ `** and **` CTRL `** + **` ↓ `**.    
+    - **Tip:** to open the currently highlighted record in the detail view, press **` TAB `** then **` ENTER `**.    
 -   **` ALT `** + **` CTRL `** + **` S `** : Select/unselect all records.
 -   **` ALT `** + **` CTRL `** + **` M `** : Open **More** menu.    
 -   **` CTRL `** + **` ← `** : Previous page *(instant action)*.
