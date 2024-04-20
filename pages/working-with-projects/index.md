@@ -1,6 +1,8 @@
 ---
 
-title: Working with projects
+title: AppGini projects
+description: Learn how to work with AppGini projects, create new projects, and save them.
+keywords: appgini projects, appgini project window, appgini new project, appgini project browser, appgini project properties
 linkTitle: Working with projects
 slug: help/working-with-projects
 
