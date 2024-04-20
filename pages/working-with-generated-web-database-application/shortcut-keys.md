@@ -29,7 +29,7 @@ link.
 -   **` ALT `** + **` 0 `** : Homepage.
 -   **` ALT `** + **` 1 `** to **` 9 `** : Open available navigation menus.    
 -   **` ALT `** + **` M `** : Import CSV data (if you have permission to).
--   **` ALT `** + **` A `** : Admin area (if you\'re signed in as admin).    
+-   **` ALT `** + **` A `** : Admin area (if you're signed in as admin).    
 -   **` ALT `** + **` P `** : User profile.
 -   **` ALT `** + **` P `** then **` SHIFT `** + **` TAB `** : Sign out.
 
@@ -72,7 +72,7 @@ link.
     at the right of the form.
 -   **` CTRL `** + **` F2 `** : First child record.
     
--   **` ALT `** + I: Show/hide admin information menu (if you\'re
+-   **` ALT `** + I: Show/hide admin information menu (if you're
     signed in as admin).
     
 -   **` F8 `** : First child link (from the child links above the
@@ -116,16 +116,16 @@ link.
 -   **` ALT `** + **` X `** : Back to detail view *(instant action)*
     .
     
--   **` CTRL `** + **` ← `** : Previous record\'s detail view
+-   **` CTRL `** + **` ← `** : Previous record's detail view
     *(instant action)* .
--   **` CTRL `** + **` → `** : Next record\'s detail view *(instant
+-   **` CTRL `** + **` → `** : Next record's detail view *(instant
     action)* .
 -   **` CTRL `** + **` ↑ `** : Same as **` CTRL `** + **` ← `**
     .
 -   **` CTRL `** + **` ↓ `** : Same as **` CTRL `** + **` → `**
     .
 
-#### \[AppGini 5.91+\] Hide \'keyboard shortcuts reference\' link
+#### \[AppGini 5.91+\] Hide 'keyboard shortcuts reference' link
 
 In AppGini 5.91 and above, the shortcuts window includes a link at the
 bottom that points to this page. This makes it easy for your app users

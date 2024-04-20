@@ -46,7 +46,7 @@ if you have multiple browser windows open, each window will have its own
 set of messages.
 
 This is particularly useful after inserting a new record, where the user
-is redirected to another page. In that case, if you\'d like to display
+is redirected to another page. In that case, if you'd like to display
 some message to the user, you can use the `WindowMessages` class
 to do so, and the message will be displayed on the redirected page. See
 the example in [`tablename_after_insert()` hook
@@ -60,8 +60,8 @@ to the user after updating or deleting a record.
 ### Including the window ID when redirecting to another page
 
 Your AppGini application already includes the window ID when redirecting
-to another page, so you don\'t need to do anything special. But in case
-you\'re using your own code to redirect to another page, you need to
+to another page, so you don't need to do anything special. But in case
+you're using your own code to redirect to another page, you need to
 include the window ID in the URL. You can do so by using the
 `WindowMessages::windowIdQuery()` method, like this:
 
@@ -73,7 +73,7 @@ redirect($url);
 ### Including the window ID in a form in custom pages
 
 Built-in AppGini pages already include the window ID in forms, so you
-don\'t need to do anything special. But in case you\'re using your own
+don't need to do anything special. But in case you're using your own
 code to create a form in a custom page, you need to include the window
 ID as a hidden field in the form. You can do so using this code where
 you want the hidden field in the form:
@@ -85,7 +85,7 @@ echo WindowMessages::includeWindowId();
 ### How to display the messages?
 
 Your AppGini application already includes the code to display the
-messages, so you don\'t need to do anything special. In case of [custom
+messages, so you don't need to do anything special. In case of [custom
 pages](/appgini/help/advanced-topics/custom-limited-access-pages)
 however, you need to include the following code in your page where you
 want the messages to be displayed:

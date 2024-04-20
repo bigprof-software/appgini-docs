@@ -24,9 +24,9 @@ To upload the generated files, you should use an FTP client. A very good
 You should upload the entire folder to your web server. Make sure that
 your web server is properly configured to run .php files as PHP scripts
 (otherwise, they will probably be treated as text files and their entire
-source code will be displayed in the visitors\' browsers.)
+source code will be displayed in the visitors' browsers.)
 
-After you upload the files, you are ready to set up the database. Let\'s
+After you upload the files, you are ready to set up the database. Let's
 move on!
 
 > **IMPORTANT Security note!**
@@ -44,13 +44,13 @@ area](/appgini/help/working-with-generated-web-database-application/the-admin-in
 where he can define groups. Each group has its own permissions over each
 table in your application.
 
-For example, let\'s say that you have created an application for storing
-clients\' contacts, vendors\' contacts, and employees\' contacts. The
-admin can define a group called \'HR\' which can view and edit only the
-employees\' contacts, a group called \'Sales\' which can view and edit
-only the clients\' contacts, and a group called \'Procurement\' which
-can view and edit only the vendors\' contacts. Each group can have one
-or more members, and each member inherits his group\'s permissions. The
+For example, let's say that you have created an application for storing
+clients' contacts, vendors' contacts, and employees' contacts. The
+admin can define a group called 'HR' which can view and edit only the
+employees' contacts, a group called 'Sales' which can view and edit
+only the clients' contacts, and a group called 'Procurement' which
+can view and edit only the vendors' contacts. Each group can have one
+or more members, and each member inherits his group's permissions. The
 following diagram explains this graphically.
 
 

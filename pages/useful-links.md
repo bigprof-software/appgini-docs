@@ -32,7 +32,7 @@ client. A very powerful program is
 
 ### Our online course on customizing AppGini applications
 
-We prepared a course for power users of AppGini, who\'d like to add more
+We prepared a course for power users of AppGini, who'd like to add more
 functionality to their applications by writing custom code. Through 4.5
 hours of video, you'll finish 30 practical examples, featuring more than
 500 lines of code, that cover the most common hook questions we receive
@@ -47,8 +47,8 @@ AppGini out-of-the-box, since AppGini generates PHP applications that
 connect to MySQL databases. PHP and MySQL are very widely available
 through almost any hosting provider.
 
-If you\'re looking for a very easy to use and **highly reliable cloud
-hosting service** , we\'ve been using [Digital
+If you're looking for a very easy to use and **highly reliable cloud
+hosting service** , we've been using [Digital
 Ocean](https://m.do.co/c/d30b7a2609f4) for many years and are quite
 content with their simplicity and reliability. This [special
 link](https://m.do.co/c/d30b7a2609f4) provides you with \$100 credit to
@@ -57,7 +57,7 @@ try their service.
 Digital Ocean however requires some experience managing your server
 updates and software installations (they have [many detailed
 guides](https://www.digitalocean.com/community/tutorials) for that
-though). If you\'re looking for managed hosting (where the provider
+though). If you're looking for managed hosting (where the provider
 takes care of installing, securing and upgrading your server software,
 as well as resolving the majority of technical issues),
 [Bluehost](https://www.bluehost.com/) is a very good

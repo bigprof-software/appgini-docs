@@ -34,19 +34,19 @@ After clicking "Let's go!", you will be asked to provide the database login para
 
 Next, the script will look for tables in the database with the names you
 specified in your project. It will attempt to create any table that
-doesn\'t already exist. You will see messages indicating whether the
-setup was succesful or not, and a link to your PHP application\'s
-homepage. The home page is the file \'index.php\' created in the
+doesn't already exist. You will see messages indicating whether the
+setup was succesful or not, and a link to your PHP application's
+homepage. The home page is the file 'index.php' created in the
 application folder.
 
-If you see error messages stating that the setup script can\'t create
+If you see error messages stating that the setup script can't create
 the database or any of the tables, make sure the database username and password
 you provided in the previous step have enough permissions to allow you to define
 the database and its tables.
 
 ## STEP 2 OF 3: Logging to the admin control panel
 
-When you finish step 1 above and go to the home page, you\'ll see this
+When you finish step 1 above and go to the home page, you'll see this
 screen:
 
 
@@ -61,7 +61,7 @@ we shall change them.
 
 ## STEP 3 OF 3: Changing the admin password
 
-After you sign in as admin, you\'ll see the following page:
+After you sign in as admin, you'll see the following page:
 
 ![](https://cdn.bigprof.com/appgini-desktop/help/setup-5.png)
 
@@ -74,14 +74,14 @@ new password and click \"Save Changes\":
 ![](https://cdn.bigprof.com/appgini-desktop/help/setup-admin-settings.png)
 
 
-After saving the changes, you\'ll see this confirmation page:
+After saving the changes, you'll see this confirmation page:
 
 
 ![](https://cdn.bigprof.com/appgini-desktop/help/setup-admin-saved.png)
 
 
-If you\'d like to have a look on the generated table pages, Click \"Sign
-Out\", and then click the \"Go to user\'s area\" link from the following
+If you'd like to have a look on the generated table pages, Click \"Sign
+Out\", and then click the \"Go to user's area\" link from the following
 page.
 
 For more information about using the admin area and managing users,

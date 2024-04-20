@@ -23,10 +23,10 @@ like this:
 ![Filters for customers from France, Germany or Mexico, whose contact names begin with A, M or P](https://cdn.bigprof.com/appgini-desktop/help/northwind-customers.png "Filters for customers from France, Germany or Mexico, whose contact names begin with A, M or P")
 
 
-If a filter begins with \'And\' it means the condition must be
-fulfilled, and if it begins with \'Or\' then the condition is optional.
+If a filter begins with 'And' it means the condition must be
+fulfilled, and if it begins with 'Or' then the condition is optional.
 You can use % (percentage sign) and \_ (underscore) in comparison values
-when the comparison operator is \'Like\' or \'Not Like\'. % means any
+when the comparison operator is 'Like' or 'Not Like'. % means any
 number of characters and \_ means any single character.
 
 There are several comparison operators available for filters, the

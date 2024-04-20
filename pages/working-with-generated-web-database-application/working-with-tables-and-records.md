@@ -34,7 +34,7 @@ clicked field. The figure below shows our table sorted by Country.
 ![Table sorted by Country, ascendingly](https://cdn.bigprof.com/appgini-desktop/help/working-with-tables-and-records-3.png "Table sorted by Country, ascendingly")
 
 
-If you click again on the \'Country\' header, it will be sorted
+If you click again on the 'Country' header, it will be sorted
 descendingly. You can sort any field by simply clicking on its column
 header once or twice (to sort ascendingly or descendingly).
 
