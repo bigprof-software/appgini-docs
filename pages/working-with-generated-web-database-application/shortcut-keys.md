@@ -51,8 +51,7 @@ link.
     and **` CTRL `** + **` ↓ `**.
     
     **Tip:** to open the currently highlighted record in the detail
-    view, press **` TAB `** then **` ENTER `** .
-    
+    view, press **` TAB `** then **` ENTER `**.    
 -   **` ALT `** + **` CTRL `** + **` S `** : Select/unselect all records.
 -   **` ALT `** + **` CTRL `** + **` M `** : Open **More** menu.    
 -   **` CTRL `** + **` ← `** : Previous page *(instant action)*.
