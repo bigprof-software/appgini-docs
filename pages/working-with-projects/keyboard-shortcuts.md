@@ -1,8 +1,10 @@
 ---
 
-title: Keyboard shortcuts
+title: Keyboard shortcuts in AppGini
 linkTitle: Keyboard shortcuts
 slug: help/working-with-projects/keyboard-shortcuts
+description: Learn about the keyboard shortcuts in AppGini that will help you work even faster with projects.
+keywords: keyboard shortcuts, AppGini, project, table, field, application, theme, context help, project browser, properties pane, project search box
 
 ---
 
