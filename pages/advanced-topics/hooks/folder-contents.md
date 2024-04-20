@@ -1,8 +1,10 @@
 ---
 
-title: The generated "hooks" folder
+title: Contents of the generated "hooks" folder
 linkTitle: The "hooks" folder
 slug: help/advanced-topics/hooks/folder-contents
+description: The hooks folder is where all your custom-defined code should be placed. AppGini generates the hook files into this folder only if they don't exist. AppGini doesn't overwrite these files later. So, your customized code is retained safely no matter how many times you regenerate your project code.
+keywords: hooks, folder, contents, customizing, code, global hooks, table-specific hooks, links-home, links-navmenu, footer-extras, header-extras
 
 ---
 

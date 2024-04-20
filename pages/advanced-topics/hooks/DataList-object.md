@@ -3,6 +3,8 @@
 title: DataList object
 linkTitle: DataList object
 slug: help/advanced-topics/hooks/DataList-object
+description: The DataList object is passed to the tablename_init hook function and exposes many options that you can control to affect the behavior and appearance of each of the AppGini-generated table pages that users see.
+keywords: DataList object, tablename_init, hook function, table, appearance, behavior, DataList properties
 
 ---
 

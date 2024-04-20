@@ -3,6 +3,8 @@
 title: Adding custom "batch actions" that apply to multiple records
 linkTitle: Batch actions
 slug: help/advanced-topics/hooks/multiple-record-batch-actions
+description: Learn how to add custom batch actions to your AppGini-generated application that apply to multiple records at once.
+keywords: batch actions, multiple records, table view, hooks, tablename_batch_actions, tablename-tv.js, print mailing labels, Northwind
 
 ---
 

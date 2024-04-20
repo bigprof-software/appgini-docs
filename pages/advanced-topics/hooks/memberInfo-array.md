@@ -3,6 +3,8 @@
 title: memberInfo array
 linkTitle: memberInfo array
 slug: help/advanced-topics/hooks/memberInfo-array
+description: Learn about the memberInfo array that is passed to many hook functions in AppGini, and contains the info of the currently logged member.
+keywords: memberInfo, array, logged member, username, groupID, group, admin, email, IP, custom fields, getMemberInfo
 
 ---
 
