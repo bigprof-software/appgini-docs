@@ -43,7 +43,7 @@ this in action.
  | 18   | Lindt EXCELLENCE Mint         | 3.25         |
  | 19   | Lindt CREATION Pistachio      | 3.25         |
 
-That was yummy☺ Each entry in the above table has a primary key `ID`
+That was yummy! Each entry in the above table has a primary key `ID`
 value, which doesn't tell much about the item itself but is used as a
 reference to it. So, if we talk about product #18, we know we are
 referring to *Lindt EXCELLENCE Mint* priced at $3.25. Primary key
