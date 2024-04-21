@@ -56,3 +56,4 @@ You can also open an existing project by selecting 'Open' from the File menu or 
 ## Advanced: The project file format
 
 AppGini project files have the extension `.axp`. They are XML files that store all the information about your project, including the tables, fields, and their properties, as well as the project settings. You can open an `.axp` file in a text/code editor to see its contents. You can also make modifications to the file, but be careful not to corrupt it, as this may prevent you from opening the project in AppGini.
+

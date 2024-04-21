@@ -229,3 +229,5 @@ The following limitations apply to calculated fields:
 * Similarly, if the calculated field is used as a parent caption field for a lookup field in another table, the lookup drop-down might not display the most up-to-date calculated values until the records of the calculated field are accessed in your AppGini app.
 
 The simple work-around for the second and third issues above is to access the record(s) containing the calculated field in the table view in your AppGini app to update them.
+
+

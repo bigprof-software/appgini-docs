@@ -65,3 +65,4 @@ This way, the owner of the customer record would be the owner of all orders and 
 If a sales person creates an order for a German customer, the sales manager of Germany would become the owner of that order and all order items belonging to that order.
 
 To apply this to existing German orders and order items, we use the **Fix record owners** utility to update the owner of all existing orders and order items.
+

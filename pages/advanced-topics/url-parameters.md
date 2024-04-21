@@ -133,3 +133,5 @@ menu).
 * Details: AppGini 5.90 and above
   * Passing `noQuickSearchFocus=1` when linking to a table view prevents auto-focusing of quick search button. This is useful for example when you embed a table view in another page and don't want the browser to "jump" down to the embedded page.
 
+
+

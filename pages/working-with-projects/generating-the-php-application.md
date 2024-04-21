@@ -32,3 +32,4 @@ Finally, a log window (shown below) reports events that happened during file gen
 **Tip:** If you want to customize some of the generated files and don't want AppGini to overwrite them if you regenerate your project later, set them as read-only. This is a very easy way of retaining your customized code. AppGini will just report that it couldn't overwrite that file, and will continue generating the other files normally.  
   
 For more advanced code management, you should consider using [hooks](/appgini/help/advanced-topics/hooks). Hooks allow you to add more functionality and customize your application behavior without loosing your customizations whenever you regenerate the application later.
+

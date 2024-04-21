@@ -59,3 +59,4 @@ United States;;United Kingdom;;France
 ```
 
 It's now very easy to edit this file using any text editor to add/remove/modify options, without having to regenerate your application. However, please beware that this file takes precedence over the options provided in your AppGini project. So, if you decide later to modify the options in your project file and regenerate your application, you should either delete the `tablename.fieldname.csv` hook file or update it with the new options.
+

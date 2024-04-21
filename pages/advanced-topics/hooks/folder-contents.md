@@ -57,3 +57,4 @@ The hooks folder is where all your custom-defined code should be placed. AppGini
     *   `icon` is the path to an optional icon to use with the link.
     *   `table_group` is the ***index*** of table group, default is `0` (first table group).
 *   **footer-extras.php, header-extras.php**: (As of AppGini 5.40) Both files allow you to insert additional content to the footer and header (respectively) of all user area pages. You can add HTML, CSS, JavaScript and/or PHP code into those two files.
+

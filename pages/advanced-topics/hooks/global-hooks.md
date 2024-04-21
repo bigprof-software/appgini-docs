@@ -229,3 +229,4 @@ function child_records_config($childTable, $childLookupField, &$config) {
 ### Return value:
 
 None.
+

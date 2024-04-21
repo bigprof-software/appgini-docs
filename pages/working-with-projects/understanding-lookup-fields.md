@@ -86,3 +86,4 @@ See also the related [video tutorial](#child-info-video-tutorial)
 <source src="https://cdn.bigprof.com/screencasts/child-info-in-parent-table-view.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
+

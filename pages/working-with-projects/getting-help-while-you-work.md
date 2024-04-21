@@ -9,3 +9,5 @@ In addition to this online help file, there are several additional help resource
 ![F1](https://cdn.bigprof.com/appgini-desktop/help/f1.gif)
 
 To activate context help, press F1. This would open the help section at the right side of the AppGini window. This section displays help on whatever element has the focus at the moment. You can use the mouse or the Tab key to move the focus between all the elements of the project window. To hide the help section, press F1 again.
+
+

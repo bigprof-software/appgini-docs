@@ -31,3 +31,5 @@ Select the field by clicking on it in the Project Browser and press the Delete b
 ## What about field properties?
 
 In AppGini, click with the mouse on any property and press F1 to view context help explaining the property.
+
+

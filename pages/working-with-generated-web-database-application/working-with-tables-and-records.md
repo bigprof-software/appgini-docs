@@ -60,3 +60,5 @@ AppGini. You can also control table view and detail view layouts by
 editing the [generated template
 files](/appgini/help/working-with-generated-web-database-application) .
 
+
+

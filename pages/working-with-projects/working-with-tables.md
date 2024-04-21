@@ -29,3 +29,4 @@ Yes, instead of having to recreate a table and all its fields, you can simply co
 ## Anonymous table permissions
 
 By default, your new table will be accessible only to the admin users after uploading your AppGini application to the server. You can change the table permissions to allow access for anonymous users and/or other groups from the admin area of the generated application.
+

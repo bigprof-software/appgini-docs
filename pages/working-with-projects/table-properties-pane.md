@@ -443,3 +443,4 @@ Marks/unmarks the current table or field with a yellow background for easily ret
 Click this icon to switch to help mode where clicking any icon would show its help rather than execute its action. Click again to switch to normal mode.
 
 [back to top](#map-link)
+

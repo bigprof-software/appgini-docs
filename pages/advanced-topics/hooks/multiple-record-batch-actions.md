@@ -178,3 +178,5 @@ We chose to implement the action handling using a javascript function to allow a
 > **TIP!**
 > 
 > Don't have the time or programming knowledge to write your own batch actions? We have a plugin for that now! Check our [Mass Update plugin](/appgini/applications/mass-update-plugin). This plugin allows you to add as many batch actions as you want in a very short time, without writing a single line of code.
+
+

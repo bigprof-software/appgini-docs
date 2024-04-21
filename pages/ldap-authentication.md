@@ -94,3 +94,4 @@ to:
 ## Conclusion
 
 By following these steps, you can effectively integrate LDAP authentication into your AppGini application, leveraging existing user accounts and streamlining the login process. Make sure to thoroughly test the configuration with different user scenarios to ensure a smooth transition.
+

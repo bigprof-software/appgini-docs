@@ -66,3 +66,4 @@ This outputs information about your PHP configuration. Look for a section titled
 After enabling the LDAP extension in PHP, a new 'LDAP Settings' tab will become available within the admin settings page of your AppGini application. You can now proceed to configure the LDAP settings as described in the sections above.
 
 Remember to keep your PHP environment secure and up to date, as enabling extensions can expose new vectors for potential vulnerabilities if not managed properly.
+

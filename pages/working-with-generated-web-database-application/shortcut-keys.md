@@ -101,3 +101,5 @@ this line to `hooks/footer-extras.php`:
 ```javascript
 <script>_noShortcutsReference = true;</script>
 ```
+
+

@@ -19,3 +19,4 @@ keywords: memberInfo, array, logged member, username, groupID, group, admin, ema
 The `$memberInfo` array is passed to many hook functions, both [global](/appgini/help/advanced-topics/hooks/global-hooks) and [table-specific](/appgini/help/advanced-topics/hooks/table-specific-hooks). For example, you can access the username of the currently logged member in a hook function by using `$memberInfo['username']`.
 
 > **Tip:** You can retrieve this array in your own code by calling the function `getMemberInfo()`, which returns this array.
+

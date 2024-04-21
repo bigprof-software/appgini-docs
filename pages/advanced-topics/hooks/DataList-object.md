@@ -161,3 +161,4 @@ function tablename_init(&$options, $memberInfo, &$args) {
 ```
 
 The above code will output the contents of the `DataList` object to the browser above the table view. You can use this to inspect, debug and change the various properties. But you should use this carefully in a protected environment for testing purposes only.
+

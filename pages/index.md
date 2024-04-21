@@ -32,3 +32,4 @@ AppGini applications are generated in PHP and are designed to connect with MySQL
 Dive into the world of AppGini without needing to learn the intricacies of PHP or database management. The intuitive interface and comprehensive feature set allow you to start creating immediately. Whether you choose to explore the documentation further or jump straight into using the software, AppGini promises a smooth and productive experience.
 
 Explore the potential of AppGini and start building your web database applications today. Join us as we uncover the powerful capabilities and ease of use that AppGini offers!
+

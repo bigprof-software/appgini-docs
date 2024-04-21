@@ -77,3 +77,5 @@ You can configure how to display the YouTube video in the detail view and the ta
 And this is how the YouTube video is displayed in the table view.
 
 ![YouTube video in the table view](https://cdn.bigprof.com/appgini-desktop/help/appgini-5.40/youtube_field_tv.png)
+
+

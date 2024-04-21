@@ -170,3 +170,5 @@ To summarize, whenever you are working with lookup fields in your
 calculations, you should first retrieve the actual values from the parent
 table and then use those values in your calculations. This is a simple
 concept that can save you a lot of time and headaches in the future.
+
+
