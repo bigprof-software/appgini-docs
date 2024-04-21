@@ -1,9 +1,7 @@
 ---
-
 title: Automatic application uploader
 linkTitle: Uploading apps
 slug: help/application-uploader
-
 ---
 
 As of AppGini 23.10, we introduced a new feature that makes it much easier to deploy (upload) your AppGini apps to your server. By clicking a single 'Upload' button, AppGini checks the changed files in your app and uploads them to your server. You no longer need to use external FTP, SSH or other upload tools, and you don't have to worry about uploading the right files to the right folders.

@@ -1,9 +1,7 @@
 ---
-
 title: Working with styles
 linkTitle: Working with styles
 slug: help/working-with-projects/working-with-styles
-
 ---
 
 AppGini offers you the flexibility to control the look of the generated

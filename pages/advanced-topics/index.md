@@ -1,9 +1,7 @@
 ---
-
 title: Advanced topics
 linkTitle: Advanced topics
 slug: help/advanced-topics
-
 ---
 
 * [**Hooks**](/appgini/help/advanced-topics/hooks)

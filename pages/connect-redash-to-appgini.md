@@ -1,9 +1,7 @@
 ---
-
 title: From Data to Dashboards, A Guide to Redash Integration with AppGini
 linkTitle: Redash Integration
 slug: help/connect-redash-to-appgini
-
 ---
 
 #### Table of Contents

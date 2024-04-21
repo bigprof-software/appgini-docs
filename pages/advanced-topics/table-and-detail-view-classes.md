@@ -1,9 +1,7 @@
 ---
-
 title: Table and detail view classes
 linkTitle: Table and detail view classes
 slug: help/advanced-topics/table-and-detail-view-classes
-
 ---
 
 As of AppGini 5.60, a new advanced option was added to allow you to

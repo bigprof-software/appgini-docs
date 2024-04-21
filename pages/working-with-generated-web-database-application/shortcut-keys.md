@@ -1,9 +1,7 @@
 ---
-
 title: Shortcut keys
 linkTitle: Shortcut keys
 slug: help/working-with-generated-web-database-application/shortcut-keys
-
 ---
 
 > The following shirtcut keys can be used in AppGini apps as of AppGini

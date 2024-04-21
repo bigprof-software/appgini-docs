@@ -1,9 +1,7 @@
 ---
-
-title: 
-linkTitle: 
-slug: help/
-
+title: Working with the generated web database application
+linkTitle: Working with generated web app
+slug: help/working-with-generated-web-database-application
 ---
 
 

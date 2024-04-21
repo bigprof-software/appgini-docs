@@ -1,9 +1,7 @@
 ---
-
 title: Third party resources used by AppGini applications
 linkTitle: 3rd party resources
 slug: help/advanced-topics/third-party-libraries-and-resources
-
 ---
 
 

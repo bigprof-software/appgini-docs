@@ -1,9 +1,7 @@
 ---
-
 title: Enabling LDAP Extension in PHP
 linkTitle: Enable LDAP
 slug: help/enable-php-ldap-extension
-
 ---
 
 Before [configuring LDAP settings in your AppGini app](/appgini/help/ldap-authentication), you need to ensure that the LDAP extension in PHP is enabled. This process varies depending on your operating system.

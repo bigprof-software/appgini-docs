@@ -1,9 +1,7 @@
 ---
-
 title: Useful links
 linkTitle: Useful links
 slug: help/useful-links
-
 ---
 
 

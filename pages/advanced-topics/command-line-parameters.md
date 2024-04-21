@@ -1,9 +1,7 @@
 ---
-
 title: Command-line parameters
 linkTitle: Command-line parameters
 slug: help/advanced-topics/command-line-parameters
-
 ---
 
 You can use command-line parameters to automate AppGini. For example, you can add a command to generate an AppGini application as part of your deployment workflow in a batch/script file. Command-line parameters work only with AppGini Pro. Currently, the following parameters are supported:

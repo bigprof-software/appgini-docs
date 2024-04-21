@@ -1,9 +1,7 @@
 ---
-
 title: The admin interface
 linkTitle: The admin interface
 slug: help/working-with-generated-web-database-application/the-admin-interface
-
 ---
 
 

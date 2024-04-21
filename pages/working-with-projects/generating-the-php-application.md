@@ -1,9 +1,7 @@
 ---
-
 title: Generating the PHP application
 linkTitle: Generating the PHP application
 slug: help/working-with-projects/generating-the-php-application
-
 ---
 
   

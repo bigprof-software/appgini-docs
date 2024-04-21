@@ -1,9 +1,7 @@
 ---
-
 title: Special links and URL parameters
 linkTitle: URL parameters
 slug: help/advanced-topics/url-parameters
-
 ---
 
 

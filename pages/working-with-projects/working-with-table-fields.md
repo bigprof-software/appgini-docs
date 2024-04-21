@@ -1,9 +1,7 @@
 ---
-
 title: Working with table fields
 linkTitle: Working with fields
 slug: help/working-with-projects/working-with-table-fields
-
 ---
 
 ## How can I add a field to a project?

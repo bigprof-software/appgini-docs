@@ -1,9 +1,7 @@
 ---
-
 title: Working with tables
 linkTitle: Working with tables
 slug: help/work-with-projects/working-with-tables
-
 ---
 
 ## How can I add a table to a project?

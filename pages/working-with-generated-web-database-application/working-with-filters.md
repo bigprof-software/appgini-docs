@@ -1,9 +1,7 @@
 ---
-
 title: Working with filters
 linkTitle: Working with filters
 slug: help/working-with-generated-web-database-application/working-with-filters
-
 ---
 
 

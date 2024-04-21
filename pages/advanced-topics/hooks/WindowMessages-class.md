@@ -1,9 +1,7 @@
 ---
-
 title: WindowMessages class
 linkTitle: WindowMessages class
 slug: help/advanced-topics/hooks/WindowMessages-class
-
 ---
 
 

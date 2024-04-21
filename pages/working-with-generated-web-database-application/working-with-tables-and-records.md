@@ -1,9 +1,7 @@
 ---
-
 title: Working with tables and records
 linkTitle: Working with tables and records
 slug: help/working-with-generated-web-database-application/working-with-tables-and-records
-
 ---
 
 ## The application homepage

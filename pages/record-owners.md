@@ -1,9 +1,7 @@
 ---
-
 title: Setting the child record owner to match the owner of its parent record
 linkTitle: Record owners
 slug: help/record-owners
-
 ---
 
 As of AppGini 24.10, you can set the owner of a child record based on the owner of its parent record. This is useful in many scenarios, for example:

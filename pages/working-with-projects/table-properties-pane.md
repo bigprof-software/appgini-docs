@@ -1,9 +1,7 @@
 ---
-
 title: Table properties pane
 linkTitle: Table properties
 slug: help/working-with-projects/table-properties-pane
-
 ---
 
 <div style=" width: 100%; overflow-y: auto;" id="map-link">

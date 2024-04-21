@@ -1,11 +1,9 @@
 ---
-
 title: Magic files in the hooks folder
 linkTitle: Magic files
 slug: help/advanced-topics/hooks/magic-files
 description: Learn about the magic files in the hooks folder that you can create to alter the behavior of your AppGini-generated application.
 keywords: hooks, events, customization, advanced, code, generated, app, persistent, custom code, code generation, insert, delete, edit, select, records, actions, behavior, appearance, DataList object, tablename_init, hook function, table, DataList properties, global hooks, table-specific hooks, links-home, links-navmenu, footer-extras, header-extras, tablename-dv.js, tablename-tv.js, tablename.fieldname.csv
-
 ---
 
 You can create some files with specific names inside the hooks folder that your AppGini-generated application would use to perform a specific task. These files are optional, meaning that if they exist, your application will automatically use them to alter a default behavior. But if they don't exist, the default behavior will apply.

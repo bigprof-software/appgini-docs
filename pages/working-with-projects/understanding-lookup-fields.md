@@ -1,9 +1,7 @@
 ---
-
 title: Understanding lookup fields
 linkTitle: Lookup fields
 slug: help/working-with-projects/understanding-lookup-fields
-
 ---
 
 ![Lookup field tab in AppGini](https://cdn.bigprof.com/appgini-desktop/help/appgini-lookup-tab.png)

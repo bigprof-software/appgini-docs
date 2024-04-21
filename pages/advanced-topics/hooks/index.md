@@ -1,11 +1,9 @@
 ---
-
 title: Hooks (AKA events)
 linkTitle: Hooks/events
 slug: help/advanced-topics/hooks
 description: Hooks (events) are means of advanced customization of AppGini-generated apps. They allow you to customize your application behavior in a way that is separate from the generated code. This way, your custom code doesn't get overwritten if you regenerate your app later, and your project is ready for use directly after code generation without any further modifications.
 keywords: hooks, events, customization, advanced, code, generated, app, persistent, custom code, code generation, insert, delete, edit, select, records, actions, behavior, appearance, DataList object, tablename_init, hook function, table, DataList properties, global hooks, table-specific hooks, links-home, links-navmenu, footer-extras, header-extras
-
 ---
 
 AppGini Hooks (events) are means of advanced customization of AppGini-generated apps. They allow you to customize your application behavior in a way that is separate from the generated code. This way, your custom code doesn't get overwritten if you regenerate your app later, and your project is ready for use directly after code generation without any further modifications.
