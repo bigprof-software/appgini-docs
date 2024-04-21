@@ -1,0 +1,23 @@
+# pandoc defaults file for converting markdown pages to PDF
+# Usage: pandoc --defaults pdf.yml
+#
+# Pre-requisites: pandoc, xelatex
+
+
+input-files:
+  - pages/index.md
+  - pages/install-appgini-on-windows.md
+
+output-file: appgini-documentation.pdf
+from: markdown+backtick_code_blocks+fenced_code_attributes+pipe_tables+yaml_metadata_block+raw_html
+to: pdf
+
+standalone: true
+
+variables:
+  title: "AppGini Documentation"
+  geometry: margin=1in
+  toc: true
+  toc-depth: 2
+  papersize: a4
+  documentclass: report
