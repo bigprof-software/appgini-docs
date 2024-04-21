@@ -4,6 +4,8 @@ linkTitle: The admin interface
 slug: help/working-with-generated-web-database-application/the-admin-interface
 ---
 
+# The admin interface
+
 
 
 AppGini allows you to create member accounts and control the privileges

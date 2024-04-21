@@ -4,6 +4,8 @@ linkTitle: Working with generated web app
 slug: help/working-with-generated-web-database-application
 ---
 
+# Working with the generated web database application
+
 
 
 After generating the PHP application based on your project, the next

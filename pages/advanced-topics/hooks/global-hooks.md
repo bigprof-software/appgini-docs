@@ -6,6 +6,8 @@ description: Global hook functions are defined in the generated `hooks/__global.
 keywords: global hooks, login_ok, login_failed, member_activity, sendmail_handler, child_records_config
 ---
 
+# Global hooks
+
 Global hook functions are defined in the generated `hooks/__global.php` file. This file contains hook functions that get called when a new member signs up, when a member signs in successfully and when a member fails to sign in. You could also define your own PHP functions here and they'll be visible to all your AppGini application pages.  
   
 _The following hook functions are defined in this file:_

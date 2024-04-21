@@ -4,6 +4,8 @@ linkTitle: 3rd party resources
 slug: help/advanced-topics/third-party-libraries-and-resources
 ---
 
+# Third party resources used by AppGini applications
+
 
 This is a list of third-party open source libraries and resources used
 by AppGini applications.

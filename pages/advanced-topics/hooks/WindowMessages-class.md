@@ -4,6 +4,8 @@ linkTitle: WindowMessages class
 slug: help/advanced-topics/hooks/WindowMessages-class
 ---
 
+# WindowMessages class
+
 
 A class for displaying messages to the user on the next page load.
 

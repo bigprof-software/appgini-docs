@@ -6,6 +6,8 @@ description: The hooks folder is where all your custom-defined code should be pl
 keywords: hooks, folder, contents, customizing, code, global hooks, table-specific hooks, links-home, links-navmenu, footer-extras, header-extras
 ---
 
+# Contents of the generated "hooks" folder
+
 ![](https://bigprof.com/appgini/sites/default/files/hooks-folder.png)
 
 The hooks folder is where all your custom-defined code should be placed. AppGini generates the hook files into this folder only if they don't exist. AppGini doesn't overwrite these files later. So, your customized code is retained safely no matter how many times you regenerate your project code.

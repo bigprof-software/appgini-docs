@@ -6,6 +6,8 @@ description: Learn how to install AppGini on your Windows computer.
 keywords: install, AppGini, Windows, setup, installation, uninstall, upgrade
 ---
 
+# Install AppGini on Windows
+
 After downloading AppGini (the [trial](https://bigprof.com/appgini/download) or [pro](https://bigprof.com/appgini/appgini-pro) version),
 you can install it by following the steps below: 
 

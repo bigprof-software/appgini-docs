@@ -4,6 +4,8 @@ linkTitle: The Media Tab
 slug: help/working-with-projects/media-tab
 ---
 
+# The Media Tab
+
 This tab allows you to configure your field to be displayed as a web-link, an image, a file, a google map or even a YouTube video.
 
 ## Link option

@@ -4,6 +4,8 @@ linkTitle: Working with tables and records
 slug: help/working-with-generated-web-database-application/working-with-tables-and-records
 ---
 
+# Working with tables and records
+
 ## The application homepage
 
 This page provides links to accessible tables in your application,

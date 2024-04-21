@@ -4,6 +4,8 @@ linkTitle: Table properties
 slug: help/working-with-projects/table-properties-pane
 ---
 
+# Table properties pane
+
 <div style=" width: 100%; overflow-y: auto;" id="map-link">
 	<img src="https://cdn.bigprof.com/appgini-desktop/help/appgini-table-properties-pane.png" usemap="#map" id="map-image" style="width: 100%; max-width: 1135px;" />
 	<map name="map">

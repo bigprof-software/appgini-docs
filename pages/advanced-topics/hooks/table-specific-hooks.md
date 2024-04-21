@@ -6,6 +6,8 @@ description: Table-specific hooks are functions that get called when a new recor
 keywords: table-specific hooks, hooks, table, insert, update, delete, record, edit, add, new, data, memberInfo, args, options, header, footer, init, before_insert, after_insert, before_update, after_update, before_delete, after_delete, dv, csv, batch_actions, multiple record batch actions
 ---
 
+# Table-specific hooks
+
 For each table in your project, AppGini generates a hook file named the same as the table
 name inside the `hooks` folder. This file contains hook functions that get called when
 a new record is added, when a record is edited, when a record is

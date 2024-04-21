@@ -4,6 +4,8 @@ linkTitle: Working with tables
 slug: help/work-with-projects/working-with-tables
 ---
 
+# Working with tables
+
 ## How can I add a table to a project?
 
 Make sure you have an open project, and click on the 'New Table' icon on the tool bar, or from the Tables menu, select New Table. 

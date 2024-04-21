@@ -4,6 +4,8 @@ linkTitle: Setup
 slug: help/working-with-generated-web-database-application/setup
 ---
 
+# Setup
+
 After uploading your PHP application files to a folder on your server,
 you can access it by pointing your browser to this URL:
 

@@ -4,6 +4,8 @@ linkTitle: Generating the PHP application
 slug: help/working-with-projects/generating-the-php-application
 ---
 
+# Generating the PHP application
+
   
 ![The 'Generate App' icon](https://bigprof.com/appgini/sites/default/files/2009-07-31_2326.png)
 

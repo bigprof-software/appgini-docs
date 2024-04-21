@@ -6,6 +6,8 @@ description: Learn about the keyboard shortcuts in AppGini that will help you wo
 keywords: keyboard shortcuts, AppGini, project, table, field, application, theme, context help, project browser, properties pane, project search box
 ---
 
+# Keyboard shortcuts in AppGini
+
 There are several keyboard shortcuts in AppGini that will help you work even faster with projects. Here is a list of them. 
 
 * **` Ctrl `** + **` N `**: Create a new project.

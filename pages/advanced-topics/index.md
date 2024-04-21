@@ -4,6 +4,8 @@ linkTitle: Advanced topics
 slug: help/advanced-topics
 ---
 
+# Advanced topics
+
 * [**Hooks**](/appgini/help/advanced-topics/hooks)
     * [**The "hooks" folder**](/appgini/help/advanced-topics/hooks/folder-contents)
     * [**Global hooks**](/appgini/help/advanced-topics/hooks/global-hooks)

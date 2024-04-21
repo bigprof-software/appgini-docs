@@ -6,6 +6,8 @@ linkTitle: Working with projects
 slug: help/working-with-projects
 ---
 
+# AppGini projects
+
 ## What is an AppGini project?
 
 To create a web database application using AppGini, you start by creating a project. In the project, you define your database tables and fields, and configure your application's appearance and behavior. Once you have finished working on your project, you can generate the PHP code for your application by clicking the "Generate" button on the toolbar or pressing F5. AppGini will then save the generated code to a folder of your choice. Finally, you can deploy the generated files to your web server.

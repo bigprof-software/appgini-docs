@@ -6,6 +6,8 @@ description: Learn about the memberInfo array that is passed to many hook functi
 keywords: memberInfo, array, logged member, username, groupID, group, admin, email, IP, custom fields, getMemberInfo
 ---
 
+# memberInfo array
+
 `$memberInfo` is an associative array containing logged member's info. The array contains the following keys:
 
 *   `username`: the member username.

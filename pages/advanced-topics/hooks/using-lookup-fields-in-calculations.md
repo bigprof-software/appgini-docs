@@ -4,6 +4,8 @@ linkTitle: Using lookup fields in calculations
 slug: help/advanced-topics/hooks/using-lookup-fields-in-calculations
 ---
 
+# Using lookup fields in calculations
+
 When customizing the [`before_insert`, `after_insert`, `before_update` or
 `after_update`
 hooks](/appgini/help/advanced-topics/hooks/table-specific-hooks) to make

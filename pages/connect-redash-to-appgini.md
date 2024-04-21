@@ -4,6 +4,8 @@ linkTitle: Redash Integration
 slug: help/connect-redash-to-appgini
 ---
 
+# From Data to Dashboards, A Guide to Redash Integration with AppGini
+
 #### Table of Contents
 
 - [What is Redash?](#what-is-redash)

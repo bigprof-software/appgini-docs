@@ -4,6 +4,8 @@ linkTitle: Lookup fields
 slug: help/working-with-projects/understanding-lookup-fields
 ---
 
+# Understanding lookup fields
+
 ![Lookup field tab in AppGini](https://cdn.bigprof.com/appgini-desktop/help/appgini-lookup-tab.png)
 
 A lookup field (also known as a foreign key) is how AppGini links 2 fields from 2 tables together. For example, let's say that our database contains a products table, a suppliers table, and a product categories table.

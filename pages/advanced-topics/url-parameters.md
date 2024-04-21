@@ -4,6 +4,8 @@ linkTitle: URL parameters
 slug: help/advanced-topics/url-parameters
 ---
 
+# Special links and URL parameters
+
 
 By default, the links to various tables in your AppGini-generated
 application pass no URL parameters, and thus display the default table

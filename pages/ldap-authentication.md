@@ -4,6 +4,8 @@ linkTitle: LDAP Authentication
 slug: help/ldap-authentication
 ---
 
+# LDAP Authentication
+
 AppGini applications now support [LDAP](https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol) integration starting from version 24.10, providing a more streamlined login process for users who are already part of an LDAP directory. Here's how you can set up LDAP integration within your AppGini application.
 
 > Kindly note that LDAP authentication is available only in [AppGini Pro](/appgini/order).

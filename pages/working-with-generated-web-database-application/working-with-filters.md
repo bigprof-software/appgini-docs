@@ -4,6 +4,8 @@ linkTitle: Working with filters
 slug: help/working-with-generated-web-database-application/working-with-filters
 ---
 
+# Working with filters
+
 
 
 Filters allow users to have advanced control over data display. The

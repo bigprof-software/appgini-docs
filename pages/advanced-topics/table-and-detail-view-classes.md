@@ -4,6 +4,8 @@ linkTitle: Table and detail view classes
 slug: help/advanced-topics/table-and-detail-view-classes
 ---
 
+# Table and detail view classes
+
 As of AppGini 5.60, a new advanced option was added to allow you to
 specify one or more space-separated CSS class names to apply to the
 table view and the detail view of a table. This option can be found by

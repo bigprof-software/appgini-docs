@@ -4,6 +4,8 @@ linkTitle: Working with styles
 slug: help/working-with-projects/working-with-styles
 ---
 
+# Working with styles
+
 AppGini offers you the flexibility to control the look of the generated
 application using CSS (Cascading Style Sheets). Click on the
 **Application theme** icon on the tool bar or from the Project menu

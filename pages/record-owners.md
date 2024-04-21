@@ -4,6 +4,8 @@ linkTitle: Record owners
 slug: help/record-owners
 ---
 
+# Setting the child record owner to match the owner of its parent record
+
 As of AppGini 24.10, you can set the owner of a child record based on the owner of its parent record. This is useful in many scenarios, for example:
 
 *   You have a table of `projects` and another table of `tasks`. Each task belongs to a project. You want to set the owner of each task to the owner of its parent project.

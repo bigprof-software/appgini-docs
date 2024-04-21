@@ -4,6 +4,8 @@ linkTitle: Working with fields
 slug: help/working-with-projects/working-with-table-fields
 ---
 
+# Working with table fields
+
 ## How can I add a field to a project?
 
 Each table in your AppGini project would include at least one field. To create a new field, select a table from the Project Browser and then click the 'New Field' tool bar icon or open the Tables menu > Fields > New Field. You might also use CTRL + F keyboard shortcut.
