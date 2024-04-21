@@ -12,7 +12,7 @@ application using CSS (Cascading Style Sheets). Click on the
 select **Themes** . The window below will appear.
 
 
-![Application themes window](https://bigprof.com/appgini/sites/default/files/working-with-styles.webp "Application themes window")
+![Application themes window](https://cdn.bigprof.com/appgini-desktop/help/application-theme-dialog.png "Application themes window")
 
 You can select a theme from the drop-down menu at the bottom.
 
