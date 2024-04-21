@@ -7,8 +7,54 @@
 input-files:
   - pages/index.md
   - pages/install-appgini-on-windows.md
+# Working with projects
   - pages/working-with-projects/index.md
   - pages/working-with-projects/getting-help-while-you-work.md
+  - pages/working-with-projects/project-properties-pane.md
+  - pages/working-with-projects/working-with-tables.md
+  - pages/working-with-projects/table-properties-pane.md
+  - pages/working-with-projects/working-with-table-fields.md
+  - pages/working-with-projects/field-properties-pane.md
+  - pages/working-with-projects/media-tab.md
+  - pages/working-with-projects/understanding-lookup-fields.md
+  - pages/calculated-fields.md
+  # - pages/working-with-projects/working-with-styles.md
+  - pages/working-with-projects/generating-the-php-application.md
+  - pages/working-with-projects/keyboard-shortcuts.md
+  - pages/application-uploader.md
+  - pages/record-owners.md
+# Working with the generated app
+  - pages/working-with-generated-web-database-application/index.md
+  - pages/working-with-generated-web-database-application/setup.md
+  - pages/working-with-generated-web-database-application/working-with-tables-and-records.md
+  - pages/working-with-generated-web-database-application/working-with-filters.md
+  - pages/working-with-generated-web-database-application/the-admin-interface.md
+  - pages/working-with-generated-web-database-application/shortcut-keys.md
+  - pages/ldap-authentication.md
+  - pages/enable-php-ldap-extension.md
+# Advanced topics
+  - pages/advanced-topics/index.md
+  # Hooks
+  - pages/advanced-topics/hooks/index.md
+  # - pages/advanced-topics/hooks/folder-contents.md
+  - pages/advanced-topics/hooks/global-hooks.md
+  - pages/advanced-topics/hooks/table-specific-hooks.md
+  - pages/advanced-topics/hooks/using-lookup-fields-in-calculations.md
+  - pages/advanced-topics/hooks/multiple-record-batch-actions.md
+  - pages/advanced-topics/hooks/DataList-object.md
+  - pages/advanced-topics/hooks/memberInfo-array.md
+  - pages/advanced-topics/hooks/magic-files.md
+  - pages/advanced-topics/hooks/WindowMessages-class.md
+
+  - pages/advanced-topics/table-and-detail-view-classes.md
+  - pages/advanced-topics/custom-limited-access-pages.md
+  - pages/advanced-topics/third-party-libraries-and-resources.md
+  - pages/advanced-topics/command-line-parameters.md
+  - pages/advanced-topics/url-parameters.md
+  - pages/connect-redash-to-appgini.md
+  - pages/advanced-topics/troubleshooting-errors-and-blank-pages.md
+
+  - pages/useful-links.md
 
 output-file: appgini-documentation.pdf
 from: markdown+backtick_code_blocks+fenced_code_attributes+pipe_tables+yaml_metadata_block+raw_html
