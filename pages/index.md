@@ -3,6 +3,8 @@
 title: AppGini Online Guide
 linkTitle: Overview
 slug: help
+description: Learn about AppGini, a powerful tool designed to simplify the creation of web-based database applications.
+keywords: AppGini, web database applications, PHP, MySQL, MariaDB, data management, user access control, customization, media handling, nocode, lowcode, host anywhere
 
 ---
 
