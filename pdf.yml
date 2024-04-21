@@ -7,6 +7,8 @@
 input-files:
   - pages/index.md
   - pages/install-appgini-on-windows.md
+  - pages/working-with-projects/index.md
+  - pages/working-with-projects/getting-help-while-you-work.md
 
 output-file: appgini-documentation.pdf
 from: markdown+backtick_code_blocks+fenced_code_attributes+pipe_tables+yaml_metadata_block+raw_html
