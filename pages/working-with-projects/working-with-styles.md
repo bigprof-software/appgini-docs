@@ -16,5 +16,9 @@ select **Themes** . The window below will appear.
 
 You can select a theme from the drop-down menu at the bottom.
 
+### Preview in web browser
+
+You can click on this button to preview the selected theme in your web browser. This will display a page from the Northwind demo, with the selected theme applied to it.
+
 
 
