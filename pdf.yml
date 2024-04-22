@@ -18,7 +18,7 @@ input-files:
   - pages/working-with-projects/media-tab.md
   - pages/working-with-projects/understanding-lookup-fields.md
   - pages/calculated-fields.md
-  # - pages/working-with-projects/working-with-styles.md
+  - pages/working-with-projects/working-with-styles.md
   - pages/working-with-projects/generating-the-php-application.md
   - pages/working-with-projects/keyboard-shortcuts.md
   - pages/application-uploader.md
