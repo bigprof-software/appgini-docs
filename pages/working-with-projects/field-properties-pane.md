@@ -8,5 +8,7 @@ slug: help/working-with-projects/field-properties-pane
 
 ![Field properties pane](https://bigprof.com/appgini/sites/default/files/appgini-field-properties-pane.png)
 
-> *TODO: Add description of each property in the field properties pane.*
+## Caption
+
+The field caption is the title of the field as it would appear in the table view and the detail view of its table in the generated web application.
 
