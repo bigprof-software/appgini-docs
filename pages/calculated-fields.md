@@ -34,7 +34,7 @@ If you are trying to set a field as a calculated field, it must **NOT** meet any
 
 You'll see a clear error message in AppGini explaining why a field can't be set as a calculated field if any of the above conditions apply to that field.
 
-![Calculated field error in AppGini.](https://cdn.bigprof.com/screencasts/calculated-field-error-message-for-non-read-only-field.png)
+![Calculated field error in AppGini.](https://cdn.bigprof.com/appgini-desktop/help/calculated-field-error-message-for-non-read-only-field.png)
 
 Also, if you set a field as a calculated field, and later on make some changes to the field that prevent it from being a calculated field, you'll see a warning when generating the app that the calculation will be skipped, along with reason for skipping:
 
