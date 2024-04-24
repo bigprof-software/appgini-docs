@@ -1,0 +1,29 @@
+name: Generate PDF and Upload as Artifact
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-upload-pdf:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install Pandoc and XeLaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-xetex
+
+      - name: Generate PDF
+        run: pandoc --defaults pdf.yml
+
+      - name: Upload PDF as Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: appgini-documentation.pdf
+          path: ./appgini-documentation.pdf
