@@ -2,6 +2,8 @@
 title: Calculated fields
 linkTitle: Calculated fields
 slug: help/calculated-fields
+description: Learn how to configure calculated fields in your AppGini app. Calculated fields are read-only fields that get populated automatically with a value calculated from an SQL SELECT query.
+keywords: calculated fields, read-only fields, SQL query, MySQL, AppGini, automatic calculations, batch updates, command line
 ---
 
 # Calculated fields
@@ -65,10 +67,14 @@ In the above query, we're using the special variable `%ID%`. When executing the 
 * `%USERNAME%` Will be replaced with the currently logged username before executing the query.
 * `%GROUPID%` Will be replaced with the group ID of the currently logged username before executing the query.
 * `%GROUP%` Will be replaced with the group name of the currently logged username before executing the query.
+* `%TABLENAME%` Will be replaced with the name of the table containing the calculated field before executing the query.
+* `%PKFIELD%` Will be replaced with the name of the primary key field of the table containing the calculated field before executing the query.
 
 Please make sure to use single quotes around the above variables when using them in queries. You don't have to manually type the variable into the query in AppGini; you can place the cursor at the location where you want to insert the variable, and then click the desired variable at the right as shown in this screenshot:
 
-![](https://cdn.bigprof.com/screencasts/inserting-placeholders-into-queries-for-calculated-fields.png)
+![](https://cdn.bigprof.com/screencasts/inserting-placeholders-into-queries-for-calculated-fields-24.12.png)
+
+The above special variables make it easy to write flexible queries that depend on the current user, group, or record. For example, you can use `%USERNAME%` to calculate the total sales made by the currently logged user, or use `%GROUP%` to calculate the total sales made by the group of the currently logged user. `%TABLENAME%` and `%PKFIELD%` can be used to write generic queries that can be copied and pasted to other tables without modification.
 
 ## The query helper
 
