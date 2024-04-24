@@ -16,4 +16,6 @@ The following video shows how to contribute to the documentation:
 
 <iframe width="700" height="394" src="https://www.youtube.com/embed/Apd5A0wu6qw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+
 By contributing to the documentation, you help other users and make AppGini better for everyone. Thank you for your help!
+
