@@ -24,11 +24,24 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y texlive-xetex
 
+      - name: Setup Python and AWS CLI
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install AWS CLI
+        run: pip install awscli
+
       - name: Generate PDF
         run: pandoc --defaults pdf.yml
 
-      - name: Upload PDF as Artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: appgini-documentation.pdf
-          path: ./appgini-documentation.pdf
+      - name: Configure AWS CLI for Cloudflare R2
+        run: |
+          aws configure set aws_access_key_id ${{ secrets.CLOUDFLARE_ACCESS_KEY_ID }}
+          aws configure set aws_secret_access_key ${{ secrets.CLOUDFLARE_SECRET_ACCESS_KEY }}
+          aws configure set default.region us-east-1
+          aws configure set default.s3.signature_version s3v4
+
+      - name: Upload PDF to Cloudflare R2
+        run: |
+          aws s3 cp appgini-documentation.pdf s3://bigprof-cdn/appgini-desktop/appgini-documentation.pdf --endpoint-url https://${{ secrets.CLOUDFLARE_ACCOUNT_ID }}.r2.cloudflarestorage.com
