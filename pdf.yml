@@ -55,6 +55,7 @@ input-files:
   - pages/advanced-topics/troubleshooting-errors-and-blank-pages.md
 
   - pages/useful-links.md
+  - pages/contribute.md
 
 output-file: appgini-documentation.pdf
 from: markdown+backtick_code_blocks+fenced_code_attributes+pipe_tables+yaml_metadata_block+raw_html
