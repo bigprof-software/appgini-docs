@@ -14,11 +14,15 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Install Pandoc and XeLaTeX
+      - name: Download and Install Pandoc
         run: |
-          curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+          wget https://github.com/jgm/pandoc/releases/download/3.1.13/pandoc-3.1.13-1-amd64.deb
+          sudo dpkg -i pandoc-3.1.13-1-amd64.deb
+
+      - name: Install XeLaTeX
+        run: |
           sudo apt-get update
-          sudo apt-get install -y pandoc texlive-xetex
+          sudo apt-get install -y texlive-xetex
 
       - name: Generate PDF
         run: pandoc --defaults pdf.yml
