@@ -46,14 +46,17 @@ Also, if you set a field as a calculated field, and later on make some changes t
 
 The basic steps are:
 
-1. Set the field as read-only (and make sure the other settings mentioned above don't apply to it).
-2. Click the _Calculated field_ tab.
-3. Check the option _Automatically calculate the value of this field using the following SQL query_
+1. Create the field (if it already exists, make sure it meets the conditions above).
+2. Set the field as read-only.
+3. Navidate to the _Calculated field_ tab and check the option _Automatically calculate the value of this field using the following SQL query_
 4. Type the SQL query for calculating the field value.
 
 ![](https://cdn.bigprof.com/screencasts/configure-calculated-field.gif)
 
-Valid SQL queries to use are those returning a single value to be saved in the calculated field. For example, this is a valid query to calculate the subtotal of an invoice line by multiplying the unit price by the quantity:
+**Important note**:
+
+Valid SQL queries for calculated fields must be `SELECT` queries that return a single value. The returned value should be of the same data type as the calculated field.
+For example, this is a valid query to calculate the subtotal of an invoice line by multiplying the unit price by the quantity:
 
 ```sql
 SELECT quantity * unit_price FROM invoice_items WHERE id='%ID%'
