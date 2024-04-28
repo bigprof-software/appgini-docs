@@ -34,5 +34,6 @@ slug: help/advanced-topics
 * [**Third party libraries**](/appgini/help/advanced-topics/third-party-libraries-and-resources)
 * [**Command-line parameters**](/appgini/help/advanced-topics/command-line-parameters)
 * [**URL parameters**](/appgini/help/advanced-topics/url-parameters)
-* [**Troublesooting errors and blank pages**](https://bigprof.com/appgini/help/advanced-topics/troubleshooting-errors-and-blank-pages)
+* [**Troublesooting errors and blank pages**](/appgini/help/advanced-topics/troubleshooting-errors-and-blank-pages)
+* [**AppGini files to ignore in git repositories**](/appgini/help/advanced-topics/gitignore)
 
