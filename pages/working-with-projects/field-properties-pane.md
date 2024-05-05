@@ -2,6 +2,8 @@
 title: Field properties pane
 linkTitle: Field properties
 slug: help/working-with-projects/field-properties-pane
+description: The field properties pane in AppGini allows you to configure the properties of fields in your tables.
+keywords: field properties, field properties pane, appgini field properties, appgini field properties pane, media tab, lookup field, options list, calculated field, data format, technical documentation
 ---
 
 # Field properties pane
@@ -50,11 +52,13 @@ The field will be read-only and its value set automatically by the app.
 ### Read Only
 If checked, this field will be displayed in the detail view but not editable.
 This is useful in many scenarios, including forcing a default value (or automatic value), calculated fields, fields that are populated using custom code or a third party app, .. etc.
+
 ![AppGini_rlaTzMBsVl](https://github.com/bigprof-software/appgini-docs/assets/168858457/781c5ba8-d657-426c-a6b7-65e74ae2e713)
 
 ### Primary key
 If you check this option, the current field will be the primary key of the current table.
 In AppGini, Every table must have a single primary key field in order to uniquely identify records of the table (multi-field primary keys are not supported by AppGini).
+
 ![AppGini_bI8MW1vvBU](https://github.com/bigprof-software/appgini-docs/assets/168858457/2f3e5609-4633-42ef-a93c-6cb138acef64)
 
 ### Zero Fill
@@ -70,6 +74,7 @@ If you set the field as read-only, auto-increment or hidden in detail view, this
 
 ### Rich (HTML) area 
 If checked, this field will be displayed as a rich area in the detail view. A rich area provides advanced formatting features not available in a normal text area. For example, you can change the font/font size, colors, add links, add photos, ... etc.
+
 ![AppGini_BNj6i82r3r](https://github.com/bigprof-software/appgini-docs/assets/168858457/3e5ee5eb-79b7-4bf9-833b-97d3f2e1e7f6)
 
 ### Auto increment
@@ -78,6 +83,7 @@ While defining the properties for the ID field (likely named "id"), look for an 
 ### Unique
 The data values in this field cannot be repeated if you check this property. This is similar to the Primary key property except that unique fields can be empty (null).
 If a user tries to enter a value that already exists into a unique field, they'll see an error message like the one below.
+
 ![AppGini_d3pskp8FXm](https://github.com/bigprof-software/appgini-docs/assets/168858457/3e5f90a8-6750-4f47-9eb8-cf9ba275d2ac)
 
 ### Show column sum
@@ -244,7 +250,7 @@ To hide the 'None' option, set the field as required.
 ### Data format > Format this field as
 Use this option if you want to apply a special format to the data stored in this field. 
 Examples of special formats include currency formats, Date/time formats, ... etc.
-You can add or edit data formats by editing the file 'C:\Program Files\AppGini\add-ons\dataFormats.cfg' in a text editor.
+You can add or edit data formats by editing the file `C:\Program Files\AppGini\add-ons\dataFormats.cfg` in a text editor.
 Rules: Each data format on a separate line. The line begins with the description of the data format, followed by a semi-colon (;) and a space, followed by the format code (written in MySQL syntax). The description of the data format can't include semi-colons.
 
 ![AppGini_8lyktlLxci](https://github.com/bigprof-software/appgini-docs/assets/168858457/2358b9fa-2c47-4956-b632-31d568611fb3)
