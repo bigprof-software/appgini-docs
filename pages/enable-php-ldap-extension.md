@@ -2,6 +2,8 @@
 title: Enabling LDAP Extension in PHP
 linkTitle: Enable LDAP
 slug: help/enable-php-ldap-extension
+keywords: LDAP, PHP, extension, enable, Linux, Windows, Apache, CentOS, Ubuntu, Debian, Red Hat, RHEL
+description: Learn how to enable the LDAP extension in PHP on Linux and Windows systems to configure LDAP settings in your AppGini app.
 ---
 
 # Enabling LDAP Extension in PHP
