@@ -8,6 +8,14 @@ keywords: install, AppGini, Windows, setup, installation, uninstall, upgrade
 
 # Install AppGini on Windows
 
+## System requirements
+
+AppGini runs on Windows 7 through Windows 11. It's compatible with both 32-bit and 64-bit versions of Windows. It's also compatible with Windows Server editions.
+
+It's also possible to run AppGini on MacOS or Linux using a virtual machine or a compatibility layer like Wine or Crossover. You can find more information on this in the [related topics](#related-topics) section below.
+
+## Installing AppGini
+
 After downloading AppGini (the [trial](https://bigprof.com/appgini/download) or [pro](https://bigprof.com/appgini/appgini-pro) version),
 you can install it by following the steps below: 
 
