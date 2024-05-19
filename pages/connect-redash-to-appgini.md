@@ -2,23 +2,13 @@
 title: From Data to Dashboards, A Guide to Redash Integration with AppGini
 linkTitle: Redash Integration
 slug: help/connect-redash-to-appgini
+keywords: redash, appgini, integration, dashboard, data visualization, sql, mysql, data source, query, visualization, chart, dashboard, alert, performance, read replica
+description: Learn how to integrate Redash with AppGini to create interactive visualizations, build dynamic dashboards, and share insights with your team.
 ---
 
 # From Data to Dashboards, A Guide to Redash Integration with AppGini
 
-#### Table of Contents
-
-- [What is Redash?](#what-is-redash)
-- [Installing Redash on your server](#installing-redash-on-your-server)
-- [Connecting Redash to your AppGini application](#connecting-redash-to-your-appgini-application)
-- [Creating a query in Redash](#creating-a-query-in-redash)
-- [Creating a dashboard in Redash](#creating-a-dashboard-in-redash)
-- [Creating alerts in Redash](#creating-alerts-in-redash)
-- [Dive deeper into Redash](#dive-deeper-into-redash)
-- [Performance considerations when using Redash](#performance-considerations-when-using-redash)
-- [Conclusion](#conclusion)
-
-![War room!](https://cdn.bigprof.com/images/control-room-dashboards.png)
+![Redash dashboard example](https://cdn.bigprof.com/images/redash-dashboard-example-2.png)
 
 ## What is Redash?
 
