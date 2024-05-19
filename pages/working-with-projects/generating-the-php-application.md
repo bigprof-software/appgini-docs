@@ -7,7 +7,7 @@ slug: help/working-with-projects/generating-the-php-application
 # Generating the PHP application
 
   
-![The 'Generate App' icon](https://bigprof.com/appgini/sites/default/files/2009-07-31_2326.png)
+![The 'Generate App' icon](https://cdn.bigprof.com/images/generate-app-icon.png)
 
 After you have finished working with your project (defining tables, fields and styles) the only thing remaining now is firing your application. Click the 'Generate App' icon. You'll be asked to select (or create) an output folder.  
   
