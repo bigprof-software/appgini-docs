@@ -2,9 +2,13 @@
 title: Setting the child record owner to match the owner of its parent record
 linkTitle: Record owners
 slug: help/record-owners
+keywords: record owner, parent record, child record, owner, automatic, parent table, child table, lookup field, permissions, editing, owner user, Fix record owners, utility
+description: Learn how to set the owner of a child record to match the owner of its parent record in AppGini, and how to update the owner of existing child records.
 ---
 
 # Setting the child record owner to match the owner of its parent record
+
+## About this feature
 
 As of AppGini 24.10, you can set the owner of a child record based on the owner of its parent record. This is useful in many scenarios, for example:
 
