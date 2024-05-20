@@ -2,26 +2,53 @@
 title: Shortcut keys
 linkTitle: Shortcut keys
 slug: help/working-with-generated-web-database-application/shortcut-keys
+keywords: shortcut keys, keyboard shortcuts, hotkeys, appgini shortcuts
+description: Learn about the shortcut keys available in AppGini-generated web database applications.
 ---
 
-# Shortcut keys
+# Shortcut keys in AppGini apps
 
-> The following shirtcut keys can be used in AppGini apps as of AppGini
-5.90.
+Shortcut keys are a great way to speed up your work in AppGini-generated
+applications. They allow you to quickly navigate between different
+sections of your app, perform common actions, and more. This page
+provides a reference for the available shortcut keys in AppGini apps.
+
+> Shortcut keys can be used in AppGini apps as of AppGini 5.90.
+
+## Enabling/disabling shortcut keys
+
+You can enable or disable shortcut keys in your AppGini app in 2 ways:
+
+1. Press **` CTRL `** or **` SHIFT `** + **` F1 `**. This will display a
+   list of available shortcut keys and a toggle button to enable or
+   disable shortcut keys. Click the toggle button to enable or disable
+   shortcut keys.
+
+   ![Shortcut keys popup](https://cdn.bigprof.com/images/keyboard-shortcuts-popup-window.png)
+
+2. Alternatively, you can enable or disable shortcut keys by opening the profile
+   menu (by clicking your username at the top right corner of the page),
+   then clicking the **Keyboard shortcuts** link. This will open the
+   same popup as above.
+ 
+   ![Enable/disable shortcut keys](https://cdn.bigprof.com/images/enable-shortcut-keys-in-appgini-app.png)
+
+## Shortcut keys reference
 
 **Note:** Unless otherwise specified (*1*) , pressing the shortcut keys
 below focuses (highlights) the related link/button (rather than
-performing the action itself \-- this is intended to prevent doing any
+performing the action itself -- this is intended to prevent doing any
 unintended action by mistake if pressing the wrong shortcut key
 combination). After a link is focused, you could press **` ENTER `**
 to actually activate the link, **` TAB `** to navigate to the next
 link, or **` SHIFT `** + **` TAB `** to navigate to the previous
 link.
 
-> (*1*) Wherever the shortcut listings below mention *\"instant action\"*
+> (*1*) Wherever the shortcut listings below mention *"instant action"*
 > , this is an exception to the above rule, meaning that pressing this
 > particular shortcut keys combination would instantly apply the related
 > action.
+
 
 #### General shortcuts available in all pages
 
@@ -93,7 +120,7 @@ link.
 -   **` CTRL `** + **` ↑ `** : Same as **` CTRL `** + **` ← `**.
 -   **` CTRL `** + **` ↓ `** : Same as **` CTRL `** + **` → `**.
 
-#### (AppGini 5.91+) Hide 'keyboard shortcuts reference' link
+## (AppGini 5.91+) Hide 'keyboard shortcuts reference' link
 
 In AppGini 5.91 and above, the shortcuts window includes a link at the
 bottom that points to this page. This makes it easy for your app users
