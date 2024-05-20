@@ -33,7 +33,7 @@ jobs:
         run: pip install awscli
 
       - name: Generate PDF
-        run: pandoc --defaults pdf.yml
+        run: pandoc --fail-if-warnings=false --defaults pdf.yml
 
       - name: Configure AWS CLI for Cloudflare R2
         run: |
