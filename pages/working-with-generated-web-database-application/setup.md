@@ -1,6 +1,8 @@
 ---
-title: Setup
-linkTitle: Setup
+title: Setup of AppGini-generated applications
+linkTitle: Setup of AppGini-generated applications
+keywords: setup, appgini, generated applications, database, web applications, test connection, admin user, captcha
+description: Learn how to set up your AppGini-generated web database application, including solving the captcha, filling in the database information, and creating the admin user.
 slug: help/working-with-generated-web-database-application/setup
 ---
 
