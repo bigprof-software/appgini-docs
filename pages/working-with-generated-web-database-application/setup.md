@@ -4,89 +4,106 @@ linkTitle: Setup
 slug: help/working-with-generated-web-database-application/setup
 ---
 
-# Setup
+# Setup of AppGini-generated applications
 
-After uploading your PHP application files to a folder on your server,
-you can access it by pointing your browser to this URL:
+## Accessing your application
+
+After [uploading your PHP application files](../application-uploader.md) to your server,
+you can access it by pointing your browser to the application's URL. Depending on your server,
+the URL might look like this if you uploaded the files to the document root:
 
 ```plaintext
-https://www.yourserver.com/path_to_appgini_generated_app
+https://www.yourserver.com/
 ```
 
-Replace `www.yourserver.com` with your server name or IP, and
-`path_to_appgini_generated_app` with the path to your
-application's folder.
+Or like this if you uploaded the files to a subfolder named `myapp`:
 
-## STEP 1 OF 3: Running the setup script
+```plaintext
+https://www.yourserver.com/myapp/
+```
 
-If you are running the generated application for the first time, you
-will see the following screen when you try to access the above url:
+Replace `www.yourserver.com` with your server name 
+(or IP address if you are running the server on an intranet),
+and `myapp` with the path to the folder where you uploaded the files.
 
-![Setup step 1](https://cdn.bigprof.com/appgini-desktop/help/setup-1.png)
+## Step 1: Solve the captcha
 
-Click on the "Continue" button to proceed. You should see a list of required information to prepare for the next step:
+The first time you access your application, you'll be presented with a captcha to solve.
+This is a security measure to prevent bots from trying to access your setup page.
 
-![Setup step 2](https://cdn.bigprof.com/appgini-desktop/help/setup-2.png)
+![Setup captcha](https://cdn.bigprof.com/images/appgini-setup-01-captcha.png "Setup captcha")
 
-After clicking "Let's go!", you will be asked to provide the database login parameters, and create the admin account.
+Simply solve the captcha and click the `Submit` button. Please note that this step
+might not be displayed if your server doesn't have the `GD` library installed. In this case,
+just skip to the next step.
 
-![](https://cdn.bigprof.com/appgini-desktop/help/setup-3.png)
+If you're unable to solve the captcha for any reason, you can disable it by editing the
+generated `definitions.php` file and changing the following line:
 
-Next, the script will look for tables in the database with the names you
-specified in your project. It will attempt to create any table that
-doesn't already exist. You will see messages indicating whether the
-setup was succesful or not, and a link to your PHP application's
-homepage. The home page is the file 'index.php' created in the
-application folder.
+```php
+@define('FORCE_SETUP_CAPTCHA', true);
+```
 
-If you see error messages stating that the setup script can't create
-the database or any of the tables, make sure the database username and password
-you provided in the previous step have enough permissions to allow you to define
-the database and its tables.
+to:
 
-## STEP 2 OF 3: Logging to the admin control panel
+```php
+@define('FORCE_SETUP_CAPTCHA', false);
+```
 
-When you finish step 1 above and go to the home page, you'll see this
-screen:
+## Step 2: The setup form
 
+In the next step, you should see the following intro screen:
 
-Click on the \"admin control panel\" link. You should see the following
-screen:
+![Setup intro](https://cdn.bigprof.com/images/appgini-setup-02-setup-intro.png "Setup intro")
 
+Click 'Continue' to proceed to the setup checklist:
 
+![Setup checklist](https://cdn.bigprof.com/images/appgini-setup-03-prepare-db-info.png "Setup checklist")
 
-Type the admin username and password and click \"Sign In\". The default
-username is admin and the default password is admin. In the next step,
-we shall change them.
+This simply lists the required database information you need to have at hand before proceeding.
+Usually, you can retrieve this information from your hosting control panel.
+In some cases, you might need to create a new database and user for your application,
+which you can also do from your hosting control panel, using a tool like phpMyAdmin,
+or through the command line.
 
-## STEP 3 OF 3: Changing the admin password
+For more details, please refer to [how to create a new MySQL/MariaDB database and user](../create-mysql-database-and-user.md).
 
-After you sign in as admin, you'll see the following page:
+Once you have the required information, click 'Continue' to proceed to the database setup form:
 
-![](https://cdn.bigprof.com/appgini-desktop/help/setup-5.png)
+![Database setup form](https://cdn.bigprof.com/images/appgini-setup-04-setup-form.png "Database setup form")
 
+Fill in the required information:
 
-You should click on the \"Admin Settings\" link provided in the warning
-message above. This opens the following page, where you should type a
-new password and click \"Save Changes\":
+- **MySQL server (host)**: This is usually `localhost`, but it might be different depending on your hosting provider.
+- **Database name**, **MySQL Username**, and **MySQL Password**: These are the database name, username, and password you created earlier.
+- **MySQL port**: This is usually `3306`, but it might be different depending on your hosting provider.
 
+After typing in the above information, a connection test will be performed to ensure that the application can connect to the database.
+If the connection test fails, you'd see an error message as below:
 
-![](https://cdn.bigprof.com/appgini-desktop/help/setup-admin-settings.png)
+![Database connection error](https://cdn.bigprof.com/images/appgini-setup-05-db-connection-error.png "Database connection error")
 
+In that case, double-check the information you entered and make sure it's correct. Then click the 'Retry' button to the right of the error message
+to re-test the connection.
 
-After saving the changes, you'll see this confirmation page:
+If the connection test succeeds, you'll see a success message as below:
 
+![Database connection success](https://cdn.bigprof.com/images/appgini-setup-06-db-connection-success.png "Database connection success")
 
-![](https://cdn.bigprof.com/appgini-desktop/help/setup-admin-saved.png)
+Next, provide the desired admin username, email, and password for your application.
+This will be the username and password you'll use to log in to your application's [admin area](the-admin-interface.md), where
+you can manage your application's settings, users, groups, and more.
 
+After filling in the admin information, click 'Submit' to proceed to the final step.
 
-If you'd like to have a look on the generated table pages, Click \"Sign
-Out\", and then click the \"Go to user's area\" link from the following
-page.
+## Step 3: Finalizing the setup
 
-For more information about using the admin area and managing users,
-please refer to the [admin
-interface](/appgini/help/working-with-generated-web-database-application/the-admin-interface)
-section.
+Your AppGini-generated application will next attempt to create the necessary database tables and populate them with initial data.
+If the setup process completes successfully, you'll see a success message as below:
 
+![Setup success](https://cdn.bigprof.com/images/appgini-setup-07-success.png "Setup success")
+
+Depending on what you want to do next, click one of the options provided.
+
+That's it! You've successfully set up your AppGini-generated application.
 
