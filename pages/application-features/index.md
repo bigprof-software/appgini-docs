@@ -13,5 +13,5 @@ This is a work in progress and will be updated regularly.
 
 ## Available topics
 
-- [Date and datetime offsets](date-and-datetime-offsets.md)
+- [Date and datetime offsets](date-datetime-offsets.md)
 
