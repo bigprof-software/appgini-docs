@@ -24,7 +24,7 @@ input-files:
   - pages/application-uploader.md
   - pages/record-owners.md
 # Working with the generated app
-  - pages/working-with-generated-web-database-application/index.md
+  # - pages/working-with-generated-web-database-application/index.md
   - pages/working-with-generated-web-database-application/setup.md
   - pages/working-with-generated-web-database-application/working-with-tables-and-records.md
   - pages/working-with-generated-web-database-application/working-with-filters.md
@@ -32,6 +32,9 @@ input-files:
   - pages/working-with-generated-web-database-application/shortcut-keys.md
   - pages/ldap-authentication.md
   - pages/enable-php-ldap-extension.md
+# App features
+  - pages/application-features/index.md
+  - pages/application-features/date-datetime-offsets.md
 # Advanced topics
   - pages/advanced-topics/index.md
   # Hooks
