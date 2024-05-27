@@ -12,7 +12,7 @@ The content of this documentation is hosted on GitHub and is open-source. This m
 [GitHub repository](https://github.com/bigprof-software/appgini-docs). This can be done very easily by clicking the "Edit this page on GitHub" link
 at the top of each page.
 
-The following video shows how to contribute to the documentation:
+The following video shows how to contribute to the documentation. Please note that the video was recorded before updating the documentation theme, so the appearance of the documentation has changed since then. However, the process of contributing is still the same:
 
 <iframe width="700" height="394" src="https://www.youtube.com/embed/Apd5A0wu6qw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
