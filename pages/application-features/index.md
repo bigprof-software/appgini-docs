@@ -14,4 +14,7 @@ This is a work in progress and will be updated regularly.
 ## Available topics
 
 - [Date and datetime offsets](date-datetime-offsets.md)
+- [LDAP authentication](../ldap-authentication.md)
+- [Automated record ownership](../record-ownership.md)
+- [Calculated fields](../calculated-fields.md)
 
