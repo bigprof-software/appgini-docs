@@ -34,7 +34,7 @@ Line 1 in the code above makes sure this code won't be executed until the page c
 
 If you create a file in the hooks folder and name it `tablename-tv.js` (where *`tablename`* is the name of a table in your application), AppGini will automatically load that file and execute it as a JavaScript file in the browser whenever the specified table is displayed. This is very useful to modify the page content/layout or add custom behavior.
 
-For an example of how this can be used to add new batch actions, please see the [`batch_actions()` hook documentation](/appgini/help/advanced-topics/hooks/multiple-record-batch-actions).
+For an example of how this can be used to add new batch actions, please see the [`batch_actions()` hook documentation](/appgini/help/advanced-topics/hooks/multiple-record-batch-actions/).
 
 Please note that despite the `-tv` suffix, this file is always loaded when the specific table is being viewed, whether the table view is being displayed or not. If you want to execute code *only if* the table view is visible, you can perform this check in the `tablename-tv.js` file:
 

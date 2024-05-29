@@ -31,7 +31,7 @@ function login_ok($memberInfo, &$args) {
 
 ### Parameters:  
 
-*   `$memberInfo` is an array containing details of the member who signed in. Please refer to [`memberInfo`](/appgini/help/advanced-topics/hooks/memberInfo-array) for more details.
+*   `$memberInfo` is an array containing details of the member who signed in. Please refer to [`memberInfo`](/appgini/help/advanced-topics/hooks/memberInfo-array/) for more details.
 *   `$args` is currently not implemented but is reserved for future use.
 
   
@@ -133,7 +133,7 @@ function member_activity($memberInfo, $activity, &$args){
 
 ### Parameters:
 
-*   `$memberInfo` is an associative array containing details of the member who signed up. Please refer to [`memberInfo`](/appgini/help/advanced-topics/hooks/memberInfo-array) for more details.
+*   `$memberInfo` is an associative array containing details of the member who signed up. Please refer to [`memberInfo`](/appgini/help/advanced-topics/hooks/memberInfo-array/) for more details.
 *   `$activity` is a string indicating the type of activity. It can be one of the following values:
     * `pending`: the member signed up but his account is pending approval by the admin.
     * `automatic`: the member signed up and his account is automatically approved.
@@ -212,7 +212,7 @@ None.
 ## `child_records_config()`
 
 This hook function was added in AppGini 22.14, and can be used to modify the default configuration of
-the [child records section in the detail view](/appgini/help/working-with-projects/understanding-lookup-fields#parent-children-settings).
+the [child records section in the detail view](/appgini/help/working-with-projects/understanding-lookup-fields/#parent-children-settings).
 
 If you open the generated `hooks/__global.php` file in a text editor, you can see this function defined as follows:
 

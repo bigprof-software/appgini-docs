@@ -50,7 +50,7 @@ is redirected to another page. In that case, if you'd like to display
 some message to the user, you can use the `WindowMessages` class
 to do so, and the message will be displayed on the redirected page. See
 the example in [`tablename_after_insert()` hook
-documentation](/appgini/help/advanced-topics/hooks/table-specific-hooks#tablename_after_insert)
+documentation](/appgini/help/advanced-topics/hooks/table-specific-hooks/#tablename_after_insert)
 .
 
 This is also useful for use in `tablename_after_update()` and
@@ -86,7 +86,7 @@ echo WindowMessages::includeWindowId();
 
 Your AppGini application already includes the code to display the
 messages, so you don't need to do anything special. In case of [custom
-pages](/appgini/help/advanced-topics/custom-limited-access-pages)
+pages](/appgini/help/advanced-topics/custom-limited-access-pages/)
 however, you need to include the following code in your page where you
 want the messages to be displayed:
 

@@ -18,7 +18,7 @@ keywords: memberInfo, array, logged member, username, groupID, group, admin, ema
 *   `IP`: the IP address from where the member is currently logged.
 *   `custom`: a numeric array containing the values of custom fields for the member. Custom fields can be defined via the admin settings page in the admin area of your AppGini application. Currently up to 4 custom fields are supported. So, to access the value of the first custom field for the member, you can use `$memberInfo['custom'][0]`.
 
-The `$memberInfo` array is passed to many hook functions, both [global](/appgini/help/advanced-topics/hooks/global-hooks) and [table-specific](/appgini/help/advanced-topics/hooks/table-specific-hooks). For example, you can access the username of the currently logged member in a hook function by using `$memberInfo['username']`.
+The `$memberInfo` array is passed to many hook functions, both [global](/appgini/help/advanced-topics/hooks/global-hooks/) and [table-specific](/appgini/help/advanced-topics/hooks/table-specific-hooks/). For example, you can access the username of the currently logged member in a hook function by using `$memberInfo['username']`.
 
 > **Tip:** You can retrieve this array in your own code by calling the function `getMemberInfo()`, which returns this array.
 

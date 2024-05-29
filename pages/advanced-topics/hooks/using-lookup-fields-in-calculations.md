@@ -8,10 +8,10 @@ slug: help/advanced-topics/hooks/using-lookup-fields-in-calculations
 
 When customizing the [`before_insert`, `after_insert`, `before_update` or
 `after_update`
-hooks](/appgini/help/advanced-topics/hooks/table-specific-hooks) to make
+hooks](/appgini/help/advanced-topics/hooks/table-specific-hooks/) to make
 a calculation, you might encounter a case where one or more fields in
 the formula you're calculating is a [lookup field (foreign
-key)](/appgini/help/working-with-projects/understanding-lookup-fields) .
+key)](/appgini/help/working-with-projects/understanding-lookup-fields/) .
 In this case, the value of `$data['fieldname']` (where `fieldname`
 is the name of the concerned lookup field) is probably NOT the value
 you'd like to use for your calculation.

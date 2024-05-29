@@ -14,10 +14,10 @@ The hooks folder is where all your custom-defined code should be placed. AppGini
 
 ## This folder contains the following files:
 
-*   **\_\_global.php**: This file contains hook functions that get called when a new member signs up, when a member signs in successfully and when a member fails to sign in. [_More info ..._](/appgini/help/advanced-topics/hooks/global-hooks)  
+*   **\_\_global.php**: This file contains hook functions that get called when a new member signs up, when a member signs in successfully and when a member fails to sign in. [_More info ..._](/appgini/help/advanced-topics/hooks/global-hooks/)  
       
     
-*   **_tablename_.php**: For each table in your project, a hook file named the same as the table name is created. This file contains hook functions that get called when a new record is added, when a record is edited, when a record is deleted, … etc. These hooks are table-specific. That's why each table in your project has its own hook file. [_More info ..._](/appgini/help/advanced-topics/hooks/table-specific-hooks)  
+*   **_tablename_.php**: For each table in your project, a hook file named the same as the table name is created. This file contains hook functions that get called when a new record is added, when a record is edited, when a record is deleted, … etc. These hooks are table-specific. That's why each table in your project has its own hook file. [_More info ..._](/appgini/help/advanced-topics/hooks/table-specific-hooks/)  
       
     
 *   **index.html**: This file should not be edited. It just redirects visitors who try to access the hooks folder to the main page.  

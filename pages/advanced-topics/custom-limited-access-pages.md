@@ -35,7 +35,7 @@ First of all, let's create a new file in the 'hooks' folder inside your AppGini-
     include("$hooks_dir/../lib.php");
 ```
 
-The above code allows you to use the functions provided by AppGini in your custom page, including the function [getMemberInfo()](/appgini/help/working-with-generated-web-database-application/hooks/memberInfo) which you can use for checking permissions. Let's see how to implement each of the above access methods.
+The above code allows you to use the functions provided by AppGini in your custom page, including the function [getMemberInfo()](/appgini/help/advanced-topics/hooks/memberInfo-array/) which you can use for checking permissions. Let's see how to implement each of the above access methods.
 
 #### Grant access to one or more groups
 
@@ -129,7 +129,7 @@ After controlling access to your custom page, the next step is to customize its 
 
 #### Link to the page from other pages
 
-Finally, you want users to be able to easily reach your page. AppGini makes it easy to add links to the homepage and/or to the navigation menu. To do so, all you need to do is [add a few lines to the "hooks/links-home.php" and/or "hooks/links-navmenu.php" files](/appgini/help/advanced-topics/hooks/folder-contents).
+Finally, you want users to be able to easily reach your page. AppGini makes it easy to add links to the homepage and/or to the navigation menu. To do so, all you need to do is [add a few lines to the "hooks/links-home.php" and/or "hooks/links-navmenu.php" files](/appgini/help/advanced-topics/hooks/folder-contents/).
 
 > **Tip!** If you plan to add many custom pages to your application, it might not be very practical to place links to all of them directly into the navigation menu or the homepage. A more organized approach in this case is to create a page listing the custom links and add a link to that page rather than to each custom page.
 

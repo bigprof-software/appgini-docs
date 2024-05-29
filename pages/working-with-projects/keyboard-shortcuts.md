@@ -24,6 +24,6 @@ There are several keyboard shortcuts in AppGini that will help you work even fas
 * **` F1 `**: Show/hide the context help pane.
 * **` F4 `**: Navigate between the project browser (left pane), the properties pane (right pane), and the project search box.
 
-See also: [Shortcut keys in generated applications](/appgini/help/working-with-generated-web-database-application/shortcut-keys)
+See also: [Shortcut keys in generated applications](/appgini/help/working-with-generated-web-database-application/shortcut-keys/)
 
 

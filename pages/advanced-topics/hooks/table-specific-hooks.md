@@ -27,7 +27,7 @@ table in your project has its own hook file.
 - [`tablename_init()`](#tablename_init)
 - [`tablename_header()`](#tablename_header)
 - [`tablename_footer()`](#tablename_footer)
-- [`tablename_batch_actions()`](/appgini/help/advanced-topics/hooks/multiple-record-batch-actions)
+- [`tablename_batch_actions()`](/appgini/help/advanced-topics/hooks/multiple-record-batch-actions/)
 
 
 
@@ -54,11 +54,11 @@ function tablename_init(&$options, $memberInfo, &$args) {
 -   `$options` (passed by reference so that it can be modified
     inside this hook function) a DataList object that sets options for
     rendering the page. Please refer to
-    [DataList](/appgini/help/advanced-topics/hooks/DataList-object) for more
+    [DataList](/appgini/help/advanced-topics/hooks/DataList-object/) for more
     details.
 -   `$memberInfo` is an array containing details of the member
     who signed in. Please refer to
-    [memberInfo](/appgini/help/advanced-topics/hooks/memberInfo-array)
+    [memberInfo](/appgini/help/advanced-topics/hooks/memberInfo-array/)
     for more details.
 -   `$args` is currently not used but is reserved for future
     uses.
@@ -150,7 +150,7 @@ function tablename_header($contentType, $memberInfo, &$args) {
     `print-detailview` or `filters`.
 -   `$memberInfo` is an array containing details of the member
     who signed in. Please refer to
-    [memberInfo](/appgini/help/advanced-topics/hooks/memberInfo-array)
+    [memberInfo](/appgini/help/advanced-topics/hooks/memberInfo-array/)
     for more details.
 -   `$args` is currently not used but is reserved for future
     uses.
@@ -163,7 +163,7 @@ String containing the HTML header code. If empty, the default
 besides your customized header, include the `<%%HEADER%%>` placeholder
 in the returned string. Note: If you have a customized header-extras.php
 file (see [the contents of the hooks
-folder](/appgini/help/advanced-topics/hooks/folder-contents) for more
+folder](/appgini/help/advanced-topics/hooks/folder-contents/) for more
 info), it won't be included in the page if you don't include the
 `<%%HEADER%%>` placeholder in the return string.
 
@@ -264,7 +264,7 @@ function tablename_footer($contentType, $memberInfo, &$args) {
     `print-detailview` or `filters`.
 -   `$memberInfo` is an array containing details of the member
     who signed in. Please refer to
-    [memberInfo](/appgini/help/advanced-topics/hooks/memberInfo-array)
+    [memberInfo](/appgini/help/advanced-topics/hooks/memberInfo-array/)
     for more details.
 -   `$args` is currently not used but is reserved for future
     uses.
@@ -277,7 +277,7 @@ String containing the HTML footer code. If empty, the default
 besides your customized footer, include the `<%%FOOTER%%>` placeholder
 in the returned string. Note: If you have a customized footer-extras.php
 file (see [the contents of the hooks
-folder](/appgini/help/advanced-topics/hooks/folder-contents) for more
+folder](/appgini/help/advanced-topics/hooks/folder-contents/) for more
 info), it won't be included in the page if you don't include the
 `<%%FOOTER%%>` placeholder in the return string.
 
@@ -311,7 +311,7 @@ function tablename_before_insert(&$data, $memberInfo, &$args) {
     it apply to the insert query.
 -   `$memberInfo` is an array containing details of the member
     who signed in. Please refer to
-    [memberInfo](/appgini/help/advanced-topics/hooks/memberInfo-array)
+    [memberInfo](/appgini/help/advanced-topics/hooks/memberInfo-array/)
     for more details.
 -   `$args` was not in use prior to AppGini 5.90. As of AppGini
     5.90, it's used for exchanging further data as follows:
@@ -345,7 +345,7 @@ function tablename_before_insert(&$data, $memberInfo, &$args) {
 }
 ```
 
-**See also:** [Using lookup fields in calculations](/appgini/help/advanced-topics/hooks/using-lookup-fields-in-calculations).
+**See also:** [Using lookup fields in calculations](/appgini/help/advanced-topics/hooks/using-lookup-fields-in-calculations/).
 
 
 ### Example 2 (AppGini 5.90+)
@@ -394,7 +394,7 @@ function tablename_after_insert($data, $memberInfo, &$args) {
     for the new record.
 -   `$memberInfo` is an array containing details of the member
     who signed in. Please refer to
-    [memberInfo](/appgini/help/advanced-topics/hooks/memberInfo-array)
+    [memberInfo](/appgini/help/advanced-topics/hooks/memberInfo-array/)
     for more details.
 -   `$args` is currently not used but is reserved for future
     uses.
@@ -479,7 +479,7 @@ function tablename_before_update(&$data, $memberInfo, &$args) {
     for the record to be updated.
 -   `$memberInfo` is an array containing details of the member
     who signed in. Please refer to
-    [memberInfo](/appgini/help/advanced-topics/hooks/memberInfo-array)
+    [memberInfo](/appgini/help/advanced-topics/hooks/memberInfo-array/)
     for more details.
 -   `$args` was not in use prior to AppGini 5.90. As of AppGini
     5.90, it's used for exchanging further data as follows:
@@ -576,7 +576,7 @@ function tablename_after_update($data, $memberInfo, &$args) {
     for the new record.
 -   `$memberInfo` is an array containing details of the member
     who signed in. Please refer to
-    [memberInfo](/appgini/help/advanced-topics/hooks/memberInfo-array)
+    [memberInfo](/appgini/help/advanced-topics/hooks/memberInfo-array/)
     for more details.
 -   `$args` was not in use prior to AppGini 5.90. As of AppGini
     5.90, it's used for exchanging further data as follows:
@@ -627,7 +627,7 @@ function tablename_before_delete($selectedID, &$skipChecks, $memberInfo, &$args)
     check will be performed.
 -   `$memberInfo` is an array containing details of the member
     who signed in. Please refer to
-    [memberInfo](/appgini/help/advanced-topics/hooks/memberInfo-array)
+    [memberInfo](/appgini/help/advanced-topics/hooks/memberInfo-array/)
     for more details.
 -   `$args` is currently not used but is reserved for future
     uses.
@@ -694,7 +694,7 @@ function tablename_after_delete($selectedID, $memberInfo, &$args) {
     record.
 -   `$memberInfo` is an array containing details of the member
     who signed in. Please refer to
-    [memberInfo](/appgini/help/advanced-topics/hooks/memberInfo-array)
+    [memberInfo](/appgini/help/advanced-topics/hooks/memberInfo-array/)
     for more details.
 -   `$args` is currently not used but is reserved for future
     uses.
@@ -750,7 +750,7 @@ function tablename_dv($selectedID, $memberInfo, &$html, &$args) {
     detail view will be displayed to enter a new record).
 -   `$memberInfo` is an array containing details of the member
     who signed in. Please refer to
-    [memberInfo](/appgini/help/advanced-topics/hooks/memberInfo-array)
+    [memberInfo](/appgini/help/advanced-topics/hooks/memberInfo-array/)
     for more details.
 -   `$html` (passed by reference so that it can be modified
     inside this hook function) the HTML code of the form ready to be
@@ -817,7 +817,7 @@ function tablename_csv($query, $memberInfo, $args) {
     the data in the CSV file.
 -   `$memberInfo` is an array containing details of the member
     who signed in. Please refer to
-    [memberInfo](/appgini/help/advanced-topics/hooks/memberInfo-array)
+    [memberInfo](/appgini/help/advanced-topics/hooks/memberInfo-array/)
     for more details.
 -   `$args` is currently not used but is reserved for future
     uses.

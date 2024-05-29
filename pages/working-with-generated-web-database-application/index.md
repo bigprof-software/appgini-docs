@@ -40,7 +40,7 @@ the generated application and have limited permissions that you (the
 admin) have full control of.
 
 The admin has access to an [admin
-area](/appgini/help/working-with-generated-web-database-application/the-admin-interface)
+area](/appgini/help/working-with-generated-web-database-application/the-admin-interface/)
 where he can define groups. Each group has its own permissions over each
 table in your application.
 
@@ -66,7 +66,7 @@ permissions (and denied the old ones.)
 
 You can set the permissions of anonymous users in AppGini before file
 generation. And you can change them later from the [admin
-area](/appgini/help/working-with-generated-web-database-application/the-admin-interface)
+area](/appgini/help/working-with-generated-web-database-application/the-admin-interface/)
 . Please be very careful with setting the anonymous permissions to avoid
 compromising your data.
 
@@ -109,7 +109,7 @@ files:
     template file.
     
 -   `categories_autofill.php` If you have [auto-fill lookup
-    fields](/appgini/help/working-with-projects/understanding-lookup-fields)
+    fields](/appgini/help/working-with-projects/understanding-lookup-fields/)
     in your table, this file contains the code to populate these
     autofill fields. This file is called through an ajax request and
     sends javascript code to the browser.

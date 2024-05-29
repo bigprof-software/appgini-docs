@@ -27,7 +27,7 @@ To start a new project in AppGini, follow these steps:
 
 Note that the project name you specify in AppGini doesn't have to match the name of the database on your server. It's used only for display purposes and will be used as the basis for the application title, which is displayed at the top of the project properties pane (see the screenshot below) and in the generated application's title bar.
 
-> You can configure the actual database name and credentials during the generated application setup, which is explained in detail [here](/appgini/help/working-with-generated-web-database-application/setup).
+> You can configure the actual database name and credentials during the generated application setup, which is explained in detail [here](/appgini/help/working-with-generated-web-database-application/setup/).
 
 ## The project window
 

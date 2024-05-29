@@ -10,7 +10,7 @@ keywords: DataList object, tablename_init, hook function, table, appearance, beh
 
 The `DataList` object exposes many options that you can control to affect the behavior and appearance of each of the AppGini-generated table pages that users see.  
   
-`DataList` object is passed to the [`tablename_init`](/appgini/help/advanced-topics/hooks/table-specific-hooks#tablename_init) hook function. This hook function is called before displaying data to users. So, you can control the various appearance and behavior options by modifying this object inside that hook function.  
+`DataList` object is passed to the [`tablename_init`](/appgini/help/advanced-topics/hooks/table-specific-hooks/#tablename_init) hook function. This hook function is called before displaying data to users. So, you can control the various appearance and behavior options by modifying this object inside that hook function.  
   
 ## Here is a list of the editable properties of the `DataList` object
 

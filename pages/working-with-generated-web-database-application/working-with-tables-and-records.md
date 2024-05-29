@@ -57,10 +57,10 @@ can be done in one page in an easy to understand manner.
 
 Remember that you can control the appearance of the table view through
 [Project
-Styles](/appgini/help/working-with-projects/working-with-styles) in
+Styles](/appgini/help/working-with-projects/working-with-styles/) in
 AppGini. You can also control table view and detail view layouts by
 editing the [generated template
-files](/appgini/help/working-with-generated-web-database-application) .
+files](/appgini/help/working-with-generated-web-database-application/) .
 
 
 
