@@ -7,8 +7,10 @@ keywords: internationalization, i18n, localization, language, translate, transla
 ---
 
 AppGini applications are internationalization-ready, meaning you can easily localize your app to any language you want. 
-This is done by creating a translating the generated `language.php` file, which contains all the strings used in your app interface.
-AppGini provides a built-in translation tool to help you with this task.
+This is done by translating the generated `language.php` file, which contains all the strings used in your app interface.
+
+> AppGini provides a built-in translation tool to help you with this task as we'll see below.
+> So you should not manually edit the `language.php` file.
 
 In this page, we'll discuss how to localize your AppGini app to a new language. We'll also discuss how
 to localize able and field names, which are not included in the `language.php` file.
@@ -75,7 +77,7 @@ title in the 'Detail view title' box. See the screenshot below:
 
 ![How to change the detail view title](https://cdn.bigprof.com/images/detail-view-title.png "How to change the detail view title")
 
-And here is the detail view of the orders table with the localized German title 'Bestellungsdetails':
+And here is the detail view of the orders table with the localized German title 'Bestelldetails':
 
 ![Detail view with localized title](https://cdn.bigprof.com/images/detail-view-localized-title.png "Detail view with localized title")
 
