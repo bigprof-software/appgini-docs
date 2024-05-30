@@ -12,7 +12,7 @@ AppGini applications now support [LDAP](https://en.wikipedia.org/wiki/Lightweigh
 
 ## Video overview of LDAP settings in AppGini apps
 
-<video width="100%" height="auto" controls="" allowfullscreen="">
+<video style="width: 100%; height: auto;" controls>
 <source src="https://cdn.bigprof.com/screencasts/ldap-login-in-appgini-applications.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>

@@ -57,7 +57,7 @@ To use this utility, follow these steps:
 
 ## A practical example: Set the country sales manager as the owner of all orders and order items of that country
 
-<video width="100%" height="auto" controls="" allowfullscreen="">
+<video style="width: 100%; height: auto;" controls>
 <source src="https://cdn.bigprof.com/screencasts/setting-automatic-record-owners-based-on-parent-table.mp4" type="video/mp4">
 <a href="https://cdn.bigprof.com/screencasts/setting-automatic-record-owners-based-on-parent-table.mp4">Watch the video screencast</a>
 </video>

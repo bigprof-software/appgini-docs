@@ -52,7 +52,7 @@ Once you've created the user, you can connect Redash to your AppGini database by
 
 ### Here is a screencast showing the above steps
 
-<video style="width: 100%; height: auto;" controls="" fullscreen="">
+<video style="width: 100%; height: auto;" controls>
 <source src="https://cdn.bigprof.com/screencasts/redash-add-appgini-mysql-data-source.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
@@ -73,7 +73,7 @@ Once you've connected Redash to your AppGini database, you can start creating qu
 
 ### Here is a screencast showing the above steps
 
-<video style="width: 100%; height: auto;" controls="" fullscreen="">
+<video style="width: 100%; height: auto;" controls>
 <source src="https://cdn.bigprof.com/screencasts/redash-create-and-publish-query.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
@@ -82,7 +82,7 @@ Your browser does not support the video tag.
 
 The plugin allows you to create queries by just describing them in plain English. Here is a video showing how it works:
 
-<video style="width: 100%; height: auto;" controls="" fullscreen="">
+<video style="width: 100%; height: auto;" controls>
 <source src="https://cdn.bigprof.com/screencasts/use-datatalk-plugin-to-create-redash-queries.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
