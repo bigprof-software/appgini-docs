@@ -6,6 +6,8 @@ description: Learn how to localize your AppGini app to any language you want, in
 keywords: internationalization, i18n, localization, language, translate, translation, localizing, localisation, appgini, app, application, table, field, name, title, interface, detail view, home page, group, title, application title, child table, tab, column, programmatically, access, localized, strings
 ---
 
+# Internationalization (i18n) and localizing your AppGini app
+
 AppGini applications are internationalization-ready, meaning you can easily localize your app to any language you want. 
 This is done by translating the generated `language.php` file, which contains all the strings used in your app interface.
 

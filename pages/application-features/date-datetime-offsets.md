@@ -6,6 +6,8 @@ description: Using fixed and relative date and datetime values as default values
 keywords: date, datetime, timestamp, default value, relative date, relative datetime, fixed date, fixed datetime
 ---
 
+# Date and datetime offsets
+
 ## Setting fixed date and datetime values as default
 
 When you set a date or datetime field in AppGini, you can specify a default value for it. This default value can be a fixed date or datetime, or it can be a relative date or datetime. Relative dates and datetimes are calculated based on the current date and time when the record is saved.
