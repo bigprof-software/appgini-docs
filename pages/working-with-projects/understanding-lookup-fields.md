@@ -13,6 +13,8 @@ description: Lookup fields are how AppGini links 2 fields from 2 tables together
 In the world of relational databases, a foreign key is a field in a table that uniquely identifies a row in another table.
 For example, let's say we have a table for storing orders and another table for storing customers. Each order is placed by a customer, so the orders table should have a field that uniquely identifies the customer who placed the order. This field is called a foreign key, and it links the orders table to the customers table.
 
+![Example ER diagram showing a foreign key linking orders to customers](https://cdn.bigprof.com/images/simple-er-diagram.png "Example ER diagram showing a foreign key linking orders to customers")
+
 One might ask, why not just store the customer name in the orders table? The answer is that storing the customer name in the orders table would lead to data redundancy. For example, if a customer changes their name, we would have to update all orders placed by that customer. This is not only cumbersome but also error-prone. By using a foreign key, we only store the customer ID in the orders table, and the customer name is stored in the customers table. This way, if a customer changes their name, we only need to update the customers table, and all orders placed by that customer would automatically reflect the new name.
 
 The above concept is referred to as ***normalization*** in database design. It's a set of rules that help us design databases in a way that minimizes data redundancy and ensures data integrity.
