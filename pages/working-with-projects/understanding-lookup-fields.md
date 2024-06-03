@@ -126,3 +126,9 @@ It's possible to set up a lookup field to filter its options based on the value 
 Your browser does not support the video tag.
 </video>
 
+## Querying lookup fields in SQL
+
+Although lookup fields display data from the parent table in the generated application, the actual data stored in the database is the primary key of the parent record. For example, the "Customer" field in the orders table stores the customer ID from the customers table. This is how foreign keys work in relational databases. If you need to query the data stored in a lookup field, you should join the parent table to the child table using the primary key stored in the lookup field.
+
+This topic is discussed in more detail in the [using lookup fields in calculations](../advanced-topics/hooks/using-lookup-fields-in-calculations.md) page.
+
