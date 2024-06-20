@@ -15,6 +15,6 @@ This is a work in progress and will be updated regularly.
 
 - [Date and datetime offsets](date-datetime-offsets.md)
 - [LDAP authentication](../ldap-authentication.md)
-- [Automated record ownership](../record-ownership.md)
+- [Automated record ownership](../record-owners.md)
 - [Calculated fields](../calculated-fields.md)
 
