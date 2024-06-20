@@ -8,7 +8,7 @@ keywords: field properties, field properties pane, appgini field properties, app
 
 # Field properties pane
 
-![Field properties pane](https://bigprof.com/appgini/sites/default/files/appgini-field-properties-pane.png)
+![Field properties pane](https://cdn.bigprof.com/images/appgini-new-field-24.15.png)
 
 
 ### Caption 
