@@ -2,6 +2,8 @@
 title: Working with the generated web database application
 linkTitle: Working with generated web app
 slug: help/working-with-generated-web-database-application
+description: Learn how to work with the generated web database application.
+keywords: working with generated web app, generated web app, generated web database application
 ---
 
 # Working with the generated web database application
@@ -54,7 +56,7 @@ or more members, and each member inherits his group's permissions. The
 following diagram explains this graphically.
 
 
-![](https://bigprof.com/appgini/sites/default/files/group.gif)
+![User groups and permissions in AppGini](https://cdn.bigprof.com/images/group.gif "User groups and permissions in AppGini")
 
 
 
