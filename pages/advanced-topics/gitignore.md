@@ -93,6 +93,7 @@ and add the following lines to it:
 ```
 # ignore files containing sensitive information
 app/config.php
+app/config.bak.php
 app/file-uploader.php
 app/admin/backups/*.sql
 
