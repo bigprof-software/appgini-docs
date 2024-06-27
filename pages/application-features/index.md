@@ -14,6 +14,8 @@ This is a work in progress and will be updated regularly.
 ## Available topics
 
 - [Date and datetime offsets](date-datetime-offsets.md)
+- [Internationalization](i18n-internationalization.md)
+- [Input types](input-types.md)
 - [LDAP authentication](../ldap-authentication.md)
 - [Automated record ownership](../record-owners.md)
 - [Calculated fields](../calculated-fields.md)
