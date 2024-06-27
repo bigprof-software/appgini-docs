@@ -13,6 +13,7 @@ This is a work in progress and will be updated regularly.
 
 ## Available topics
 
+- [Collaboration and multi-user support](collaboration-multi-users.md)
 - [Date and datetime offsets](date-datetime-offsets.md)
 - [Internationalization](i18n-internationalization.md)
 - [Input types](input-types.md)
