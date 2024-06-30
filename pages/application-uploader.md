@@ -91,7 +91,25 @@ If you're having issues with automatic file uploading, please check the followin
     _**Hint:**_ Check your server error logs to see if modsecurity is blocking requests to `file-uploader.php` or not.
     
 *   **Are you using Cloudflare?** Cloudflare is a great service for securing your website, but since it also acts as a web application firewall, it might block the automatic file uploader from working. You'll need to add an exception for the `file-uploader.php` file to [Cloudflare's firewall rules](https://developers.cloudflare.com/waf/managed-rules/waf-exceptions/).
-*   **Are folder permissions/ownership set correctly?** Make sure that the folder to which you're uploading your app and any subfolder are writable by the web server software (apache, nginx, .. etc) you're using. For example, on most apache setups on linux, the user that owns the app folders should be `www-data`
+*   **Are folder permissions/ownership set correctly?** Make sure that the folder to which you're uploading your app and any subfolder are writable by the web server software (apache, nginx, .. etc) you're using. For example, on most apache setups on linux, the user that owns the app folders should be `www-data`.
+    
+    You can set the ownership of the app folder and all its subfolders to `www-data` by running this command on your server:
+    
+    ```bash
+    sudo chown -R www-data:www-data /path/to/your/app
+    ```
+    
+    Replace `/path/to/your/app` with the actual path to your app on your server.
+    
+    If you're using a different web server software or a different operating system, you might need to use a different user/group name. For example, on CentOS, the user/group name is usually `apache` instead of `www-data`.
+    
+    If you're not sure what user/group name to use, you can check the user/group name of the web server software by running this command on your server:
+    
+    ```bash
+    ps aux | egrep '(apache|nginx)'
+    ```
+    
+    This will show you the user/group name of the web server software.
 
 ### Security considerations
 
