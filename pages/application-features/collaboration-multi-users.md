@@ -8,6 +8,14 @@ keywords: collaboration, multi-user, user groups, permissions, record ownership
 
 # Collaboration and multi-user support
 
+## **Quick overview**
+
+> * **AppGini applications support multiple users.**
+> * **Users are organized into groups, and each group is assigned a granular set of permissions.**
+>   * **Permissions make it easy to manage access to different parts of the application.**
+> * **Users can sign up for an account, and/or be added by the admin.**
+> * **You can enable or disable anonymous access to your application.**
+
 AppGini applications are designed to be used by multiple users simultaneously. Users belong to groups, 
 and each group is assigned a set of permissions to access different parts of the application.
 This section provides an overview of the collaboration and multi-user support features in AppGini applications.
