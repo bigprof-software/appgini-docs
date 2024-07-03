@@ -259,6 +259,14 @@ This is how the **Google Map options** dialog looks like:
 
 ![Google Map options dialog](https://cdn.bigprof.com/images/google-map-options-dialog.png "Google Map options dialog")
 
+To display Google Maps in your application, you need to [obtain a Google Maps API key](../configure-google-maps-api-key.md). You should then sign in to your application as the super admin,
+go to the **Admin area** » **Utilties** menu » **Admin settings**. Under the **Application** tab, enter your Google Maps API key in the **Google API key** field
+as shown in the screenshot below, then click on the **Save changes** button.
+
+![Google Maps API key setting](https://cdn.bigprof.com/images/google-maps-api-key-setting.png "Google Maps API key setting")
+
+> **Note:** If, instead of the Google map, you see an error message like *"Google Maps Platform rejected your request..."*, you need to provide a correctly configured Google Maps API key.
+
 ## YouTube video
 
 This input type allows users to paste a YouTube video URL to display the video. Here is a screenshot of a YouTube video field in a detail view form:
