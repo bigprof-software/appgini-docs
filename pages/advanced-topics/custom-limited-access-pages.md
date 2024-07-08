@@ -2,6 +2,8 @@
 title: Adding custom limited-access pages and reports
 linkTitle: Custom pages
 slug: help/advanced-topics/custom-limited-access-pages
+description: Learn how to create custom pages and reports in your AppGini application and limit access to them to authenticated users.
+keywords: custom pages, custom reports, limited access, user groups, permissions, hooks, getMemberInfo
 ---
 
 # Adding custom limited-access pages and reports
@@ -26,7 +28,7 @@ AppGini supports a membership system that is based on user groups.
 
 Let's see how to apply any of these approaches to your custom page.
 
-First of all, let's create a new file in the 'hooks' folder inside your AppGini-generated application folder. Let's call it "example.php". Now, open that file in your text editor and paste the code below then save it.
+First of all, let's create a new file in the `hooks` folder inside your AppGini-generated application folder. Let's call it `example.php`. Now, open that file in your text editor and paste the code below then save it.
 
 ```php
 <?php
@@ -35,7 +37,9 @@ First of all, let's create a new file in the 'hooks' folder inside your AppGini-
     include("$hooks_dir/../lib.php");
 ```
 
-The above code allows you to use the functions provided by AppGini in your custom page, including the function [getMemberInfo()](/appgini/help/advanced-topics/hooks/memberInfo-array/) which you can use for checking permissions. Let's see how to implement each of the above access methods.
+The above code allows you to use the functions provided by AppGini in your custom page, including the function [`getMemberInfo()`](/appgini/help/advanced-topics/hooks/memberInfo-array/) which you can use for checking permissions. Let's see how to implement each of the above access methods.
+
+> **Note:** We highly recommend placing your custom pages in the `hooks` folder or a subfolder of it. Placing your custom files outside the `hooks` folder, in the main application folder, would make it harder to maintain your custom files when you regenerate your application using AppGini. In addition, if you place your custom files outside the main application folder, they would always run as guest user, regardless of the logged-in user.
 
 #### Grant access to one or more groups
 
