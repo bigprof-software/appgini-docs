@@ -39,7 +39,36 @@ First of all, let's create a new file in the `hooks` folder inside your AppGini-
 
 The above code allows you to use the functions provided by AppGini in your custom page, including the function [`getMemberInfo()`](/appgini/help/advanced-topics/hooks/memberInfo-array/) which you can use for checking permissions. Let's see how to implement each of the above access methods.
 
-> **Note:** We highly recommend placing your custom pages in the `hooks` folder or a subfolder of it. Placing your custom files outside the `hooks` folder, in the main application folder, would make it harder to maintain your custom files when you regenerate your application using AppGini. In addition, if you place your custom files outside the main application folder, they would always run as guest user, regardless of the logged-in user.
+#### Where to place your custom pages
+
+**We highly recommend placing your custom pages in the `hooks` folder or a subfolder of it. Placing your custom files outside the `hooks` folder, in the main application folder, would make it harder to maintain your custom files when you regenerate your application using AppGini.** 
+
+In some cases, however, you might need to place your custom files outside the main application folder. For example, you might want to create a public-facing page that doesn't require authentication, without exposing your entire application to the public. In this case, you should modify the session cookie path to include the folder containing your custom files. This is important to allow custom pages outside the main application folder to share the same session with the rest of the application. Otherwise, users accessing the custom pages would be considered as guest users.
+
+Let's take an example to illustrate this. Suppose you have a custom page called `custom-page.php` that you want to place in the parent folder of your AppGini application. And the application is located in a folder called `myapp`. The folder structure would look something like this, assuming your application is located at `/var/www/html/myapp`:
+
+```
+/var/www/html/
+    myapp/
+        hooks/
+        ...
+    custom-page.php
+```
+
+To allow `custom-page.php` to share the same session with the rest of the application, you should create a file called `__bootstrap.php` in the `myapp/hooks` folder if it doesn't already exist. Add the following code to `__bootstrap.php`:
+
+```php
+<?php // if you don't have this line already, add it at the top of the file
+
+function session_options(&$options) {
+	$cookie_path = '/' . trim(config('appURI'), '/');
+	// remove the last subdir from the cookie path
+	$cookie_path = substr($cookie_path, 0, strrpos($cookie_path, '/'));
+	$options['cookie_path'] = $cookie_path;
+}
+```
+
+The above code modifies the session cookie path to include the parent folder of your application. This way, the session cookie would be shared between your custom page and the rest of the application.
 
 #### Grant access to one or more groups
 
