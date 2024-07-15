@@ -95,7 +95,7 @@ and add the following lines to it:
 app/config.php
 app/config.bak.php
 app/file-uploader.php
-app/admin/backups/*.sql
+app/admin/backups
 
 # ignore files generated dynamically by AppGini application
 app/setup.md5
@@ -107,6 +107,11 @@ app/plugins
 app/images
 !app/images/index.html
 !app/images/blank.gif
+
+# ignore other common artifacts
+*.log
+*.cache
+*.zip
 ```
 
 This will tell git to ignore the listed files and folders when committing changes to your repository.
