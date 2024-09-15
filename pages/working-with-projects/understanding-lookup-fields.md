@@ -132,3 +132,7 @@ Although lookup fields display data from the parent table in the generated appli
 
 This topic is discussed in more detail in the [using lookup fields in calculations](../advanced-topics/hooks/using-lookup-fields-in-calculations.md) page.
 
+> **Update:** As of [AppGini 24.11](https://bigprof.com/appgini/release-log), the admin user can access the joined SQL query of any table by clicking the "SQL" button in the table view. To enable this feature, check the option **Allow admin access to table view SQL** under the **Security settings** section of the app properties in AppGini.
+>
+> ![Display table view SQL query](https://cdn.bigprof.com/images/allow-admin-show-sql.gif)
+
