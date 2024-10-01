@@ -26,6 +26,20 @@ This file, if present, is included at the very beginning of each page of your ap
 ```php
 define('HOMEPAGE_NAVMENUS', true);
 ```
+
+#### Modifying session behavior via `session_options` function in `__bootstrap.php`
+
+Another common use case for the `__bootstrap.php` file is to modify the session behavior. To do so, define a function `session_options` in this file like so:
+
+```php
+function session_options(&$options) {
+    // change session behavior here
+    // example: set session lifetime to 1 week
+    $options['cookie_lifetime'] = 60 * 60 * 24 * 7; // 1 week
+}
+```
+
+In the above example, we set the session lifetime to 1 week. Other session options you can set are listed and explained at [php.net/manual/en/session.configuration.php](https://www.php.net/manual/en/session.configuration.php). Remove the initial `session.` prefix from the option name when setting it in the `session_options` function. For example, to set the `session.gc_maxlifetime` option, you should set `$options['gc_maxlifetime'] = ...`.
     
 ### `{tablename}.php`
 
