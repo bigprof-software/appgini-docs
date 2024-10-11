@@ -9,7 +9,8 @@ keywords: google maps, api key, appgini, google cloud console
 # How to obtain a Google Maps API key?
 
 > **TLDR;** To enable [Google Maps support](application-features/input-types.md#google-map) in your AppGini apps, you need to enable Maps Embed API and Maps 
-> Static API in your Google Cloud console, create an API key and copy it to AppGini.
+> Static API in your Google Cloud console, create an API key and copy it to AppGini. You should also 
+> [restrict the key](https://developers.google.com/maps/documentation/javascript/get-api-key#restrict_key) to your server IP/domain to avoid abuse.
 
 Obtaining a Google API key can be quite challenging due to the complex, ever-changing interface of 
 Google Cloud console. So, we are listing the specific steps in detail to get you started quickly.
@@ -58,7 +59,8 @@ Following are the steps to obtain a Google Maps API key (last updated October 22
 	![API key dialog](https://cdn.bigprof.com/screencasts/gcp-apis-and-services-api-key-created.png "API key dialog")
 
 12. Google allows a free usage quota that is generous enough for most small apps. We highly recommend that you choose 
-    **Restrict key** and follow the instructions to limit key usage to your server IP/domain to avoid someone stealing 
+    [**Restrict key**](https://developers.google.com/maps/documentation/javascript/get-api-key#restrict_key)
+	and follow the instructions to limit key usage to your server IP/domain to avoid someone stealing 
 	and abusing your key, causing unnecessary costs.
 
 Your API key is finally ready to copy and use in your AppGini apps. To do so, sign in to your AppGini app as the super admin, 
