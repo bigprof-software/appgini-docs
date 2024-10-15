@@ -1,6 +1,6 @@
 ---
 title: I see an error or a blank page in my AppGini app - how to troubleshoot?
-linkTitle: Troubleshooting
+linkTitle: Blank pages and errors
 slug: help/advanced-topics/troubleshooting-errors-and-blank-pages
 ---
 
