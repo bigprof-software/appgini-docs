@@ -21,41 +21,50 @@ This is because the server on which your AppGini app is hosted might have a lowe
 To fix this, you need to increase the `upload_max_filesize` and `post_max_size` settings in your server's `php.ini` file.
 Here's how to do this:
 
-1. Locate the `php.ini` file on your server. If you don't know where it is, the easiest way to check is to go to the admin area of your AppGini app, open the Utilities menu, and click on the **Server status** link. From there, search for `php.ini` in the page that opens. The path to the `php.ini` file should be displayed there.
+## Step 1: Locate the `php.ini` file
 
-   ![Locating php.ini file in Server status page](https://cdn.bigprof.com/images/php-ini-location-24.18.png)
+Locate the `php.ini` file on your server. If you don't know where it is, the easiest way to check is to go to the admin area of your AppGini app, open the Utilities menu, and click on the **Server status** link. From there, search for `php.ini` in the page that opens. The path to the `php.ini` file should be displayed there.
+
+![Locating php.ini file in Server status page](https://cdn.bigprof.com/images/php-ini-location-24.18.png)
    
-   If you don't see the **Server status** link in the Utilities menu, it means it's been disabled in your AppGini project. You can enable that page in your AXP project under the **Security settings** section > **Allow admin access to server status page**.
+If you don't see the **Server status** link in the Utilities menu, it means it's been disabled in your AppGini project. You can enable that page in your AXP project under the **Security settings** section > **Allow admin access to server status page**.
 
-   ![Enabling server status page in AppGini project](https://cdn.bigprof.com/images/enable-server-status-24.18.png)
+![Enabling server status page in AppGini project](https://cdn.bigprof.com/images/enable-server-status-24.18.png)
 
-   Alternatively, you can check your server control panel or ask your hosting provider for help in locating the `php.ini` file.
+Alternatively, you can check your server control panel or ask your hosting provider for help in locating the `php.ini` file.
 
-2. Open the `php.ini` file in a text editor and search for the `upload_max_filesize` setting. It might look like this:
+## Step 2: Check and update the `upload_max_filesize` value
+ 
+Open the `php.ini` file in a text editor and search for the `upload_max_filesize` setting. It might look like this:
 
-   ```ini
-   upload_max_filesize = 2M
-   ```
+```ini
+upload_max_filesize = 2M
+```
 
-   Change the value to the desired maximum file size. For example, to allow 10MB uploads, change it to:
+Change the value to the desired maximum file size. For example, to allow 10MB uploads, change it to:
 
-   ```ini
-   upload_max_filesize = 10M
-   ```
+```ini
+upload_max_filesize = 10M
+ ```
 
-3. Next, search for the `post_max_size` setting in the `php.ini` file. It might look like this:
+## Step 3: Check and update the `post_max_size` value
 
-   ```ini
-   post_max_size = 8M
-   ```
+Next, search for the `post_max_size` setting in the `php.ini` file. It might look like this:
 
-   Change the value to the desired maximum file size. For example, to allow 10MB uploads, change it to:
+```ini
+post_max_size = 8M
+```
 
-   ```ini
-   post_max_size = 10M
-   ```
+Change the value to the desired maximum file size. For example, to allow 10MB uploads, change it to:
 
-4. Save the `php.ini` file and restart your web server. If you're not sure how to restart your web server, you can ask your hosting provider for help.
-5. Try uploading the large file again in your AppGini app. It should work now.
+```ini
+post_max_size = 10M
+```
+
+## Step 4: Save and restart your web server
+
+Save the `php.ini` file and restart your web server. If you're not sure how to restart your web server, you can ask your hosting provider for help.
+
+Finally, try uploading the large file again in your AppGini app. It should work now.
 
 
