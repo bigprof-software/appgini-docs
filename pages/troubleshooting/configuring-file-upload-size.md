@@ -45,7 +45,7 @@ Change the value to the desired maximum file size. For example, to allow 10MB up
 
 ```ini
 upload_max_filesize = 10M
- ```
+```
 
 ## Step 3: Check and update the `post_max_size` value
 
