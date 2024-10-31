@@ -3,7 +3,7 @@ title: The Media Tab
 linkTitle: The Media Tab
 slug: help/working-with-projects/media-tab
 description: Learn how to configure your field to be displayed as a web-link, an image, a file, a google map or even a YouTube video.
-keywords: media tab, link, image, file upload, google map, youtube video
+keywords: media tab, link, image, file upload, google map, youtube video, geolocation, google maps api key
 ---
 
 # The Media Tab
