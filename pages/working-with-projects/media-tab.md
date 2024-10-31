@@ -59,17 +59,19 @@ Google map fields allow you to display a Google map in your application.
 
 To create a Google map field, set the data type of your field to `Varchar` or `Char` with a length of at least 200 characters. Then, under the **Media** tab in the field properties, select the **Google map** option. This should open the **Google map options** dialog (you can open it later by clicking the **Configure** button in the **Media** tab).
 
-![Google map option](https://cdn.bigprof.com/images/google-map-dialog-24.18.png "Google map option")
+![Google map options dialog](https://cdn.bigprof.com/images/google-map-dialog-24.18.png "Google map options dialog")
 
-> ***Note!*** Google map fields require a [Google API key](../configure-google-maps-api-key.md) to work correctly. You can enter your Google API key in the **Admin settings** page of your application by following the steps below:
->
-> 1. Sign in to your application as the super admin.
-> 2. Go to the **Admin area** » **Utilities** menu » **Admin settings**.
-> 3. Under the **Application** tab, enter your Google maps API key in the **Google API key** field.
-> 
->    ![Google maps API key setting](https://cdn.bigprof.com/images/google-maps-api-key-setting-24.18.png "Google maps API key setting")
->
->  If, instead of the Google map, you see an error message like *"Google maps Platform rejected your request..."*, you need to provide a [correctly configured Google maps API key](../configure-google-maps-api-key.md).
+### Google API key
+
+Google map fields require a [Google API key](../configure-google-maps-api-key.md) to work correctly. You can enter your Google API key in the **Admin settings** page of your application by following the steps below:
+
+1. Sign in to your application as the super admin.
+2. Go to the **Admin area** » **Utilities** menu » **Admin settings**.
+3. Under the **Application** tab, enter your Google maps API key in the **Google API key** field.
+
+   ![Google maps API key setting](https://cdn.bigprof.com/images/google-maps-api-key-setting-24.18.png "Google maps API key setting")
+
+If, instead of the Google map, you see an error message like *`Google maps Platform rejected your request...`*, you need to provide a [correctly configured Google maps API key](../configure-google-maps-api-key.md).
 
 ### Map behavior and location options
 
@@ -103,7 +105,7 @@ Shows a pin only when the user chooses to capture their location manually.
 
 #### Table View (Thumbnail)
 
-In the table view, the map field is displayed as a thumbnail image (static map). For option 1, the thumbnail map is generated from the URL provided by the user, without a pin/marker. For options 2, 3, and 4, the thumbnail map shows the user's location at the time of saving the record, with a pin/marker.
+In the table view, the map field is displayed as a thumbnail image (static map). For [option 1](#1-map-from-url) above, the thumbnail map is generated from the URL provided by the user, without a pin/marker. For [options 2 and 3](#2-map-with-a-pin-of-the-user-location-at-the-time-of-saving-a-new-record), the thumbnail map shows the user's location at the time of saving the record, with a pin/marker. And for [option 4](#4-map-with-a-pin-of-the-user-location-only-if-the-user-clicks-capture-my-location), the thumbnail map shows the user's locationat the time when they click the *Capture my location* button.
 
 ![Google map field in the table view, showing a thumbnail map](https://cdn.bigprof.com/images/input-types-tv-google-map-24.18.png "Google map field in the table view, showing a thumbnail map")
 
