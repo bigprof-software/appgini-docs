@@ -8,7 +8,7 @@ keywords: media tab, link, image, file upload, google map, youtube video, geoloc
 
 # The Media Tab
 
-This tab allows you to configure your field to be displayed as a web-link, an image, a file, a google map or even a YouTube video.
+This tab allows you to configure your field to be displayed as a web-link, an image, a file, a Google map or even a YouTube video.
 
 ## Link option
 
@@ -50,26 +50,26 @@ You can configure the field to be displayed as the field content, clickable icon
 
 ![File upload field in the table view](https://cdn.bigprof.com/appgini-desktop/help/appgini-5.40/file_upload_browser.png)
 
-## Google Maps
+## Google maps
 
-Google Map fields allow you to display a Google map in your application.
+Google map fields allow you to display a Google map in your application.
 
-![Google Map field in a detail view form](https://cdn.bigprof.com/images/input-types-dv-google-map-24.18.png "Google Map field in a detail view form")
+![Google map field in a detail view form](https://cdn.bigprof.com/images/input-types-dv-google-map-24.18.png "Google map field in a detail view form")
 
 
-To create a Google Map field, set the data type of your field to `Varchar` or `Char` with a length of at least 200 characters. Then, under the **Media** tab in the field properties, select the **Google Map** option. This should open the **Google Map options** dialog (you can open it later by clicking the **Configure** button in the **Media** tab).
+To create a Google map field, set the data type of your field to `Varchar` or `Char` with a length of at least 200 characters. Then, under the **Media** tab in the field properties, select the **Google map** option. This should open the **Google map options** dialog (you can open it later by clicking the **Configure** button in the **Media** tab).
 
-![Google Map option](https://cdn.bigprof.com/images/google-map-dialog-24.18.png "Google Map option")
+![Google map option](https://cdn.bigprof.com/images/google-map-dialog-24.18.png "Google map option")
 
-> ***Note!*** Google Map fields require a [Google API key](../configure-google-maps-api-key.md) to work correctly. You can enter your Google API key in the **Admin settings** page of your application by following the steps below:
+> ***Note!*** Google map fields require a [Google API key](../configure-google-maps-api-key.md) to work correctly. You can enter your Google API key in the **Admin settings** page of your application by following the steps below:
 >
 > 1. Sign in to your application as the super admin.
 > 2. Go to the **Admin area** » **Utilities** menu » **Admin settings**.
-> 3. Under the **Application** tab, enter your Google Maps API key in the **Google API key** field.
+> 3. Under the **Application** tab, enter your Google maps API key in the **Google API key** field.
 > 
->    ![Google Maps API key setting](https://cdn.bigprof.com/images/google-maps-api-key-setting-24.18.png "Google Maps API key setting")
+>    ![Google maps API key setting](https://cdn.bigprof.com/images/google-maps-api-key-setting-24.18.png "Google maps API key setting")
 >
->  If, instead of the Google map, you see an error message like *"Google Maps Platform rejected your request..."*, you need to provide a [correctly configured Google Maps API key](../configure-google-maps-api-key.md).
+>  If, instead of the Google map, you see an error message like *"Google maps Platform rejected your request..."*, you need to provide a [correctly configured Google maps API key](../configure-google-maps-api-key.md).
 
 ### Map behavior and location options
 
@@ -79,13 +79,13 @@ When configuring a field to display a Google map, the following options are avai
 
 Displays a map using a user-provided URL.
 
-![Google Map field in a detail view form, based on a user-provided URL](https://cdn.bigprof.com/images/input-types-dv-google-map-24.18.png "Google Map field in a detail view form, based on a user-provided URL")
+![Google map field in a detail view form, based on a user-provided URL](https://cdn.bigprof.com/images/input-types-dv-google-map-24.18.png "Google map field in a detail view form, based on a user-provided URL")
 
 #### 2. Map with a pin of the user location at the time of saving a new record
 
 Automatically pins the user's location when a new record is saved.
 
-![Google Map field with user's current location](https://cdn.bigprof.com/images/input-types-dv-google-map-with-user-location-24.18.png "Google Map field with user's current location")
+![Google map field with user's current location](https://cdn.bigprof.com/images/input-types-dv-google-map-with-user-location-24.18.png "Google map field with user's current location")
 
 #### 3. Map with a pin of the user location at the time of saving a new or existing record
 
@@ -95,7 +95,7 @@ Same as the previous option, but also shows the user's location when saving an e
 
 Shows a pin only when the user chooses to capture their location manually.
    
-![Google Map field with user's current location, captured manually](https://cdn.bigprof.com/images/input-types-dv-google-map-with-user-location-manual-24.18.png "Google Map field with user's current location, captured manually")
+![Google map field with user's current location, captured manually](https://cdn.bigprof.com/images/input-types-dv-google-map-with-user-location-manual-24.18.png "Google map field with user's current location, captured manually")
 
 > Options 2, 3, and 4 were introduced in AppGini 24.18. They require the user's consent to access their location. If the user denies access, the map will not show their location.
 
@@ -105,7 +105,7 @@ Shows a pin only when the user chooses to capture their location manually.
 
 In the table view, the map field is displayed as a thumbnail image (static map). For option 1, the thumbnail map is generated from the URL provided by the user, without a pin/marker. For options 2, 3, and 4, the thumbnail map shows the user's location at the time of saving the record, with a pin/marker.
 
-![Google Map field in the table view, showing a thumbnail map](https://cdn.bigprof.com/images/input-types-tv-google-map-24.18.png "Google Map field in the table view, showing a thumbnail map")
+![Google map field in the table view, showing a thumbnail map](https://cdn.bigprof.com/images/input-types-tv-google-map-24.18.png "Google map field in the table view, showing a thumbnail map")
 
 - **Width in pixels**: Set the width of the thumbnail map shown in the table view. Default is `50` pixels.
 - **Height in pixels**: Set the height of the thumbnail map in the table view. Default is `50` pixels.
