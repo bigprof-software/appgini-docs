@@ -54,6 +54,9 @@ You can configure the field to be displayed as the field content, clickable icon
 
 Google Map fields allow you to display a Google map in your application.
 
+![Google Map field in a detail view form](https://cdn.bigprof.com/images/input-types-dv-google-map-24.18.png "Google Map field in a detail view form")
+
+
 To create a Google Map field, set the data type of your field to `Varchar` or `Char` with a length of at least 200 characters. Then, under the **Media** tab in the field properties, select the **Google Map** option. This should open the **Google Map options** dialog (you can open it later by clicking the **Configure** button in the **Media** tab).
 
 ![Google Map option](https://cdn.bigprof.com/images/google-map-dialog-24.18.png "Google Map option")
@@ -68,20 +71,31 @@ To create a Google Map field, set the data type of your field to `Varchar` or `C
 >
 >  If, instead of the Google map, you see an error message like *"Google Maps Platform rejected your request..."*, you need to provide a [correctly configured Google Maps API key](../configure-google-maps-api-key.md).
 
-When configuring a field to display a Google map, the following options are available for setting up map display preferences:
+### Map behavior and location options
 
-1. **Map from URL**: Displays a map using a user-provided URL.
+When configuring a field to display a Google map, the following options are available for setting up map behavior and location:
 
-   ![Google Map field in a detail view form, based on a user-provided URL](https://cdn.bigprof.com/images/input-types-dv-google-map-24.18.png "Google Map field in a detail view form, based on a user-provided URL")
+#### 1. Map from URL
 
-2. **Map with a pin of the user location at the time of saving a new record**: Automatically pins the user's location when a new record is saved.
-3. **Map with a pin of the user location at the time of saving a new or existing record**: Adds a pin showing the user’s location whenever a record (new or existing) is saved.
+Displays a map using a user-provided URL.
 
-   ![Google Map field with user's current location](https://cdn.bigprof.com/images/input-types-dv-google-map-with-user-location-24.18.png "Google Map field with user's current location")
+![Google Map field in a detail view form, based on a user-provided URL](https://cdn.bigprof.com/images/input-types-dv-google-map-24.18.png "Google Map field in a detail view form, based on a user-provided URL")
 
-4. **Map with a pin of the user location only if the user clicks "Capture my location"**: Shows a pin only when the user chooses to capture their location manually.
+#### 2. Map with a pin of the user location at the time of saving a new record
+
+Automatically pins the user's location when a new record is saved.
+
+![Google Map field with user's current location](https://cdn.bigprof.com/images/input-types-dv-google-map-with-user-location-24.18.png "Google Map field with user's current location")
+
+#### 3. Map with a pin of the user location at the time of saving a new or existing record
+
+Same as the previous option, but also shows the user's location when saving an existing record.
+
+#### 4. Map with a pin of the user location only if the user clicks *Capture my location*
+
+Shows a pin only when the user chooses to capture their location manually.
    
-   ![Google Map field with user's current location, captured manually](https://cdn.bigprof.com/images/input-types-dv-google-map-with-user-location-manual-24.18.png "Google Map field with user's current location, captured manually")
+![Google Map field with user's current location, captured manually](https://cdn.bigprof.com/images/input-types-dv-google-map-with-user-location-manual-24.18.png "Google Map field with user's current location, captured manually")
 
 > Options 2, 3, and 4 were introduced in AppGini 24.18. They require the user's consent to access their location. If the user denies access, the map will not show their location.
 
