@@ -244,28 +244,25 @@ If you name a field `image`, `photo` or `picture`, it will automatically be set 
 
 ## Google Map
 
-This input type allows users to paste a Google Maps URL to display a map. Here is a screenshot of a Google Map field in a detail view form:
+This input type displays a Google map in the detail view. The map is interactive and allows users to zoom in and out, as well as move around.
+Here is a screenshot of a Google Map field in a detail view form:
 
-![Google Map field in a detail view form](https://cdn.bigprof.com/images/input-types-dv-google-map.png "Google Map field in a detail view form")
+![Google Map field in a detail view form](https://cdn.bigprof.com/images/input-types-dv-google-map-24.18.png "Google Map field in a detail view form")
 
-And here is a screenshot of a Google Map field in a table view:
+In the table view, as well as print view, the Google Map field displays a static map image:
 
 ![Google Map field in a table view](https://cdn.bigprof.com/images/input-types-tv-google-map.png "Google Map field in a table view")
 
-To create a Google Map field, set the data type of your field to `Varchar` or `Char` with a length of at least 200 characters. Then, under the **Media** tab in the field properties,
-select the **Google Map** option. This should open the **Google Map options** dialog (you can open it later by clicking the **Configure** button in the **Media** tab).
+In AppGini, you can configure the Google Map field to obtain the location from a Google Maps URL provided by the user.
 
-This is how the **Google Map options** dialog looks like:
+In AppGini 24.18 and later, you can also configure the Google Map field to obtain the location of the user's device using the browser's geolocation API.
+In this case, the field will display a map with a marker at the user's current location:
 
-![Google Map options dialog](https://cdn.bigprof.com/images/google-map-options-dialog.png "Google Map options dialog")
+![Google Map field with user's current location](https://cdn.bigprof.com/images/input-types-dv-google-map-with-user-location-24.18.png "Google Map field with user's current location")
 
-To display Google Maps in your application, you need to [obtain a Google Maps API key](../configure-google-maps-api-key.md). You should then sign in to your application as the super admin,
-go to the **Admin area** » **Utilties** menu » **Admin settings**. Under the **Application** tab, enter your Google Maps API key in the **Google API key** field
-as shown in the screenshot below, then click on the **Save changes** button.
+You can configure user location capture to take place automatically when the record is created and/or updated, or manually when the user clicks a button.
 
-![Google Maps API key setting](https://cdn.bigprof.com/images/google-maps-api-key-setting.png "Google Maps API key setting")
-
-> **Note:** If, instead of the Google map, you see an error message like *"Google Maps Platform rejected your request..."*, you need to provide a correctly configured Google Maps API key.
+[Learn more about configuring Google Map fields in your AppGini project](../working-with-projects/media-tab.md#google-maps).
 
 ## YouTube video
 
