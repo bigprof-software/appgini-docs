@@ -8,7 +8,7 @@ keywords: command-line parameters, generate, output, upload, log, CI/CD, deploym
 
 # Command-line parameters
 
-> **Command-line parameters work only with [AppGini Pro](https://bigprof.com/appgini/pricing).**
+> **Command-line parameters work only with [AppGini Pro](https://bigprof.com/appgini/order).**
 
 You can use command-line parameters to automate AppGini. For example, you can add a command to generate an AppGini application as part of your deployment workflow in a batch/script file. Currently, the following parameters are supported:
 
