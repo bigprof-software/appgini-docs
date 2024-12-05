@@ -451,8 +451,12 @@ to add order items.
     }
 ```
 
+Here is a video showing how the above example works:
 
-
+<video width="100%" controls>
+    <source src="https://cdn.bigprof.com/screencasts/show-message-after-insert.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
 
 ## `tablename_before_update()`
 

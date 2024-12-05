@@ -50,8 +50,12 @@ is redirected to another page. In that case, if you'd like to display
 some message to the user, you can use the `WindowMessages` class
 to do so, and the message will be displayed on the redirected page. See
 the example in [`tablename_after_insert()` hook
-documentation](/appgini/help/advanced-topics/hooks/table-specific-hooks/#tablename_after_insert)
-.
+documentation](/appgini/help/advanced-topics/hooks/table-specific-hooks/#tablename_after_insert).
+
+<video width="100%" controls>
+    <source src="https://cdn.bigprof.com/screencasts/show-message-after-insert.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
 
 This is also useful for use in `tablename_after_update()` and
 `tablename_after_delete()` hooks, where you can display a message
