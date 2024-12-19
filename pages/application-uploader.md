@@ -61,6 +61,8 @@ If all checks pass, AppGini will scan for file changes. This would take a couple
 
 In the above screenshot, AppGini detected that 36 files were changed. You should click the button showing the number of changed files to begin the upload. In case no changes were detected, you'll see a message like this instead:
 
+![No changes detected](https://cdn.bigprof.com/images/appgini-upload-no-changes-detected-24.19.png)
+
 After clicking the button for uploading changes, AppGini will begin uploading only the changed files to your server. The upload progress window will show you the progress of the upload.
 
 ![Upload progress window](https://cdn.bigprof.com/images/appgini-upload-progrss-24.19.png?1)
