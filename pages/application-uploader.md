@@ -2,6 +2,8 @@
 title: Automatic application uploader
 linkTitle: Uploading apps
 slug: help/application-uploader
+description: Learn how to use the automatic application uploader in AppGini to upload your apps to your server. This feature makes it much easier to deploy your apps.
+keywords: automatic uploader, upload apps, deploy apps, appgini uploader, appgini deploy, appgini upload, continuous deployment, continuous integration, CI/CD, appgini CI/CD, appgini continuous deployment, appgini continuous integration, uploader security, appgini security
 ---
 
 # Automatic application uploader
@@ -43,25 +45,33 @@ You can also find the 'Upload' button after generating your app in the status wi
 
 ![Upload button in status window](https://cdn.bigprof.com/images/appgini-upload-button-app-generator-status-window.png)
 
-After clicking the 'Upload' button, you'll see a list of checks that AppGini performs before uploading.
+After clicking the 'Upload' button, AppGini will perform several checks before uploading.
 
-![Checks performed before uploading apps in AppGini](https://cdn.bigprof.com/images/appgini-app-uploader-start-checks.png)
+![Checks performed before uploading apps in AppGini](https://cdn.bigprof.com/images/appgini-app-uploader-start-checks-24.19.png)
 
-Click the 'Begin checks and upload the app' button to start checks. If any checks fail, you'll see an error message:
+In the screenshot above, all checks were successful. The next step after that is to check for changed files. But if any checks fail, you'll see an error message like this:
 
-![Upload checks failed](https://cdn.bigprof.com/images/appgini-app-uploader-checks-failed.png)
+![Upload checks failed](https://cdn.bigprof.com/images/appgini-app-uploader-checks-failed-24.19.png)
 
-If all checks pass, AppGini will scan for file changes. This would take a couple of minutes or so, depending on the size of your app.
+You should fix the error(s) shown in the message before you can proceed with the upload. In the example above, the error is that the `file-uploader.php` file is not found on the server. You should upload it to the server as explained in the [How to enable automatic file uploading section](#how-to-enable-automatic-file-uploading) above, then retry the upload.
 
-![Scanning for changed files](https://cdn.bigprof.com/images/appgini-upload-scanning-changed-files.png)
+If all checks pass, AppGini will scan for file changes. This would take a couple of minutes or so, depending on the size of your app. Once the scan is complete, AppGini will show you a summary of the changes detected:
 
-After that, AppGini will begin uploading only the changed files to your server. The upload progress window will show you the progress of the upload.
+![Results of scanning for changed files](https://cdn.bigprof.com/images/appgini-upload-scanning-changed-files-24.19.png)
 
-![Upload progress window](https://cdn.bigprof.com/images/appgini-upload-progrss.png)
+In the above screenshot, AppGini detected that 36 files were changed. You should click the button showing the number of changed files to begin the upload. In case no changes were detected, you'll see a message like this instead:
 
-After the upload is complete, AppGini will show you how many files were uploaded, how many were skipped and how many failed, if any, along with a full list of files processed.
+After clicking the button for uploading changes, AppGini will begin uploading only the changed files to your server. The upload progress window will show you the progress of the upload.
 
-![Upload results window](https://cdn.bigprof.com/images/appgini-upload-finished.png)
+![Upload progress window](https://cdn.bigprof.com/images/appgini-upload-progrss-24.19.png?1)
+
+After the upload is complete, AppGini will show you how many files were uploaded, how many were skipped (because they were unchanged/ignored) and how many failed, if any, along with a full list of files uploaded:
+
+![Upload results window](https://cdn.bigprof.com/images/appgini-upload-finished-24.19.png)
+
+In case of any failed uploads, they will be listed in red. You should check the error message shown for each failed upload and fix the issue. Usually, failed uploads are due to file permissions issues on the server. You can fix this by making sure that the folder to which you're uploading your app and any subfolder are writable by the web server software (apache, nginx, .. etc) you're using. For example, on most apache setups on linux, the user that owns the app folders should be `www-data`. After fixing the issue, you can retry the upload by clicking the 'Retry failed uploads' button:
+
+![Retry failed uploads button](https://cdn.bigprof.com/images/appgini-upload-retry-failed.png)
 
 ### Troubleshooting
 
@@ -115,8 +125,9 @@ If you're having issues with automatic file uploading, please check the followin
 
 Automatic file uploading is a great feature, but it's important to understand the security implications of it. Here are some things to keep in mind:
 
-*   **The automatic file uploader uses HTTPS**. This is to prevent anyone from intercepting the upload key and using it to upload files to your server. Make sure your server has a valid, non-self-signed SSL certificate, and make sure it's not expired.
-*   **The automatic file uploader uses a secret upload key**. The secret upload key can be retrieved from the AppGini preferences window, under the 'App uploader' tab.
+* **The automatic file uploader uses HTTPS**. This is to prevent anyone from intercepting the upload key and using it to upload files to your server. Make sure your server has a valid, non-self-signed SSL certificate, and make sure it's not expired.
+
+* **The automatic file uploader uses a secret upload key**. The secret upload key can be retrieved from the AppGini preferences window, under the 'App uploader' tab.
     
     ![App uploader tab in AppGini preferences window](https://cdn.bigprof.com/images/appgini-preferences-app-uploader.png)
     
@@ -128,8 +139,9 @@ Automatic file uploading is a great feature, but it's important to understand th
     
     We also recommend that you remove all app files from the server and use the automatic file uploader to re-upload them.
     
-*   During the upload process, the application is set to **maintenance mode**. This means that no one can access the app while it's being uploaded. After the upload is complete, the app is set back to normal mode.
-*   For tighter security, you can add a rule to your server firewall or to Cloudflare (if you're using it) to block access to the `file-uploader.php` file from all IP addresses except the one you're using to upload your app.
+* During the upload process, the application is set to **maintenance mode**. This means that no one can access the app while it's being uploaded. After the upload is complete, the app is set back to normal mode.
+
+* For tighter security, you can add a rule to your server firewall or to Cloudflare (if you're using it) to block access to the `file-uploader.php` file from all IP addresses except the one you're using to upload your app.
     
     If you're using Apache, you can add this rule to your `.htaccess` file or your site's Apache configuration file:
     
@@ -154,6 +166,6 @@ Automatic file uploading is a great feature, but it's important to understand th
     
     You could also specify a range of IP addresses in the above rules by using [CIDR notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#IPv4_CIDR_blocks) instead of a single IP address.
     
-
+* **Exclude the `file-uploader.php` file from your repository**. If you're using a version control system like git, make sure to exclude the `file-uploader.php` file from your repository. This file contains the secret upload key, and you don't want to expose it to the public. To exclude the file from your repository, you can add it to your `.gitignore` file.
 
 
