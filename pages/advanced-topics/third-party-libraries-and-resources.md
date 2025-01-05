@@ -22,7 +22,7 @@ by AppGini applications.
 -   **Datepicker** [Website](https://github.com/freqdec/datePicker),
     [Documentation](https://freqdec.github.io/datePicker/)
 -   **Bootstrap Timepicker** [Website and
-    documentation](https://jdewit.github.com/bootstrap-timepicker)
+    documentation](https://github.com/jdewit/bootstrap-timepicker)
 *   **Bootstrap Datetimepicker** [Website and
     documentation](https://getdatepicker.com/4/)
 -   **Prototype** [Website](http://prototypejs.org/),
@@ -36,5 +36,9 @@ by AppGini applications.
     be replaced or upgraded in future releases)
 -   **NicEdit** [Website and
     documentation](http://nicedit.com/) 
+-   **Moment.js** [Website and
+    documentation](https://momentjs.com/docs/)
+-   **jQuery Hotkeys** [Website and
+    documentation](https://github.com/jeresig/jquery.hotkeys)
 
 
