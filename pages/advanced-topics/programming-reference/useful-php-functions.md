@@ -8,6 +8,8 @@ description: AppGini provides a number of useful PHP functions that you can use 
 
 # Useful AppGini PHP functions for use in custom code
 
+> **Note**: This page is a work in progress. We'll be adding more functions and examples soon.
+
 AppGini provides a number of useful PHP functions that you can use in your custom code to interact with your database and perform various tasks. Here's a list of some of these functions:
 
 ## `sql()`
@@ -54,15 +56,16 @@ if($result === false) {
 This function is used to send emails using the [PHPMailer library](https://github.com/PHPMailer/PHPMailer/) included as part of the generated files of AppGini apps. It supports sending emails to single or multiple recipients, and can use SMTP for sending emails, if configured via the Admin settings page under the Admin area. The function also supports adding CC, BCC recipients, and handling HTML content in the email body.
 
 ### Parameters
+
 - **`$mail`** (array): An associative array containing the email details. The following keys are supported:
-  - `to` (string|array): The recipient's email address or an array of recipients in the format `[[email, name]]`.
-  - `name` (string, optional): The recipient's name (used if 'to' is a string).
-  - `subject` (string, optional): The subject of the email.
-  - `message` (string, optional): The body of the email.
-  - `cc` (array, optional): An array of CC recipients in the format `[[email, name]]`.
-  - `bcc` (array, optional): An array of BCC recipients in the format `[[email, name]]`.
-  - `debug` (int, optional): Debug level for SMTP (0 to 4).
-  - `tag` (mixed, optional): Custom tag to pass to the [`sendmail_handler` hook function](../hooks/global-hooks.md#sendmail_handler).
+    - `to` (string|array): The recipient's email address or an array of recipients in the format `[[email, name]]`.
+    - `name` (string, optional): The recipient's name (used if 'to' is a string).
+    - `subject` (string, optional): The subject of the email.
+    - `message` (string, optional): The body of the email.
+    - `cc` (array, optional): An array of CC recipients in the format `[[email, name]]`.
+    - `bcc` (array, optional): An array of BCC recipients in the format `[[email, name]]`.
+    - `debug` (int, optional): Debug level for SMTP (0 to 4).
+    - `tag` (mixed, optional): Custom tag to pass to the [`sendmail_handler` hook function](../hooks/global-hooks.md#sendmail_handler).
 
 ### Return value
 
