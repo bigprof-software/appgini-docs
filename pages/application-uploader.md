@@ -91,6 +91,7 @@ If you're having issues with automatic file uploading, please check the followin
        define('UPLOAD_KEY', '2DF5367D046FFE742277D04B107CF46B');
     ```
     
+*   **Is your antivirus blocking the upload?** Some antivirus software might block the automatic file uploader from working. You can try disabling your antivirus temporarily to see if it's causing the issue. If it is, you can add an exception for AppGini.exe in your antivirus settings.
 *   **Is curl installed on your PC?**. The automatic file uploader uses curl to upload files to your server. Curl is installed by default on modern Windows machines, Linux and MacOS. On older Windows PCs, you can download curl from the [official curl website](https://curl.se/windows/).
 *   **Do you have modsecurity or a similar web application firewall (WAF) installed on your server?** This might prevent the automatic file uploader from working. If you have a WAF installed on your server, you can try adding an exception for the `file-uploader.php` file to the WAF configuration. For modsecurity, you can try adding this code to a new file inside `/etc/apache/mods-enabled/` (maybe name it `appgini.conf`) or similar, then restart apache:
     
