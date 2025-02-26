@@ -79,6 +79,6 @@ To specify a currency symbol for a particular field, use the format `td.{tablena
 
 Here’s an example of how the table view will look after applying the above code:
 
-[Currency Symbol Example](https://cdn.bigprof.com/images/currency-symbol-in-table-view.png)
+![Currency Symbol Example](https://cdn.bigprof.com/images/currency-symbol-in-table-view.png)
 
 
