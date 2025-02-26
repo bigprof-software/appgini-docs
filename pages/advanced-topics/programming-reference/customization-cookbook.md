@@ -1,8 +1,8 @@
 ---
 title: Customization Cookbook 
 linkTitle: Customization Cookbook
-slug: help/advanced-topics/programming-reference/customization-cookbook
-keywords: 
+slug: help/advanced-topics/customization-cookbook
+keywords: customization, cookbook, recipes, hooks, footer-extras.php, tablename-dv.js
 description: Quick recipes for common customizations.
 ---
 
