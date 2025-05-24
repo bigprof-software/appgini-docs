@@ -82,3 +82,44 @@ Here’s an example of how the table view will look after applying the above cod
 ![Currency Symbol Example](https://cdn.bigprof.com/images/currency-symbol-in-table-view.png)
 
 
+## Split radio button lookups into two columns
+
+[Lookup fields](../working-with-projects/understanding-lookup-fields.md) in AppGini can be displayed either as a dropdown list or as radio buttons. If you have a lookup field with many options, displaying them as radio buttons can make the form too long and difficult to navigate.
+
+![A radio button lookup field](https://cdn.bigprof.com/images/radio-button-lookup-field.png)
+
+To improve the user experience, you can split the radio button options into two columns. This can be done by adding a simple CSS rule to your `hooks/footer-extras.php` file. First, we need to identify the exact name of the lookup field(s) we want to modify, which we can find in the AppGini project.
+
+In the above screenshot, for example, the lookup field is named `ReportsTo`. To split the radio buttons into two columns, we can add the following CSS rule to the `hooks/footer-extras.php` file:
+
+```html
+<style>
+/* CSS rule to split radio button lookup field into two columns */
+/* Replace 'ReportsTo' with the actual name of your lookup field */
+#ReportsTo-combo-list {
+  br:nth-of-type(2n+1) { display: none; }
+  label { width: 200px; } /* Adjust the width as needed */
+}
+</style>
+```
+
+Here is the same field after applying the above CSS rule:
+
+![Radio button lookup field split into two columns](https://cdn.bigprof.com/images/radio-button-lookup-field-split.png)
+
+If you have multiple lookup fields that you want to modify, you can combine them into a single CSS rule. For example, if you have two lookup fields named `ReportsTo` and `Status`, you can use the following CSS rule:
+
+```html
+<style>
+/* CSS rule to split multiple radio button lookup fields into two columns */
+/* Replace 'ReportsTo' and 'Status' with the actual names of your lookup fields */
+#ReportsTo-combo-list,
+#Status-combo-list {
+  br:nth-of-type(2n+1) { display: none; }
+  label { width: 200px; } /* Adjust the width as needed */
+}
+</style>
+```
+
+This will apply the same two-column layout to both lookup fields. You can adjust the width of the labels as needed to fit your design.
+
