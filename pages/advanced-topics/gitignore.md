@@ -102,6 +102,9 @@ app/setup.md5
 app/tmp
 app/admin/tmp
 app/plugins
+app/import-csv
+!app/import-csv/index.html
+!app/import-csv/.htaccess
 
 # ignore user-uploaded files
 app/images
