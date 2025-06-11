@@ -160,6 +160,10 @@ After controlling access to your custom page, the next step is to customize its 
     include_once("$hooks_dir/../footer.php");
 ```
 
+#### Useful functions to use in your custom pages
+
+AppGini provides a number of useful functions that you can use in your custom pages. For example, you can use the [`sql()`](programming-reference/useful-php-functions.md#sql) function to execute SQL queries, the [`sendmail()`](programming-reference/useful-php-functions.md#sendmail) function to send emails, and the [`sqlValue()`](programming-reference/useful-php-functions.md#sqlValue) function to retrieve a single value from the database. You can find more details about these functions in the [Useful AppGini PHP functions](programming-reference/useful-php-functions.md) page.
+
 #### Link to the page from other pages
 
 Finally, you want users to be able to easily reach your page. AppGini makes it easy to add links to the homepage and/or to the navigation menu. To do so, all you need to do is [add a few lines to the "hooks/links-home.php" and/or "hooks/links-navmenu.php" files](/appgini/help/advanced-topics/hooks/folder-contents/).

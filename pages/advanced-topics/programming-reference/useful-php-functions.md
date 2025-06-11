@@ -2,7 +2,7 @@
 title: Useful AppGini PHP functions for use in custom code
 linkTitle: AppGini PHP functions
 slug: help/advanced-topics/programming-reference/useful-php-functions
-keywords: AppGini PHP functions, sql(), sendmail(), PHPMailer, sendmail_handler()
+keywords: AppGini PHP functions, sql(), sendmail(), PHPMailer, sendmail_handler(), sqlValue()
 description: AppGini provides a number of useful PHP functions that you can use in your custom code to interact with your database and perform various tasks. 
 ---
 
@@ -148,4 +148,44 @@ if ($result === true) {
     echo "Failed to send email: $result";
 }
 ```
+
+## `sqlValue()`
+
+This function is used to execute a SQL query and return a single value from the first row of the result set. This is a very convenient way to quickly execute a query and get a single value, without having to iterate through the result set.
+
+### Syntax
+
+```php
+$value = sqlValue($query, $error);
+```
+
+### Parameters
+
+- **`$query`** (string): The SQL query to execute.
+- **`$error`** (string, optional): A variable passed by reference to store an error message if the query fails. If the query is successful, this variable will not be modified.
+
+### Return value
+- The function returns the value from the first row of the result set, or `false` if the query fails or returns no rows. In the case of failure, the `$error` variable (if provided) will contain the error message.
+
+### Examples
+
+#### Basic Usage without error handling
+
+```php
+$bookCount = sqlValue("SELECT COUNT(*) FROM `books`");
+echo "Total number of books: $bookCount";
+```
+
+#### Usage with error handling
+
+```php
+$error = '';
+$bookCount = sqlValue("SELECT COUNT(*) FROM `books`", $error);
+if ($bookCount === false) {
+    echo "Failed to get book count: $error";
+} else {
+    echo "Total number of books: $bookCount";
+}
+```
+
 
