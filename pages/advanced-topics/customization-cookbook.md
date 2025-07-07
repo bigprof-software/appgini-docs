@@ -1,34 +1,34 @@
 ---
-title: Customization Cookbook 
-linkTitle: Customization Cookbook
+title: Libro de recetas de personalización
+linkTitle: Libro de recetas de personalización
 slug: help/advanced-topics/customization-cookbook
-keywords: customization, cookbook, recipes, hooks, footer-extras.php, tablename-dv.js
-description: Quick recipes for common customizations.
+keywords: personalización, libro de recetas, recetas, hooks, footer-extras.php, tablename-dv.js
+description: Recetas rápidas para personalizaciones comunes.
 ---
 
-# Customization Cookbook
+# Libro de recetas de personalización
 
-This page contains quick recipes for common customizations that you can apply to your AppGini applications. This is a dynamic page that will be updated with new recipes over time.
-So, bookmark this page and check back often!
+Esta página contiene recetas rápidas para personalizaciones comunes que puede aplicar a sus aplicaciones AppGini. Esta es una página dinámica que se actualizará con nuevas recetas con el tiempo.
+¡Así que marque esta página como favorita y vuelva a consultarla a menudo!
 
-## Disable the detail view layout buttons
+## Desactivar los botones de diseño de la vista detallada
 
-Add the following code to `hooks/footer-extras.php` to disable the detail view layout buttons (the buttons that allow users to switch single, double, and triple column layouts in the detail view) in all tables:
+Añada el siguiente código a `hooks/footer-extras.php` para desactivar los botones de diseño de la vista detallada (los botones que permiten a los usuarios cambiar los diseños de una, dos y tres columnas en la vista detallada) en todas las tablas:
 
 ```html
 <script>AppGini.renderDVLayoutToolbar = () => {};</script>
 ```
 
-If you'd like to disable the layout buttons only in certain tables, you can instead create the file `hooks/tablename-dv.js` if it doesn't already exist (replace `tablename` with the actual name of the table), and add the following code to it:
+Si desea desactivar los botones de diseño solo en ciertas tablas, puede crear el archivo `hooks/tablename-dv.js` si aún no existe (reemplace `tablename` con el nombre real de la tabla) y añadirle el siguiente código:
 
 ```js
 AppGini.renderDVLayoutToolbar = () => {};
 ```
 
 
-## Change the clickable icon for links in a table
+## Cambiar el icono en el que se puede hacer clic para los enlaces de una tabla
 
-If you want to change the clickable icon for links in a specific table and avoid having to manually update the icon after every project build, you can use the following solution. Create a file named `tablename-tv.js` in the `hooks` folder (replace `tablename` with the actual name of the table containing the link field), and add the following JavaScript code to it:
+Si desea cambiar el icono en el que se puede hacer clic para los enlaces de una tabla específica y evitar tener que actualizar manualmente el icono después de cada compilación del proyecto, puede utilizar la siguiente solución. Cree un archivo llamado `tablename-tv.js` en la carpeta `hooks` (reemplace `tablename` con el nombre real de la tabla que contiene el campo de enlace) y añádale el siguiente código JavaScript:
 
 ```js
 $j(() => {
@@ -36,90 +36,89 @@ $j(() => {
 });
 ```
 
-Replace `tablename` with the name of your table and `fieldname` with the name of your link field. This code changes the default globe icon (`glyphicon-globe`) to a shopping cart icon (`glyphicon-shopping-cart`). 
+Reemplace `tablename` por el nombre de su tabla y `fieldname` por el nombre de su campo de enlace. Este código cambia el icono de globo terráqueo predeterminado (`glyphicon-globe`) por un icono de carrito de la compra (`glyphicon-shopping-cart`).
 
-By placing this code in the `hooks` folder, your changes will persist even if you regenerate the app later.
+Al colocar este código en la carpeta `hooks`, sus cambios persistirán incluso si regenera la aplicación más tarde.
 
 
-## Prepend a currency symbol to amount fields in the table view
+## Anteponer un símbolo de moneda a los campos de importe en la vista de tabla
 
-If you'd like to prepend a currency symbol (e.g., ₹ for Indian Rupee) to amount fields in the table view of your AppGini application, you can use CSS for a simple solution. This method is more user-friendly than using **Data format** tab in AppGini and editing the `dataFormats.cfg` file and allows you to customize the display without affecting your database queries.
+Si desea anteponer un símbolo de moneda (por ejemplo, ₹ para la rupia india) a los campos de importe en la vista de tabla de su aplicación AppGini, puede utilizar CSS para una solución sencilla. Este método es más fácil de usar que utilizar la pestaña **Formato de datos** en AppGini y editar el archivo `dataFormats.cfg` y le permite personalizar la visualización sin afectar a sus consultas de base de datos.
 
-Open the generated `hooks/footer-extras.php` file in your project and add the following code at the end of the file:
+Abra el archivo generado `hooks/footer-extras.php` en su proyecto y añada el siguiente código al final del archivo:
 
 ```php
 <?php if(Request::val('Print_x')) : ?>
   <style>
-    /* format is: td.{tablename}-{fieldname} */
+    /* el formato es: td.{tablename}-{fieldname} */
     td.orders-Total::before,
     td.order_details-UnitPrice::before,
-    td.order_details-SubTotal::before  /* Attention: no comma (,) after last field! */
+    td.order_details-SubTotal::before  /* Atención: ¡sin coma (,) después del último campo! */
       { content: '₹'; }
   </style>
 <?php else : ?>
   <style>
     td.orders-Total > a::before,
     td.order_details-UnitPrice > a::before,
-    td.order_details-SubTotal > a::before  /* Attention: no comma (,) after last field! */
+    td.order_details-SubTotal > a::before  /* Atención: ¡sin coma (,) después del último campo! */
       { content: '₹'; }
   </style>
 <?php endif; ?>
 ```
 
-**Explanation of the Code**
+**Explicación del código**
 
-- The **first block** (lines 2-8) specifies the currency symbol (`₹`) for the amount fields in the **print view**.
-- The **second block** (lines 10-15) specifies the currency symbol (`₹`) for the amount fields in the **table view**.
+- El **primer bloque** (líneas 2-8) especifica el símbolo de moneda (`₹`) para los campos de importe en la **vista de impresión**.
+- El **segundo bloque** (líneas 10-15) especifica el símbolo de moneda (`₹`) para los campos de importe en la **vista de tabla**.
 
-You can replace `₹` with any currency symbol of your choice. For instance, `$` for USD or `€` for EUR.
+Puede reemplazar `₹` por cualquier símbolo de moneda de su elección. Por ejemplo, `$` para USD o `€` para EUR.
 
-To specify a currency symbol for a particular field, use the format `td.{tablename}-{fieldname}`. For example:
+Para especificar un símbolo de moneda para un campo en particular, utilice el formato `td.{tablename}-{fieldname}`. Por ejemplo:
 
-- For a table named `invoices` with an amount field named `total`, use the selector `td.invoices-total`.
+- Para una tabla llamada `invoices` con un campo de importe llamado `total`, utilice el selector `td.invoices-total`.
 
-Here’s an example of how the table view will look after applying the above code:
+A continuación, se muestra un ejemplo de cómo se verá la vista de tabla después de aplicar el código anterior:
 
-![Currency Symbol Example](https://cdn.bigprof.com/images/currency-symbol-in-table-view.png)
+![Ejemplo de símbolo de moneda](https://cdn.bigprof.com/images/currency-symbol-in-table-view.png)
 
 
-## Split radio button lookups into two columns
+## Dividir las búsquedas de botones de opción en dos columnas
 
-[Lookup fields](../working-with-projects/understanding-lookup-fields.md) in AppGini can be displayed either as a dropdown list or as radio buttons. If you have a lookup field with many options, displaying them as radio buttons can make the form too long and difficult to navigate.
+Los [campos de búsqueda](../working-with-projects/understanding-lookup-fields.md) en AppGini se pueden mostrar como una lista desplegable o como botones de opción. Si tiene un campo de búsqueda con muchas opciones, mostrarlas como botones de opción puede hacer que el formulario sea demasiado largo y difícil de navegar.
 
-![A radio button lookup field](https://cdn.bigprof.com/images/radio-button-lookup-field.png)
+![Un campo de búsqueda de botones de opción](https://cdn.bigprof.com/images/radio-button-lookup-field.png)
 
-To improve the user experience, you can split the radio button options into two columns. This can be done by adding a simple CSS rule to your `hooks/footer-extras.php` file. First, we need to identify the exact name of the lookup field(s) we want to modify, which we can find in the AppGini project.
+Para mejorar la experiencia del usuario, puede dividir las opciones de los botones de opción en dos columnas. Esto se puede hacer añadiendo una regla CSS sencilla a su archivo `hooks/footer-extras.php`. Primero, debemos identificar el nombre exacto del campo o campos de búsqueda que queremos modificar, lo cual podemos encontrar en el proyecto AppGini.
 
-In the above screenshot, for example, the lookup field is named `ReportsTo`. To split the radio buttons into two columns, we can add the following CSS rule to the `hooks/footer-extras.php` file:
+En la captura de pantalla anterior, por ejemplo, el campo de búsqueda se llama `ReportsTo`. Para dividir los botones de opción en dos columnas, podemos añadir la siguiente regla CSS al archivo `hooks/footer-extras.php`:
 
 ```html
 <style>
-/* CSS rule to split radio button lookup field into two columns */
-/* Replace 'ReportsTo' with the actual name of your lookup field */
+/* Regla CSS para dividir el campo de búsqueda de botones de opción en dos columnas */
+/* Reemplace 'ReportsTo' por el nombre real de su campo de búsqueda */
 #ReportsTo-combo-list {
   br:nth-of-type(2n+1) { display: none; }
-  label { width: 200px; } /* Adjust the width as needed */
+  label { width: 200px; } /* Ajuste el ancho según sea necesario */
 }
 </style>
 ```
 
-Here is the same field after applying the above CSS rule:
+Este es el mismo campo después de aplicar la regla CSS anterior:
 
-![Radio button lookup field split into two columns](https://cdn.bigprof.com/images/radio-button-lookup-field-split.png)
+![Campo de búsqueda de botones de opción dividido en dos columnas](https://cdn.bigprof.com/images/radio-button-lookup-field-split.png)
 
-If you have multiple lookup fields that you want to modify, you can combine them into a single CSS rule. For example, if you have two lookup fields named `ReportsTo` and `Status`, you can use the following CSS rule:
+Si tiene varios campos de búsqueda que desea modificar, puede combinarlos en una sola regla CSS. Por ejemplo, si tiene dos campos de búsqueda llamados `ReportsTo` y `Status`, puede utilizar la siguiente regla CSS:
 
 ```html
 <style>
-/* CSS rule to split multiple radio button lookup fields into two columns */
-/* Replace 'ReportsTo' and 'Status' with the actual names of your lookup fields */
+/* Regla CSS para dividir varios campos de búsqueda de botones de opción en dos columnas */
+/* Reemplace 'ReportsTo' y 'Status' por los nombres reales de sus campos de búsqueda */
 #ReportsTo-combo-list,
 #Status-combo-list {
   br:nth-of-type(2n+1) { display: none; }
-  label { width: 200px; } /* Adjust the width as needed */
+  label { width: 200px; } /* Ajuste el ancho según sea necesario */
 }
 </style>
 ```
 
-This will apply the same two-column layout to both lookup fields. You can adjust the width of the labels as needed to fit your design.
-
+Esto aplicará el mismo diseño de dos columnas a ambos campos de búsqueda. Puede ajustar el ancho de las etiquetas según sea necesario para que se ajusten a su diseño.

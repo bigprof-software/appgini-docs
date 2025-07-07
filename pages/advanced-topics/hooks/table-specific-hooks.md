@@ -1,20 +1,20 @@
 ---
-title: Table-specific hooks
-linkTitle: Table-specific hooks
+title: Hooks específicos de tabla
+linkTitle: Hooks específicos de tabla
 slug: help/advanced-topics/hooks/table-specific-hooks
-description: Table-specific hooks are functions that get called when a new record is added, when a record is edited, when a record is deleted, ... etc. These hooks are table-specific. That's why each table in your project has its own hook file.
-keywords: table-specific hooks, hooks, table, insert, update, delete, record, edit, add, new, data, memberInfo, args, options, header, footer, init, before_insert, after_insert, before_update, after_update, before_delete, after_delete, dv, csv, batch_actions, multiple record batch actions
+description: Los hooks específicos de tabla son funciones que se llaman cuando se agrega un nuevo registro, cuando se edita un registro, cuando se elimina un registro, etc. Estos hooks son específicos de tabla. Es por eso que cada tabla en su proyecto tiene su propio archivo hook.
+keywords: hooks específicos de tabla, hooks, tabla, insertar, actualizar, eliminar, registro, editar, agregar, nuevo, datos, memberInfo, args, options, header, footer, init, before_insert, after_insert, before_update, after_update, before_delete, after_delete, dv, csv, batch_actions, acciones por lotes de múltiples registros
 ---
 
-# Table-specific hooks
+# Hooks específicos de tabla
 
-For each table in your project, AppGini generates a hook file named the same as the table
-name inside the `hooks` folder. This file contains hook functions that get called when
-a new record is added, when a record is edited, when a record is
-deleted, ... etc. These hooks are table-specific. That's why each
-table in your project has its own hook file.
+Para cada tabla de su proyecto, AppGini genera un archivo hook con el mismo nombre que el nombre de la tabla
+dentro de la carpeta `hooks`. Este archivo contiene funciones hook que se llaman cuando
+se agrega un nuevo registro, cuando se edita un registro, cuando se elimina un registro
+, etc. Estos hooks son específicos de tabla. Es por eso que cada
+tabla en su proyecto tiene su propio archivo hook.
 
-*The following hook functions are defined in this file:*
+*Las siguientes funciones de hook se definen en este archivo:*
 
 - [`tablename_before_insert()`](#tablename_before_insert)
 - [`tablename_after_insert()`](#tablename_after_insert)
@@ -35,47 +35,47 @@ table in your project has its own hook file.
 ## `tablename_init()`
 
 
-Called before rendering the page. This is a very powerful hook that
-allows you to control all aspects of how the page is rendered. If you
-open the generated `hooks/tablename.php` file in a text editor (where
-tablename is the name of the concerned table), you can see this function
-defined as follows:
+Llamado antes de representar la página. Este es un hook muy poderoso que
+le permite controlar todos los aspectos de cómo se representa la página. Si
+abre el archivo `hooks/tablename.php` generado en un editor de texto (donde
+tablename es el nombre de la tabla en cuestión), puede ver esta función
+definida de la siguiente manera:
 
 ```php
 function tablename_init(&$options, $memberInfo, &$args) {
 
     return true;
-} 
+}
 ```
 
 
-### Parameters
+### Parámetros
 
--   `$options` (passed by reference so that it can be modified
-    inside this hook function) a DataList object that sets options for
-    rendering the page. Please refer to
-    [DataList](/appgini/help/advanced-topics/hooks/DataList-object/) for more
-    details.
--   `$memberInfo` is an array containing details of the member
-    who signed in. Please refer to
+-   `$options` (pasado por referencia para que pueda modificarse
+    dentro de esta función hook) un objeto DataList que establece opciones para
+    representar la página. Consulte
+    [DataList](/appgini/help/advanced-topics/hooks/DataList-object/) para obtener más
+    detalles.
+-   `$memberInfo` es una matriz que contiene detalles del miembro
+    que inició sesión. Consulte
     [memberInfo](/appgini/help/advanced-topics/hooks/memberInfo-array/)
-    for more details.
--   `$args` is currently not used but is reserved for future
-    uses.
+    para obtener más detalles.
+-   `$args` actualmente no se usa pero está reservado para usos
+    futuros.
 
 
-### Return value
+### Valor devuelto
 
-`true` to render the page. `false` to cancel the operation
-(which could be useful for error handling to display an error message to
-the user and stop displaying any data).
+`true` para representar la página. `false` para cancelar la operación
+(lo que podría ser útil para el manejo de errores para mostrar un mensaje de error al
+usuario y dejar de mostrar cualquier dato).
 
 
-### Example
+### Ejemplo
 
-The following example checks that the logged user belongs to the admin
-group and accordingly allows CSV downloading of records. If the user is
-not a member of the admin group, CSV downloads are disabled.
+El siguiente ejemplo comprueba que el usuario conectado pertenece al grupo de administradores
+y, en consecuencia, permite la descarga CSV de registros. Si el usuario no es
+miembro del grupo de administradores, las descargas CSV están deshabilitadas.
 
 ```php
 function tablename_init(&$options, $memberInfo, &$args) {
@@ -87,25 +87,24 @@ function tablename_init(&$options, $memberInfo, &$args) {
     }
 
     return true;
-} 
+}
 ```
 
-> There is another example in the [Tips and tutorials
-section](/appgini/tips-and-tutorials) that uses the `tablename_init` hook
-to [modify part of the table view
-query](/appgini/tips-and-tutorials/customize-tableview-data). Another
-example uses the `tablename_init` hook to [apply a default filter to a
-table](/appgini/tips-and-tutorials/apply-default-filter).
+> Hay otro ejemplo en la sección [Consejos y tutoriales](/appgini/tips-and-tutorials)
+que usa el hook `tablename_init`
+para [modificar parte de la consulta de la vista de tabla](/appgini/tips-and-tutorials/customize-tableview-data). Otro
+ejemplo usa el hook `tablename_init` para [aplicar un filtro predeterminado a una
+tabla](/appgini/tips-and-tutorials/apply-default-filter).
 
 
 
 ## `tablename_header()`
 
 
-Called before displaying page content. Can be used to return a
-customized header template for the table. If you open the generated
-`hooks/tablename.php` file in a text editor (where `tablename` is the name
-of the concerned table), you can see this function defined as follows:
+Llamado antes de mostrar el contenido de la página. Se puede usar para devolver una
+plantilla de encabezado personalizada para la tabla. Si abre el archivo
+`hooks/tablename.php` generado en un editor de texto (donde `tablename` es el nombre
+de la tabla en cuestión), puede ver esta función definida de la siguiente manera:
 
 ```php
 function tablename_header($contentType, $memberInfo, &$args) {
@@ -142,39 +141,38 @@ function tablename_header($contentType, $memberInfo, &$args) {
 ```
 
 
-### Parameters
+### Parámetros
 
--   `$contentType` specifies the type of view that will be
-    displayed. Takes one of the following values: `tableview`,
+-   `$contentType` especifica el tipo de vista que se
+    mostrará. Toma uno de los siguientes valores: `tableview`,
     `detailview`, `tableview+detailview`, `print-tableview`,
-    `print-detailview` or `filters`.
--   `$memberInfo` is an array containing details of the member
-    who signed in. Please refer to
+    `print-detailview` o `filters`.
+-   `$memberInfo` es una matriz que contiene detalles del miembro
+    que inició sesión. Consulte
     [memberInfo](/appgini/help/advanced-topics/hooks/memberInfo-array/)
-    for more details.
--   `$args` is currently not used but is reserved for future
-    uses.
+    para obtener más detalles.
+-   `$args` actualmente no se usa pero está reservado para usos
+    futuros.
 
 
-### Return value
+### Valor devuelto
 
-String containing the HTML header code. If empty, the default
-`header.php` is used. If you want to include the default header
-besides your customized header, include the `<%%HEADER%%>` placeholder
-in the returned string. Note: If you have a customized header-extras.php
-file (see [the contents of the hooks
-folder](/appgini/help/advanced-topics/hooks/folder-contents/) for more
-info), it won't be included in the page if you don't include the
-`<%%HEADER%%>` placeholder in the return string.
+Cadena que contiene el código de encabezado HTML. Si está vacío, se usa el
+`header.php` predeterminado. Si desea incluir el encabezado predeterminado
+además de su encabezado personalizado, incluya el marcador de posición `<%%HEADER%%>`
+en la cadena devuelta. Nota: Si tiene un archivo header-extras.php
+personalizado (consulte [el contenido de la carpeta `hooks`](/appgini/help/advanced-topics/hooks/folder-contents/) para obtener más
+información), no se incluirá en la página si no incluye el
+marcador de posición `<%%HEADER%%>` en la cadena de devolución.
 
 
-### Example
+### Ejemplo
 
-The following example displays today's date and current time above the
-print-preview pages, so that the printed document shows this data.
-Notice that the placeholder \<%%HEADER%%\> is included so that the
-original header is still output to users. The modified code is at lines
-18 and 22.
+El siguiente ejemplo muestra la fecha de hoy y la hora actual sobre las
+páginas de vista previa de impresión, para que el documento impreso muestre estos datos.
+Observe que se incluye el marcador de posición `<%%HEADER%%>` para que el
+encabezado original todavía se muestre a los usuarios. El código modificado está en las líneas
+18 y 22.
 
 ```php
 function tablename_header($contentType, $memberInfo, &$args) {
@@ -216,10 +214,10 @@ function tablename_header($contentType, $memberInfo, &$args) {
 ## `tablename_footer()`
 
 
-Called after displaying page content. Can be used to return a customized
-footer template for the table. If you open the generated
-`hooks/tablename.php` file in a text editor (where tablename is the name
-of the concerned table), you can see this function defined as follows:
+Llamado después de mostrar el contenido de la página. Se puede usar para devolver una plantilla de pie de página
+personalizada para la tabla. Si abre el archivo `hooks/tablename.php` generado
+en un editor de texto (donde tablename es el nombre
+de la tabla en cuestión), puede ver esta función definida de la siguiente manera:
 
 ```php
 function tablename_footer($contentType, $memberInfo, &$args) {
@@ -256,44 +254,43 @@ function tablename_footer($contentType, $memberInfo, &$args) {
 ```
 
 
-### Parameters
+### Parámetros
 
--   `$contentType` specifies the type of view that will be
-    displayed. Takes one of the following values: `tableview`,
+-   `$contentType` especifica el tipo de vista que se
+    mostrará. Toma uno de los siguientes valores: `tableview`,
     `detailview`, `tableview+detailview`, `print-tableview`,
-    `print-detailview` or `filters`.
--   `$memberInfo` is an array containing details of the member
-    who signed in. Please refer to
+    `print-detailview` o `filters`.
+-   `$memberInfo` es una matriz que contiene detalles del miembro
+    que inició sesión. Consulte
     [memberInfo](/appgini/help/advanced-topics/hooks/memberInfo-array/)
-    for more details.
--   `$args` is currently not used but is reserved for future
-    uses.
+    para obtener más detalles.
+-   `$args` actualmente no se usa pero está reservado para usos
+    futuros.
 
 
-### Return value
+### Valor devuelto
 
-String containing the HTML footer code. If empty, the default
-`footer.php` is used. If you want to include the default footer
-besides your customized footer, include the `<%%FOOTER%%>` placeholder
-in the returned string. Note: If you have a customized footer-extras.php
-file (see [the contents of the hooks
-folder](/appgini/help/advanced-topics/hooks/folder-contents/) for more
-info), it won't be included in the page if you don't include the
-`<%%FOOTER%%>` placeholder in the return string.
+Cadena que contiene el código de pie de página HTML. Si está vacío, se usa el
+`footer.php` predeterminado. Si desea incluir el pie de página predeterminado
+además de su pie de página personalizado, incluya el marcador de posición `<%%FOOTER%%>`
+en la cadena devuelta. Nota: Si tiene un archivo footer-extras.php
+personalizado (consulte [el contenido de la carpeta `hooks`](/appgini/help/advanced-topics/hooks/folder-contents/) para obtener más
+información), no se incluirá en la página si no incluye el
+marcador de posición `<%%FOOTER%%>` en la cadena de devolución.
 
 
-### Example
+### Ejemplo
 
-Please refer to the above example for tablename_header.
+Consulte el ejemplo anterior para tablename_header.
 
 
 
 ## `tablename_before_insert()`
 
 
-Called before executing the insert query. If you open the generated
-`hooks/tablename.php` file in a text editor (where tablename is the name
-of the concerned table), you can see this function defined as follows:
+Llamado antes de ejecutar la consulta de inserción. Si abre el archivo
+`hooks/tablename.php` generado en un editor de texto (donde tablename es el nombre
+de la tabla en cuestión), puede ver esta función definida de la siguiente manera:
 
 ```php
 function tablename_before_insert(&$data, $memberInfo, &$args) {
@@ -303,38 +300,38 @@ function tablename_before_insert(&$data, $memberInfo, &$args) {
 ```
 
 
-### Parameters
+### Parámetros
 
--   `$data` An associative array where the keys are field names
-    and the values are the field data values to be inserted into the new
-    record. This array is passed by reference so that modifications to
-    it apply to the insert query.
--   `$memberInfo` is an array containing details of the member
-    who signed in. Please refer to
+-   `$data` Una matriz asociativa donde las claves son nombres de campo
+    y los valores son los valores de datos de campo que se insertarán en el nuevo
+    registro. Esta matriz se pasa por referencia para que las modificaciones en ella se apliquen
+    a la consulta de inserción.
+-   `$memberInfo` es una matriz que contiene detalles del miembro
+    que inició sesión. Consulte
     [memberInfo](/appgini/help/advanced-topics/hooks/memberInfo-array/)
-    for more details.
--   `$args` was not in use prior to AppGini 5.90. As of AppGini
-    5.90, it's used for exchanging further data as follows:
-    -   `$args['error_message']` can be set inside the hook
-        function to display an error message to user in case of
-        returning `false` .
+    para obtener más detalles.
+-   `$args` no se usaba antes de AppGini 5.90. A partir de AppGini
+    5.90, se usa para intercambiar más datos de la siguiente manera:
+    -   `$args['error_message']` se puede establecer dentro del hook
+        función para mostrar un mensaje de error al usuario en caso de
+        devolver `false`.
 
 
-### Return value
+### Valor devuelto
 
-A boolean `true` to perform the insert operation, or `false`
-to cancel it.
+Un booleano `true` para realizar la operación de inserción, o `false`
+para cancelarla.
 
-*As of AppGini 5.90* , if returning `false` , an error message
-string (no HTML tags allowed) can be displayed to users by passing it
-through `$args['error_message']` .
+*A partir de AppGini 5.90*, si devuelve `false`, se puede mostrar un mensaje de error
+en cadena (no se permiten etiquetas HTML) a los usuarios pasándolo
+a través de `$args['error_message']`.
 
 
-### Example 1
+### Ejemplo 1
 
-In this example, let's assume that our table contains the fields:
-unit_price, quantity and total. We want to automatically calculate the
-value of the total field by multiplying quantity and unit_price.
+En este ejemplo, supongamos que nuestra tabla contiene los campos:
+precio_unitario, cantidad y total. Queremos calcular automáticamente el
+valor del campo total multiplicando cantidad y precio_unitario.
 
 ```php
 function tablename_before_insert(&$data, $memberInfo, &$args) {
@@ -345,20 +342,20 @@ function tablename_before_insert(&$data, $memberInfo, &$args) {
 }
 ```
 
-**See also:** [Using lookup fields in calculations](/appgini/help/advanced-topics/hooks/using-lookup-fields-in-calculations/).
+**Ver también:** [Uso de campos de búsqueda en cálculos](/appgini/help/advanced-topics/hooks/using-lookup-fields-in-calculations/).
 
 
-### Example 2 (AppGini 5.90+)
+### Ejemplo 2 (AppGini 5.90+)
 
-In this example, let's assume that we have a `job_orders` table,
-and we want to make sure the `duration` field value must be higher
-than 3. If not, we'll reject the record with an error message.
+En este ejemplo, supongamos que tenemos una tabla `job_orders`,
+y queremos asegurarnos de que el valor del campo `duration` debe ser mayor
+que 3. Si no, rechazaremos el registro con un mensaje de error.
 
 ```php
 function job_orders_before_insert(&$data, $memberInfo, &$args) {
 
     if($data['duration'] <= 3) {
-        $args['error_message'] = 'Error: Duration must be higher than 3.';
+        $args['error_message'] = 'Error: La duración debe ser mayor que 3.';
         return false;
     }
 
@@ -372,10 +369,10 @@ function job_orders_before_insert(&$data, $memberInfo, &$args) {
 ## `tablename_after_insert()`
 
 
-Called after executing the insert query (but before executing the
-ownership insert query). If you open the generated `hooks/tablename.php`
-file in a text editor (where tablename is the name of the concerned
-table), you can see this function defined as follows:
+Llamado después de ejecutar la consulta de inserción (pero antes de ejecutar la
+consulta de inserción de propiedad). Si abre el archivo `hooks/tablename.php` generado
+en un editor de texto (donde tablename es el nombre de la tabla en cuestión
+), puede ver esta función definida de la siguiente manera:
 
 ```php
 function tablename_after_insert($data, $memberInfo, &$args) {
@@ -385,85 +382,84 @@ function tablename_after_insert($data, $memberInfo, &$args) {
 ```
 
 
-### Parameters
+### Parámetros
 
--   `$data` is an associative array where the keys are field
-    names and the values are the field data values that were inserted
-    into the new record. It also includes the item
-    `$data['selectedID']` which stores the value of the primary key
-    for the new record.
--   `$memberInfo` is an array containing details of the member
-    who signed in. Please refer to
+-   `$data` es una matriz asociativa donde las claves son nombres de campo
+    y los valores son los valores de datos de campo que se insertaron
+    en el nuevo registro. También incluye el elemento
+    `$data['selectedID']` que almacena el valor de la clave principal
+    para el nuevo registro.
+-   `$memberInfo` es una matriz que contiene detalles del miembro
+    que inició sesión. Consulte
     [memberInfo](/appgini/help/advanced-topics/hooks/memberInfo-array/)
-    for more details.
--   `$args` is currently not used but is reserved for future
-    uses.
+    para obtener más detalles.
+-   `$args` actualmente no se usa pero está reservado para usos
+    futuros.
 
 
-### Return value
+### Valor devuelto
 
-A boolean `true` to perform the ownership insert operation or
-`false` to cancel it. Warning: if a `false` is returned, the
-new record will have no ownership info.
+Un booleano `true` para realizar la operación de inserción de propiedad o
+`false` para cancelarla. Advertencia: si se devuelve `false`, el
+nuevo registro no tendrá información de propiedad.
 
 
-### Example 1
+### Ejemplo 1
 
-The following example sends a notification email to an employee when a
-user submits a new record. The email contains the record data.
+El siguiente ejemplo envía un correo electrónico de notificación a un empleado cuando un
+usuario envía un nuevo registro. El correo electrónico contiene los datos del registro.
 
 ```php
 function tablename_after_insert($data, $memberInfo, &$args) {
 
-    // to compose a message containing the submitted data,
-    // we need to iterate through the $data array
+    // para componer un mensaje que contenga los datos enviados,
+    // necesitamos iterar a través de la matriz $data
     foreach($data as $field => $value) {
         $messageData .= "$field: $value \n";
     }
 
     sendmail([
         'to' => 'employee@company.com',
-        'name' => 'Recipient Name',        
-        'subject' => 'A new record needs your attention',        
-        'message' => "The following new record was submitted by {$memberInfo['username']}: \n\n" . $messageData
+        'name' => 'Nombre del destinatario',
+        'subject' => 'Un nuevo registro necesita su atención',
+        'message' => "El siguiente nuevo registro fue enviado por {$memberInfo['username']}: \n\n" . $messageData
     ]);
     
     return true;
 }
 ```
 
-### Example 2
+### Ejemplo 2
 
-The following example works with apps created by AppGini 23.17 or above.
-It uses the [`WindowMessages`
-class](https://bigprof.com/appgini/help/advanced-topics/hooks/WindowMessages-class)
-to display a custom message to the user after a record is inserted. In
-this example, we're displaying a sample instruction for the user to
-follow after he's added a new record to the orders table reminding him
-to add order items.
+El siguiente ejemplo funciona con aplicaciones creadas por AppGini 23.17 o superior.
+Utiliza la clase [`WindowMessages`](https://bigprof.com/appgini/help/advanced-topics/hooks/WindowMessages-class)
+para mostrar un mensaje personalizado al usuario después de insertar un registro. En
+este ejemplo, mostramos una instrucción de muestra para que el usuario la
+siga después de haber agregado un nuevo registro a la tabla de pedidos recordándole
+que agregue artículos de pedido.
 
 ```php
   function orders_after_insert($data, $memberInfo, &$args) {
 
-        WindowMessages::add('Next step: Add order items for this order!');
+        WindowMessages::add('Siguiente paso: ¡Agregue artículos de pedido para este pedido!');
         
         return true;
     }
 ```
 
-Here is a video showing how the above example works:
+Aquí hay un video que muestra cómo funciona el ejemplo anterior:
 
 <video width="100%" controls>
     <source src="https://cdn.bigprof.com/screencasts/show-message-after-insert.mp4" type="video/mp4">
-    Your browser does not support the video tag.
+    Su navegador no es compatible con la etiqueta de video.
 </video>
 
 ## `tablename_before_update()`
 
 
-Called before executing the update query. If you open the generated
-`hooks/tablename.php` file in a text editor (where tablename is the name
-of the concerned table), you can see this function defined as follows:
+Llamado antes de ejecutar la consulta de actualización. Si abre el archivo
+`hooks/tablename.php` generado en un editor de texto (donde tablename es el nombre
+de la tabla en cuestión), puede ver esta función definida de la siguiente manera:
 
 ```php
 function tablename_before_update(&$data, $memberInfo, &$args) {
@@ -473,56 +469,55 @@ function tablename_before_update(&$data, $memberInfo, &$args) {
 ```
 
 
-### Parameters
+### Parámetros
 
--   `$data` An associative array where the keys are field names
-    and the values are the new data values to update the field with.
-    This array is passed by reference so that modifications to it apply
-    to the update query. This array includes the item
-    `$data['selectedID']` which stores the value of the primary key
-    for the record to be updated.
--   `$memberInfo` is an array containing details of the member
-    who signed in. Please refer to
+-   `$data` Una matriz asociativa donde las claves son nombres de campo
+    y los valores son los nuevos valores de datos con los que actualizar el campo.
+    Esta matriz se pasa por referencia para que las modificaciones en ella se apliquen
+    a la consulta de actualización. Esta matriz incluye el elemento
+    `$data['selectedID']` que almacena el valor de la clave principal
+    para el registro que se va a actualizar.
+-   `$memberInfo` es una matriz que contiene detalles del miembro
+    que inició sesión. Consulte
     [memberInfo](/appgini/help/advanced-topics/hooks/memberInfo-array/)
-    for more details.
--   `$args` was not in use prior to AppGini 5.90. As of AppGini
-    5.90, it's used for exchanging further data as follows:
-    -   `$args['error_message']` can be set inside the hook
-        function to display an error message to user in case of
-        returning `false` .
-    -   `$args['old_data']` is an associative array
-        containing existing record values. This is useful for comparing
-        the new values passed through the `$data` parameter
-        to the stored values in the record before the actual update
-        operation is performed.
+    para obtener más detalles.
+-   `$args` no se usaba antes de AppGini 5.90. A partir de AppGini
+    5.90, se usa para intercambiar más datos de la siguiente manera:
+    -   `$args['error_message']` se puede establecer dentro del hook
+        función para mostrar un mensaje de error al usuario en caso de
+        devolver `false`.
+    -   `$args['old_data']` es una matriz asociativa
+        que contiene los valores de registro existentes. Esto es útil para comparar
+        los nuevos valores pasados a través del parámetro `$data`
+        con los valores almacenados en el registro antes de que se realice la operación de actualización
+        real.
 
 
-### Return value
+### Valor devuelto
 
-`true` to perform the update operation or `false` to cancel
-it.
+`true` para realizar la operación de actualización o `false` para cancelarla.
 
-*As of AppGini 5.90* , if returning `false` , an error message
-string (no HTML tags allowed) can be displayed to users by passing it
-through `$args['error_message']` (See example 2 for
-[tablename_before_insert](#tablename_before_insert) ).
+*A partir de AppGini 5.90*, si devuelve `false`, se puede mostrar un mensaje de error
+en cadena (no se permiten etiquetas HTML) a los usuarios pasándolo
+a través de `$args['error_message']` (Consulte el ejemplo 2 para
+[tablename_before_insert](#tablename_before_insert)).
 
 
-### Example
+### Ejemplo
 
-Let's say we have an orders table. When a user makes changes to a
-record and saves them, we want to automatically calculate the value of
-the *total* field using the fields *subtotal* , *discount* and
-*sales_tax* , where discount and sales_tax are stored as percentages
-(i.e. a discount value of 10 means 10% of subtotal):
+Supongamos que tenemos una tabla de pedidos. Cuando un usuario realiza cambios en un
+registro y los guarda, queremos calcular automáticamente el valor del
+campo *total* usando los campos *subtotal*, *descuento* y
+*impuesto_ventas*, donde el descuento y el impuesto_ventas se almacenan como porcentajes
+(es decir, un valor de descuento de 10 significa 10% del subtotal):
 
 ```php
 function tablename_before_update(&$data, $memberInfo, &$args) {
     
-    // calculate total after applying discount
+    // calcular el total después de aplicar el descuento
     $data['total'] = $data['subtotal'] * (1 - $data['discount'] / 100);
     
-    // calculate total after applying sales tax 
+    // calcular el total después de aplicar el impuesto sobre las ventas
     $data['total'] = $data['total'] * (1 + $data['sales_tax'] / 100); 
     
     return true;
@@ -531,37 +526,37 @@ function tablename_before_update(&$data, $memberInfo, &$args) {
 
 
 
-### Another example
+### Otro ejemplo
 
-Let's say that we want to prevent updates to any records in a
-particular table that are older than 30 days. To do so, we would
-customize the *tablename* _before_update() hooks like this:
+Supongamos que queremos evitar actualizaciones a cualquier registro en una
+tabla en particular que tenga más de 30 días. Para hacerlo,
+personalizaríamos los hooks *tablename* _before_update() de esta manera:
 
 ```php
 function tablename_before_update(&$data, $memberInfo, &$args) {
     
-    // get the creation date of the record
+    // obtener la fecha de creación del registro
     $creationDate=sqlValue("select dateAdded from membership_userrecords
         where tableName='tablename' and pkValue='{$data['selectedID']}'");
     
-    // if the record is older than 30 days, deny changes 
+    // si el registro tiene más de 30 días, denegar los cambios
     if($creationDate < strtotime('30 days ago')) return false;
     
     return true;
 }
 ```
 
-*Don't forget to replace `tablename` at line 5 above, with the actual
-name of your table.*
+*No olvide reemplazar `tablename` en la línea 5 anterior, con el nombre real
+de su tabla.*
 
 
 ## `tablename_after_update()`
 
 
-Called after executing the update query and before executing the
-ownership update query. If you open the generated `hooks/tablename.php`
-file in a text editor (where tablename is the name of the concerned
-table), you can see this function defined as follows:
+Llamado después de ejecutar la consulta de actualización y antes de ejecutar la
+consulta de actualización de propiedad. Si abre el archivo `hooks/tablename.php` generado
+en un editor de texto (donde tablename es el nombre de la tabla en cuestión
+), puede ver esta función definida de la siguiente manera:
 
 ```php
 function tablename_after_update($data, $memberInfo, &$args) {
@@ -571,46 +566,46 @@ function tablename_after_update($data, $memberInfo, &$args) {
 ```
 
 
-### Parameters
+### Parámetros
 
--   `$data` is an associative array where the keys are field
-    names and the values are the field data values that were inserted
-    into the new record. It also includes the item
-    `$data['selectedID']` which stores the value of the primary key
-    for the new record.
--   `$memberInfo` is an array containing details of the member
-    who signed in. Please refer to
+-   `$data` es una matriz asociativa donde las claves son nombres de campo
+    y los valores son los valores de datos de campo que se insertaron
+    en el nuevo registro. También incluye el elemento
+    `$data['selectedID']` que almacena el valor de la clave principal
+    para el nuevo registro.
+-   `$memberInfo` es una matriz que contiene detalles del miembro
+    que inició sesión. Consulte
     [memberInfo](/appgini/help/advanced-topics/hooks/memberInfo-array/)
-    for more details.
--   `$args` was not in use prior to AppGini 5.90. As of AppGini
-    5.90, it's used for exchanging further data as follows:
-    -   `$args['old_data']` is an associative array
-        containing old record values that existed before the update
-        operation. This is useful for comparing the new values passed
-        through the `$data` parameter to the old values of
-        the record that existed before the update operation. You could
-        use this for example for auditing purposes.
+    para obtener más detalles.
+-   `$args` no se usaba antes de AppGini 5.90. A partir de AppGini
+    5.90, se usa para intercambiar más datos de la siguiente manera:
+    -   `$args['old_data']` es una matriz asociativa
+        que contiene los valores de registro antiguos que existían antes de la operación de actualización
+        . Esto es útil para comparar los nuevos valores pasados
+        a través del parámetro `$data` con los valores antiguos del
+        registro que existían antes de la operación de actualización. Podría
+        usar esto, por ejemplo, para fines de auditoría.
 
 
-### Return value
+### Valor devuelto
 
-`true` to perform the ownership update operation or `false` to
-cancel it.
+`true` para realizar la operación de actualización de propiedad o `false` para
+cancelarla.
 
 
-### Example
+### Ejemplo
 
-Please refer to the example for `tablename_after_insert` hook above.
+Consulte el ejemplo para el hook `tablename_after_insert` anterior.
 
 
 
 ## `tablename_before_delete()`
 
 
-Called before deleting a record (and before performing child records
-check). If you open the generated `hooks/tablename.php` file in a text
-editor (where tablename is the name of the concerned table), you can see
-this function defined as follows:
+Llamado antes de eliminar un registro (y antes de realizar la verificación de registros
+secundarios). Si abre el archivo `hooks/tablename.php` generado en un editor de texto
+(donde tablename es el nombre de la tabla en cuestión), puede ver
+esta función definida de la siguiente manera:
 
 ```php
 function tablename_before_delete($selectedID, &$skipChecks, $memberInfo, &$args) {
@@ -620,47 +615,46 @@ function tablename_before_delete($selectedID, &$skipChecks, $memberInfo, &$args)
 ```
 
 
-### Parameters
+### Parámetros
 
--   `$selectedID` is the primary key value of the record to be
-    deleted.
--   `$skipChecks` is a flag passed by reference that determines
-    whether child records check should be performed or not. If you set
-    \$skipChecks to `true` inside this hook function, no child
-    records check will be made. If you set it to `false` , the
-    check will be performed.
--   `$memberInfo` is an array containing details of the member
-    who signed in. Please refer to
+-   `$selectedID` es el valor de la clave principal del registro que se va a
+    eliminar.
+-   `$skipChecks` es una bandera pasada por referencia que determina
+    si se debe realizar o no la verificación de registros secundarios. Si establece
+    `$skipChecks` en `true` dentro de esta función hook, no se realizará ninguna verificación de
+    registros secundarios. Si lo establece en `false`, se realizará
+    la verificación.
+-   `$memberInfo` es una matriz que contiene detalles del miembro
+    que inició sesión. Consulte
     [memberInfo](/appgini/help/advanced-topics/hooks/memberInfo-array/)
-    for more details.
--   `$args` is currently not used but is reserved for future
-    uses.
+    para obtener más detalles.
+-   `$args` actualmente no se usa pero está reservado para usos
+    futuros.
 
 
-### Return value
+### Valor devuelto
 
-`true` to perform the delete operation or `false` to cancel
-it.
+`true` para realizar la operación de eliminación o `false` para cancelarla.
 
 
-### Example
+### Ejemplo
 
-In this example, we'll assume that our table contains a checkbox field
-named *approved* . We want to allow deleting of the record only if that
-field is not checked (set to 0). If the field is checked (set to 1), it
-won't be deleted unless the user is a member of the Admins group.
+En este ejemplo, asumiremos que nuestra tabla contiene un campo de casilla de verificación
+llamado *aprobado*. Queremos permitir la eliminación del registro solo si ese
+campo no está marcado (establecido en 0). Si el campo está marcado (establecido en 1),
+no se eliminará a menos que el usuario sea miembro del grupo Administradores.
 
 ```php
 function tablename_before_delete($selectedID, &$skipChecks, $memberInfo, &$args) {
     
-    // We'll perform the 'approved' check only if the user
-    // is not a member of the 'Admins' group.
+    // Realizaremos la verificación 'aprobado' solo si el usuario
+    // no es miembro del grupo 'Administradores'.
     
     if($memberInfo['group']!='Admins') {
         $id=makeSafe($SelectedID);
         $approved=sqlValue("select `approved` from `tablename` where `id`='$id'");
         
-        // if the record is approved, don't allow deleting it
+        // si el registro está aprobado, no permitir su eliminación
         if($approved) return false;
     }
     
@@ -668,12 +662,12 @@ function tablename_before_delete($selectedID, &$skipChecks, $memberInfo, &$args)
 }
 ```
 
-We assumed in the above example that the primary key field of the table
-is named *id*. Also, notice in line 7 the use of the `makeSafe()`
-function, which prepares variables to be used safely inside SQL queries.
-In line 8, we used the `sqlValue()` function which performs a SQL query
-that we know returns a single value. It's a shortcut function that
-saves us the effort of processing a MySQL result set.
+Asumimos en el ejemplo anterior que el campo de clave principal de la tabla
+se llama *id*. Además, observe en la línea 7 el uso de la función `makeSafe()`,
+que prepara las variables para que se usen de forma segura dentro de las consultas SQL.
+En la línea 8, usamos la función `sqlValue()` que realiza una consulta SQL
+que sabemos que devuelve un solo valor. Es una función de acceso directo que
+nos ahorra el esfuerzo de procesar un conjunto de resultados de MySQL.
 
 
 
@@ -681,9 +675,9 @@ saves us the effort of processing a MySQL result set.
 ## `tablename_after_delete()`
 
 
-Called after deleting a record. If you open the generated
-`hooks/tablename.php` file in a text editor (where tablename is the name
-of the concerned table), you can see this function defined as follows:
+Llamado después de eliminar un registro. Si abre el archivo `hooks/tablename.php` generado
+en un editor de texto (donde tablename es el nombre de la tabla en cuestión),
+puede ver esta función definida de la siguiente manera:
 
 ```php
 function tablename_after_delete($selectedID, $memberInfo, &$args) {
@@ -692,37 +686,36 @@ function tablename_after_delete($selectedID, $memberInfo, &$args) {
 ```
 
 
-### Parameters
+### Parámetros
 
--   `$selectedID` is the primary key value of the deleted
-    record.
--   `$memberInfo` is an array containing details of the member
-    who signed in. Please refer to
+-   `$selectedID` es el valor de la clave principal del registro
+    eliminado.
+-   `$memberInfo` es una matriz que contiene detalles del miembro
+    que inició sesión. Consulte
     [memberInfo](/appgini/help/advanced-topics/hooks/memberInfo-array/)
-    for more details.
--   `$args` is currently not used but is reserved for future
-    uses.
+    para obtener más detalles.
+-   `$args` actualmente no se usa pero está reservado para usos
+    futuros.
 
 
-### Return value
+### Valor devuelto
 
-None.
+Ninguno.
 
 
-### Example
+### Ejemplo
 
-This example logs the date and time a record was deleted and who deleted
-it.
+Este ejemplo registra la fecha y hora en que se eliminó un registro y quién lo eliminó.
 
 ```php
 function tablename_after_delete($selectedID, $memberInfo, &$args) {
-    // log file
+    // archivo de registro
     $logFile='deletes.log';
     
-    // attempt to open the log file for appending
+    // intentar abrir el archivo de registro para agregar
     if(!$fp = @fopen($logFile, 'a')) return;
     
-    // write log data: date/time, username, IP, record ID
+    // escribir datos de registro: fecha/hora, nombre de usuario, IP, ID de registro
     $datetime=date('r');
     fwrite($fp, "$datetime,{$memberInfo['username']},{$memberInfo['IP']},$selectedID\n");
     fclose($fp);
@@ -735,10 +728,10 @@ function tablename_after_delete($selectedID, $memberInfo, &$args) {
 ## `tablename_dv()`
 
 
-Called when a user requests to view the detail view (before displaying
-the detail view). If you open the generated `hooks/tablename.php` file
-in a text editor (where tablename is the name of the concerned table),
-you can see this function defined as follows:
+Llamado cuando un usuario solicita ver la vista detallada (antes de mostrar
+la vista detallada). Si abre el archivo `hooks/tablename.php` generado
+en un editor de texto (donde tablename es el nombre de la tabla en cuestión),
+puede ver esta función definida de la siguiente manera:
 
 ```php
 function tablename_dv($selectedID, $memberInfo, &$html, &$args) {
@@ -747,41 +740,40 @@ function tablename_dv($selectedID, $memberInfo, &$html, &$args) {
 ```
 
 
-### Parameters
+### Parámetros
 
--   `$selectedID` The primary key value of the record selected.
-    It's set to `false` if no record is selected (i.e. the
-    detail view will be displayed to enter a new record).
--   `$memberInfo` is an array containing details of the member
-    who signed in. Please refer to
+-   `$selectedID` El valor de la clave principal del registro seleccionado.
+    Se establece en `false` si no se selecciona ningún registro (es decir, la
+    vista detallada se mostrará para ingresar un nuevo registro).
+-   `$memberInfo` es una matriz que contiene detalles del miembro
+    que inició sesión. Consulte
     [memberInfo](/appgini/help/advanced-topics/hooks/memberInfo-array/)
-    for more details.
--   `$html` (passed by reference so that it can be modified
-    inside this hook function) the HTML code of the form ready to be
-    displayed. This could be useful for manipulating the code before
-    displaying it using regular expressions, \... etc.
--   `$args` is currently not used but is reserved for future
-    uses.
+    para obtener más detalles.
+-   `$html` (pasado por referencia para que pueda modificarse
+    dentro de esta función hook) el código HTML del formulario listo para ser
+    mostrado. Esto podría ser útil para manipular el código antes de
+    mostrarlo usando expresiones regulares, etc.
+-   `$args` actualmente no se usa pero está reservado para usos
+    futuros.
 
 
-### Return value
+### Valor devuelto
 
-None.
+Ninguno.
 
 
-### Example
+### Ejemplo
 
-The following example sets the price field as read-only for non-admin
-users. The example demonstrates how to \"inject\" JavaScript code to the
-detail view to change its behavior. Please note that setting a field as
-read-only via JavaScript is not sufficient to prevent modifying it.
-Power users can easily circumvent this. So, you have to also force this
-server-side, for example using the [before_update
-hook](#tablename_before_update) .
+El siguiente ejemplo establece el campo de precio como de solo lectura para usuarios que no son administradores.
+El ejemplo demuestra cómo "inyectar" código JavaScript en la
+vista detallada para cambiar su comportamiento. Tenga en cuenta que establecer un campo como
+de solo lectura a través de JavaScript no es suficiente para evitar su modificación.
+Los usuarios avanzados pueden eludir esto fácilmente. Por lo tanto, también debe forzar esto
+del lado del servidor, por ejemplo, usando el hook [before_update](#tablename_before_update).
 
 ```php
 function tablename_dv($selectedID, $memberInfo, &$html, &$args) {
-    /* current user is not an admin? */
+    /* ¿el usuario actual no es un administrador? */
     if($mi['group'] != 'Admins') {
         ob_start();
         ?>
@@ -802,10 +794,10 @@ function tablename_dv($selectedID, $memberInfo, &$html, &$args) {
 ## `tablename_csv()`
 
 
-Called when a user requests to download table data as a CSV file (by
-clicking the SAVE CSV button). If you open the generated
-`hooks/tablename.php` file in a text editor (where tablename is the name
-of the concerned table), you can see this function defined as follows:
+Llamado cuando un usuario solicita descargar datos de la tabla como un archivo CSV (haciendo
+clic en el botón GUARDAR CSV). Si abre el archivo `hooks/tablename.php` generado
+en un editor de texto (donde tablename es el nombre de la tabla en cuestión),
+puede ver esta función definida de la siguiente manera:
 
 ```php
 function tablename_csv($query, $memberInfo, $args) {
@@ -815,34 +807,34 @@ function tablename_csv($query, $memberInfo, $args) {
 ```
 
 
-### Parameters
+### Parámetros
 
--   `$query` contains the query that will be executed to return
-    the data in the CSV file.
--   `$memberInfo` is an array containing details of the member
-    who signed in. Please refer to
+-   `$query` contiene la consulta que se ejecutará para devolver
+    los datos en el archivo CSV.
+-   `$memberInfo` es una matriz que contiene detalles del miembro
+    que inició sesión. Consulte
     [memberInfo](/appgini/help/advanced-topics/hooks/memberInfo-array/)
-    for more details.
--   `$args` is currently not used but is reserved for future
-    uses.
+    para obtener más detalles.
+-   `$args` actualmente no se usa pero está reservado para usos
+    futuros.
 
 
-### Return value
+### Valor devuelto
 
-A string containing the query to use for fetching the CSV data. If
-`false` or empty is returned, the default query is used.
+Una cadena que contiene la consulta que se usará para obtener los datos CSV. Si
+se devuelve `false` o vacío, se usa la consulta predeterminada.
 
 
-### Example
+### Ejemplo
 
-The following example modifies the SQL query used to limit records
-retrieved to 10 records only if the user requesting the CSV file is not
-an admin.
+El siguiente ejemplo modifica la consulta SQL utilizada para limitar los registros
+recuperados a solo 10 registros si el usuario que solicita el archivo CSV no es
+un administrador.
 
 ```php
 function tablename_csv($query, $memberInfo, $args) {
 
-    // return only the first 10 records for non-admin users.
+    // devolver solo los primeros 10 registros para usuarios que no son administradores.
     if($memberInfo['group']!='Admins') {
         $query.=" limit 10";
     }
@@ -850,6 +842,3 @@ function tablename_csv($query, $memberInfo, $args) {
     return $query;
 }
 ```
-
-
-

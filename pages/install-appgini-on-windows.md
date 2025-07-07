@@ -1,73 +1,72 @@
 ---
-title: Install AppGini on Windows
-linkTitle: Installing AppGini
+title: Instalar AppGini en Windows
+linkTitle: Instalación de AppGini
 slug: help/install-appgini-on-windows
-description: Learn how to install AppGini on your Windows computer.
-keywords: install, AppGini, Windows, setup, installation, uninstall, upgrade
+description: Aprenda a instalar AppGini en su computadora con Windows.
+keywords: instalar, AppGini, Windows, configuración, instalación, desinstalar, actualizar
 ---
 
-# Install AppGini on Windows
+# Instalar AppGini en Windows
 
-## System requirements
+## Requisitos del sistema
 
-AppGini runs on Windows 7 through Windows 11. It's compatible with both 32-bit and 64-bit versions of Windows. It's also compatible with Windows Server editions.
+AppGini se ejecuta en Windows 7 hasta Windows 11. Es compatible con las versiones de 32 y 64 bits de Windows. También es compatible con las ediciones de Windows Server.
 
-It's also possible to run AppGini on MacOS or Linux using a virtual machine or a compatibility layer like Wine or Crossover. You can find more information on this in the [related topics](#related-topics) section below.
+También es posible ejecutar AppGini en MacOS o Linux usando una máquina virtual o una capa de compatibilidad como Wine o Crossover. Puede encontrar más información sobre esto en la sección [Temas relacionados](#temas-relacionados) a continuación.
 
-## Installing AppGini
+## Instalación de AppGini
 
-After downloading AppGini (the [trial](https://bigprof.com/appgini/download) or [pro](https://bigprof.com/appgini/appgini-pro) version),
-you can install it by following the steps below: 
+Después de descargar AppGini (la versión de [prueba](https://bigprof.com/appgini/download) o [pro](https://bigprof.com/appgini/appgini-pro)),
+puede instalarlo siguiendo los pasos a continuación:
 
-1. Double-click the downloaded setup file.
+1. Haga doble clic en el archivo de instalación descargado.
 
-   ![Double-click the downloaded setup file](https://cdn.bigprof.com/appgini-desktop/help/downloaded-trial-exe.png)
+   ![Haga doble clic en el archivo de instalación descargado](https://cdn.bigprof.com/appgini-desktop/help/downloaded-trial-exe.png)
 
-2. Click 'Yes' if prompted by User Account Control
+2. Haga clic en 'Sí' si se lo solicita el Control de cuentas de usuario.
 
-   ![Click 'Yes' when prompted by User Account Control](https://cdn.bigprof.com/appgini-desktop/help/uac-allow-install.png)
+   ![Haga clic en 'Sí' cuando se lo solicite el Control de cuentas de usuario](https://cdn.bigprof.com/appgini-desktop/help/uac-allow-install.png)
 
-3. Click 'Next' to start the installation, and follow the steps in the setup wizard.
+3. Haga clic en 'Siguiente' para iniciar la instalación y siga los pasos del asistente de configuración.
 
-   ![Click 'Next' to start the installation](https://cdn.bigprof.com/appgini-desktop/help/setup-screen-click-next.png)
+   ![Haga clic en 'Siguiente' para iniciar la instalación](https://cdn.bigprof.com/appgini-desktop/help/setup-screen-click-next.png)
 
-   Setup will take a few seconds to prepare the installation.
+   La configuración tardará unos segundos en preparar la instalación.
 
-   ![Setup progress](https://cdn.bigprof.com/appgini-desktop/help/setup-screen-progress.png)
+   ![Progreso de la configuración](https://cdn.bigprof.com/appgini-desktop/help/setup-screen-progress.png)
 
-4. Click 'Finish' to complete the installation.
+4. Haga clic en 'Finalizar' para completar la instalación.
 
-   ![Click 'Finish' to complete the installation](https://cdn.bigprof.com/appgini-desktop/help/setup-screen-finish.png)
+   ![Haga clic en 'Finalizar' para completar la instalación](https://cdn.bigprof.com/appgini-desktop/help/setup-screen-finish.png)
 
-5. AppGini is now installed on your computer. You can start it by double-clicking the desktop shortcut or by clicking the start menu shortcut.
-   
-   If you can't see the shortcut in the start menu, you can type `AppGini` in the search box to find it.
+5. AppGini ya está instalado en su computadora. Puede iniciarlo haciendo doble clic en el acceso directo del escritorio o haciendo clic en el acceso directo del menú de inicio.
 
-   ![Start menu shortcut](https://cdn.bigprof.com/appgini-desktop/help/start-appgini.png)
+   Si no puede ver el acceso directo en el menú de inicio, puede escribir `AppGini` en el cuadro de búsqueda para encontrarlo.
 
-6. The first time you run AppGini, you'll be asked to choose how you want to begin your work. You can choose to create a new project, open an existing project, among other options.
+   ![Acceso directo del menú de inicio](https://cdn.bigprof.com/appgini-desktop/help/start-appgini.png)
 
-   ![How do you want to begin your work?](https://cdn.bigprof.com/appgini-desktop/help/first-run.png)
+6. La primera vez que ejecute AppGini, se le pedirá que elija cómo desea comenzar su trabajo. Puede elegir crear un nuevo proyecto, abrir un proyecto existente, entre otras opciones.
 
-## Upgrading an existing installation
+   ![¿Cómo desea comenzar su trabajo?](https://cdn.bigprof.com/appgini-desktop/help/first-run.png)
 
-If you're upgrading from a previous version of AppGini, you can install the new version over the old one. Your existing projects and settings will be preserved.
-You can follow the same steps above to install the new version. Just make sure to close AppGini before starting the installation.
+## Actualización de una instalación existente
 
-## Uninstalling AppGini
+Si está actualizando desde una versión anterior de AppGini, puede instalar la nueva versión sobre la anterior. Sus proyectos y configuraciones existentes se conservarán.
+Puede seguir los mismos pasos anteriores para instalar la nueva versión. Solo asegúrese de cerrar AppGini antes de iniciar la instalación.
 
-To uninstall AppGini, you can use the 'Add or remove programs' feature in Windows. Here's how:
+## Desinstalación de AppGini
 
-1. Open the 'Add or remove programs' window by typing 'Add or remove programs' in the start menu search box and clicking the result.
+Para desinstalar AppGini, puede usar la función 'Agregar o quitar programas' en Windows. He aquí cómo:
 
-2. Find 'AppGini' in the list of installed programs, click it, and then click 'Uninstall'.
+1. Abra la ventana 'Agregar o quitar programas' escribiendo 'Agregar o quitar programas' en el cuadro de búsqueda del menú de inicio y haciendo clic en el resultado.
 
-3. Follow the steps in the uninstall wizard to remove AppGini from your computer.
+2. Busque 'AppGini' en la lista de programas instalados, haga clic en él y luego haga clic en 'Desinstalar'.
 
-   After uninstalling AppGini, you can delete the installation folder to remove any remaining files.
+3. Siga los pasos del asistente de desinstalación para eliminar AppGini de su computadora.
 
-## Related topics
+   Después de desinstalar AppGini, puede eliminar la carpeta de instalación para eliminar los archivos restantes.
 
-- [Installing AppGini on MacOS or Linux](https://bigprof.com/appgini/tips-and-tutorials/install-appgini-on-ubuntu-linux)
-- [Installing AppGini on a remotely-hosted Windows VM](https://bigprof.com/appgini/easy-way-to-use-appgini-on-mac-osx-and-linux)
+## Temas relacionados
 
+- [Instalación de AppGini en MacOS o Linux](https://bigprof.com/appgini/tips-and-tutorials/install-appgini-on-ubuntu-linux)
+- [Instalación de AppGini en una VM de Windows alojada de forma remota](https://bigprof.com/appgini/easy-way-to-use-appgini-on-mac-osx-and-linux)

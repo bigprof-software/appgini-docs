@@ -1,24 +1,23 @@
 ---
-title: memberInfo array
-linkTitle: memberInfo array
+title: Matriz memberInfo
+linkTitle: Matriz memberInfo
 slug: help/advanced-topics/hooks/memberInfo-array
-description: Learn about the memberInfo array that is passed to many hook functions in AppGini, and contains the info of the currently logged member.
-keywords: memberInfo, array, logged member, username, groupID, group, admin, email, IP, custom fields, getMemberInfo
+description: Aprenda sobre la matriz memberInfo que se pasa a muchas funciones hook en AppGini y que contiene la información del miembro actualmente conectado.
+keywords: memberInfo, matriz, miembro conectado, nombre de usuario, groupID, grupo, admin, correo electrónico, IP, campos personalizados, getMemberInfo
 ---
 
-# memberInfo array
+# Matriz memberInfo
 
-`$memberInfo` is an associative array containing logged member's info. The array contains the following keys:
+`$memberInfo` es una matriz asociativa que contiene la información del miembro conectado. La matriz contiene las siguientes claves:
 
-*   `username`: the member username.
-*   `groupID`: the numeric ID of the member's group.
-*   `group`: the name of the member's group.
-*   `admin`: true for admin member, false for others.
-*   `email`: the email address of the member.
-*   `IP`: the IP address from where the member is currently logged.
-*   `custom`: a numeric array containing the values of custom fields for the member. Custom fields can be defined via the admin settings page in the admin area of your AppGini application. Currently up to 4 custom fields are supported. So, to access the value of the first custom field for the member, you can use `$memberInfo['custom'][0]`.
+*   `username`: el nombre de usuario del miembro.
+*   `groupID`: el ID numérico del grupo del miembro.
+*   `group`: el nombre del grupo del miembro.
+*   `admin`: verdadero para el miembro administrador, falso para los demás.
+*   `email`: la dirección de correo electrónico del miembro.
+*   `IP`: la dirección IP desde la que el miembro está actualmente conectado.
+*   `custom`: una matriz numérica que contiene los valores de los campos personalizados para el miembro. Los campos personalizados se pueden definir a través de la página de configuración de administración en el área de administración de su aplicación AppGini. Actualmente se admiten hasta 4 campos personalizados. Por lo tanto, para acceder al valor del primer campo personalizado para el miembro, puede usar `$memberInfo['custom'][0]`.
 
-The `$memberInfo` array is passed to many hook functions, both [global](/appgini/help/advanced-topics/hooks/global-hooks/) and [table-specific](/appgini/help/advanced-topics/hooks/table-specific-hooks/). For example, you can access the username of the currently logged member in a hook function by using `$memberInfo['username']`.
+La matriz `$memberInfo` se pasa a muchas funciones hook, tanto [globales](/appgini/help/advanced-topics/hooks/global-hooks/) como [específicas de tabla](/appgini/help/advanced-topics/hooks/table-specific-hooks/). Por ejemplo, puede acceder al nombre de usuario del miembro actualmente conectado en una función hook usando `$memberInfo['username']`.
 
-> **Tip:** You can retrieve this array in your own code by calling the function `getMemberInfo()`, which returns this array.
-
+> **Consejo:** Puede recuperar esta matriz en su propio código llamando a la función `getMemberInfo()`, que devuelve esta matriz.

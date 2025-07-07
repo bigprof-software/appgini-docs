@@ -1,251 +1,250 @@
 ---
-title: Working with tables and records
-linkTitle: Working with tables and records
+title: Trabajar con tablas y registros
+linkTitle: Trabajar con tablas y registros
 slug: help/working-with-generated-web-database-application/working-with-tables-and-records
-keywords: tables, records, table view, detail view, homepage, filters, sorting, pagination, child records, export records, print records
-description: Learn how to work with tables and records in your AppGini application. This page explains the homepage, table view, detail view, and how to filter, sort, and export records.
+keywords: tablas, registros, vista de tabla, vista detallada, página de inicio, filtros, ordenación, paginación, registros secundarios, exportar registros, imprimir registros
+description: Aprenda a trabajar con tablas y registros en su aplicación AppGini. Esta página explica la página de inicio, la vista de tabla, la vista detallada y cómo filtrar, ordenar y exportar registros.
 ---
 
-# Working with tables and records
+# Trabajar con tablas y registros
 
-After [setting up your AppGini application](setup.md), you can start
-working with your tables and records. This page will guide you through
-the process of working with tables and records in your AppGini
-application.
+Después de [configurar su aplicación AppGini](setup.md), puede comenzar a
+trabajar con sus tablas y registros. Esta página lo guiará a través del
+proceso de trabajo con tablas y registros en su aplicación AppGini.
 
-## The application homepage
+## La página de inicio de la aplicación
 
-This page provides links to accessible tables in your application,
-depending on the group permissions of the logged user. In the following
-screenshot, we can see the homepage of the [Northwind sample application](https://northwind.demos.appgini.com/).
+Esta página proporciona enlaces a las tablas accesibles en su aplicación,
+dependiendo de los permisos de grupo del usuario que ha iniciado sesión. En la siguiente
+captura de pantalla, podemos ver la página de inicio de la [aplicación de ejemplo Northwind](https://northwind.demos.appgini.com/).
 
-![app homepage](https://cdn.bigprof.com/images/northwind-app-homepage-24.15.png "app homepage")
+![página de inicio de la aplicación](https://cdn.bigprof.com/images/northwind-app-homepage-24.15.png "página de inicio de la aplicación")
 
-### Table groups
+### Grupos de tablas
 
-The homepage shows a list of tables accessible to the current user. AppGini allows
-you to group related tables together by configuring **table groups** under the [table properties pane](../working-with-projects/table-properties-pane.md).
-The homepage would then show these groups as collapsible sections, as shown in the screenshot above.
+La página de inicio muestra una lista de tablas accesibles para el usuario actual. AppGini permite
+agrupar tablas relacionadas configurando **grupos de tablas** en el [panel de propiedades de la tabla](../working-with-projects/table-properties-pane.md).
+La página de inicio mostraría entonces estos grupos como secciones desplegables, como se muestra en la captura de pantalla anterior.
 
-### Hide link in homepage
+### Ocultar enlace en la página de inicio
 
-The [table properties pane](../working-with-projects/table-properties-pane.md) in AppGini also allows you to control whether a table is shown in the homepage or not.
-This can be done by checking the option **Hide link in homepage** in the table properties pane.
+El [panel de propiedades de la tabla](../working-with-projects/table-properties-pane.md) en AppGini también le permite controlar si una tabla se muestra en la página de inicio o no.
+Esto se puede hacer marcando la opción **Ocultar enlace en la página de inicio** en el panel de propiedades de la tabla.
 
-### Table view title
+### Título de la vista de tabla
 
-The title of each table in the homepage is shown as a link. Clicking this link will take you to the table view page for that table.
-You can customize the title of each table in the homepage by setting the **Table view title** option in the [table properties pane](../working-with-projects/table-properties-pane.md).
+El título de cada tabla en la página de inicio se muestra como un enlace. Al hacer clic en este enlace, accederá a la página de vista de tabla para esa tabla.
+Puede personalizar el título de cada tabla en la página de inicio configurando la opción **Título de la vista de tabla** en el [panel de propiedades de la tabla](../working-with-projects/table-properties-pane.md).
 
-### Description
+### Descripción
 
-You can also add a description to each table in the homepage by setting the **Description** option in the [table properties pane](../working-with-projects/table-properties-pane.md).
-You can use HTML tags in the description to format it as needed. Please note that based on the length of the description, it may be partially hidden in the homepage, and
-a vertical scrollbar will appear to allow you to scroll through the description.
+También puede agregar una descripción a cada tabla en la página de inicio configurando la opción **Descripción** en el [panel de propiedades de la tabla](../working-with-projects/table-properties-pane.md).
+Puede usar etiquetas HTML en la descripción para formatearla según sea necesario. Tenga en cuenta que, según la longitud de la descripción, puede ocultarse parcialmente en la página de inicio y
+aparecerá una barra de desplazamiento vertical para permitirle desplazarse por la descripción.
 
-You can control the height of the description box in the homepage by setting the **Height of table panel in homepage (pixels)**
-option in the [project properties pane](../working-with-projects/project-properties-pane.md).
+Puede controlar la altura del cuadro de descripción en la página de inicio configurando la opción **Altura del panel de la tabla en la página de inicio (píxeles)**
+en el [panel de propiedades del proyecto](../working-with-projects/project-properties-pane.md).
 
-### Table icon
+### Icono de tabla
 
-You can set an icon for each table in the homepage by setting the **Table icon** option in the [table properties pane](../working-with-projects/table-properties-pane.md).
-You can set this option by clicking the icon to the left of the table name in the table properties pane.
+Puede establecer un icono para cada tabla en la página de inicio configurando la opción **Icono de tabla** en el [panel de propiedades de la tabla](../working-with-projects/table-properties-pane.md).
+Puede establecer esta opción haciendo clic en el icono a la izquierda del nombre de la tabla en el panel de propiedades de la tabla.
 
-### Show record count in homepage
+### Mostrar recuento de registros en la página de inicio
 
-The option **Show record count in homepage** in the [table properties pane](../working-with-projects/table-properties-pane.md)
-in AppGini can be used to display the number of records in each table in the homepage.
-This displays the number of records *accessible* to the current user rather than the total number of records in the table.
+La opción **Mostrar recuento de registros en la página de inicio** en el [panel de propiedades de la tabla](../working-with-projects/table-properties-pane.md)
+en AppGini se puede usar para mostrar el número de registros en cada tabla en la página de inicio.
+Esto muestra el número de registros *accesibles* para el usuario actual en lugar del número total de registros en la tabla.
 
-### Allow adding new records from homepage
+### Permitir agregar nuevos registros desde la página de inicio
 
-The option **Allow adding new records from homepage** in the [table properties pane](../working-with-projects/table-properties-pane.md)
-in AppGini can be used to display an "Add new" button in the homepage for each table.
-Clicking this button will display a modal dialog to add a new record to the table, as shown in the screenshot below.
+La opción **Permitir agregar nuevos registros desde la página de inicio** en el [panel de propiedades de la tabla](../working-with-projects/table-properties-pane.md)
+en AppGini se puede usar para mostrar un botón "Agregar nuevo" en la página de inicio para cada tabla.
+Al hacer clic en este botón, se mostrará un cuadro de diálogo modal para agregar un nuevo registro a la tabla, como se muestra en la captura de pantalla a continuación.
 
-![add new order from homepage](https://cdn.bigprof.com/images/northwind-add-new-order-from-homepage-24.15.png "add new order from homepage")
+![agregar nuevo pedido desde la página de inicio](https://cdn.bigprof.com/images/northwind-add-new-order-from-homepage-24.15.png "agregar nuevo pedido desde la página de inicio")
 
-### Searching for tables
+### Búsqueda de tablas
 
-*Available in AppGini 24.13 and later*
+*Disponible en AppGini 24.13 y versiones posteriores*
 
-The homepage also includes a search box at the top to allow you to search for a specific table by its name.
-This is useful when you have a large number of tables in your application. 
+La página de inicio también incluye un cuadro de búsqueda en la parte superior para permitirle buscar una tabla específica por su nombre.
+Esto es útil cuando tiene una gran cantidad de tablas en su aplicación.
 
-![search for tables](https://cdn.bigprof.com/screencasts/live-search-in-homepage.gif "search for tables")
+![buscar tablas](https://cdn.bigprof.com/screencasts/live-search-in-homepage.gif "buscar tablas")
 
-You can programmatically hide the search box by adding this code to the `hooks/header-extras.php` file:
+Puede ocultar mediante programación el cuadro de búsqueda agregando este código al archivo `hooks/header-extras.php`:
 
 ```html
 <script>AppGini.disableHomePageSearch = true;</script>
 ```
 
-By default, you can search for table names only. If you want to search for table descriptions as well, you can add this code to the `hooks/header-extras.php` file:
+De forma predeterminada, solo puede buscar nombres de tablas. Si también desea buscar descripciones de tablas, puede agregar este código al archivo `hooks/header-extras.php`:
 
 ```html
 <script>AppGini.homePageSearchDescriptions = true;</script>
 ```
 
-### Displaying the table navigation menus in the homepage
+### Visualización de los menús de navegación de tablas en la página de inicio
 
-*Available in AppGini 24.14 and later*
+*Disponible en AppGini 24.14 y versiones posteriores*
 
-You can display the navigation menus in the homepage by adding this code to the `hooks/__bootstrap.php` file:
+Puede mostrar los menús de navegación en la página de inicio agregando este código al archivo `hooks/__bootstrap.php`:
 
 ```php
 <?php define('HOMEPAGE_NAVMENUS', true); ?>
 ```
 
-> **Note:** If the `hooks/__bootstrap.php` file doesn't exist, just create it as an empty file in the `hooks` folder of your project, then add the above code to it.
+> **Nota:** Si el archivo `hooks/__bootstrap.php` no existe, simplemente créelo como un archivo vacío en la carpeta `hooks` de su proyecto, luego agréguele el código anterior.
 
-## The Table View page
+## La página de vista de tabla
 
-Clicking on a table link in the homepage takes you to the table view page.
-Here you can navigate data records of your table and edit, add and
-delete records. As shown in the figure below, the table view shows data
-in a table where records appear in rows, and each column represents a
-field of the table.
+Al hacer clic en un enlace de tabla en la página de inicio, accederá a la página de vista de tabla.
+Aquí puede navegar por los registros de datos de su tabla y editar, agregar y
+eliminar registros. Como se muestra en la figura siguiente, la vista de tabla muestra los datos
+en una tabla donde los registros aparecen en filas y cada columna representa un
+campo de la tabla.
 
-![customers table view](https://cdn.bigprof.com/images/northwind-customers-tv-24.15.png "customers table view")
+![vista de tabla de clientes](https://cdn.bigprof.com/images/northwind-customers-tv-24.15.png "vista de tabla de clientes")
 
-To change the displayed column headers, you can set the **Caption** property of each field in the [field properties pane](../working-with-projects/field-properties-pane.md).
+Para cambiar los encabezados de columna mostrados, puede establecer la propiedad **Título** de cada campo en el [panel de propiedades del campo](../working-with-projects/field-properties-pane.md).
 
-### Sorting records
+### Ordenación de registros
 
-Column headers can be clicked to sort records by the clicked column. 
-Clicking a column header once sorts the records in ascending order, and clicking it again sorts the records in descending order.
-The following screenshot shows the customers table sorted by the 'Country' column in ascending order.
+Se puede hacer clic en los encabezados de las columnas para ordenar los registros por la columna en la que se hizo clic.
+Al hacer clic en el encabezado de una columna una vez, los registros se ordenan en orden ascendente, y al hacer clic de nuevo, los registros se ordenan en orden descendente.
+La siguiente captura de pantalla muestra la tabla de clientes ordenada por la columna 'País' en orden ascendente.
 
-![customers tv sorted by country](https://cdn.bigprof.com/images/northwind-customers-tv-sorted-by-country-24.15.png "customers tv sorted by country")
+![tv de clientes ordenada por país](https://cdn.bigprof.com/images/northwind-customers-tv-sorted-by-country-24.15.png "tv de clientes ordenada por país")
 
-To sort by multiple columns, click the [**Filter** button](#filtering-records) above the table. From there, you can add multiple sorting criteria.
+Para ordenar por varias columnas, haga clic en el botón [**Filtro**](#filtrado-de-registros) sobre la tabla. Desde allí, puede agregar múltiples criterios de ordenación.
 
-### Quick search
+### Búsqueda rápida
 
-The quick search box above the table allows you to search for records containing a specific value in any of the fields.
-The quick search is case-insensitive and searches for the entered value in all fields of the table.
-The matching records are displayed in the table view, with the matching text highlighted in a different style, as shown in the screenshot below.
+El cuadro de búsqueda rápida sobre la tabla le permite buscar registros que contengan un valor específico en cualquiera de los campos.
+La búsqueda rápida no distingue entre mayúsculas y minúsculas y busca el valor ingresado en todos los campos de la tabla.
+Los registros coincidentes se muestran en la vista de tabla, con el texto coincidente resaltado en un estilo diferente, como se muestra en la captura de pantalla a continuación.
 
-![customers tv quick search](https://cdn.bigprof.com/images/northwind-customers-tv-quick-search-24.15.png "customers tv quick search")
+![búsqueda rápida de tv de clientes](https://cdn.bigprof.com/images/northwind-customers-tv-quick-search-24.15.png "búsqueda rápida de tv de clientes")
 
-To clear the quick search, click the **(X)** button at the right end of the quick search box.
+Para borrar la búsqueda rápida, haga clic en el botón **(X)** en el extremo derecho del cuadro de búsqueda rápida.
 
-### Filtering records
+### Filtrado de registros
 
-While quick search allows you to search for records containing a specific value in any field, 
-filtering allows you to search for records based on more granular criteria.
-For example, the screenshot below shows the filters page where we are filtering customers from the United States,
-who have placed orders with a total value between $20,000 and $100,000.
+Si bien la búsqueda rápida le permite buscar registros que contengan un valor específico en cualquier campo,
+el filtrado le permite buscar registros según criterios más granulares.
+Por ejemplo, la captura de pantalla a continuación muestra la página de filtros donde estamos filtrando clientes de los Estados Unidos,
+que han realizado pedidos con un valor total entre $20,000 y $100,000.
 
-![customers tv filters](https://cdn.bigprof.com/images/northwind-customers-filters-example.png "customers tv filters")
+![filtros de tv de clientes](https://cdn.bigprof.com/images/northwind-customers-filters-example.png "filtros de tv de clientes")
 
-To filter records, click the **Filter** button above the table view. This will display the filters page, 
-where you can set and combine multiple filters to search for specific records.
+Para filtrar registros, haga clic en el botón **Filtro** sobre la vista de tabla. Esto mostrará la página de filtros,
+donde puede establecer y combinar múltiples filtros para buscar registros específicos.
 
-The filters page also allows users to specify a more granular sorting order for the records,
-allowing sorting by up to four fields in ascending or descending order.
+La página de filtros también permite a los usuarios especificar un orden de clasificación más granular para los registros,
+permitiendo la clasificación por hasta cuatro campos en orden ascendente o descendente.
 
-Users can also filter records based on ownership, allowing them to filter records owned by themselves, their group, or all records.
-This section is displayed only if the current user has the access to records of their group or all records.
+Los usuarios también pueden filtrar registros según la propiedad, lo que les permite filtrar registros de su propiedad, de su grupo o todos los registros.
+Esta sección se muestra solo si el usuario actual tiene acceso a los registros de su grupo o a todos los registros.
 
-> **Pro Tip:** You can use the [Search Page Maker plugin](https://bigprof.com/appgini/applications/search-page-maker-plugin) to replace
-> the default filters page with a more customized and user-friendly search page. For example, the screenshot below shows the
-> same filters from the previous screenshot, but defined in a more user-friendly way using the Search Page Maker plugin.
+> **Consejo profesional:** Puede utilizar el [plugin Creador de páginas de búsqueda](https://bigprof.com/appgini/applications/search-page-maker-plugin) para reemplazar
+> la página de filtros predeterminada con una página de búsqueda más personalizada y fácil de usar. Por ejemplo, la captura de pantalla a continuación muestra los
+> mismos filtros de la captura de pantalla anterior, pero definidos de una manera más fácil de usar utilizando el plugin Creador de páginas de búsqueda.
 >
-> ![customers tv filters spm](https://cdn.bigprof.com/images/northwind-customers-filters-spm.png "customers tv filters spm")
+> ![filtros spm de tv de clientes](https://cdn.bigprof.com/images/northwind-customers-filters-spm.png "filtros spm de tv de clientes")
 
-After defining the filters, click the **Apply filters** button to apply the filters and display the filtered records in the table view.
-Columns that are used in the filters would show a filter icon in the column header, as shown in the screenshot below.
+Después de definir los filtros, haga clic en el botón **Aplicar filtros** para aplicar los filtros y mostrar los registros filtrados en la vista de tabla.
+Las columnas que se utilizan en los filtros mostrarán un icono de filtro en el encabezado de la columna, como se muestra en la captura de pantalla a continuación.
 
-![customers tv filters applied](https://cdn.bigprof.com/images/northwind-customers-tv-filters-applied-24.15.png "customers tv filters applied")
+![filtros aplicados de tv de clientes](https://cdn.bigprof.com/images/northwind-customers-tv-filters-applied-24.15.png "filtros aplicados de tv de clientes")
 
-To clear the filters, click the **Show All** button at the top of the table view.
+Para borrar los filtros, haga clic en el botón **Mostrar todo** en la parte superior de la vista de tabla.
 
-### Exporting records to CSV
+### Exportación de registros a CSV
 
-You can export the records in the current table view to a CSV file by clicking the **Save CSV** button above the table.
-This will download a CSV file containing the records in the current table view. If you've applied any filters, quick search, or sorting,
-the exported CSV file will contain only the records that match the applied filters and sorting.
+Puede exportar los registros de la vista de tabla actual a un archivo CSV haciendo clic en el botón **Guardar CSV** sobre la tabla.
+Esto descargará un archivo CSV que contiene los registros de la vista de tabla actual. Si ha aplicado filtros, búsqueda rápida u ordenación,
+el archivo CSV exportado contendrá solo los registros que coincidan con los filtros y la ordenación aplicados.
 
-Once you've exported the records to a CSV file, you can open it in a spreadsheet application like Microsoft Excel or Google Sheets.
-From there, you can analyze the data, create charts, or share the data with others.
+Una vez que haya exportado los registros a un archivo CSV, puede abrirlo en una aplicación de hoja de cálculo como Microsoft Excel o Google Sheets.
+Desde allí, puede analizar los datos, crear gráficos o compartir los datos con otros.
 
-![customers tv csv](https://cdn.bigprof.com/images/northwind-customers-tv-csv-24.15.png "customers tv csv")
+![csv de tv de clientes](https://cdn.bigprof.com/images/northwind-customers-tv-csv-24.15.png "csv de tv de clientes")
 
-### Printing records
+### Impresión de registros
 
-You can print the records in the current table view by clicking the **Print Preview** button above the table.
-This will display *all* records in the current table view in a print-friendly format, without pagination.
-If you've applied any filters, quick search, or sorting, the print preview will contain only the records that match the applied filters and sorting.
+Puede imprimir los registros de la vista de tabla actual haciendo clic en el botón **Vista previa de impresión** sobre la tabla.
+Esto mostrará *todos* los registros de la vista de tabla actual en un formato imprimible, sin paginación.
+Si ha aplicado filtros, búsqueda rápida u ordenación, la vista previa de impresión contendrá solo los registros que coincidan con los filtros y la ordenación aplicados.
 
-From the print preview, you can use the browser's print functionality to print the records or save them as a PDF file.
+Desde la vista previa de impresión, puede utilizar la funcionalidad de impresión del navegador para imprimir los registros o guardarlos como un archivo PDF.
 
-![customers tvp](https://cdn.bigprof.com/images/northwind-customers-tvp-24.15.png "customers tvp")
+![tvp de clientes](https://cdn.bigprof.com/images/northwind-customers-tvp-24.15.png "tvp de clientes")
 
-### Viewing the SQL query of the current table view
+### Visualización de la consulta SQL de la vista de tabla actual
 
-*Available in AppGini 24.11 and later*
+*Disponible en AppGini 24.11 y versiones posteriores*
 
-If you are signed in as the super admin, you can view the SQL query used to fetch the records displayed in the current table view.
-This can be useful for creating custom reports or for debugging purposes. If the current table view is filtered, the SQL query will include the filters applied.
-To display the SQL query, click the **SQL** button above the table view.
+Si ha iniciado sesión como superadministrador, puede ver la consulta SQL utilizada para obtener los registros que se muestran en la vista de tabla actual.
+Esto puede ser útil para crear informes personalizados o para fines de depuración. Si la vista de tabla actual está filtrada, la consulta SQL incluirá los filtros aplicados.
+Para mostrar la consulta SQL, haga clic en el botón **SQL** sobre la vista de tabla.
 
-To copy the SQL query, just click anywhere in the SQL query box. This would copy the entire query to your clipboard, ready to be pasted into your favorite SQL editor.
-To hide the SQL query, click the **SQL** button again.
+Para copiar la consulta SQL, simplemente haga clic en cualquier parte del cuadro de consulta SQL. Esto copiará toda la consulta a su portapapeles, lista para pegarla en su editor SQL favorito.
+Para ocultar la consulta SQL, vuelva a hacer clic en el botón **SQL**.
 
-![customers tv sql query](https://cdn.bigprof.com/images/northwind-customers-tv-sql-query-24.15.png "customers tv sql query")
+![consulta sql de tv de clientes](https://cdn.bigprof.com/images/northwind-customers-tv-sql-query-24.15.png "consulta sql de tv de clientes")
 
-To enable this feature, check the option **Allow admin access to table view SQL** under the **Security settings** section of the project properties pane in AppGini.
+Para habilitar esta función, marque la opción **Permitir acceso de administrador a SQL de vista de tabla** en la sección **Configuración de seguridad** del panel de propiedades del proyecto en AppGini.
 
-### Hide/Show columns
+### Ocultar/Mostrar columnas
 
-It's useful when there are many columns in a table to hide some of them to focus on the most important ones.
-To do so, click the **Hide/Show columns** icon at the top right of the table view. This will display a dialog
-where you can select which columns to hide or show. These settings are saved in the browser's local storage, 
-so they persist across sessions for each user.
+Es útil cuando hay muchas columnas en una tabla ocultar algunas de ellas para centrarse en las más importantes.
+Para ello, haga clic en el icono **Ocultar/Mostrar columnas** en la parte superior derecha de la vista de tabla. Esto mostrará un cuadro de diálogo
+donde puede seleccionar qué columnas ocultar o mostrar. Estas configuraciones se guardan en el almacenamiento local del navegador,
+por lo que persisten entre sesiones para cada usuario.
 
-![customers tv show hide columns](https://cdn.bigprof.com/images/northwind-customers-tv-show-hide-columns-24.15.png "customers tv show hide columns")
+![mostrar ocultar columnas de tv de clientes](https://cdn.bigprof.com/images/northwind-customers-tv-show-hide-columns-24.15.png "mostrar ocultar columnas de tv de clientes")
 
-### Applying actions to multiple records
+### Aplicación de acciones a múltiples registros
 
-You can apply actions to multiple records in the table view by selecting the records you want to apply the action to.
-Once you select one or more records, a **More** button appears at the top of the table view. Clicking this button displays a menu with the available actions.
+Puede aplicar acciones a múltiples registros en la vista de tabla seleccionando los registros a los que desea aplicar la acción.
+Una vez que seleccione uno o más registros, aparecerá un botón **Más** en la parte superior de la vista de tabla. Al hacer clic en este botón, se muestra un menú con las acciones disponibles.
 
-![customers tv more menu](https://cdn.bigprof.com/images/northwind-customers-tv-more-menu-24.15.png "customers tv more menu")
+![menú más de tv de clientes](https://cdn.bigprof.com/images/northwind-customers-tv-more-menu-24.15.png "menú más de tv de clientes")
 
-The available actions depend on the permissions of the logged user. For example,
-super admins can delete multiple records at once, and can change the ownership of multiple records at once.
+Las acciones disponibles dependen de los permisos del usuario que ha iniciado sesión. Por ejemplo,
+los superadministradores pueden eliminar múltiples registros a la vez y pueden cambiar la propiedad de múltiples registros a la vez.
 
-For users who can access the detail view (inclucing the super admin), the **Print Preview Detail View** action is available.
-This action allows you to print the detail view of multiple records at once.
+Para los usuarios que pueden acceder a la vista detallada (incluido el superadministrador), está disponible la acción **Vista previa de impresión de vista detallada**.
+Esta acción le permite imprimir la vista detallada de múltiples registros a la vez.
 
-You can [add custom actions to this menu by using hooks](../advanced-topics/hooks/multiple-record-batch-actions.md).
+Puede [agregar acciones personalizadas a este menú mediante hooks](../advanced-topics/hooks/multiple-record-batch-actions.md).
 
-### Child records
+### Registros secundarios
 
-*Available in AppGini 23.15 and later*
+*Disponible en AppGini 23.15 y versiones posteriores*
 
-If a table has a one-to-many relationship with another table (see [lookup fields](../working-with-projects/understanding-lookup-fields.md)),
-you can [configure](../working-with-projects/understanding-lookup-fields.md#parentchildren-settings) the parent table to display a child info column for some or all of its child tables.
-For example, you can display the count of orders of each customer in the customers table view, in the *Customer's orders* column.
-In the same columns, you can directly create a new order for a customer by clicking the **+** button.
+Si una tabla tiene una relación de uno a muchos con otra tabla (consulte [campos de búsqueda](../working-with-projects/understanding-lookup-fields.md)),
+puede [configurar](../working-with-projects/understanding-lookup-fields.md#parentchildren-settings) la tabla principal para mostrar una columna de información secundaria para algunas o todas sus tablas secundarias.
+Por ejemplo, puede mostrar el recuento de pedidos de cada cliente en la vista de tabla de clientes, en la columna *Pedidos del cliente*.
+En las mismas columnas, puede crear directamente un nuevo pedido para un cliente haciendo clic en el botón **+**.
 
-![customers orders modal](https://cdn.bigprof.com/images/northwind-customers-orders-modal-24.15.png "customers orders modal")
+![modal de pedidos de clientes](https://cdn.bigprof.com/images/northwind-customers-orders-modal-24.15.png "modal de pedidos de clientes")
 
-### Pagination
+### Paginación
 
-If the table has many records, the table view is paginated. You can navigate between pages using the pagination controls at the bottom of the table view.
-These include the **Previous** and **Next** buttons. You can also jump to a specific page using the **Go to page** dropdown.
+Si la tabla tiene muchos registros, la vista de tabla está paginada. Puede navegar entre páginas utilizando los controles de paginación en la parte inferior de la vista de tabla.
+Estos incluyen los botones **Anterior** y **Siguiente**. También puede saltar a una página específica utilizando el menú desplegable **Ir a la página**.
 
-![customers tv goto page number](https://cdn.bigprof.com/images/northwind-customers-tv-goto-page-number-24.15.png "customers tv goto page number")
+![número de página de ir a tv de clientes](https://cdn.bigprof.com/images/northwind-customers-tv-goto-page-number-24.15.png "número de página de ir a tv de clientes")
 
-As of AppGini 24.15, you can also control the number of records displayed per page by clicking the **Records per page** dropdown.
-This setting is saved in the browser's local storage, so it persists across sessions for each user, for each table.
+A partir de AppGini 24.15, también puede controlar el número de registros que se muestran por página haciendo clic en el menú desplegable **Registros por página**.
+Esta configuración se guarda en el almacenamiento local del navegador, por lo que persiste entre sesiones para cada usuario, para cada tabla.
 
-![customers tv records per page](https://cdn.bigprof.com/images/northwind-customers-tv-records-per-page-24.15.png "customers tv records per page")
+![registros por página de tv de clientes](https://cdn.bigprof.com/images/northwind-customers-tv-records-per-page-24.15.png "registros por página de tv de clientes")
 
-If you want to change the available options in the **Records per page** dropdown, you can do so by adding this JavaScript code to
-the `hooks/footer-extras.php` or `hooks/header-extras.php` file:
+Si desea cambiar las opciones disponibles en el menú desplegable **Registros por página**, puede hacerlo agregando este código JavaScript al
+archivo `hooks/footer-extras.php` o `hooks/header-extras.php`:
 
 ```html
 <script>
@@ -253,119 +252,118 @@ the `hooks/footer-extras.php` or `hooks/header-extras.php` file:
 </script>
 ```
 
-Adjust the values in the array to match the desired options.
+Ajuste los valores de la matriz para que coincidan con las opciones deseadas.
 
 ---
 
-## The Detail View
+## La vista detallada
 
-Clicking on a record in the table view takes you to the detail view page.
-Here you can view and edit the details of the selected record. The detail view page
-shows the record fields in a form layout, where you can edit the values of the fields.
+Al hacer clic en un registro en la vista de tabla, accederá a la página de vista detallada.
+Aquí puede ver y editar los detalles del registro seleccionado. La página de vista detallada
+muestra los campos del registro en un diseño de formulario, donde puede editar los valores de los campos.
 
-![customer detail view](https://cdn.bigprof.com/images/northwind-customers-dv-full-permissions-24.15.png "customer detail view")
+![vista detallada del cliente](https://cdn.bigprof.com/images/northwind-customers-dv-full-permissions-24.15.png "vista detallada del cliente")
 
-The above screenshot shows the detail view of a customer record in the 
-[Northwind sample application](https://northwind.demos.appgini.com/customers_view.php?SelectedID=ANATR).
-The user has full permissions on this table, so they can view, edit and delete the record. For users
-with limited permissions, some of the actions may be unavailable. For example, a user with read-only permissions
-will see the detail view like this:
+La captura de pantalla anterior muestra la vista detallada de un registro de cliente en la
+[aplicación de ejemplo Northwind](https://northwind.demos.appgini.com/customers_view.php?SelectedID=ANATR).
+El usuario tiene todos los permisos en esta tabla, por lo que puede ver, editar y eliminar el registro. Para los usuarios
+con permisos limitados, algunas de las acciones pueden no estar disponibles. Por ejemplo, un usuario con permisos de solo lectura
+verá la vista detallada así:
 
-![customer detail view read-only](https://cdn.bigprof.com/images/northwind-customers-dv-read-only-24.15.png "customer detail view read-only")
+![vista detallada del cliente de solo lectura](https://cdn.bigprof.com/images/northwind-customers-dv-read-only-24.15.png "vista detallada del cliente de solo lectura")
 
-For clarity, let's assign a number to each section of the detail view so we can refer to them in the explanations below:
+Para mayor claridad, asignemos un número a cada sección de la vista detallada para poder hacer referencia a ellas en las explicaciones siguientes:
 
-![customer detail view sections](https://cdn.bigprof.com/images/northwind-customers-dv-full-permissions-labeled-24.15.png "customer detail view sections")
+![secciones de la vista detallada del cliente](https://cdn.bigprof.com/images/northwind-customers-dv-full-permissions-labeled-24.15.png "secciones de la vista detallada del cliente")
 
-### Detail view main header (1)
+### Encabezado principal de la vista detallada (1)
 
-The main header of the detail view shows the title of the table, as specified in the caption property of the table properties pane in AppGini.
-It also shows the table icon, also specified in the table properties pane. If the user has the permission to insert new records, an **Add New** button is displayed here.
+El encabezado principal de la vista detallada muestra el título de la tabla, como se especifica en la propiedad de título del panel de propiedades de la tabla en AppGini.
+También muestra el icono de la tabla, también especificado en el panel de propiedades de la tabla. Si el usuario tiene permiso para insertar nuevos registros, aquí se muestra un botón **Agregar nuevo**.
 
-### Detail view title (2)
+### Título de la vista detallada (2)
 
-The title of the detail view is shown at the top of the form. This title is specified in the **Detail view title** property of the table properties pane in AppGini.
+El título de la vista detallada se muestra en la parte superior del formulario. Este título se especifica en la propiedad **Título de la vista detallada** del panel de propiedades de la tabla en AppGini.
 
-### Admin info button (3)
+### Botón de información de administrador (3)
 
-If the current user is a super admin, an **Admin info** button is displayed at the top right of the detail view.
-Clicking this button displays a dialog that displays the record owner, owner group, and the record creation and last modification dates.
-It also allows the super admin to assign the record to a different owner, show all records of the owner or their group, and email the owner
-or the owner group.
+Si el usuario actual es un superadministrador, se muestra un botón **Información de administrador** en la parte superior derecha de la vista detallada.
+Al hacer clic en este botón, se muestra un cuadro de diálogo que muestra el propietario del registro, el grupo propietario y las fechas de creación y última modificación del registro.
+También permite al superadministrador asignar el registro a un propietario diferente, mostrar todos los registros del propietario o su grupo, y enviar un correo electrónico al propietario
+o al grupo propietario.
 
-![customer detail view admin info](https://cdn.bigprof.com/images/northwind-customers-dv-admin-info-menu-24.15.png "customer detail view admin info")
+![información de administrador de la vista detallada del cliente](https://cdn.bigprof.com/images/northwind-customers-dv-admin-info-menu-24.15.png "información de administrador de la vista detallada del cliente")
 
-### Child record links (4)
+### Enlaces de registros secundarios (4)
 
-If the current table has a one-to-many relationship with another table, and the child link is [configured](../working-with-projects/understanding-lookup-fields.md#parentchildren-settings)
-to be displayed in the detail view, the child record links are displayed here. Clicking the link opens the table view of the child table, 
-filtered to show only the child records related to the current record.
+Si la tabla actual tiene una relación de uno a muchos con otra tabla, y el enlace secundario está [configurado](../working-with-projects/understanding-lookup-fields.md#parentchildren-settings)
+para mostrarse en la vista detallada, aquí se muestran los enlaces de registros secundarios. Al hacer clic en el enlace, se abre la vista de tabla de la tabla secundaria,
+filtrada para mostrar solo los registros secundarios relacionados con el registro actual.
 
-### Detail view layout toolbar (5)
+### Barra de herramientas de diseño de vista detallada (5)
 
-*Available in AppGini 24.14 and later*
+*Disponible en AppGini 24.14 y versiones posteriores*
 
-The detail view layout toolbar allows users to switch between different layouts of the detail view.
-Based on the screen width, users may be able to switch between 1-column, 2-column, or 3-column layouts.
-The sast-selected layout is saved in the browser's local storage, so it persists across sessions for each user
-for each table.
+La barra de herramientas de diseño de vista detallada permite a los usuarios cambiar entre diferentes diseños de la vista detallada.
+Según el ancho de la pantalla, los usuarios pueden cambiar entre diseños de 1, 2 o 3 columnas.
+El último diseño seleccionado se guarda en el almacenamiento local del navegador, por lo que persiste entre sesiones para cada usuario
+para cada tabla.
 
-![customer detail view layout toolbar](https://cdn.bigprof.com/screencasts/dv-layout-switcher.gif "customer detail view layout toolbar")
+![barra de herramientas de diseño de vista detallada del cliente](https://cdn.bigprof.com/screencasts/dv-layout-switcher.gif "barra de herramientas de diseño de vista detallada del cliente")
 
-### Detail view actions (6)
+### Acciones de la vista detallada (6)
 
-The detail view actions allow users to perform various actions on the current record. The available actions depend on the permissions of the logged user.
-The **< Back** button allows users to return to the table view. 
+Las acciones de la vista detallada permiten a los usuarios realizar diversas acciones en el registro actual. Las acciones disponibles dependen de los permisos del usuario que ha iniciado sesión.
+El botón **< Atrás** permite a los usuarios volver a la vista de tabla.
 
-The **Print Preview** button allows users to preview a read-only version of the current record
-for printing or saving as a PDF.
+El botón **Vista previa de impresión** permite a los usuarios obtener una vista previa de una versión de solo lectura del registro actual
+para imprimir o guardar como PDF.
 
-![customer detail view print preview](https://cdn.bigprof.com/images/northwind-customers-dvp-24.15.png "customer detail view print preview")
+![vista previa de impresión de la vista detallada del cliente](https://cdn.bigprof.com/images/northwind-customers-dvp-24.15.png "vista previa de impresión de la vista detallada del cliente")
 
-The print preview page can be easily customized to control the number of columns and display/hide child records.
+La página de vista previa de impresión se puede personalizar fácilmente para controlar el número de columnas y mostrar/ocultar registros secundarios.
 
-If the user has the permission to edit the current record, the **Save Changes** button is displayed. Similarly, if the user has the permission to delete the current record,
-the **Delete** button is displayed.
+Si el usuario tiene permiso para editar el registro actual, se muestra el botón **Guardar cambios**. Del mismo modo, si el usuario tiene permiso para eliminar el registro actual,
+se muestra el botón **Eliminar**.
 
-To allow easier navigation between records, the **Previous** and **Next** buttons are displayed. These buttons allow users to navigate to the previous or next record
-without returning to the table view. The order of records is based on the currently applied filters and sorting.
+Para facilitar la navegación entre registros, se muestran los botones **Anterior** y **Siguiente**. Estos botones permiten a los usuarios navegar al registro anterior o siguiente
+sin volver a la vista de tabla. El orden de los registros se basa en los filtros y la ordenación aplicados actualmente.
 
-### Detail view fields (7)
+### Campos de la vista detallada (7)
 
-The detail view fields show the values of the record fields. The fields are displayed in the same
-order as they are defined in AppGini, rather than the order they are defined in the database.
-You can control the order of fields by moving them up or down in the project browser pane in AppGini.
+Los campos de la vista detallada muestran los valores de los campos del registro. Los campos se muestran en el mismo
+orden en que se definen en AppGini, en lugar del orden en que se definen en la base de datos.
+Puede controlar el orden de los campos moviéndolos hacia arriba o hacia abajo en el panel del explorador de proyectos en AppGini.
 
-If the current user doesn't have the permission to edit fields, the fields are displayed in a read-only mode.
+Si el usuario actual no tiene permiso para editar campos, los campos se muestran en modo de solo lectura.
 
-### Child record tabs (8)
+### Pestañas de registros secundarios (8)
 
-If the current table has a one-to-many relationship with one or more child tables,
-and the child tabs are [configured](../working-with-projects/understanding-lookup-fields.md#parentchildren-settings)
-to be displayed in the detail view, the child record tabs are displayed here. The tab title and icon can be
-configured as well.
+Si la tabla actual tiene una relación de uno a muchos con una o más tablas secundarias,
+y las pestañas secundarias están [configuradas](../working-with-projects/understanding-lookup-fields.md#parentchildren-settings)
+para mostrarse en la vista detallada, aquí se muestran las pestañas de registros secundarios. El título y el icono de la pestaña también se pueden
+configurar.
 
-Only users with the permission to view the child records will see the child tabs.
+Solo los usuarios con permiso para ver los registros secundarios verán las pestañas secundarias.
 
-### Adding new child records (9)
+### Adición de nuevos registros secundarios (9)
 
-If the current user has the permission to add new records to a child table, an **Add New** button is displayed at the top of that child tab.
-Clicking this button opens a modal dialog to add a new record to the child table, with the parent lookup field pre-filled with
-the current record's value (so that the new child record is automatically linked to the current parent record).
+Si el usuario actual tiene permiso para agregar nuevos registros a una tabla secundaria, se muestra un botón **Agregar nuevo** en la parte superior de esa pestaña secundaria.
+Al hacer clic en este botón, se abre un cuadro de diálogo modal para agregar un nuevo registro a la tabla secundaria, con el campo de búsqueda principal rellenado previamente con
+el valor del registro actual (para que el nuevo registro secundario se vincule automáticamente al registro principal actual).
 
-### Child table headers (10)
+### Encabezados de tabla secundaria (10)
 
-The child table headers show the title (caption) of the fields in the child table. The title of each field can be customized in the field properties pane in AppGini.
-Clicking a column header sorts the child records by that column in ascending order. Clicking the same column header again sorts the records in descending order.
+Los encabezados de la tabla secundaria muestran el título (leyenda) de los campos de la tabla secundaria. El título de cada campo se puede personalizar en el panel de propiedades del campo en AppGini.
+Al hacer clic en el encabezado de una columna, los registros secundarios se ordenan por esa columna en orden ascendente. Al hacer clic de nuevo en el mismo encabezado de columna, los registros se ordenan en orden descendente.
 
-### Open child record detail view (11)
+### Abrir vista detallada de registro secundario (11)
 
-Clicking this icon opens the detail view of the child record in a modal dialog. 
-This allows users to view and, if they have the permission, edit or delete the child record without leaving the parent record detail view.
-After editing the child record, the child records tab is refreshed to reflect the changes.
+Al hacer clic en este icono, se abre la vista detallada del registro secundario en un cuadro de diálogo modal.
+Esto permite a los usuarios ver y, si tienen permiso, editar o eliminar el registro secundario sin salir de la vista detallada del registro principal.
+Después de editar el registro secundario, la pestaña de registros secundarios se actualiza para reflejar los cambios.
 
-### Child records pagination (12)
+### Paginación de registros secundarios (12)
 
-This sections shows the pagination controls for the child records and the current position in the pagination.
-If there is only one page of child records, the pagination controls are hidden.
-
+Esta sección muestra los controles de paginación para los registros secundarios y la posición actual en la paginación.
+Si solo hay una página de registros secundarios, los controles de paginación están ocultos.

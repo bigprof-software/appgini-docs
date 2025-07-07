@@ -1,28 +1,28 @@
-# AppGini Documentation
+# Documentación de AppGini
 
-This repository contains the source files (in Markdown format) used for the [AppGini documentation](https://bigprof.com/appgini/help).
+Este repositorio contiene los archivos fuente (en formato Markdown) utilizados para la [documentación de AppGini](https://bigprof.com/appgini/help).
 
-[AppGini](https://bigprof.com/appgini/) is a web application development environment that dramatically reduces the time and effort required to create data-driven web applications.
-It enables you to create data-driven web applications without having to write any code. You can use it to create custom web applications for
-managing your data, your processes, and your customers.
+[AppGini](https://bigprof.com/appgini/) es un entorno de desarrollo de aplicaciones web que reduce drásticamente el tiempo y el esfuerzo necesarios para crear aplicaciones web basadas en datos.
+Permite crear aplicaciones web basadas en datos sin tener que escribir ningún código. Puede utilizarlo para crear aplicaciones web personalizadas para
+gestionar sus datos, sus procesos y sus clientes.
 
-## Document format
+## Formato del documento
 
-The documentation is written in extended Markdown format. Each page is a separate Markdown file in the `pages` directory.
-This directory contains subdirectories for each section of the documentation, such as `working-with-projects`, `advanced-topics`, etc.
-The `index.md` file in each subdirectory is the main page for that section.
+La documentación está escrita en formato Markdown extendido. Cada página es un archivo Markdown independiente en el directorio `pages`.
+Este directorio contiene subdirectorios para cada sección de la documentación, como `working-with-projects`, `advanced-topics`, etc.
+El archivo `index.md` de cada subdirectorio es la página principal de esa sección.
 
-*Front matter* is used to specify various information about each page. Currently supported front matter fields are:
+La *información preliminar* (front matter) se utiliza para especificar diversa información sobre cada página. Actualmente, los campos de información preliminar admitidos son:
 
-* `title`: The title of the page (applied to the `<title>` tag in the generated HTML, as well as the page heading).
-* `description`: A brief description of the page's content, applied to the `<meta name="description">` tag in the generated HTML.
-* `keywords`: A comma-separated list of keywords for the page, applied to the `<meta name="keywords">` tag in the generated HTML.
-* `linkTitle`: The title of the page as it *should* appear in the TOC men. Typically, this is a shorter version of the `title` field.
-* `slug`: The URL of the page, relative to the root of the documentation. For example, `help/working-with-projects`.
+* `title`: El título de la página (aplicado a la etiqueta `<title>` en el HTML generado, así como al encabezado de la página).
+* `description`: Una breve descripción del contenido de la página, aplicada a la etiqueta `<meta name="description">` en el HTML generado.
+* `keywords`: Una lista de palabras clave separadas por comas para la página, aplicada a la etiqueta `<meta name="keywords">` en el HTML generado.
+* `linkTitle`: El título de la página tal como *debería* aparecer en el menú TDC (Tabla de Contenidos). Normalmente, esta es una versión más corta del campo `title`.
+* `slug`: La URL de la página, relativa a la raíz de la documentación. Por ejemplo, `help/working-with-projects`.
 
-In general, the front matter follows the same rules of [Hugo static site generator](https://gohugo.io/content-management/front-matter/),
-though Hugo is not used to generate this documentation. Only the yaml dialect of front matter is supported.
+En general, la información preliminar sigue las mismas reglas del [generador de sitios estáticos Hugo](https://gohugo.io/content-management/front-matter/),
+aunque Hugo no se utiliza para generar esta documentación. Solo se admite el dialecto yaml de la información preliminar.
 
-## Contributing
+## Contribuir
 
-If you'd like to contribute to the documentation, please fork this repository, make your changes, and submit a pull request.
+Si desea contribuir a la documentación, por favor, haga un fork de este repositorio, realice sus cambios y envíe una pull request.

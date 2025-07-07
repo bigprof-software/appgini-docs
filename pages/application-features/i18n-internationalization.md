@@ -1,119 +1,119 @@
 ---
-title: Internationalization (i18n) and localizing your AppGini app
-linkTitle: Internationalization (i18n)
+title: Internacionalización (i18n) y localización de su aplicación AppGini
+linkTitle: Internacionalización (i18n)
 slug: help/application-features/i18n-internationalization
-description: Learn how to localize your AppGini app to any language you want, including translating the app interface, table and field names, and more.
-keywords: internationalization, i18n, localization, language, translate, translation, localizing, localisation, appgini, app, application, table, field, name, title, interface, detail view, home page, group, title, application title, child table, tab, column, programmatically, access, localized, strings
+description: Aprenda cómo localizar su aplicación AppGini a cualquier idioma que desee, incluida la traducción de la interfaz de la aplicación, los nombres de tablas y campos, y más.
+keywords: internacionalización, i18n, localización, idioma, traducir, traducción, localizar, appgini, app, aplicación, tabla, campo, nombre, título, interfaz, vista detallada, página de inicio, grupo, título, título de la aplicación, tabla secundaria, pestaña, columna, programáticamente, acceso, cadenas localizadas
 ---
 
-# Internationalization (i18n) and localizing your AppGini app
+# Internacionalización (i18n) y localización de su aplicación AppGini
 
-AppGini applications are internationalization-ready, meaning you can easily localize your app to any language you want. 
-This is done by translating the generated `language.php` file, which contains all the strings used in your app interface.
+Las aplicaciones AppGini están preparadas para la internacionalización, lo que significa que puede localizar fácilmente su aplicación a cualquier idioma que desee.
+Esto se hace traduciendo el archivo `language.php` generado, que contiene todas las cadenas utilizadas en la interfaz de su aplicación.
 
-> AppGini provides a built-in translation tool to help you with this task as we'll see below.
-> So you should not manually edit the `language.php` file.
+> AppGini proporciona una herramienta de traducción integrada para ayudarlo con esta tarea, como veremos a continuación.
+> Por lo tanto, no debe editar manualmente el archivo `language.php`.
 
-In this page, we'll discuss how to localize your AppGini app to a new language. We'll also discuss how
-to localize able and field names, which are not included in the `language.php` file.
+En esta página, analizaremos cómo localizar su aplicación AppGini a un nuevo idioma. También analizaremos cómo
+localizar nombres de tablas y campos, que no están incluidos en el archivo `language.php`.
 
-## Localizing your app interface (`language.php`)
+## Localización de la interfaz de su aplicación (`language.php`)
 
-### Downloading a pre-translated language file
+### Descarga de un archivo de idioma pretraducido
 
-AppGini users have contributed translations to many languages. 
-These are available for download from the [language files page](https://bigprof.com/appgini/download-language-files).
-check that page to see if a translation for your desired language is already available. If it is, you can download it
-into your application's main directory, replacing the existing `language.php` file.
+Los usuarios de AppGini han contribuido con traducciones a muchos idiomas.
+Están disponibles para descargar desde la [página de archivos de idioma](https://bigprof.com/appgini/download-language-files).
+Consulte esa página para ver si ya hay disponible una traducción para el idioma deseado. Si es así, puede descargarla
+en el directorio principal de su aplicación, reemplazando el archivo `language.php` existente.
 
-As we introduce new features and strings in AppGini, the language file might become incomplete,
-so you might need to update it from time to time.
+A medida que introducimos nuevas funciones y cadenas en AppGini, el archivo de idioma puede quedar incompleto,
+por lo que es posible que deba actualizarlo de vez en cuando.
 
-In case you need to translate your app to a language that is not available in the language files page,
-or if you need to update an existing translation, you can use the built-in translation tool in AppGini.
+En caso de que necesite traducir su aplicación a un idioma que no está disponible en la página de archivos de idioma,
+o si necesita actualizar una traducción existente, puede utilizar la herramienta de traducción integrada en AppGini.
 
-### Using the built-in translation tool
+### Uso de la herramienta de traducción integrada
 
-Starting with AppGini 22.11, we've added a built-in translation tool to help you translate your app to any language you want.
-To use this tool, follow these steps:
+A partir de AppGini 22.11, hemos agregado una herramienta de traducción integrada para ayudarlo a traducir su aplicación a cualquier idioma que desee.
+Para utilizar esta herramienta, siga estos pasos:
 
-1. Sign in to your application as admin.
-2. Click the 'Admin area' link at the top of the page.
-3. Open the 'Utilities' menu and click 'Translation tool'.
+1. Inicie sesión en su aplicación como administrador.
+2. Haga clic en el enlace 'Área de administración' en la parte superior de la página.
+3. Abra el menú 'Utilidades' y haga clic en 'Herramienta de traducción'.
 
-Here is a video showing how to use the translation tool:
+Aquí hay un video que muestra cómo usar la herramienta de traducción:
 
 <video style="width: 100%; height: auto;" controls>
   <source src="https://cdn.bigprof.com/screencasts/appgini-22.11-translation-tool.mp4" type="video/mp4">
-  Your browser does not support the video tag.
+  Su navegador no es compatible con la etiqueta de video.
 </video>
 
-In the above video, we're translating the words 'Admin area' into the Arabic words 'منطقة الإدارة'. 
+En el video anterior, estamos traduciendo las palabras 'Admin area' a las palabras árabes 'منطقة الإدارة'.
 
-### Language fallback
+### Reserva de idioma
 
-If a string is not found in the `language.php` file, AppGini will fall back to the English string,
-which is included in the generated `defaultLang.php` file.
+Si no se encuentra una cadena en el archivo `language.php`, AppGini recurrirá a la cadena en inglés,
+que se incluye en el archivo `defaultLang.php` generado.
 
-## Right to left (RTL) languages
+## Idiomas de derecha a izquierda (RTL)
 
-AppGini supports right-to-left (RTL) languages, such as Arabic and Hebrew. 
-To enable RTL support in your app, open your application's project file in AppGini,
-click the 'Application theme' icon in the toolbar, and check the 'RTL' checkbox.
+AppGini admite idiomas de derecha a izquierda (RTL), como el árabe y el hebreo.
+Para habilitar la compatibilidad con RTL en su aplicación, abra el archivo de proyecto de su aplicación en AppGini,
+haga clic en el icono 'Tema de la aplicación' en la barra de herramientas y marque la casilla de verificación 'RTL'.
 
-![Enable RTL support in your app](https://cdn.bigprof.com/images/enable-rtl-layout.png "Enable RTL support in your app")
+![Habilitar compatibilidad con RTL en su aplicación](https://cdn.bigprof.com/images/enable-rtl-layout.png "Habilitar compatibilidad con RTL en su aplicación")
 
-## Localizing table and field names
+## Localización de nombres de tablas y campos
 
-The `language.php` file contains strings used in the app interface, such as buttons, labels, and messages.
-However, it does not contain table and field names. To localize these, you can open the AXP project file in AppGini,
-click on the table or field you want to localize, and enter the localized name in the 'Caption' box.
+El archivo `language.php` contiene cadenas utilizadas en la interfaz de la aplicación, como botones, etiquetas y mensajes.
+Sin embargo, no contiene nombres de tablas y campos. Para localizarlos, puede abrir el archivo de proyecto AXP en AppGini,
+hacer clic en la tabla o campo que desea localizar e ingresar el nombre localizado en el cuadro 'Título'.
 
-![Localizing table and field names](https://cdn.bigprof.com/images/localize-table-field-names.png "Localizing table and field names")
+![Localización de nombres de tablas y campos](https://cdn.bigprof.com/images/localize-table-field-names.png "Localización de nombres de tablas y campos")
 
-## Localizing the detail view (record editing form) title
+## Localización del título de la vista detallada (formulario de edición de registros)
 
-By default, the title of the detail view (record editing form) is 'Detail view'. You can localize this title
-by opening the AXP project file in AppGini, clicking the table you want to localize, and entering the localized
-title in the 'Detail view title' box. See the screenshot below:
+De forma predeterminada, el título de la vista detallada (formulario de edición de registros) es 'Vista detallada'. Puede localizar este título
+abriendo el archivo de proyecto AXP en AppGini, haciendo clic en la tabla que desea localizar e ingresando el título localizado
+en el cuadro 'Título de la vista detallada'. Vea la captura de pantalla a continuación:
 
-![How to change the detail view title](https://cdn.bigprof.com/images/detail-view-title.png "How to change the detail view title")
+![Cómo cambiar el título de la vista detallada](https://cdn.bigprof.com/images/detail-view-title.png "Cómo cambiar el título de la vista detallada")
 
-And here is the detail view of the orders table with the localized German title 'Bestelldetails':
+Y aquí está la vista detallada de la tabla de pedidos con el título localizado en alemán 'Bestelldetails':
 
-![Detail view with localized title](https://cdn.bigprof.com/images/detail-view-localized-title.png "Detail view with localized title")
+![Vista detallada con título localizado](https://cdn.bigprof.com/images/detail-view-localized-title.png "Vista detallada con título localizado")
 
-## Localizing the home page table group titles
+## Localización de los títulos de los grupos de tablas de la página de inicio
 
-AppGini allows you to group similar tables under a common title in the home page.
-This makes it easier for users to navigate your app. You can use localized titles for these groups.
-To set the table group title:
+AppGini le permite agrupar tablas similares bajo un título común en la página de inicio.
+Esto facilita a los usuarios la navegación por su aplicación. Puede utilizar títulos localizados para estos grupos.
+Para establecer el título del grupo de tablas:
 
-1. Open the AXP project file in AppGini.
-2. Click the table you want to localize.
-3. Click the button titled 'Table group' to open the 'Table groups' dialog.
-4. Click the table group you want to localize.
-5. Press **`F2`** or the 'Rename' button to rename the group.
+1. Abra el archivo de proyecto AXP en AppGini.
+2. Haga clic en la tabla que desea localizar.
+3. Haga clic en el botón titulado 'Grupo de tablas' para abrir el cuadro de diálogo 'Grupos de tablas'.
+4. Haga clic en el grupo de tablas que desea localizar.
+5. Presione **`F2`** o el botón 'Renombrar' para renombrar el grupo.
 
-![Localizing table group titles](https://cdn.bigprof.com/images/localize-table-group-titles.png "Localizing table group titles")
+![Localización de títulos de grupos de tablas](https://cdn.bigprof.com/images/localize-table-group-titles.png "Localización de títulos de grupos de tablas")
 
-Here is the home page of the app with the table group title localized to Greek:
+Aquí está la página de inicio de la aplicación con el título del grupo de tablas localizado al griego:
 
-![Home page with localized table group title](https://cdn.bigprof.com/images/home-page-localized-table-group-title.png "Home page with localized table group title")
+![Página de inicio con título de grupo de tablas localizado](https://cdn.bigprof.com/images/home-page-localized-table-group-title.png "Página de inicio con título de grupo de tablas localizado")
 
-> **Note**: After renaming the table group to some non-Latin characters, you might see question marks or other unexpected characters in the group title
-> in AppGini. This is a known issue in AppGini and does not affect the actual display of the group title in the app.
+> **Nota**: Después de cambiar el nombre del grupo de tablas a algunos caracteres no latinos, es posible que vea signos de interrogación u otros caracteres inesperados en el título del grupo
+> en AppGini. Este es un problema conocido en AppGini y no afecta la visualización real del título del grupo en la aplicación.
 
-## Localizing the application title
+## Localización del título de la aplicación
 
-The application title is displayed in the browser's title bar and in the top-left corner of the app.
-You can set it to a localized title by opening the AXP project file in AppGini, clicking the topmost node
-in the project browser tree at the left, then pressing **`F2`** to rename the application. Underscores in the application name
-will be replaced with spaces in the displayed title.
+El título de la aplicación se muestra en la barra de título del navegador y en la esquina superior izquierda de la aplicación.
+Puede establecerlo en un título localizado abriendo el archivo de proyecto AXP en AppGini, haciendo clic en el nodo superior
+en el árbol del explorador de proyectos a la izquierda, luego presionando **`F2`** para cambiar el nombre de la aplicación. Los guiones bajos en el nombre de la aplicación
+se reemplazarán con espacios en el título mostrado.
 
-Non-Latin characters in the application title would cause an error message and won't be accepted by AppGini.
-As a workaround, you can set the application title to a Latin name, then, after generating the app, you can
-edit the generated `hooks/header-extras.php` or `hooks/footer-extras.php` and add the following code:
+Los caracteres no latinos en el título de la aplicación provocarán un mensaje de error y AppGini no los aceptará.
+Como solución alternativa, puede establecer el título de la aplicación en un nombre latino, luego, después de generar la aplicación, puede
+editar el archivo `hooks/header-extras.php` o `hooks/footer-extras.php` generado y agregar el siguiente código:
 
 ```html
 <script>
@@ -123,52 +123,50 @@ edit the generated `hooks/header-extras.php` or `hooks/footer-extras.php` and ad
 </script>
 ```
 
-Replace the Greek text in the `appTitle` variable with your localized application title. Here is the result of the above code:
+Reemplace el texto griego en la variable `appTitle` con el título de su aplicación localizado. Aquí está el resultado del código anterior:
 
-![Home page with localized table group title](https://cdn.bigprof.com/images/home-page-localized-table-group-title.png "Home page with localized table group title")
+![Página de inicio con título de grupo de tablas localizado](https://cdn.bigprof.com/images/home-page-localized-table-group-title.png "Página de inicio con título de grupo de tablas localizado")
 
-## Localizing the titles of child tables
+## Localización de los títulos de las tablas secundarias
 
-When you have a parent table with child tables, for example, a parent table `shippers` with a child table `orders`,
-you can configure the `shippers` table to display the child orders as a tab in the detail view as shown below:
+Cuando tiene una tabla principal con tablas secundarias, por ejemplo, una tabla principal `transportistas` con una tabla secundaria `pedidos`,
+puede configurar la tabla `transportistas` para mostrar los pedidos secundarios como una pestaña en la vista detallada como se muestra a continuación:
 
-![Child table as a tab in the detail view](https://cdn.bigprof.com/images/child-table-as-tab.png "Child table as a tab in the detail view")
+![Tabla secundaria como pestaña en la vista detallada](https://cdn.bigprof.com/images/child-table-as-tab.png "Tabla secundaria como pestaña en la vista detallada")
 
-You can also display the count of child orders as a column in the parent shippers table as shown below:
+También puede mostrar el recuento de pedidos secundarios como una columna en la tabla principal de transportistas como se muestra a continuación:
 
-![Child table count as a column in the parent table](https://cdn.bigprof.com/images/child-table-count-as-column.png "Child table count as a column in the parent table")
+![Recuento de tablas secundarias como columna en la tabla principal](https://cdn.bigprof.com/images/child-table-count-as-column.png "Recuento de tablas secundarias como columna en la tabla principal")
 
-For both of the above screenshots, the title of the child orders table is set as 'Orders via shipper'. We can localize this title
-by opening the AXP project file in AppGini, clicking the parent table (in this case, `shippers`), then clicking the **Parent/children settings**
-button to open the **Parent/children settings** dialog.
+Para ambas capturas de pantalla anteriores, el título de la tabla de pedidos secundarios se establece como 'Pedidos a través del transportista'. Podemos localizar este título
+abriendo el archivo de proyecto AXP en AppGini, haciendo clic en la tabla principal (en este caso, `transportistas`), luego haciendo clic en el botón **Configuración de padre/hijo**
+para abrir el cuadro de diálogo **Configuración de padre/hijo**.
 
-![Opening the parent/children settings dialog](https://cdn.bigprof.com/images/parent-children-settings.png "Opening the parent/children settings dialog")
+![Apertura del cuadro de diálogo de configuración de padre/hijo](https://cdn.bigprof.com/images/parent-children-settings.png "Apertura del cuadro de diálogo de configuración de padre/hijo")
 
-Click the desired child table from the grid at the left if not already selected, then enter the localized title in the **Tab/Column title** box.
+Haga clic en la tabla secundaria deseada de la cuadrícula de la izquierda si aún no está seleccionada, luego ingrese el título localizado en el cuadro **Título de pestaña/columna**.
 
-> **Note**: If the title contains non-Latin characters, you might see question marks or other unexpected characters in the title in the grid.
-> This is a known issue in AppGini and does not affect the actual display of the title in the app.
+> **Nota**: Si el título contiene caracteres no latinos, es posible que vea signos de interrogación u otros caracteres inesperados en el título en la cuadrícula.
+> Este es un problema conocido en AppGini y no afecta la visualización real del título en la aplicación.
 
-## Programmatically accessing localized strings
+## Acceso programático a cadenas localizadas
 
-You can access localized strings in your hooks using the PHP variable `$Translation`. This is an associative array
-where the keys are English strings/short codes and the values are the localized strings. This variable is defined
-in `language.php` and can be made available inside any PHP hook function by including the following line at the top of the function:
+Puede acceder a cadenas localizadas en sus hooks utilizando la variable PHP `$Translation`. Esta es una matriz asociativa
+donde las claves son cadenas/códigos cortos en inglés y los valores son las cadenas localizadas. Esta variable está definida
+en `language.php` y puede estar disponible dentro de cualquier función hook de PHP incluyendo la siguiente línea en la parte superior de la función:
 
 ```php
 global $Translation;
 ```
 
-You can then access any localized string by its English string/short code as follows:
+Luego puede acceder a cualquier cadena localizada por su cadena/código corto en inglés de la siguiente manera:
 
 ```php
-echo $Translation['last modified']; // --> 'zuletzt geändert' in German
+echo $Translation['last modified']; // --> 'zuletzt geändert' en alemán
 ```
 
-You can also access localized strings using the `AppGini.Translate._map` JavaScript object. For example:
+También puede acceder a cadenas localizadas utilizando el objeto JavaScript `AppGini.Translate._map`. Por ejemplo:
 
 ```javascript
-console.log(AppGini.Translate._map['last modified']); // --> 'zuletzt geändert' in German
+console.log(AppGini.Translate._map['last modified']); // --> 'zuletzt geändert' en alemán
 ```
-
-

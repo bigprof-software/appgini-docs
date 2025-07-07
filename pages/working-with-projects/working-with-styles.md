@@ -1,24 +1,20 @@
 ---
-title: Working with styles
-linkTitle: Working with styles
+title: Trabajar con estilos
+linkTitle: Trabajar con estilos
 slug: help/working-with-projects/working-with-styles
 ---
 
-# Working with styles
+# Trabajar con estilos
 
-AppGini offers you the flexibility to control the look of the generated
-application using CSS (Cascading Style Sheets). Click on the
-**Application theme** icon on the tool bar or from the Project menu
-select **Themes** . The window below will appear.
+AppGini le ofrece la flexibilidad de controlar el aspecto de la aplicación generada
+mediante CSS (Hojas de estilo en cascada). Haga clic en el icono
+**Tema de la aplicación** de la barra de herramientas o, en el menú Proyecto,
+seleccione **Temas**. Aparecerá la siguiente ventana.
 
+![Ventana de temas de la aplicación](https://cdn.bigprof.com/appgini-desktop/help/application-theme-dialog.png "Ventana de temas de la aplicación")
 
-![Application themes window](https://cdn.bigprof.com/appgini-desktop/help/application-theme-dialog.png "Application themes window")
+Puede seleccionar un tema en el menú desplegable de la parte inferior.
 
-You can select a theme from the drop-down menu at the bottom.
+### Vista previa en el navegador web
 
-### Preview in web browser
-
-You can click on this button to preview the selected theme in your web browser. This will display a page from the Northwind demo, with the selected theme applied to it.
-
-
-
+Puede hacer clic en este botón para obtener una vista previa del tema seleccionado en su navegador web. Se mostrará una página de la demostración de Northwind, con el tema seleccionado aplicado.

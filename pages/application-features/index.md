@@ -1,23 +1,22 @@
 ---
-title: Detailed overview of AppGini and generated application features
-linkTitle: App features
+title: Descripción detallada de las características de AppGini y de las aplicaciones generadas
+linkTitle: Características de la aplicación
 slug: help/application-features
-description: Detailed overview of AppGini and generated application features.
-keywords: appgini, features, overview, generated application, app features
+description: Descripción detallada de las características de AppGini y de las aplicaciones generadas.
+keywords: appgini, características, descripción general, aplicación generada, características de la aplicación
 ---
 
-# Detailed overview of AppGini and generated application features
+# Descripción detallada de las características de AppGini y de las aplicaciones generadas
 
-The following section provides a detailed overview of the features of AppGini and the applications it generates.
-This is a work in progress and will be updated regularly.
+La siguiente sección proporciona una descripción detallada de las características de AppGini y de las aplicaciones que genera.
+Esto es un trabajo en progreso y se actualizará regularmente.
 
-## Available topics
+## Temas disponibles
 
-- [Collaboration and multi-user support](collaboration-multi-users.md)
-- [Date and datetime offsets](date-datetime-offsets.md)
-- [Internationalization](i18n-internationalization.md)
-- [Input types](input-types.md)
-- [LDAP authentication](../ldap-authentication.md)
-- [Automated record ownership](../record-owners.md)
-- [Calculated fields](../calculated-fields.md)
-
+- [Colaboración y soporte multiusuario](collaboration-multi-users.md)
+- [Desplazamientos de fecha y fecha y hora](date-datetime-offsets.md)
+- [Internacionalización](i18n-internationalization.md)
+- [Tipos de entrada](input-types.md)
+- [Autenticación LDAP](../ldap-authentication.md)
+- [Propiedad automatizada de registros](../record-owners.md)
+- [Campos calculados](../calculated-fields.md)

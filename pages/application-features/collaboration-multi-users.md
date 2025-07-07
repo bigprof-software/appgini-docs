@@ -1,274 +1,269 @@
 ---
-title: Collaboration and multi-user support
-linkTitle: Collaboration
+title: Colaboración y compatibilidad multiusuario
+linkTitle: Colaboración
 slug: help/application-features/collaboration-multi-users
-description: Learn how to manage user groups and permissions in your AppGini application, and how to configure record ownership.
-keywords: collaboration, multi-user, user groups, permissions, record ownership
+description: Aprenda a administrar grupos de usuarios y permisos en su aplicación AppGini, y cómo configurar la propiedad de los registros.
+keywords: colaboración, multiusuario, grupos de usuarios, permisos, propiedad de registros
 ---
 
-# Collaboration and multi-user support
+# Colaboración y compatibilidad multiusuario
 
-## **Quick overview**
+## **Resumen rápido**
 
-> * **AppGini applications support multiple users.**
-> * **Users are organized into groups, and each group is assigned a granular set of permissions.**
->   * **Permissions make it easy to manage access to different parts of the application.**
-> * **Users can sign up for an account, and/or be added by the admin.**
-> * **You can enable or disable anonymous access to your application.**
+> * **Las aplicaciones AppGini admiten múltiples usuarios.**
+> * **Los usuarios se organizan en grupos, y a cada grupo se le asigna un conjunto granular de permisos.**
+>   * **Los permisos facilitan la gestión del acceso a diferentes partes de la aplicación.**
+> * **Los usuarios pueden registrarse para obtener una cuenta y/o ser agregados por el administrador.**
+> * **Puede habilitar o deshabilitar el acceso anónimo a su aplicación.**
 
-AppGini applications are designed to be used by multiple users simultaneously. Users belong to groups, 
-and each group is assigned a set of permissions to access different parts of the application.
-This section provides an overview of the collaboration and multi-user support features in AppGini applications.
+Las aplicaciones AppGini están diseñadas para ser utilizadas por múltiples usuarios simultáneamente. Los usuarios pertenecen a grupos,
+y a cada grupo se le asigna un conjunto de permisos para acceder a diferentes partes de la aplicación.
+Esta sección proporciona una descripción general de las funciones de colaboración y compatibilidad multiusuario en las aplicaciones AppGini.
 
-There are two important concepts to understand when it comes to collaboration and multi-user support in AppGini applications:
+Hay dos conceptos importantes que se deben comprender cuando se trata de colaboración y compatibilidad multiusuario en las aplicaciones AppGini:
 
-1. [User groups](#user-groups)
-2. [Record ownership](#record-ownership)
+1. [Grupos de usuarios](#grupos-de-usuarios)
+2. [Propiedad de los registros](#propiedad-de-los-registros)
 
-## User groups
+## Grupos de usuarios
 
-Users in AppGini applications are organized into groups. Each group is assigned a set of permissions to access 
-different parts of the application. Permissions include the ability to view, add, edit, or delete records in a table, 
-as well as the ability to import data from CSV files.
+Los usuarios en las aplicaciones AppGini se organizan en grupos. A cada grupo se le asigna un conjunto de permisos para acceder
+a diferentes partes de la aplicación. Los permisos incluyen la capacidad de ver, agregar, editar o eliminar registros en una tabla,
+así como la capacidad de importar datos desde archivos CSV.
 
-Let's take a simple example of a small company that has a sales team, accountants and managers/admins. We can configure
-the application to have three groups: Sales, Accountants, and Admins. And we can set different permissions for each group
-for handling orders, customers and transactions, as shown in the following diagram:
+Tomemos un ejemplo simple de una pequeña empresa que tiene un equipo de ventas, contadores y gerentes/administradores. Podemos configurar
+la aplicación para que tenga tres grupos: Ventas, Contadores y Administradores. Y podemos establecer diferentes permisos para cada grupo
+para manejar pedidos, clientes y transacciones, como se muestra en el siguiente diagrama:
 
-![User groups example permissions](https://cdn.bigprof.com/images/appgini-group-permissions-diagram.png "User groups example permissions")
+![Ejemplo de permisos de grupos de usuarios](https://cdn.bigprof.com/images/appgini-group-permissions-diagram.png "Ejemplo de permisos de grupos de usuarios")
 
-Organizing users into groups makes it easy to manage permissions without having to set permissions for each user individually.
-A user who is assigned to the Sales team group will inherit the permissions assigned to the Sales group, and so on.
+Organizar a los usuarios en grupos facilita la gestión de permisos sin tener que establecer permisos para cada usuario individualmente.
+Un usuario que está asignado al grupo del equipo de Ventas heredará los permisos asignados al grupo de Ventas, y así sucesivamente.
 
-### Default user groups and the default super admin account
+### Grupos de usuarios predeterminados y la cuenta de superadministrador predeterminada
 
-When you create a new AppGini application, it comes with two default user groups: **Admins** and **anonymous**. The Admins group
-is assigned full permissions to all tables in the application, while the anonymous group is assigned no permissions by default.
+Cuando crea una nueva aplicación AppGini, viene con dos grupos de usuarios predeterminados: **Administradores** y **anónimo**. Al grupo de Administradores
+se le asignan permisos completos para todas las tablas de la aplicación, mientras que al grupo anónimo no se le asignan permisos de forma predeterminada.
 
-During [application setup](../working-with-generated-web-database-application/setup.md), you are asked to create an admin user account. 
-This account is automatically assigned to the Admins group and becomes the **super admin** account. The super admin account has full
-permissions to all tables in the application and can manage user groups and permissions.
+Durante la [configuración de la aplicación](../working-with-generated-web-database-application/setup.md), se le pide que cree una cuenta de usuario administrador.
+Esta cuenta se asigna automáticamente al grupo de Administradores y se convierte en la cuenta de **superadministrador**. La cuenta de superadministrador tiene permisos completos
+para todas las tablas de la aplicación y puede administrar grupos de usuarios y permisos.
 
-## Record ownership
+## Propiedad de los registros
 
-In addition to user groups, AppGini applications support record ownership. When a user adds a record to a table, they become the **owner**
-of that record, and their group becomes the **owner group** of the record. AppGini applications can be configured to provide record
-owners (and/or members of the record owner group) with additional permissions, such as the ability to edit or delete their own records.
+Además de los grupos de usuarios, las aplicaciones AppGini admiten la propiedad de los registros. Cuando un usuario agrega un registro a una tabla, se convierte en el **propietario**
+de ese registro, y su grupo se convierte en el **grupo propietario** del registro. Las aplicaciones AppGini se pueden configurar para proporcionar a los
+propietarios de registros (y/o miembros del grupo propietario del registro) permisos adicionales, como la capacidad de editar o eliminar sus propios registros.
 
-Administrators can view and manage record ownership, as well as transfer ownership of records between users and groups.
+Los administradores pueden ver y administrar la propiedad de los registros, así como transferir la propiedad de los registros entre usuarios y grupos.
 
-## Configuring user groups and permissions
+## Configuración de grupos de usuarios y permisos
 
-You can configure user groups and permissions in your AppGini application by sigining in as the super admin account,
-then navigating to the **Admin area**, opening the **Groups** menu and clicking on the **View groups** link. This
-would display the **Groups** page, where you can view, add, edit, and delete user groups, as well as send emails
-to group members, view group members, and view records owned by each group.
+Puede configurar grupos de usuarios y permisos en su aplicación AppGini iniciando sesión como la cuenta de superadministrador,
+luego navegando al **Área de administración**, abriendo el menú **Grupos** y haciendo clic en el enlace **Ver grupos**. Esto
+mostrará la página **Grupos**, donde puede ver, agregar, editar y eliminar grupos de usuarios, así como enviar correos electrónicos
+a los miembros del grupo, ver los miembros del grupo y ver los registros propiedad de cada grupo.
 
-![Groups page](https://cdn.bigprof.com/images/appgini-groups-page-24.15.png "Groups page")
+![Página de grupos](https://cdn.bigprof.com/images/appgini-groups-page-24.15.png "Página de grupos")
 
-## Managing groups
+## Gestión de grupos
 
-If you click the group name link, or the pencil ✏️ icon to the right of a group row, you can edit the
-group's details and permissions (privileges). This will open a page similar to this one below.
+Si hace clic en el enlace del nombre del grupo, o en el icono del lápiz ✏️ a la derecha de una fila de grupo, puede editar los
+detalles y permisos (privilegios) del grupo. Esto abrirá una página similar a la que se muestra a continuación.
 
-![Editing group permissions in an AppGini application](https://cdn.bigprof.com/images/appgini-edit-group-permissions-24.15.png?1 "Editing group permissions in an AppGini application")
+![Edición de permisos de grupo en una aplicación AppGini](https://cdn.bigprof.com/images/appgini-edit-group-permissions-24.15.png?1 "Edición de permisos de grupo en una aplicación AppGini")
 
-Let's take a closer look at the different sections of the group editing page:
+Echemos un vistazo más de cerca a las diferentes secciones de la página de edición de grupos:
 
-### Group name
-This is the name of the group. You can change it at any time. Use a descriptive name that reflects the role of the group in your application.
+### Nombre del grupo
+Este es el nombre del grupo. Puede cambiarlo en cualquier momento. Utilice un nombre descriptivo que refleje el rol del grupo en su aplicación.
 
-### Description
-This is an optional field where you can provide additional information about the group.
+### Descripción
+Este es un campo opcional donde puede proporcionar información adicional sobre el grupo.
 
-### View group members
-Clicking this button will display a list of all members of the group. You can add or remove members from the group on this page.
+### Ver miembros del grupo
+Al hacer clic en este botón se mostrará una lista de todos los miembros del grupo. Puede agregar o eliminar miembros del grupo en esta página.
 
-### Add a new member to group
-This button allows you to add a new member to the group.
+### Agregar un nuevo miembro al grupo
+Este botón le permite agregar un nuevo miembro al grupo.
 
-### View group records
-Clicking this button will display a list of all records owned by the group. You can view, edit, or delete these records on this page.
-You can filter records by table, and you can also sort them creation date, last modification date, ascending or descending.
+### Ver registros del grupo
+Al hacer clic en este botón se mostrará una lista de todos los registros propiedad del grupo. Puede ver, editar o eliminar estos registros en esta página.
+Puede filtrar registros por tabla, y también puede ordenarlos por fecha de creación, fecha de última modificación, ascendente o descendente.
 
-### Allow importing CSV files
-If checked, members of this group will be able to [import data from CSV files](importing-exporting-data.md) into the tables they have insert or edit permissions for.
+### Permitir la importación de archivos CSV
+Si está marcado, los miembros de este grupo podrán [importar datos desde archivos CSV](importing-exporting-data.md) a las tablas para las que tienen permisos de inserción o edición.
 
-### Allow visitors to sign up
-This options controls whether visitors to the application can sign up for an account. There are 3 possible values:
+### Permitir que los visitantes se registren
+Esta opción controla si los visitantes de la aplicación pueden registrarse para obtener una cuenta. Hay 3 valores posibles:
 
-* **No. Only the admin can add users.** Visitors cannot sign up for an account. The admin must add users manually.
-* **Yes, and the admin must approve them.** Visitors can sign up for an account, but the admin must approve their account before they can sign in.
-* **Yes, and automatically approve them.** Visitors can sign up for an account, and their account is automatically approved.
+* **No. Solo el administrador puede agregar usuarios.** Los visitantes no pueden registrarse para obtener una cuenta. El administrador debe agregar usuarios manualmente.
+* **Sí, y el administrador debe aprobarlos.** Los visitantes pueden registrarse para obtener una cuenta, pero el administrador debe aprobar su cuenta antes de que puedan iniciar sesión.
+* **Sí, y aprobarlos automáticamente.** Los visitantes pueden registrarse para obtener una cuenta, y su cuenta se aprueba automáticamente.
 
-> **Note:** Anonymous visitors to your application will not have the ability to sign up for an account unless 
-> at least one user group is configured to allow visitors to sign up (with or without admin approval).
+> **Nota:** Los visitantes anónimos de su aplicación no tendrán la posibilidad de registrarse para obtener una cuenta a menos que
+> al menos un grupo de usuarios esté configurado para permitir que los visitantes se registren (con o sin la aprobación del administrador).
 
-### Permissions
+### Permisos
 
-This section allows you to set permissions for the group. Permissions are set separately for each table in the application.
-These permissions include the ability to insert, view, edit and delete records in a table.
+Esta sección le permite establecer permisos para el grupo. Los permisos se establecen por separado para cada tabla de la aplicación.
+Estos permisos incluyen la capacidad de insertar, ver, editar y eliminar registros en una tabla.
 
-When a group has permission to insert records into a table, a member user who inserts a record into that table becomes the owner of that record.
-And the group of the member user becomes the owner group of the record.
+Cuando un grupo tiene permiso para insertar registros en una tabla, un usuario miembro que inserta un registro en esa tabla se convierte en el propietario de ese registro.
+Y el grupo del usuario miembro se convierte en el grupo propietario del registro.
 
-For view, edit and delete permissions, you can choose one of the following options:
+Para los permisos de ver, editar y eliminar, puede elegir una de las siguientes opciones:
 
-* **No** - Members of the group won't have that permission at all.
-* **Owner** - Members of the group will have that permission only on records they own.
-* **Group** - Members of the group will have that permission on all records owned by the group.
-* **All** - Members of the group will have that permission on all records in the table.
+* **No** - Los miembros del grupo no tendrán ese permiso en absoluto.
+* **Propietario** - Los miembros del grupo tendrán ese permiso solo en los registros de los que son propietarios.
+* **Grupo** - Los miembros del grupo tendrán ese permiso en todos los registros propiedad del grupo.
+* **Todos** - Los miembros del grupo tendrán ese permiso en todos los registros de la tabla.
 
-![Sales group permissions example](https://cdn.bigprof.com/images/appgini-group-permissions-example.png?24.15 "Sales group permissions example")
+![Ejemplo de permisos del grupo Ventas](https://cdn.bigprof.com/images/appgini-group-permissions-example.png?24.15 "Ejemplo de permisos del grupo Ventas")
 
-For example, in the above screenshot, members of the "Sales" group can insert records to the "Customers" table
-(to define new customers), view all records in the "Customers" table, edit only records they own, and delete only records they own.
+Por ejemplo, en la captura de pantalla anterior, los miembros del grupo "Ventas" pueden insertar registros en la tabla "Clientes"
+(para definir nuevos clientes), ver todos los registros en la tabla "Clientes", editar solo los registros de los que son propietarios y eliminar solo los registros de los que son propietarios.
 
-The checkmark menu to the right of each permission allows you to set the permission for all tables at once. If you
-click the checkmark menu next to the "View" permission for example, you can set the view permission for all tables
-to "No", "Owner", "Group", or "All" at once.
+El menú de marca de verificación a la derecha de cada permiso le permite establecer el permiso para todas las tablas a la vez. Si
+hace clic en el menú de marca de verificación junto al permiso "Ver", por ejemplo, puede establecer el permiso de visualización para todas las tablas
+en "No", "Propietario", "Grupo" o "Todos" a la vez.
 
-Similarly, the checkmark menu at the right of each table allows you to set all permissions for that table at once.
+Del mismo modo, el menú de marca de verificación a la derecha de cada tabla le permite establecer todos los permisos para esa tabla a la vez.
 
-### Copy permissions from another group
+### Copiar permisos de otro grupo
 
-*Available since AppGini 24.14*
+*Disponible desde AppGini 24.14*
 
-![Copy permissions from another group](https://cdn.bigprof.com/images/copy-group-permissions.png "Copy permissions from another group")
+![Copiar permisos de otro grupo](https://cdn.bigprof.com/images/copy-group-permissions.png "Copiar permisos de otro grupo")
 
-This feature allows you to copy permissions from another group. Select a group from the dropdown list to apply its permissions to the current group.
-You can revert to the original permissions by clicking the ❌ icon next to the groups dropdown.
+Esta función le permite copiar permisos de otro grupo. Seleccione un grupo de la lista desplegable para aplicar sus permisos al grupo actual.
+Puede revertir a los permisos originales haciendo clic en el icono ❌ junto a la lista desplegable de grupos.
 
-### Save changes
-After you've made your changes, click the "Save changes" button to save the group settings.
+### Guardar cambios
+Después de realizar los cambios, haga clic en el botón "Guardar cambios" para guardar la configuración del grupo.
 
-### Adding a new group
+### Agregar un nuevo grupo
 
-To add a new group, click the **➕ Add group** button at the top right of the **Groups** page,
-or open the **Groups** menu and click the **➕ Add group** link.
-This will open a page similar to the group editing page, where you can set the group name, description, permissions, and other settings.
+Para agregar un nuevo grupo, haga clic en el botón **➕ Agregar grupo** en la parte superior derecha de la página **Grupos**,
+o abra el menú **Grupos** y haga clic en el enlace **➕ Agregar grupo**.
+Esto abrirá una página similar a la página de edición de grupos, donde puede establecer el nombre del grupo, la descripción, los permisos y otras configuraciones.
 
-### Deleting a group
+### Eliminar un grupo
 
-To delete a group, click the **🗑️ Delete** icon to the right of the group row on the **Groups** page.
-If the group has members, this icon will be disabled. You must first remove all members from the group before you can delete it.
-The anonymous group and the Admins group cannot be deleted.
+Para eliminar un grupo, haga clic en el icono **🗑️ Eliminar** a la derecha de la fila del grupo en la página **Grupos**.
+Si el grupo tiene miembros, este icono estará deshabilitado. Primero debe eliminar a todos los miembros del grupo antes de poder eliminarlo.
+El grupo anónimo y el grupo de Administradores no se pueden eliminar.
 
-> **Hint:** You can disable anonymous access to your application by removing all permissions from the anonymous group (this is the default setting).
+> **Sugerencia:** Puede deshabilitar el acceso anónimo a su aplicación eliminando todos los permisos del grupo anónimo (esta es la configuración predeterminada).
 
-### Sending an email to group members
+### Enviar un correo electrónico a los miembros del grupo
 
-To send an email to all members of a group, click the **📧 Email** icon to the right of the group row on the **Groups** page.
-This will open a page where you can compose an email to the group members.
+Para enviar un correo electrónico a todos los miembros de un grupo, haga clic en el icono **📧 Correo electrónico** a la derecha de la fila del grupo en la página **Grupos**.
+Esto abrirá una página donde puede redactar un correo electrónico para los miembros del grupo.
 
-> **TIP!** You can use the **[Messages plugin](https://bigprof.com/appgini/applications/messages-plugin)** to send messages to group members directly from the application.
-> The Messages plugin allows you to send messages to individual users, groups, or all users of the application, in a secure and distraction-free environment.
+> **¡CONSEJO!** Puede utilizar el **[plugin de Mensajes](https://bigprof.com/appgini/applications/messages-plugin)** para enviar mensajes a los miembros del grupo directamente desde la aplicación.
+> El plugin de Mensajes le permite enviar mensajes a usuarios individuales, grupos o todos los usuarios de la aplicación, en un entorno seguro y libre de distracciones.
 >
-> ![Messages plugin](https://cdn.bigprof.com/images/messages/inbox-normal-user-dark.png "Messages plugin")
+> ![Plugin de Mensajes](https://cdn.bigprof.com/images/messages/inbox-normal-user-dark.png "Plugin de Mensajes")
 
-## Managing members (users)
+## Gestión de miembros (usuarios)
 
-The **Members** menu in the admin area allows you to manage your application's users, add new users, and view users' records.
+El menú **Miembros** en el área de administración le permite administrar los usuarios de su aplicación, agregar nuevos usuarios y ver los registros de los usuarios.
 
-![The members menu in the admin area](https://cdn.bigprof.com/images/appgini-members-menu.png?24.15 "The members menu in the admin area")
+![El menú de miembros en el área de administración](https://cdn.bigprof.com/images/appgini-members-menu.png?24.15 "El menú de miembros en el área de administración")
 
-If you click the **View Members** link, you will see a list of all members in your application, as shown in the screenshot below.
+Si hace clic en el enlace **Ver miembros**, verá una lista de todos los miembros de su aplicación, como se muestra en la captura de pantalla a continuación.
 
-![](https://cdn.bigprof.com/appgini-desktop/help/the-admin-interface-6.png "Managing members in an AppGini application")
+![](https://cdn.bigprof.com/appgini-desktop/help/the-admin-interface-6.png "Gestión de miembros en una aplicación AppGini")
 
+Si hace clic en el enlace de un nombre de usuario, o en el icono del lápiz ✏️ a la derecha de la fila de un miembro, puede editar los detalles del miembro. Esto abrirá una página similar a la que se muestra a continuación.
 
-If you click on a username link, or the pencil ✏️ icon to the right of a member row, you can edit the member's details. This would open a page similar to the one below.
+![Edición de un miembro en una aplicación AppGini](https://cdn.bigprof.com/images/appgini-edit-member-24.15.png "Edición de un miembro en una aplicación AppGini")
 
-![Editing a member in an AppGini application](https://cdn.bigprof.com/images/appgini-edit-member-24.15.png "Editing a member in an AppGini application")
+Puede cambiar el nombre de usuario, la contraseña, el correo electrónico y el grupo del miembro.
 
-You can change the member's username, password, email and group.
+El botón **Establecer permisos especiales para este usuario** le permite establecer permisos especiales para este usuario. Esto es útil si desea otorgar
+a un usuario permisos especiales que son diferentes de los permisos del grupo al que pertenece.
 
-The **Set special permissions for this user** button allows you to set special permissions for this user. This is useful if you want to give
-a user special permissions that are different from the permissions of the group they belong to.
+### Aprobar/bloquear miembros
 
-### Approving/banning members
+Desmarcar la casilla de verificación **Aprobado** o marcar la casilla de verificación **Bloqueado** evitará que el usuario inicie sesión.
+La diferencia entre los dos es sutil, y solo indica el estado del usuario. Un usuario no aprobado es un usuario que se ha registrado
+pero que aún no ha sido aprobado por el administrador. Un usuario bloqueado es un usuario que ha sido bloqueado por el administrador. Pero el resultado es el mismo: el usuario no puede iniciar sesión.
 
-Unchecking the **Approved** checkbox or checking the **Banned** checkbox will prevent the user from signing in.
-The difference between the two is subtle, and just indicates the status of the user. An unapproved user is a user who has signed up
-but has not been approved by the admin yet. A banned user is a user who has been banned by the admin. But the result is the same: the user cannot sign in.
+### Campos personalizados
 
-### Custom fields
+Las aplicaciones AppGini proporcionan un conjunto de campos personalizados que puede utilizar para almacenar información adicional sobre los usuarios.
+De forma predeterminada, estos campos están etiquetados como **Nombre completo**, **Dirección**, **Ciudad** y **Estado**. Puede cambiar estas etiquetas para que coincidan con los requisitos de su aplicación.
+Para ello, abra el **Área de administración** » menú **Utilidades** » **Configuración de administración**. Luego haga clic en la pestaña **Registro**. Desde allí, puede cambiar las etiquetas de los campos personalizados.
 
-AppGini applications provide a set of custom fields that you can use to store additional information about users. 
-By default, these fields are labeled as **Full Name**, **Address**, **City**, and **State**. You can change these labels to match your application's requirements. 
-To do this, open the **Admin Area** » **Utilities** menu » **Admin settings**. Then click the **Sign up** tab. From there, you can change the labels of the custom fields.
+### Campo de comentarios
 
-### Comments field
+El campo **Comentarios** es un campo especial que le permite almacenar información adicional sobre un usuario.
+Este campo no se muestra al usuario y está destinado únicamente al uso del administrador.
 
-The **Comments** field is a special field that allows you to store additional information about a user. 
-This field is not displayed to the user and is intended for admin use only.
+### Ver registros del miembro
 
-### View member's records
+Al hacer clic en el enlace **Ver registros del miembro** se mostrará una lista de todos los registros propiedad del miembro. Puede ver los datos sin procesar de cada registro,
+o eliminar estos registros en esta página. También puede asignar registros a otro usuario o grupo.
 
-Clicking the **View member's records** link will display a list of all records owned by the member. You can view each record's raw data, 
-or delete these records on this page. You can also assign records to another user or group.
+### Enviar mensaje al miembro
 
-### Send message to member
+Al hacer clic en el enlace **Enviar mensaje al miembro** se abrirá una página donde puede redactar un correo electrónico para el miembro.
 
-Clicking the **Send message to member** link will open a page where you can compose an email to the member.
+### Eliminar miembro
 
-### Delete member
+Al hacer clic en el icono **🗑 Eliminar** a la derecha de la fila del miembro en la página **Miembros** se mostrará un mensaje pidiéndole que
+confirme si desea eliminar a ese usuario. El usuario superadministrador y el usuario invitado no se pueden eliminar.
 
-Clicking the **🗑 Delete** icon to the right of the member row in the **Members** page would display a message asking you to 
-confirm whether you want to delete that user. The super admin user as well as the guest user can't be deleted.
+> **Sugerencia:** Puede deshabilitar el acceso de invitados a su aplicación eliminando todos los permisos del grupo anónimo (esta es la configuración predeterminada).
 
-> **Hint:** You can disable guest access to your application by removing all permissions from the anonymous group (this is the default setting).
+## Gestión de la propiedad de los registros
 
-## Managing record ownership
+La interfaz de administración le permite ver todos los registros ingresados por cualquier miembro
+o grupo. Haga clic en el enlace 'Ver registros de miembros' en la parte superior de la
+página de inicio de administración. Esto mostrará una página similar a la que se muestra a continuación.
 
-The admin interface allows you to view all records entered by any member
-or group. Click the 'View Members' Records' link on the top of the
-admin homepage. This will display a page similar to the one below.
+![](https://cdn.bigprof.com/appgini-desktop/help/the-admin-interface-8.png "Gestión de registros en una aplicación AppGini")
 
+Si hace clic en el icono 'Editar' a la izquierda de cualquier registro, puede ver
+todos los datos de ese registro, y también puede editar la propiedad del registro.
+Esto abrirá una página similar a la que se muestra a continuación.
 
-![](https://cdn.bigprof.com/appgini-desktop/help/the-admin-interface-8.png "Managing records in an AppGini application")
+![](https://cdn.bigprof.com/screencasts/admin-area-edit-record-ownership.png "Edición de la propiedad de los registros en una aplicación AppGini")
 
+### Asistente de transferencia por lotes
 
-If you click the 'Edit' icon to the left of any record, you can view
-all the data in that record, and you can also edit the record ownership.
-This will open a page similar to the one below.
+Si desea cambiar la propiedad de varios registros a la vez, debe
+utilizar el **Asistente de transferencia por lotes** en lugar de la página anterior.
+Haga clic en el enlace **Transferencia por lotes de propiedad** del menú **Utilidades**
+en el área de administración y siga las instrucciones del asistente.
 
+El 'Asistente de transferencia por lotes' también le permite:
 
-![](https://cdn.bigprof.com/screencasts/admin-area-edit-record-ownership.png "Editing record ownership in an AppGini application")
+* Transferir registros de un usuario a otro.
+* Transferir registros de un grupo a otro.
+* Mover un usuario y todos sus registros a otro grupo.
 
-### Batch Transfer Wizard
+### Propiedad automática de registros
 
-If you want to change the ownership of multiple records at once, you
-should use the **Batch Transfer Wizard** instead of the above page.
-Click on the **Batch Transfer Of Ownership** link from the **Utilities**
-menu in the admin area and follow the wizard instructions. 
+De forma predeterminada, las aplicaciones AppGini están configuradas para asignar automáticamente la propiedad de los registros al usuario que inserta un registro.
+Sin embargo, puede cambiar este comportamiento y establecer el propietario del registro como el propietario del registro principal. Esto es útil en los casos en los que
+tiene una relación padre-hijo entre tablas y desea que los registros secundarios hereden el propietario del registro principal.
 
-The 'Batch Transfer Wizard' allows you also to:
+Para obtener más información sobre la configuración de la propiedad automática de registros, consulte la página [Propiedad automatizada de registros](../record-owners.md).
 
-* Transfer records from one user to another.
-* Transfer records from one group to another.
-* Move a user and all their records to another group.
+### Cambiar el propietario de un registro desde el área de usuarios
 
-### Automatic record ownership
+Si inicia sesión en su aplicación como el usuario superadministrador y explora cualquier registro de tabla en la aplicación,
+verá un botón con 3 puntos verticales en la parte superior derecha de la página de detalles del registro, etiquetado como "Información de administrador".
+Al hacer clic en este botón se mostrará un menú desplegable que enumera el propietario del registro y el grupo propietario. Puede hacer clic en el enlace "Cambiar propietario"
+para cambiar el propietario del registro a otro usuario o grupo.
 
-By default, AppGini applications are configured to automatically assign record ownership to the user who inserts a record.
-However, you can change this behavior and set the record owner to the owner of the parent record. This is useful in cases where
-you have a parent-child relationship between tables and you want the child records to inherit the owner of the parent record.
+![Cambiar el propietario de un registro desde el área de usuarios](https://cdn.bigprof.com/images/admin-info-menu.png "Cambiar el propietario de un registro desde el área de usuarios")
 
-For more information on configuring automatic record ownership, see the [Automated record ownership](../record-owners.md) page.
+También puede cambiar el propietario del registro para varios registros a la vez. Para ello, navegue a la vista de tabla de
+la tabla correspondiente, seleccione los registros para los que desea cambiar el propietario, abra el menú desplegable **Más** en la parte superior de la tabla,
+y haga clic en el enlace **Cambiar propietario**.
 
-### Changing a record owner from the users area
-
-If you sign in to your application as the super admin user, and browse any table record in the application,
-you will see a button with 3 vertical dots at the top right of the record details page, labeled "Admin information".
-Clicking this button will display a dropdown listing the record owner and the owner group. You can click the "Change owner" link
-to change the record owner to another user or group.
-
-![Changing a record owner from the users area](https://cdn.bigprof.com/images/admin-info-menu.png "Changing a record owner from the users area")
-
-You can also change the record owner for multiple records at once. To do this, navigate to the table view of
-the relevant table, select the records you want to change the owner for, open the **More** dropdown menu at the top of the table,
-and click the **Change owner** link.
-
-![Changing a record owner for multiple records at once](https://cdn.bigprof.com/images/change-owner-multiple-records.png "Changing a record owner for multiple records at once")
-
+![Cambiar el propietario de un registro para varios registros a la vez](https://cdn.bigprof.com/images/change-owner-multiple-records.png "Cambiar el propietario de un registro para varios registros a la vez")

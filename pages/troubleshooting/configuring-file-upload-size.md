@@ -1,70 +1,68 @@
 ---
-title: Configuring file/image upload size in AppGini apps
-linkTitle: File upload size
+title: Configuración del tamaño de carga de archivos/imágenes en aplicaciones AppGini
+linkTitle: Tamaño de carga de archivos
 slug: help/troubleshooting/configuring-file-upload-size
-description: Learn how to configure the maximum file/image upload size in AppGini apps.
-keywords: file upload, image upload, file size, image size, upload limit, php.ini, upload_max_filesize, post_max_size
+description: Aprenda a configurar el tamaño máximo de carga de archivos/imágenes en las aplicaciones AppGini.
+keywords: carga de archivos, carga de imágenes, tamaño de archivo, tamaño de imagen, límite de carga, php.ini, upload_max_filesize, post_max_size
 ---
 
-# I can't upload large files/images in my AppGini app
+# No puedo cargar archivos/imágenes grandes en mi aplicación AppGini
 
-When you create a file or image upload field in your AppGini app,
-you can configure the maximum file size that can be uploaded.
-This can be done in the media tab, by clicking the **Configure** button,
-and setting the maximum file size in kilobytes.
+Cuando crea un campo de carga de archivos o imágenes en su aplicación AppGini,
+puede configurar el tamaño máximo de archivo que se puede cargar.
+Esto se puede hacer en la pestaña de medios, haciendo clic en el botón **Configurar**,
+y estableciendo el tamaño máximo de archivo en kilobytes.
 
-![Configuring file upload size in AppGini](https://cdn.bigprof.com/images/configure-upload-size-24.18.png)
+![Configuración del tamaño de carga de archivos en AppGini](https://cdn.bigprof.com/images/configure-upload-size-24.18.png)
 
-However, you might still face issues uploading large files, even if they are within the configured limit.
-This is because the server on which your AppGini app is hosted might have a lower limit set in its PHP configuration.
+Sin embargo, es posible que aún tenga problemas para cargar archivos grandes, incluso si están dentro del límite configurado.
+Esto se debe a que el servidor en el que está alojada su aplicación AppGini podría tener un límite inferior establecido en su configuración de PHP.
 
-To fix this, you need to increase the `upload_max_filesize` and `post_max_size` settings in your server's `php.ini` file.
-Here's how to do this:
+Para solucionar esto, debe aumentar la configuración de `upload_max_filesize` y `post_max_size` en el archivo `php.ini` de su servidor.
+He aquí cómo hacerlo:
 
-## Step 1: Locate the `php.ini` file
+## Paso 1: Localice el archivo `php.ini`
 
-Locate the `php.ini` file on your server. If you don't know where it is, the easiest way to check is to go to the admin area of your AppGini app, open the Utilities menu, and click on the **Server status** link. From there, search for `php.ini` in the page that opens. The path to the `php.ini` file should be displayed there.
+Localice el archivo `php.ini` en su servidor. Si no sabe dónde está, la forma más fácil de verificarlo es ir al área de administración de su aplicación AppGini, abrir el menú Utilidades y hacer clic en el enlace **Estado del servidor**. Desde allí, busque `php.ini` en la página que se abre. La ruta al archivo `php.ini` debería mostrarse allí.
 
-![Locating php.ini file in Server status page](https://cdn.bigprof.com/images/php-ini-location-24.18.png)
-   
-If you don't see the **Server status** link in the Utilities menu, it means it's been disabled in your AppGini project. You can enable that page in your AXP project under the **Security settings** section > **Allow admin access to server status page**.
+![Localización del archivo php.ini en la página de estado del servidor](https://cdn.bigprof.com/images/php-ini-location-24.18.png)
 
-![Enabling server status page in AppGini project](https://cdn.bigprof.com/images/enable-server-status-24.18.png)
+Si no ve el enlace **Estado del servidor** en el menú Utilidades, significa que se ha deshabilitado en su proyecto AppGini. Puede habilitar esa página en su proyecto AXP en la sección **Configuración de seguridad** > **Permitir acceso de administrador a la página de estado del servidor**.
 
-Alternatively, you can check your server control panel or ask your hosting provider for help in locating the `php.ini` file.
+![Habilitación de la página de estado del servidor en el proyecto AppGini](https://cdn.bigprof.com/images/enable-server-status-24.18.png)
 
-## Step 2: Check and update the `upload_max_filesize` value
- 
-Open the `php.ini` file in a text editor and search for the `upload_max_filesize` setting. It might look like this:
+Alternativamente, puede consultar el panel de control de su servidor o pedir ayuda a su proveedor de alojamiento para localizar el archivo `php.ini`.
+
+## Paso 2: Verifique y actualice el valor de `upload_max_filesize`
+
+Abra el archivo `php.ini` en un editor de texto y busque la configuración `upload_max_filesize`. Podría verse así:
 
 ```ini
 upload_max_filesize = 2M
 ```
 
-Change the value to the desired maximum file size. For example, to allow 10MB uploads, change it to:
+Cambie el valor al tamaño máximo de archivo deseado. Por ejemplo, para permitir cargas de 10 MB, cámbielo a:
 
 ```ini
 upload_max_filesize = 10M
 ```
 
-## Step 3: Check and update the `post_max_size` value
+## Paso 3: Verifique y actualice el valor de `post_max_size`
 
-Next, search for the `post_max_size` setting in the `php.ini` file. It might look like this:
+A continuación, busque la configuración `post_max_size` en el archivo `php.ini`. Podría verse así:
 
 ```ini
 post_max_size = 8M
 ```
 
-Change the value to the desired maximum file size. For example, to allow 10MB uploads, change it to:
+Cambie el valor al tamaño máximo de archivo deseado. Por ejemplo, para permitir cargas de 10 MB, cámbielo a:
 
 ```ini
 post_max_size = 10M
 ```
 
-## Step 4: Save and restart your web server
+## Paso 4: Guarde y reinicie su servidor web
 
-Save the `php.ini` file and restart your web server. If you're not sure how to restart your web server, you can ask your hosting provider for help.
+Guarde el archivo `php.ini` y reinicie su servidor web. Si no está seguro de cómo reiniciar su servidor web, puede pedir ayuda a su proveedor de alojamiento.
 
-Finally, try uploading the large file again in your AppGini app. It should work now.
-
-
+Finalmente, intente cargar el archivo grande nuevamente en su aplicación AppGini. Debería funcionar ahora.

@@ -1,153 +1,151 @@
 ---
-title: Automatic application uploader
-linkTitle: Uploading apps
+title: Cargador automático de aplicaciones
+linkTitle: Carga de aplicaciones
 slug: help/application-uploader
-description: Learn how to use the automatic application uploader in AppGini to upload your apps to your server. This feature makes it much easier to deploy your apps.
-keywords: automatic uploader, upload apps, deploy apps, appgini uploader, appgini deploy, appgini upload, continuous deployment, continuous integration, CI/CD, appgini CI/CD, appgini continuous deployment, appgini continuous integration, uploader security, appgini security
+description: Aprenda a utilizar el cargador automático de aplicaciones en AppGini para cargar sus aplicaciones en su servidor. Esta función facilita mucho la implementación de sus aplicaciones.
+keywords: cargador automático, cargar aplicaciones, implementar aplicaciones, cargador appgini, implementar appgini, cargar appgini, implementación continua, integración continua, CI/CD, appgini CI/CD, implementación continua appgini, integración continua appgini, seguridad del cargador, seguridad appgini
 ---
 
-# Automatic application uploader
+# Cargador automático de aplicaciones
 
-As of AppGini 23.10, we introduced a new feature that makes it much easier to deploy (upload) your AppGini apps to your server. By clicking a single 'Upload' button, AppGini checks the changed files in your app and uploads them to your server. You no longer need to use external FTP, SSH or other upload tools, and you don't have to worry about uploading the right files to the right folders.
+A partir de AppGini 23.10, introdujimos una nueva función que facilita mucho la implementación (carga) de sus aplicaciones AppGini en su servidor. Al hacer clic en un solo botón 'Cargar', AppGini comprueba los archivos modificados en su aplicación y los carga en su servidor. Ya no necesita utilizar herramientas externas de FTP, SSH u otras herramientas de carga, y no tiene que preocuparse por cargar los archivos correctos en las carpetas correctas.
 
-### Smart features of the automatic file uploader
+### Funciones inteligentes del cargador automático de archivos
 
-*   **Uploads only the files that have changed**. This means that if you make changes to your app that cause only a few files to change, the uploader will take care of detecting which files were changed and will only upload those files. This is much faster than uploading all files every time.
-*   **Uploads only the files that are needed**. The uploader will only upload the files that are needed to run your app. It will ignore files that are not needed, such as log files, the local `config.php` (which should not be uploaded to the server), ...etc.
-*   **Uploads files to the right folders**. The uploader will upload the files to the right folders on your server. For example, the file named `admin/index.php` in your app will be uploaded to the `admin` folder on your server. Missing folders will be created automatically as well. This saves you a lot of time trying to debug why your app is not working after uploading it.
-*   **Secure upload key**. The uploader uses a secret upload key to authenticate itself to your server. This key is created the first time you use the uploader. It's a 32-character random string that is stored in AppGini config and in the `file-uploader.php` file. This all happens transparently to you, so you don't have to worry about it. Just rest assured that any one trying to access the file uploader will not be able to do so without knowing the secret key.
-    
-    In addition, automatic file uploading only works over HTTPS. This is to prevent anyone from intercepting the upload key and using it to upload files to your server.
-    
+*   **Carga solo los archivos que han cambiado**. Esto significa que si realiza cambios en su aplicación que solo provocan la modificación de unos pocos archivos, el cargador se encargará de detectar qué archivos se modificaron y solo cargará esos archivos. Esto es mucho más rápido que cargar todos los archivos cada vez.
+*   **Carga solo los archivos necesarios**. El cargador solo cargará los archivos necesarios para ejecutar su aplicación. Ignorará los archivos que no son necesarios, como los archivos de registro, el archivo local `config.php` (que no debe cargarse en el servidor), etc.
+*   **Carga los archivos en las carpetas correctas**. El cargador cargará los archivos en las carpetas correctas de su servidor. Por ejemplo, el archivo llamado `admin/index.php` en su aplicación se cargará en la carpeta `admin` de su servidor. Las carpetas que falten también se crearán automáticamente. Esto le ahorra mucho tiempo tratando de depurar por qué su aplicación no funciona después de cargarla.
+*   **Clave de carga segura**. El cargador utiliza una clave de carga secreta para autenticarse en su servidor. Esta clave se crea la primera vez que utiliza el cargador. Es una cadena aleatoria de 32 caracteres que se almacena en la configuración de AppGini y en el archivo `file-uploader.php`. Todo esto sucede de forma transparente para usted, por lo que no tiene que preocuparse por ello. Solo tenga la seguridad de que nadie que intente acceder al cargador de archivos podrá hacerlo sin conocer la clave secreta.
 
-### How to enable automatic file uploading
+    Además, la carga automática de archivos solo funciona a través de HTTPS. Esto es para evitar que alguien intercepte la clave de carga y la utilice para cargar archivos en su servidor.
 
-To enable automatic file uploading, you should:
+### Cómo habilitar la carga automática de archivos
 
-1.  **Set the application URL** under the Security settings section of the project properties. This is the URL that your users will use to access your app. You should provide the full URL of the homepage, including the protocol (`https://`) but without `index.php` at the end. For example:
-    
+Para habilitar la carga automática de archivos, debe:
+
+1.  **Establecer la URL de la aplicación** en la sección de configuración de Seguridad de las propiedades del proyecto. Esta es la URL que sus usuarios utilizarán para acceder a su aplicación. Debe proporcionar la URL completa de la página de inicio, incluido el protocolo (`https://`) pero sin `index.php` al final. Por ejemplo:
+
     https://example.com/catalog
-    
-    ![Set the application URL](https://cdn.bigprof.com/images/appgini-app-url.png)
-    
-2.  **Manually upload the generated `file-uploader.php` file to your server**. This only needs to be done once. You can do it by using any FTP or SSH tool. Once you upload it, you can use automatic uploading for all future changes. The `file-uploader.php` file is located in the home folder of your app. And it should be uploaded to the matching folder on your server. So, for the example application URL above, that file should be accessible at:
-    
+
+    ![Establecer la URL de la aplicación](https://cdn.bigprof.com/images/appgini-app-url.png)
+
+2.  **Cargar manualmente el archivo `file-uploader.php` generado en su servidor**. Esto solo debe hacerse una vez. Puede hacerlo utilizando cualquier herramienta FTP o SSH. Una vez que lo cargue, puede utilizar la carga automática para todos los cambios futuros. El archivo `file-uploader.php` se encuentra en la carpeta de inicio de su aplicación. Y debe cargarse en la carpeta correspondiente de su servidor. Entonces, para la URL de la aplicación de ejemplo anterior, ese archivo debería ser accesible en:
+
     https://example.com/catalog/file-uploader.php
-    
 
-### How to use automatic file uploading
+### Cómo utilizar la carga automática de archivos
 
-After you've set the application URL and uploaded `file-uploader.php` to your server, you can use automatic file uploading by clicking the 'Upload' button in AppGini. This button can be found at the top of the project properties pane, next to the 'View files' button. It's only visible after you've generated your app.
+Después de haber establecido la URL de la aplicación y haber cargado `file-uploader.php` en su servidor, puede utilizar la carga automática de archivos haciendo clic en el botón 'Cargar' en AppGini. Este botón se puede encontrar en la parte superior del panel de propiedades del proyecto, junto al botón 'Ver archivos'. Solo es visible después de haber generado su aplicación.
 
-![Upload button in the project properties pane](https://cdn.bigprof.com/images/appgini-upload-button-project-properties-pane.png)
+![Botón Cargar en el panel de propiedades del proyecto](https://cdn.bigprof.com/images/appgini-upload-button-project-properties-pane.png)
 
-You can also find the 'Upload' button after generating your app in the status window:
+También puede encontrar el botón 'Cargar' después de generar su aplicación en la ventana de estado:
 
-![Upload button in status window](https://cdn.bigprof.com/images/appgini-upload-button-app-generator-status-window.png)
+![Botón Cargar en la ventana de estado](https://cdn.bigprof.com/images/appgini-upload-button-app-generator-status-window.png)
 
-After clicking the 'Upload' button, AppGini will perform several checks before uploading.
+Después de hacer clic en el botón 'Cargar', AppGini realizará varias comprobaciones antes de cargar.
 
-![Checks performed before uploading apps in AppGini](https://cdn.bigprof.com/images/appgini-app-uploader-start-checks-24.19.png)
+![Comprobaciones realizadas antes de cargar aplicaciones en AppGini](https://cdn.bigprof.com/images/appgini-app-uploader-start-checks-24.19.png)
 
-In the screenshot above, all checks were successful. The next step after that is to check for changed files. But if any checks fail, you'll see an error message like this:
+En la captura de pantalla anterior, todas las comprobaciones se realizaron correctamente. El siguiente paso después de eso es comprobar si hay archivos modificados. Pero si alguna comprobación falla, verá un mensaje de error como este:
 
-![Upload checks failed](https://cdn.bigprof.com/images/appgini-app-uploader-checks-failed-24.19.png)
+![Fallaron las comprobaciones de carga](https://cdn.bigprof.com/images/appgini-app-uploader-checks-failed-24.19.png)
 
-You should fix the error(s) shown in the message before you can proceed with the upload. In the example above, the error is that the `file-uploader.php` file is not found on the server. You should upload it to the server as explained in the [How to enable automatic file uploading section](#how-to-enable-automatic-file-uploading) above, then retry the upload.
+Debe corregir los errores que se muestran en el mensaje antes de poder continuar con la carga. En el ejemplo anterior, el error es que el archivo `file-uploader.php` no se encuentra en el servidor. Debe cargarlo en el servidor como se explica en la sección [Cómo habilitar la carga automática de archivos](#cómo-habilitar-la-carga-automática-de-archivos) anterior, y luego volver a intentar la carga.
 
-If all checks pass, AppGini will scan for file changes. This would take a couple of minutes or so, depending on the size of your app. Once the scan is complete, AppGini will show you a summary of the changes detected:
+Si todas las comprobaciones pasan, AppGini buscará cambios en los archivos. Esto tardará un par de minutos aproximadamente, dependiendo del tamaño de su aplicación. Una vez que se complete el escaneo, AppGini le mostrará un resumen de los cambios detectados:
 
-![Results of scanning for changed files](https://cdn.bigprof.com/images/appgini-upload-scanning-changed-files-24.19.png)
+![Resultados del escaneo de archivos modificados](https://cdn.bigprof.com/images/appgini-upload-scanning-changed-files-24.19.png)
 
-In the above screenshot, AppGini detected that 36 files were changed. You should click the button showing the number of changed files to begin the upload. In case no changes were detected, you'll see a message like this instead:
+En la captura de pantalla anterior, AppGini detectó que se modificaron 36 archivos. Debe hacer clic en el botón que muestra el número de archivos modificados para comenzar la carga. En caso de que no se detecten cambios, verá un mensaje como este en su lugar:
 
-![No changes detected](https://cdn.bigprof.com/images/appgini-upload-no-changes-detected-24.19.png)
+![No se detectaron cambios](https://cdn.bigprof.com/images/appgini-upload-no-changes-detected-24.19.png)
 
-After clicking the button for uploading changes, AppGini will begin uploading only the changed files to your server. The upload progress window will show you the progress of the upload.
+Después de hacer clic en el botón para cargar los cambios, AppGini comenzará a cargar solo los archivos modificados en su servidor. La ventana de progreso de la carga le mostrará el progreso de la carga.
 
-![Upload progress window](https://cdn.bigprof.com/images/appgini-upload-progrss-24.19.png?1)
+![Ventana de progreso de la carga](https://cdn.bigprof.com/images/appgini-upload-progrss-24.19.png?1)
 
-After the upload is complete, AppGini will show you how many files were uploaded, how many were skipped (because they were unchanged/ignored) and how many failed, if any, along with a full list of files uploaded:
+Una vez completada la carga, AppGini le mostrará cuántos archivos se cargaron, cuántos se omitieron (porque no se modificaron/ignoraron) y cuántos fallaron, si los hubo, junto con una lista completa de los archivos cargados:
 
-![Upload results window](https://cdn.bigprof.com/images/appgini-upload-finished-24.19.png)
+![Ventana de resultados de la carga](https://cdn.bigprof.com/images/appgini-upload-finished-24.19.png)
 
-In case of any failed uploads, they will be listed in red. You should check the error message shown for each failed upload and fix the issue. Usually, failed uploads are due to file permissions issues on the server. You can fix this by making sure that the folder to which you're uploading your app and any subfolder are writable by the web server software (apache, nginx, .. etc) you're using. For example, on most apache setups on linux, the user that owns the app folders should be `www-data`. After fixing the issue, you can retry the upload by clicking the 'Retry failed uploads' button:
+En caso de que alguna carga falle, se mostrará en rojo. Debe verificar el mensaje de error que se muestra para cada carga fallida y solucionar el problema. Por lo general, las cargas fallidas se deben a problemas de permisos de archivos en el servidor. Puede solucionar esto asegurándose de que la carpeta a la que está cargando su aplicación y cualquier subcarpeta sean editables por el software del servidor web (apache, nginx, etc.) que está utilizando. Por ejemplo, en la mayoría de las configuraciones de apache en linux, el usuario propietario de las carpetas de la aplicación debe ser `www-data`. Después de solucionar el problema, puede volver a intentar la carga haciendo clic en el botón 'Reintentar cargas fallidas':
 
-![Retry failed uploads button](https://cdn.bigprof.com/images/appgini-upload-retry-failed.png)
+![Botón Reintentar cargas fallidas](https://cdn.bigprof.com/images/appgini-upload-retry-failed.png)
 
-### Troubleshooting
+### Solución de problemas
 
-If you're having issues with automatic file uploading, please check the following:
+Si tiene problemas con la carga automática de archivos, compruebe lo siguiente:
 
-*   **Have you set the application URL?** If you haven't set the application URL, the 'Upload' button will display an error. Please refer to the [How to enable automatic file uploading section](#how-to-enable-automatic-file-uploading) above for more information.
-*   **Have you uploaded `file-uploader.php` to your server?** If you haven't uploaded `file-uploader.php` to your server, the checks performed before uploading will fail. You can upload `file-uploader.php` to your server using any FTP or SSH tool. It should be uploaded to the home folder of your app on your server.
-*   **Is your application accessible over HTTPS?**. Automatic file uploading only works over HTTPS. This is to prevent anyone from intercepting the upload key and using it to upload files to your server. Make sure your server has a valid, non-self-signed SSL certificate, and make sure it's not expired.
-*   **Make sure the secret upload key is correct**. The secret upload key can be retrieved from the AppGini preferences window. If it doesn't match the key in the `file-uploader.php` on your server, you can regenerate your app, then manually re-upload the new `file-uploader.php` file, overwriting the old one on the server.
-    
-    _**Tip:**_ You can view the secret upload key stored in the `file-uploader.php` file by opening it in a text editor. Line 2 contains the key, like so:
-    
+*   **¿Ha configurado la URL de la aplicación?** Si no ha configurado la URL de la aplicación, el botón 'Cargar' mostrará un error. Consulte la sección [Cómo habilitar la carga automática de archivos](#cómo-habilitar-la-carga-automática-de-archivos) anterior para obtener más información.
+*   **¿Ha cargado `file-uploader.php` en su servidor?** Si no ha cargado `file-uploader.php` en su servidor, las comprobaciones realizadas antes de cargar fallarán. Puede cargar `file-uploader.php` en su servidor utilizando cualquier herramienta FTP o SSH. Debe cargarse en la carpeta de inicio de su aplicación en su servidor.
+*   **¿Su aplicación es accesible a través de HTTPS?**. La carga automática de archivos solo funciona a través de HTTPS. Esto es para evitar que alguien intercepte la clave de carga y la utilice para cargar archivos en su servidor. Asegúrese de que su servidor tenga un certificado SSL válido, no autofirmado, y asegúrese de que no esté caducado.
+*   **Asegúrese de que la clave de carga secreta sea correcta**. La clave de carga secreta se puede recuperar desde la ventana de preferencias de AppGini. Si no coincide con la clave en el archivo `file-uploader.php` de su servidor, puede regenerar su aplicación y luego volver a cargar manualmente el nuevo archivo `file-uploader.php`, sobrescribiendo el antiguo en el servidor.
+
+    _**Consejo:**_ Puede ver la clave de carga secreta almacenada en el archivo `file-uploader.php` abriéndolo en un editor de texto. La línea 2 contiene la clave, así:
+
     ```php
     <?php
        define('UPLOAD_KEY', '2DF5367D046FFE742277D04B107CF46B');
     ```
-    
-*   **Is your antivirus blocking the upload?** Some antivirus software might block the automatic file uploader from working. You can try disabling your antivirus temporarily to see if it's causing the issue. If it is, you can add an exception for AppGini.exe in your antivirus settings.
-*   **Is curl installed on your PC?**. The automatic file uploader uses curl to upload files to your server. Curl is installed by default on modern Windows machines, Linux and MacOS. On older Windows PCs, you can download curl from the [official curl website](https://curl.se/windows/).
-*   **Do you have modsecurity or a similar web application firewall (WAF) installed on your server?** This might prevent the automatic file uploader from working. If you have a WAF installed on your server, you can try adding an exception for the `file-uploader.php` file to the WAF configuration. For modsecurity, you can try adding this code to a new file inside `/etc/apache/mods-enabled/` (maybe name it `appgini.conf`) or similar, then restart apache:
-    
+
+*   **¿Su antivirus está bloqueando la carga?** Algunos programas antivirus pueden bloquear el funcionamiento del cargador automático de archivos. Puede intentar deshabilitar su antivirus temporalmente para ver si está causando el problema. Si es así, puede agregar una excepción para AppGini.exe en la configuración de su antivirus.
+*   **¿Está instalado curl en su PC?**. El cargador automático de archivos utiliza curl para cargar archivos en su servidor. Curl está instalado de forma predeterminada en las máquinas Windows modernas, Linux y MacOS. En PC con Windows más antiguas, puede descargar curl desde el [sitio web oficial de curl](https://curl.se/windows/).
+*   **¿Tiene modsecurity o un firewall de aplicaciones web (WAF) similar instalado en su servidor?** Esto podría impedir que el cargador automático de archivos funcione. Si tiene un WAF instalado en su servidor, puede intentar agregar una excepción para el archivo `file-uploader.php` a la configuración del WAF. Para modsecurity, puede intentar agregar este código a un nuevo archivo dentro de `/etc/apache/mods-enabled/` (quizás llámelo `appgini.conf`) o similar, luego reinicie apache:
+
     ```apache
     <IfModule mod_security2.c>
        SecRule REQUEST_URI "/file-uploader.php$" id:300001,allow
     </IfModule>
     ```
-    
-    _**Hint:**_ Check your server error logs to see if modsecurity is blocking requests to `file-uploader.php` or not.
-    
-*   **Are you using Cloudflare?** Cloudflare is a great service for securing your website, but since it also acts as a web application firewall, it might block the automatic file uploader from working. You'll need to add an exception for the `file-uploader.php` file to [Cloudflare's firewall rules](https://developers.cloudflare.com/waf/managed-rules/waf-exceptions/).
-*   **Are folder permissions/ownership set correctly?** Make sure that the folder to which you're uploading your app and any subfolder are writable by the web server software (apache, nginx, .. etc) you're using. For example, on most apache setups on linux, the user that owns the app folders should be `www-data`.
-    
-    You can set the ownership of the app folder and all its subfolders to `www-data` by running this command on your server:
-    
+
+    _**Sugerencia:**_ Revise los registros de errores de su servidor para ver si modsecurity está bloqueando las solicitudes a `file-uploader.php` o no.
+
+*   **¿Está utilizando Cloudflare?** Cloudflare es un excelente servicio para proteger su sitio web, pero como también actúa como un firewall de aplicaciones web, podría impedir que el cargador automático de archivos funcione. Deberá agregar una excepción para el archivo `file-uploader.php` a las [reglas de firewall de Cloudflare](https://developers.cloudflare.com/waf/managed-rules/waf-exceptions/).
+*   **¿Están configurados correctamente los permisos/propiedad de las carpetas?** Asegúrese de que la carpeta a la que está cargando su aplicación y cualquier subcarpeta sean editables por el software del servidor web (apache, nginx, etc.) que está utilizando. Por ejemplo, en la mayoría de las configuraciones de apache en linux, el usuario propietario de las carpetas de la aplicación debe ser `www-data`.
+
+    Puede establecer la propiedad de la carpeta de la aplicación y todas sus subcarpetas en `www-data` ejecutando este comando en su servidor:
+
     ```bash
-    sudo chown -R www-data:www-data /path/to/your/app
+    sudo chown -R www-data:www-data /ruta/a/su/aplicacion
     ```
-    
-    Replace `/path/to/your/app` with the actual path to your app on your server.
-    
-    If you're using a different web server software or a different operating system, you might need to use a different user/group name. For example, on CentOS, the user/group name is usually `apache` instead of `www-data`.
-    
-    If you're not sure what user/group name to use, you can check the user/group name of the web server software by running this command on your server:
-    
+
+    Reemplace `/ruta/a/su/aplicacion` con la ruta real a su aplicación en su servidor.
+
+    Si está utilizando un software de servidor web diferente o un sistema operativo diferente, es posible que deba utilizar un nombre de usuario/grupo diferente. Por ejemplo, en CentOS, el nombre de usuario/grupo suele ser `apache` en lugar de `www-data`.
+
+    Si no está seguro de qué nombre de usuario/grupo usar, puede verificar el nombre de usuario/grupo del software del servidor web ejecutando este comando en su servidor:
+
     ```bash
     ps aux | egrep '(apache|nginx)'
     ```
-    
-    This will show you the user/group name of the web server software.
 
-### Security considerations
+    Esto le mostrará el nombre de usuario/grupo del software del servidor web.
 
-Automatic file uploading is a great feature, but it's important to understand the security implications of it. Here are some things to keep in mind:
+### Consideraciones de seguridad
 
-* **The automatic file uploader uses HTTPS**. This is to prevent anyone from intercepting the upload key and using it to upload files to your server. Make sure your server has a valid, non-self-signed SSL certificate, and make sure it's not expired.
+La carga automática de archivos es una gran característica, pero es importante comprender sus implicaciones de seguridad. Aquí hay algunas cosas a tener en cuenta:
 
-* **The automatic file uploader uses a secret upload key**. The secret upload key can be retrieved from the AppGini preferences window, under the 'App uploader' tab.
-    
-    ![App uploader tab in AppGini preferences window](https://cdn.bigprof.com/images/appgini-preferences-app-uploader.png)
-    
-    Make sure to keep this key secret. Anyone with access to this key can upload executable files to your server and compromise it. If you think your key has been compromised, you _must immediately_:
-    
-    1.  Remove the `file-uploader.php` file from your server.
-    2.  Generate a new key from the AppGini preferences window.
-    3.  Regenerate your app and upload the new `file-uploader.php` to your server.
-    
-    We also recommend that you remove all app files from the server and use the automatic file uploader to re-upload them.
-    
-* During the upload process, the application is set to **maintenance mode**. This means that no one can access the app while it's being uploaded. After the upload is complete, the app is set back to normal mode.
+* **El cargador automático de archivos utiliza HTTPS**. Esto es para evitar que alguien intercepte la clave de carga y la utilice para cargar archivos en su servidor. Asegúrese de que su servidor tenga un certificado SSL válido, no autofirmado, y asegúrese de que no esté caducado.
 
-* For tighter security, you can add a rule to your server firewall or to Cloudflare (if you're using it) to block access to the `file-uploader.php` file from all IP addresses except the one you're using to upload your app.
-    
-    If you're using Apache, you can add this rule to your `.htaccess` file or your site's Apache configuration file:
-    
+* **El cargador automático de archivos utiliza una clave de carga secreta**. La clave de carga secreta se puede recuperar desde la ventana de preferencias de AppGini, en la pestaña 'Cargador de aplicaciones'.
+
+    ![Pestaña Cargador de aplicaciones en la ventana de preferencias de AppGini](https://cdn.bigprof.com/images/appgini-preferences-app-uploader.png)
+
+    Asegúrese de mantener esta clave en secreto. Cualquiera que tenga acceso a esta clave puede cargar archivos ejecutables en su servidor y comprometerlo. Si cree que su clave ha sido comprometida, debe _inmediatamente_:
+
+    1.  Eliminar el archivo `file-uploader.php` de su servidor.
+    2.  Generar una nueva clave desde la ventana de preferencias de AppGini.
+    3.  Regenerar su aplicación y cargar el nuevo `file-uploader.php` en su servidor.
+
+    También recomendamos que elimine todos los archivos de la aplicación del servidor y utilice el cargador automático de archivos para volver a cargarlos.
+
+* Durante el proceso de carga, la aplicación se establece en **modo de mantenimiento**. Esto significa que nadie puede acceder a la aplicación mientras se está cargando. Una vez completada la carga, la aplicación vuelve al modo normal.
+
+* Para mayor seguridad, puede agregar una regla a su firewall de servidor o a Cloudflare (si lo está utilizando) para bloquear el acceso al archivo `file-uploader.php` desde todas las direcciones IP excepto la que está utilizando para cargar su aplicación.
+
+    Si está utilizando Apache, puede agregar esta regla a su archivo `.htaccess` o al archivo de configuración de Apache de su sitio:
+
     ```
     <Files "file-uploader.php">
         Order allow,deny
@@ -155,20 +153,18 @@ Automatic file uploading is a great feature, but it's important to understand th
         Allow from 124.233.112.210
     </Files>
     ```
-    
-    Replace `124.233.112.210` with the external IP address of the PC you're using to upload your app.
-    
-    For nginx, you can use this rule instead:
-    
+
+    Reemplace `124.233.112.210` con la dirección IP externa de la PC que está utilizando para cargar su aplicación.
+
+    Para nginx, puede utilizar esta regla en su lugar:
+
     ```
     location ~* ^/file-uploader\.php$ {
       allow 124.233.112.210;
       deny all;
     }
     ```
-    
-    You could also specify a range of IP addresses in the above rules by using [CIDR notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#IPv4_CIDR_blocks) instead of a single IP address.
-    
-* **Exclude the `file-uploader.php` file from your repository**. If you're using a version control system like git, make sure to exclude the `file-uploader.php` file from your repository. This file contains the secret upload key, and you don't want to expose it to the public. To exclude the file from your repository, you can add it to your `.gitignore` file.
 
+    También podría especificar un rango de direcciones IP en las reglas anteriores utilizando la [notación CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#IPv4_CIDR_blocks) en lugar de una sola dirección IP.
 
+* **Excluya el archivo `file-uploader.php` de su repositorio**. Si está utilizando un sistema de control de versiones como git, asegúrese de excluir el archivo `file-uploader.php` de su repositorio. Este archivo contiene la clave de carga secreta y no desea exponerla al público. Para excluir el archivo de su repositorio, puede agregarlo a su archivo `.gitignore`.

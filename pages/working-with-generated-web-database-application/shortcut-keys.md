@@ -1,134 +1,130 @@
 ---
-title: Shortcut keys
-linkTitle: Shortcut keys
+title: Teclas de acceso directo
+linkTitle: Teclas de acceso directo
 slug: help/working-with-generated-web-database-application/shortcut-keys
-keywords: shortcut keys, keyboard shortcuts, hotkeys, appgini shortcuts
-description: Learn about the shortcut keys available in AppGini-generated web database applications.
+keywords: teclas de acceso directo, atajos de teclado, teclas de acceso rápido, atajos de appgini
+description: Obtenga información sobre las teclas de acceso directo disponibles en las aplicaciones de bases de datos web generadas por AppGini.
 ---
 
-# Shortcut keys in AppGini apps
+# Teclas de acceso directo en las aplicaciones AppGini
 
-Shortcut keys are a great way to speed up your work in AppGini-generated
-applications. They allow you to quickly navigate between different
-sections of your app, perform common actions, and more. This page
-provides a reference for the available shortcut keys in AppGini apps.
+Las teclas de acceso directo son una excelente manera de acelerar su trabajo en las aplicaciones generadas por AppGini.
+Le permiten navegar rápidamente entre diferentes
+secciones de su aplicación, realizar acciones comunes y más. Esta página
+proporciona una referencia de las teclas de acceso directo disponibles en las aplicaciones AppGini.
 
-> Shortcut keys can be used in AppGini apps as of AppGini 5.90.
+> Las teclas de acceso directo se pueden usar en las aplicaciones AppGini a partir de AppGini 5.90.
 
-## Enabling/disabling shortcut keys
+## Habilitar/deshabilitar teclas de acceso directo
 
-You can enable or disable shortcut keys in your AppGini app in 2 ways:
+Puede habilitar o deshabilitar las teclas de acceso directo en su aplicación AppGini de 2 maneras:
 
-1. Press **` CTRL `** or **` SHIFT `** + **` F1 `**. This will display a
-   list of available shortcut keys and a toggle button to enable or
-   disable shortcut keys. Click the toggle button to enable or disable
-   shortcut keys.
+1. Presione **` CTRL `** o **` SHIFT `** + **` F1 `**. Esto mostrará una
+   lista de las teclas de acceso directo disponibles y un botón de alternancia para habilitar o
+   deshabilitar las teclas de acceso directo. Haga clic en el botón de alternancia para habilitar o deshabilitar
+   las teclas de acceso directo.
 
-   ![Shortcut keys popup](https://cdn.bigprof.com/images/keyboard-shortcuts-popup-window.png)
+   ![Ventana emergente de teclas de acceso directo](https://cdn.bigprof.com/images/keyboard-shortcuts-popup-window.png)
 
-2. Alternatively, you can enable or disable shortcut keys by opening the profile
-   menu (by clicking your username at the top right corner of the page),
-   then clicking the **Keyboard shortcuts** link. This will open the
-   same popup as above.
- 
-   ![Enable/disable shortcut keys](https://cdn.bigprof.com/images/enable-shortcut-keys-in-appgini-app.png)
+2. Alternativamente, puede habilitar o deshabilitar las teclas de acceso directo abriendo el menú de perfil
+   (haciendo clic en su nombre de usuario en la esquina superior derecha de la página),
+   luego haciendo clic en el enlace **Atajos de teclado**. Esto abrirá la
+   misma ventana emergente que arriba.
 
-## Shortcut keys reference
+   ![Habilitar/deshabilitar teclas de acceso directo](https://cdn.bigprof.com/images/enable-shortcut-keys-in-appgini-app.png)
 
-**Note:** Unless otherwise specified (*1*) , pressing the shortcut keys
-below focuses (highlights) the related link/button (rather than
-performing the action itself -- this is intended to prevent doing any
-unintended action by mistake if pressing the wrong shortcut key
-combination). After a link is focused, you could press **` ENTER `**
-to actually activate the link, **` TAB `** to navigate to the next
-link, or **` SHIFT `** + **` TAB `** to navigate to the previous
-link.
+## Referencia de teclas de acceso directo
 
-> (*1*) Wherever the shortcut listings below mention *"instant action"*
-> , this is an exception to the above rule, meaning that pressing this
-> particular shortcut keys combination would instantly apply the related
-> action.
+**Nota:** A menos que se especifique lo contrario (*1*), al presionar las teclas de acceso directo
+a continuación, se enfoca (resalta) el enlace/botón relacionado (en lugar de
+realizar la acción en sí misma; esto tiene la intención de evitar realizar cualquier
+acción no deseada por error si se presiona la combinación incorrecta de teclas de acceso directo).
+Después de enfocar un enlace, puede presionar **` ENTER `**
+para activar realmente el enlace, **` TAB `** para navegar al siguiente
+enlace, o **` SHIFT `** + **` TAB `** para navegar al enlace anterior.
+
+> (*1*) Siempre que las listas de accesos directos a continuación mencionen *"acción instantánea"*
+> , esto es una excepción a la regla anterior, lo que significa que presionar esta
+> combinación particular de teclas de acceso directo aplicaría instantáneamente la acción relacionada.
 
 
-#### General shortcuts available in all pages
+#### Accesos directos generales disponibles en todas las páginas
 
--   **` CTRL `** or **` SHIFT `** + **` F1 `** : Display available shortcuts (and enable/disabled shortcut keys).
--   **` ALT `** + **` 0 `** : Homepage.
--   **` ALT `** + **` 1 `** to **` 9 `** : Open available navigation menus.    
--   **` ALT `** + **` M `** : Import CSV data (if you have permission to).
--   **` ALT `** + **` A `** : Admin area (if you're signed in as admin).    
--   **` ALT `** + **` P `** : User profile.
--   **` ALT `** + **` P `** then **` SHIFT `** + **` TAB `** : Sign out.
+-   **` CTRL `** o **` SHIFT `** + **` F1 `** : Mostrar accesos directos disponibles (y habilitar/deshabilitar teclas de acceso directo).
+-   **` ALT `** + **` 0 `** : Página de inicio.
+-   **` ALT `** + **` 1 `** a **` 9 `** : Abrir menús de navegación disponibles.
+-   **` ALT `** + **` M `** : Importar datos CSV (si tiene permiso para hacerlo).
+-   **` ALT `** + **` A `** : Área de administración (si ha iniciado sesión como administrador).
+-   **` ALT `** + **` P `** : Perfil de usuario.
+-   **` ALT `** + **` P `** luego **` SHIFT `** + **` TAB `** : Cerrar sesión.
 
-#### Homepage
+#### Página de inicio
 
--   **` SHIFT `** + **` F2 `** : Highlight first table group.
--   **` CTRL `** + **` F2 `** : Highlight the first table link.
+-   **` SHIFT `** + **` F2 `** : Resaltar el primer grupo de tablas.
+-   **` CTRL `** + **` F2 `** : Resaltar el primer enlace de tabla.
 
-#### Table view
+#### Vista de tabla
 
--   **` ALT `** + **` Q `** : Quick search (type your search then press **` ENTER `** ).
--   **` ALT `** + **` SHIFT `** + Q: Clear quick search *(instant action)*.
--   **` F2 `** : same as **` ALT `** + **` Q `**.    
--   **` SHIFT `** + **` F2 `** : First button in the buttons bar above the table.
--   **` ALT `** + **` F2 `** : First element in the bottom navigation bar.
--   **` CTRL `** + **` F2 `** : First record selector checkbox.
-    - You can then navigate to other records using **` CTRL `** + **` ↑ `** and **` CTRL `** + **` ↓ `**.    
-    - **Tip:** to open the currently highlighted record in the detail view, press **` TAB `** then **` ENTER `**.    
--   **` ALT `** + **` CTRL `** + **` S `** : Select/unselect all records.
--   **` ALT `** + **` CTRL `** + **` M `** : Open **More** menu.    
--   **` CTRL `** + **` ← `** : Previous page *(instant action)*.
--   **` CTRL `** + **` → `** : Next page *(instant action)*.
+-   **` ALT `** + **` Q `** : Búsqueda rápida (escriba su búsqueda y luego presione **` ENTER `** ).
+-   **` ALT `** + **` SHIFT `** + Q: Borrar búsqueda rápida *(acción instantánea)*.
+-   **` F2 `** : igual que **` ALT `** + **` Q `**.
+-   **` SHIFT `** + **` F2 `** : Primer botón en la barra de botones sobre la tabla.
+-   **` ALT `** + **` F2 `** : Primer elemento en la barra de navegación inferior.
+-   **` CTRL `** + **` F2 `** : Primera casilla de verificación del selector de registros.
+    - Luego puede navegar a otros registros usando **` CTRL `** + **` ↑ `** y **` CTRL `** + **` ↓ `**.
+    - **Consejo:** para abrir el registro actualmente resaltado en la vista detallada, presione **` TAB `** y luego **` ENTER `**.
+-   **` ALT `** + **` CTRL `** + **` S `** : Seleccionar/deseleccionar todos los registros.
+-   **` ALT `** + **` CTRL `** + **` M `** : Abrir menú **Más**.
+-   **` CTRL `** + **` ← `** : Página anterior *(acción instantánea)*.
+-   **` CTRL `** + **` → `** : Página siguiente *(acción instantánea)*.
 
-#### Detail view
+#### Vista detallada
 
--   **` F2 `** : First field in form.
--   **` SHIFT `** + **` F2 `** : First button in the action buttons at the right of the form.
--   **` CTRL `** + **` F2 `** : First child record.    
--   **` ALT `** + **` I `**: Show/hide admin information menu (if you're signed in as admin).    
--   **` F8 `** : First child link (from the child links above the detail view form).
--   **` SHIFT `** + **` F8 `** : First child tab.
--   **` ALT `** + **` F8 `** : First navigation button in child tab.    
--   **` CTRL `** + **` ← `** : Previous record *(instant action)*.
--   **` CTRL `** + **` → `** : Next record *(instant action)*.
--   **` CTRL `** + **` ↑ `** : Same as **` CTRL `** + **` ← `**.
--   **` CTRL `** + **` ↓ `** : Same as **` CTRL `** + **` → `**.    
--   **` CTRL `** + **` ENTER `** : Save Changes *(instant action)*.
--   **` ALT `** + **` X `** : Back to table view, discarding any changes made *(instant action)*.
+-   **` F2 `** : Primer campo del formulario.
+-   **` SHIFT `** + **` F2 `** : Primer botón en los botones de acción a la derecha del formulario.
+-   **` CTRL `** + **` F2 `** : Primer registro secundario.
+-   **` ALT `** + **` I `**: Mostrar/ocultar menú de información de administrador (si ha iniciado sesión como administrador).
+-   **` F8 `** : Primer enlace secundario (de los enlaces secundarios sobre el formulario de vista detallada).
+-   **` SHIFT `** + **` F8 `** : Primera pestaña secundaria.
+-   **` ALT `** + **` F8 `** : Primer botón de navegación en la pestaña secundaria.
+-   **` CTRL `** + **` ← `** : Registro anterior *(acción instantánea)*.
+-   **` CTRL `** + **` → `** : Siguiente registro *(acción instantánea)*.
+-   **` CTRL `** + **` ↑ `** : Igual que **` CTRL `** + **` ← `**.
+-   **` CTRL `** + **` ↓ `** : Igual que **` CTRL `** + **` → `**.
+-   **` CTRL `** + **` ENTER `** : Guardar cambios *(acción instantánea)*.
+-   **` ALT `** + **` X `** : Volver a la vista de tabla, descartando cualquier cambio realizado *(acción instantánea)*.
 
-#### Filters page:
+#### Página de filtros:
 
--   **` F2 `** : First filter.
--   **` SHIFT `** + **` F2 `** : Apply filters button.
--   **` CTRL `** + **` ENTER `** : Apply filters *(instant action)*.
--   **` CTRL `** + **` SHIFT `** + **` ENTER `** : Save and apply filters *(instant action)*.
--   **` ALT `** + **` X `** : Cancel and go back to table view *(instant action)*.
+-   **` F2 `** : Primer filtro.
+-   **` SHIFT `** + **` F2 `** : Botón Aplicar filtros.
+-   **` CTRL `** + **` ENTER `** : Aplicar filtros *(acción instantánea)*.
+-   **` CTRL `** + **` SHIFT `** + **` ENTER `** : Guardar y aplicar filtros *(acción instantánea)*.
+-   **` ALT `** + **` X `** : Cancelar y volver a la vista de tabla *(acción instantánea)*.
 
-#### Print preview of table view:
+#### Vista previa de impresión de la vista de tabla:
 
--   **` SHIFT `** + **` F2 `** : Print button.
--   **` ALT `** + **` X `** : Back *(instant action)*.
+-   **` SHIFT `** + **` F2 `** : Botón Imprimir.
+-   **` ALT `** + **` X `** : Atrás *(acción instantánea)*.
 
-#### Print preview of detail view:
+#### Vista previa de impresión de la vista detallada:
 
--   **` SHIFT `** + **` F2 `** : Print button.
--   **` SHIFT `** + **` F8 `** : First child tab. You can then press
-    **` ENTER `** to expand/collapse children records.
--   **` ALT `** + **` X `** : Back to detail view *(instant action)*.    
--   **` CTRL `** + **` ← `** : Previous record's detail view *(instant action)*.
--   **` CTRL `** + **` → `** : Next record's detail view *(instant action)*.
--   **` CTRL `** + **` ↑ `** : Same as **` CTRL `** + **` ← `**.
--   **` CTRL `** + **` ↓ `** : Same as **` CTRL `** + **` → `**.
+-   **` SHIFT `** + **` F2 `** : Botón Imprimir.
+-   **` SHIFT `** + **` F8 `** : Primera pestaña secundaria. Luego puede presionar
+    **` ENTER `** para expandir/contraer los registros secundarios.
+-   **` ALT `** + **` X `** : Volver a la vista detallada *(acción instantánea)*.
+-   **` CTRL `** + **` ← `** : Vista detallada del registro anterior *(acción instantánea)*.
+-   **` CTRL `** + **` → `** : Vista detallada del siguiente registro *(acción instantánea)*.
+-   **` CTRL `** + **` ↑ `** : Igual que **` CTRL `** + **` ← `**.
+-   **` CTRL `** + **` ↓ `** : Igual que **` CTRL `** + **` → `**.
 
-## (AppGini 5.91+) Hide 'keyboard shortcuts reference' link
+## (AppGini 5.91+) Ocultar enlace 'referencia de atajos de teclado'
 
-In AppGini 5.91 and above, the shortcuts window includes a link at the
-bottom that points to this page. This makes it easy for your app users
-to see a full reference. You can remove this link if desired by adding
-this line to `hooks/footer-extras.php`:
+En AppGini 5.91 y superior, la ventana de accesos directos incluye un enlace en la
+parte inferior que apunta a esta página. Esto facilita que los usuarios de su aplicación
+vean una referencia completa. Puede eliminar este enlace si lo desea agregando
+esta línea a `hooks/footer-extras.php`:
 
 ```javascript
 <script>_noShortcutsReference = true;</script>
 ```
-
-

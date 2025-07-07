@@ -1,22 +1,19 @@
 ---
-title: Getting help while you work
-linkTitle: Live help
+title: Obtener ayuda mientras trabaja
+linkTitle: Ayuda en vivo
 slug: help/working-with-projects/getting-help-while-you-work
 ---
 
-# Getting help while you work
+# Obtener ayuda mientras trabaja
 
-In addition to this online help file, there are several additional help resources: there is the continuously expanding [tips and tutorials](/appgini/tips-and-tutorials) section, [AppGini FAQs](/appgini/faqs), the context help inside AppGini, and the [AppGini community forums](http://forums.appgini.com/phpbb/). Context help is a handy tool for obtaining help while you work with your projects without having to be online.
+Además de este archivo de ayuda en línea, existen varios recursos de ayuda adicionales: está la sección de [consejos y tutoriales](/appgini/tips-and-tutorials) en continua expansión, las [Preguntas frecuentes de AppGini](/appgini/faqs), la ayuda contextual dentro de AppGini y los [foros de la comunidad de AppGini](http://forums.appgini.com/phpbb/). La ayuda contextual es una herramienta útil para obtener ayuda mientras trabaja con sus proyectos sin tener que estar en línea.
 
 ![F1](https://cdn.bigprof.com/appgini-desktop/help/f1.gif)
 
-To activate context help, press **`F1`**. This would open the help section at the right side of the AppGini window. This section displays help on whatever element has the focus at the moment. You can use the mouse or the Tab key to move the focus between all the elements of the project window. To hide the help section, press **`F1`** again.
+Para activar la ayuda contextual, presione **`F1`**. Esto abrirá la sección de ayuda en el lado derecho de la ventana de AppGini. Esta sección muestra ayuda sobre cualquier elemento que tenga el foco en ese momento. Puede usar el mouse o la tecla Tab para mover el foco entre todos los elementos de la ventana del proyecto. Para ocultar la sección de ayuda, presione **`F1`** nuevamente.
 
+![Panel de propiedades del proyecto AppGini, que muestra la sección de ayuda](https://github.com/bigprof-software/appgini-docs/assets/168858457/1b8c5ff8-8f8a-4a5e-9647-6ba752df8948 "Panel de propiedades del proyecto AppGini, que muestra la sección de ayuda")
 
-![AppGini project properties pane, showing help section](https://github.com/bigprof-software/appgini-docs/assets/168858457/1b8c5ff8-8f8a-4a5e-9647-6ba752df8948 "AppGini project properties pane, showing help section")
+Al presionar la tecla **`F1`** se abre la sección de ayuda en el panel del lado derecho. Este panel muestra ayuda sensible al contexto según el elemento actualmente enfocado.
 
-
-Pressing **`F1`** key opens the help section in the right-side panel. This panel displays context-sensitive help based on the currently focused element.
-
-
-![AppGini context help based on the currently focused element](https://github.com/bigprof-software/appgini-docs/assets/168858457/062b478d-bd6b-424c-bdda-81052762fbb4 "AppGini context help based on the currently focused element")
+![Ayuda contextual de AppGini basada en el elemento actualmente enfocado](https://github.com/bigprof-software/appgini-docs/assets/168858457/062b478d-bd6b-424c-bdda-81052762fbb4 "Ayuda contextual de AppGini basada en el elemento actualmente enfocado")

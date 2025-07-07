@@ -1,99 +1,97 @@
 ---
-title: LDAP Authentication
-linkTitle: LDAP Authentication
+title: Autenticación LDAP
+linkTitle: Autenticación LDAP
 slug: help/ldap-authentication
 ---
 
-# LDAP Authentication
+# Autenticación LDAP
 
-AppGini applications now support [LDAP](https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol) integration starting from version 24.10, providing a more streamlined login process for users who are already part of an LDAP directory. Here's how you can set up LDAP integration within your AppGini application.
+Las aplicaciones AppGini ahora admiten la integración [LDAP](https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol) a partir de la versión 24.10, lo que proporciona un proceso de inicio de sesión más optimizado para los usuarios que ya forman parte de un directorio LDAP. A continuación, se explica cómo configurar la integración LDAP dentro de su aplicación AppGini.
 
-> Kindly note that LDAP authentication is available only in [AppGini Pro](/appgini/order).
+> Tenga en cuenta que la autenticación LDAP solo está disponible en [AppGini Pro](/appgini/order).
 
-## Video overview of LDAP settings in AppGini apps
+## Vídeo de descripción general de la configuración LDAP en aplicaciones AppGini
 
 <video style="width: 100%; height: auto;" controls>
 <source src="https://cdn.bigprof.com/screencasts/ldap-login-in-appgini-applications.mp4" type="video/mp4">
-Your browser does not support the video tag.
+Su navegador no admite la etiqueta de vídeo.
 </video>
 
-## Enabling LDAP Extension in PHP
+## Habilitación de la extensión LDAP en PHP
 
-Before you begin, [ensure that the LDAP extension in PHP is enabled](/appgini/help/enable-php-ldap-extension/), as the integration is disabled by default. Upon enabling this extension, a new 'LDAP settings' tab will become available within the admin settings page of your AppGini application.
+Antes de comenzar, [asegúrese de que la extensión LDAP en PHP esté habilitada](/appgini/help/enable-php-ldap-extension/), ya que la integración está deshabilitada de forma predeterminada. Al habilitar esta extensión, una nueva pestaña 'Configuración LDAP' estará disponible dentro de la página de configuración de administración de su aplicación AppGini.
 
-One way to check if LDAP extension is enabled is to sign in to your AppGini app as admin, go to the admin area > Utilties menu > Server status. In the server status page, under the PHP section, you should see LDAP details like the screenshot below if LDAP is enabled:
+Una forma de verificar si la extensión LDAP está habilitada es iniciar sesión en su aplicación AppGini como administrador, ir al área de administración > Menú Utilidades > Estado del servidor. En la página de estado del servidor, en la sección PHP, debería ver los detalles de LDAP como en la captura de pantalla a continuación si LDAP está habilitado:
 
-![LDAP info section under PHP info](https://cdn.bigprof.com/images/ldap-section-php-ini.png)
+![Sección de información LDAP en PHP info](https://cdn.bigprof.com/images/ldap-section-php-ini.png)
 
-## Configuring LDAP Settings
+## Configuración de los ajustes LDAP
 
-Sign in to your AppGini app as administrator. Go to the admin area, open the Utilities menu, and click on Admin settings. If the LDAP extension is enabled in PHP, you should see an 'LDAP settings' tab. Once you access the 'LDAP settings' tab, you can configure the LDAP integration. This section allows you to switch from the default login method, where AppGini manages usernames and passwords, to an LDAP-based authentication system.
+Inicie sesión en su aplicación AppGini como administrador. Vaya al área de administración, abra el menú Utilidades y haga clic en Configuración de administración. Si la extensión LDAP está habilitada en PHP, debería ver una pestaña 'Configuración LDAP'. Una vez que acceda a la pestaña 'Configuración LDAP', podrá configurar la integración LDAP. Esta sección le permite cambiar del método de inicio de sesión predeterminado, donde AppGini administra los nombres de usuario y las contraseñas, a un sistema de autenticación basado en LDAP.
 
-![AppGini LDAP settings](https://cdn.bigprof.com/images/ldap-settings.png)
+![Configuración LDAP de AppGini](https://cdn.bigprof.com/images/ldap-settings.png)
 
-### Specifying the LDAP Server
+### Especificación del servidor LDAP
 
-Input your LDAP server URL in the format `ldap.example.com` or `ldaps://ldap.example.com` for SSL connections. If your LDAP server operates on a non-standard port, you can specify it like `ldap.example.com:389`.
+Ingrese la URL de su servidor LDAP en el formato `ldap.example.com` o `ldaps://ldap.example.com` para conexiones SSL. Si su servidor LDAP opera en un puerto no estándar, puede especificarlo como `ldap.example.com:389`.
 
-### LDAP Version
+### Versión de LDAP
 
-Select the LDAP protocol version that corresponds to your server's configuration. Most servers will work with version 3, which is recommended for optimal compatibility.
+Seleccione la versión del protocolo LDAP que corresponda a la configuración de su servidor. La mayoría de los servidores funcionarán con la versión 3, que se recomienda para una compatibilidad óptima.
 
-### User DN (Distinguished Name) Pattern
+### Patrón de DN (Nombre Distinguido) de usuario
 
-You must specify the pattern for wrapping the username for LDAP logins. This pattern usually includes prefixes and suffixes, such as:
+Debe especificar el patrón para envolver el nombre de usuario para los inicios de sesión LDAP. Este patrón generalmente incluye prefijos y sufijos, como:
 
 ```
 uid=USERNAME,ou=people,dc=ldap,dc=example,dc=com
 ```
 
-In this example, the username prefix is `uid=`, and the username suffix is `,ou=people,dc=ldap,dc=example,dc=com` (note the initial comma `,`). Adjust the domain components (`dc=`) according to your LDAP server's domain.
+En este ejemplo, el prefijo del nombre de usuario es `uid=`, y el sufijo del nombre de usuario es `,ou=people,dc=ldap,dc=example,dc=com` (tenga en cuenta la coma inicial `,`). Ajuste los componentes del dominio (`dc=`) de acuerdo con el dominio de su servidor LDAP.
 
-### Handling Non-Existent Users
+### Manejo de usuarios inexistentes
 
-Determine how AppGini should handle login attempts from users who are authenticated through LDAP but do not exist in the AppGini database. You can choose to:
+Determine cómo debe AppGini manejar los intentos de inicio de sesión de usuarios que están autenticados a través de LDAP pero que no existen en la base de datos de AppGini. Puede elegir:
 
-*   Disable login for such users, requiring an admin to manually add them, or
-*   Automatically create a user account in AppGini and assign the user to a default group that you can specify.
+*   Deshabilitar el inicio de sesión para dichos usuarios, lo que requiere que un administrador los agregue manualmente, o
+*   Crear automáticamente una cuenta de usuario en AppGini y asignar al usuario a un grupo predeterminado que puede especificar.
 
-Note that the list of groups doesn't include the Admins group to prevent unintended privilege escalation of normal users. If you need to assign admin rights to an LDAP user, you must do so manually from the admin area.
+Tenga en cuenta que la lista de grupos no incluye el grupo de administradores para evitar una escalada de privilegios no deseada de los usuarios normales. Si necesita asignar derechos de administrador a un usuario LDAP, debe hacerlo manualmente desde el área de administración.
 
-## Important Considerations
+## Consideraciones importantes
 
-Before enabling LDAP authentication, confirm that your AppGini admin username exists in the LDAP directory. Otherwise, you'll be unable to log in to AppGini with admin privileges. If this does occur, you will need to edit the `config.php` file manually to revert to the default login method. This can be done by changing the line:
-
-```
-'loginMethod' => "ldap",
-```
-
-to:
-
-```
-'loginMethod' => "default",
-```
-
-## Testing LDAP Integration
-
-After saving the changes, it's wise to test the integration, without signing out from your admin account. To do so, open an anonymous (i.e. incognito or private) browser window, visit your AppGini application, and attempt to log in with an LDAP user. If the setup is correct, users should be able to sign in with their LDAP credentials and be automatically added to the specified default group if they don't already exist in AppGini.
-
-If you're unable to sign in as an LDAP user, this could be due to incorrect LDAP settings. In that case, switch to the browser window where you are signed in as admin, try to adjust the settings, then switch back to the anonymous window and try to sign in.
-
-## Troubleshooting
-
-If you're unable to sign in after enabling LDAP, and you get locked out of your admin account, you can manually disable LDAP. To do so, you will need to edit the `config.php` file to revert to the default login method. This can be done by changing the line:
-
+Antes de habilitar la autenticación LDAP, confirme que su nombre de usuario de administrador de AppGini existe en el directorio LDAP. De lo contrario, no podrá iniciar sesión en AppGini con privilegios de administrador. Si esto ocurre, deberá editar el archivo `config.php` manualmente para volver al método de inicio de sesión predeterminado. Esto se puede hacer cambiando la línea:
 
 ```
 'loginMethod' => "ldap",
 ```
 
-to:
+a:
 
 ```
 'loginMethod' => "default",
 ```
 
-## Conclusion
+## Prueba de la integración LDAP
 
-By following these steps, you can effectively integrate LDAP authentication into your AppGini application, leveraging existing user accounts and streamlining the login process. Make sure to thoroughly test the configuration with different user scenarios to ensure a smooth transition.
+Después de guardar los cambios, es aconsejable probar la integración, sin cerrar sesión en su cuenta de administrador. Para hacerlo, abra una ventana de navegador anónima (es decir, de incógnito o privada), visite su aplicación AppGini e intente iniciar sesión con un usuario LDAP. Si la configuración es correcta, los usuarios deberían poder iniciar sesión con sus credenciales LDAP y ser agregados automáticamente al grupo predeterminado especificado si aún no existen en AppGini.
 
+Si no puede iniciar sesión como usuario LDAP, esto podría deberse a una configuración LDAP incorrecta. En ese caso, cambie a la ventana del navegador donde ha iniciado sesión como administrador, intente ajustar la configuración, luego vuelva a la ventana anónima e intente iniciar sesión.
+
+## Solución de problemas
+
+Si no puede iniciar sesión después de habilitar LDAP y se le bloquea el acceso a su cuenta de administrador, puede deshabilitar LDAP manualmente. Para hacerlo, deberá editar el archivo `config.php` para volver al método de inicio de sesión predeterminado. Esto se puede hacer cambiando la línea:
+
+```
+'loginMethod' => "ldap",
+```
+
+a:
+
+```
+'loginMethod' => "default",
+```
+
+## Conclusión
+
+Siguiendo estos pasos, puede integrar eficazmente la autenticación LDAP en su aplicación AppGini, aprovechando las cuentas de usuario existentes y optimizando el proceso de inicio de sesión. Asegúrese de probar exhaustivamente la configuración con diferentes escenarios de usuario para garantizar una transición sin problemas.

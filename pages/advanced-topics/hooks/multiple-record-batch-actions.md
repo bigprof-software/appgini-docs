@@ -1,50 +1,49 @@
 ---
-title: Adding custom "batch actions" that apply to multiple records
-linkTitle: Batch actions
+title: Agregar "acciones por lotes" personalizadas que se aplican a múltiples registros
+linkTitle: Acciones por lotes
 slug: help/advanced-topics/hooks/multiple-record-batch-actions
-description: Learn how to add custom batch actions to your AppGini-generated application that apply to multiple records at once.
-keywords: batch actions, multiple records, table view, hooks, tablename_batch_actions, tablename-tv.js, print mailing labels, Northwind
+description: Aprenda cómo agregar acciones por lotes personalizadas a su aplicación generada por AppGini que se aplican a múltiples registros a la vez.
+keywords: acciones por lotes, múltiples registros, vista de tabla, hooks, tablename_batch_actions, tablename-tv.js, imprimir etiquetas de correo, Northwind
 ---
 
-# Adding custom "batch actions" that apply to multiple records
+# Agregar "acciones por lotes" personalizadas que se aplican a múltiples registros
 
-When you select one or more records in the table view, a "More" button is displayed above the table. If you click that button, it opens the batch actions menu. This menu displays some actions that you can perform on the records you selected -- see the screenshot below. Which actions show up in the menu depends on the permissions you have. 
+Cuando selecciona uno o más registros en la vista de tabla, se muestra un botón "Más" encima de la tabla. Si hace clic en ese botón, se abre el menú de acciones por lotes. Este menú muestra algunas acciones que puede realizar en los registros que seleccionó; consulte la captura de pantalla a continuación. Las acciones que aparecen en el menú dependen de los permisos que tenga.
 
-![Batch actions menu](https://cdn.bigprof.com/appgini-desktop/wp-content/uploads/select-multiple-records-show-batch-actions.png)
+![Menú de acciones por lotes](https://cdn.bigprof.com/appgini-desktop/wp-content/uploads/select-multiple-records-show-batch-actions.png)
 
-For example, if you are an admin, you can change the owner of the records. If you have delete permissions, and you've enabled mass-delete in AppGini, you can delete the records.
+Por ejemplo, si es un administrador, puede cambiar el propietario de los registros. Si tiene permisos de eliminación y ha habilitado la eliminación masiva en AppGini, puede eliminar los registros.
 
-## Adding custom batch actions
+## Agregar acciones por lotes personalizadas
 
-> **TIP!**
-> 
-> Don't have the time or programming knowledge to write your own batch actions? We have a plugin for that now! Check our [Mass Update plugin](/appgini/applications/mass-update-plugin). This plugin allows you to add as many batch actions as you want in a very short time, without writing a single line of code.
+> **¡CONSEJO!**
+>
+> ¿No tiene el tiempo o los conocimientos de programación para escribir sus propias acciones por lotes? ¡Ahora tenemos un complemento para eso! Consulte nuestro [complemento de Actualización masiva](/appgini/applications/mass-update-plugin). Este complemento le permite agregar tantas acciones por lotes como desee en muy poco tiempo, sin escribir una sola línea de código.
 
-You can define your own batch actions inside the body of the `tablename_batch_actions()` function in the generated `hooks/tablename.php` file. In this function, you just define the name of the batch action. You can add the details and functionality of the batch action in another place that we'll come to in a moment. The `tablename_batch_actions()` hook works by returning an array of actions. Your AppGini application receives this array and displays the actions in the "More" menu.
+Puede definir sus propias acciones por lotes dentro del cuerpo de la función `tablename_batch_actions()` en el archivo `hooks/tablename.php` generado. En esta función, solo define el nombre de la acción por lotes. Puede agregar los detalles y la funcionalidad de la acción por lotes en otro lugar al que llegaremos en un momento. El hook `tablename_batch_actions()` funciona devolviendo una matriz de acciones. Su aplicación AppGini recibe esta matriz y muestra las acciones en el menú "Más".
 
-When a user chooses an action from the "More" menu, your AppGini application calls the javascript function linked to that action. The name of this javascript function is part of the data in the array we mentioned above (the array returned from the `tablename_batch_actions` hook).
+Cuando un usuario elige una acción del menú "Más", su aplicación AppGini llama a la función javascript vinculada a esa acción. El nombre de esta función javascript es parte de los datos en la matriz que mencionamos anteriormente (la matriz devuelta por el hook `tablename_batch_actions`).
 
-You should define the javascript function in the file `tablename-tv.js` inside the `hooks` folder. This function could do anything you want to apply to the selected records. It could open a new page, or make an ajax request, or any other action you wish to do. There is no specific implementation that you have to follow here. We'll discuss an example action with all these details below so you can use it as a guideline.
+Debe definir la función javascript en el archivo `tablename-tv.js` dentro de la carpeta `hooks`. Esta función podría hacer cualquier cosa que desee aplicar a los registros seleccionados. Podría abrir una nueva página, realizar una solicitud ajax o cualquier otra acción que desee realizar. No hay una implementación específica que deba seguir aquí. Discutiremos una acción de ejemplo con todos estos detalles a continuación para que pueda usarla como guía.
 
-This diagram explains how this all works. 
+Este diagrama explica cómo funciona todo esto.
 
-![Batch actions diagram](https://cdn.bigprof.com/appgini-desktop/wp-content/uploads/appgini-record-action-hook.png)
+![Diagrama de acciones por lotes](https://cdn.bigprof.com/appgini-desktop/wp-content/uploads/appgini-record-action-hook.png)
 
-So, here is the sequence of events:
+Entonces, aquí está la secuencia de eventos:
 
-1. The user opens the table view of a table in your AppGini application.
-2. The application calls the hook function `tablename_batch_actions()`. This is where you define the extra actions users can choose.
-3. This function returns an array that describes one or more actions and the name of the javascript function to call if the user selects an action. The application adds those actions to the "More" menu.
-4. If the user selects one or more records, opens the "More" menu, and chooses one of the actions you defined in the `tablename_batch_actions()` hook, the application passes the IDs of the selected records to the javascript function you associated with that action.
+1. El usuario abre la vista de tabla de una tabla en su aplicación AppGini.
+2. La aplicación llama a la función hook `tablename_batch_actions()`. Aquí es donde define las acciones adicionales que los usuarios pueden elegir.
+3. Esta función devuelve una matriz que describe una o más acciones y el nombre de la función javascript a la que llamar si el usuario selecciona una acción. La aplicación agrega esas acciones al menú "Más".
+4. Si el usuario selecciona uno o más registros, abre el menú "Más" y elige una de las acciones que definió في el hook `tablename_batch_actions()`, la aplicación pasa los ID de los registros seleccionados a la función javascript que asoció con esa acción.
 
-## Example: Adding a batch action to print mailing labels for selected records
+## Ejemplo: Agregar una acción por lotes para imprimir etiquetas de correo para los registros seleccionados
 
+Volviendo al ejemplo de la tabla de clientes:
 
-Back to the customers table example:
+![Tabla de clientes](https://cdn.bigprof.com/appgini-desktop/wp-content/uploads/select-multiple-records-show-batch-actions.png)
 
-![Customers table](https://cdn.bigprof.com/appgini-desktop/wp-content/uploads/select-multiple-records-show-batch-actions.png)
-
-Let's say you want to add a batch action to print mailing labels for the selected customers. Here is how you can do it: the first step is to add the action into the `customers_batch_actions()` hook. To do so, we'll open the `hooks/customers.php` file, we should find our hook function: 
+Digamos que desea agregar una acción por lotes para imprimir etiquetas de correo para los clientes seleccionados. Así es como puede hacerlo: el primer paso es agregar la acción al hook `customers_batch_actions()`. Para hacerlo, abriremos el archivo `hooks/customers.php`, deberíamos encontrar nuestra función hook:
 
 ```php
 function customers_batch_actions(&$args){
@@ -53,14 +52,14 @@ function customers_batch_actions(&$args){
 }
 ```
 
-The function above is empty (we call this a skeleton function). We need to add our action to it. So, let's modify it to read: 
+La función anterior está vacía (la llamamos función esqueleto). Necesitamos agregarle nuestra acción. Entonces, modifiquémosla para que diga:
 
 ```php
 function customers_batch_actions(&$args){
  
     return [
         [
-            'title' => 'Print mail labels',
+            'title' => 'Imprimir etiquetas de correo',
             'function' => 'print_mail_labels',
             'icon' => 'th-list'
         ]
@@ -68,47 +67,47 @@ function customers_batch_actions(&$args){
 }
 ```
 
-The code above tells our application to display an extra action in the "More" menu labeled "Print mail labels". If a user chooses that action, the application will pass the IDs (primary key values) of the selected records to a javascript function named `print_mail_labels()`. We didn't write this function yet. We'll do so in a moment. But before we do so, let's take a look on the "More" menu after adding the code above. 
+El código anterior le dice a nuestra aplicación que muestre una acción adicional en el menú "Más" con la etiqueta "Imprimir etiquetas de correo". Si un usuario elige esa acción, la aplicación pasará los ID (valores de clave principal) de los registros seleccionados a una función javascript llamada `print_mail_labels()`. Aún no hemos escrito esta función. Lo haremos en un momento. Pero antes de hacerlo, echemos un vistazo al menú "Más" después de agregar el código anterior.
 
-![More menu with print mail labels action](https://cdn.bigprof.com/appgini-desktop/wp-content/uploads/new-batch-action-defined.png)
+![Menú Más con la acción de imprimir etiquetas de correo](https://cdn.bigprof.com/appgini-desktop/wp-content/uploads/new-batch-action-defined.png)
 
-We've specified an icon name in the code above. So, the icon shows up to the left of the new action. For a full list of supported icon names, please refer to the [Bootstrap Glyphicons list](https://getbootstrap.com/components/#glyphicons). All icons there have a name like "glyphicon-xyz" ... just use the xyz part in our hook code to specify an icon.
+Hemos especificado un nombre de icono en el código anterior. Por lo tanto, el icono aparece a la izquierda de la nueva acción. Para obtener una lista completa de los nombres de iconos admitidos, consulte la [lista de Glyphicons de Bootstrap](https://getbootstrap.com/components/#glyphicons). Todos los iconos allí tienen un nombre como "glyphicon-xyz"... simplemente use la parte xyz en nuestro código de hook para especificar un icono.
 
-> **TIP!**
+> **¡CONSEJO!**
 >
-> To display the batch action only to users from a specific group, you can add a conditional check in the hook function. For example, to display the action only to users in the 'Admins' group, you can add the following code:
+> Para mostrar la acción por lotes solo a los usuarios de un grupo específico, puede agregar una verificación condicional en la función hook. Por ejemplo, para mostrar la acción solo a los usuarios del grupo 'Admins', puede agregar el siguiente código:
 > ```php
 > $memberInfo = getMemberInfo();
-> // if the current user is not an admin, return an empty array
+> // si el usuario actual no es un administrador, devuelve una matriz vacía
 > if($memberInfo['group'] != 'Admins') return [];
-> 
-> return [ ... ]; // your batch actions array here
+>
+> return [ ... ]; // su matriz de acciones por lotes aquí
 > ```
 
-The next step is to define the `print_mail_labels()` javascript function. This is the function that our application would call if the user clicks the "Print mail labels" item in the menu. We should write this function in the `customers-tv.js` file in the `hooks` folder ... If you don't find that file in the folder, just create it there .. the format is `tablename-tv.js` (where `tablename` is the name of the concerned table). If the file exists in the hooks folder, it's loaded in the table view. So, whatever javascript code you put there will get executed in the table view of the concerned table.
+El siguiente paso es definir la función javascript `print_mail_labels()`. Esta es la función a la que nuestra aplicación llamaría si el usuario hace clic en el elemento "Imprimir etiquetas de correo" en el menú. Deberíamos escribir esta función en el archivo `customers-tv.js` en la carpeta `hooks`... Si no encuentra ese archivo en la carpeta, simplemente créelo allí... el formato es `tablename-tv.js` (donde `tablename` es el nombre de la tabla en cuestión). Si el archivo existe en la carpeta `hooks`, se carga en la vista de tabla. Por lo tanto, cualquier código javascript que coloque allí se ejecutará en la vista de tabla de la tabla en cuestión.
 
-Let's write our code in the `customers-tv.js` file as follows:
+Escribamos nuestro código en el archivo `customers-tv.js` de la siguiente manera:
 
 ```javascript
 function print_mail_labels(table_name, ids) {
-    alert("IDs selected from " + table_name + ": " + ids);
+    alert("ID seleccionados de " + table_name + ": " + ids);
 }
 ```
 
-Here is what happens when we choose the "Print mail labels" action after adding the above code: 
+Esto es lo que sucede cuando elegimos la acción "Imprimir etiquetas de correo" después de agregar el código anterior:
 
-![Alert showing selected IDs](https://cdn.bigprof.com/appgini-desktop/wp-content/uploads/testing-new-batch-action-javascript-function-parameters.png)
+![Alerta que muestra los ID seleccionados](https://cdn.bigprof.com/appgini-desktop/wp-content/uploads/testing-new-batch-action-javascript-function-parameters.png)
 
-The above code simply displays the parameters passed to the `print_mail_labels()` function. When you write the javascript function, you should write it so that it receives two parameters. The first one is a string containing the table name (this is useful if you have one function for handling multiple tables), and the second one is an array of selected record IDs (primary key values of selected records).
+El código anterior simplemente muestra los parámetros pasados a la función `print_mail_labels()`. Cuando escriba la función javascript, debe escribirla para que reciba dos parámetros. El primero es una cadena que contiene el nombre de la tabla (esto es útil si tiene una función para manejar múltiples tablas), y el segundo es una matriz de ID de registros seleccionados (valores de clave principal de los registros seleccionados).
 
-Let's change the javascript code to do something more useful. We'll pass the selected IDs to a PHP script to display the mail labels for those records. So let's rewrite the `print_mail_labels()` function as follows. 
+Cambiemos el código javascript para hacer algo más útil. Pasaremos los ID seleccionados a un script PHP para mostrar las etiquetas de correo de esos registros. Así que reescribamos la función `print_mail_labels()` de la siguiente manera.
 
 ```javascript
 function print_mail_labels(table_name, ids) {
-    /* 
-      we'll open the mail labels page in a new window
-      that page is a server-side PHP script named mail-labels.php
-      but first, let's prepare the parameters to send to that script
+    /*
+      abriremos la página de etiquetas de correo en una nueva ventana
+      esa página es un script PHP del lado del servidor llamado mail-labels.php
+      pero primero, preparemos los parámetros para enviar a ese script
     */
     var url = 'mail-labels.php?table=' + table_name;
     for(var i = 0; i < ids.length; i++){
@@ -121,35 +120,35 @@ function print_mail_labels(table_name, ids) {
 }
 ```
 
-Finally, let's write the server-side `mail-labels.php` script. Based on the code above, we assumed the location of this script to be the main folder of our AppGini application. Here is how this script might look like: 
+Finalmente, escribamos el script `mail-labels.php` del lado del servidor. Según el código anterior, asumimos que la ubicación de este script es la carpeta principal de nuestra aplicación AppGini. Así es como podría verse este script:
 
 ```php
 <?php
     /*
-      Including the following files allows us to use many shortcut
-      functions provided by AppGini. Here, we'll be using the
-      following functions:
+      Incluir los siguientes archivos nos permite usar muchos accesos directos
+      funciones proporcionadas por AppGini. Aquí, usaremos las
+      siguientes funciones:
         makeSafe()
-            protect against malicious SQL injection attacks
+            proteger contra ataques maliciosos de inyección SQL
         sql()
-            connect to the database and execute a SQL query
+            conectarse a la base de datos y ejecutar una consulta SQL
         db_fetch_assoc()
-            same as PHP built-in mysqli_fetch_assoc() function
+            igual que la función mysqli_fetch_assoc() integrada de PHP
     */
     include(__DIR__ . "/lib.php");
      
-    /* receive calling parameters */
+    /* recibir parámetros de llamada */
     $table = $_REQUEST['table'];
-    $ids = $_REQUEST['ids']; /* this is an array of IDs */
+    $ids = $_REQUEST['ids']; /* esto es una matriz de ID */
      
-    /* a comma-separated list of IDs to use in the query */
+    /* una lista de ID separada por comas para usar en la consulta */
     $cs_ids = '';
     foreach($ids as $id){
         $cs_ids .= "'" . makeSafe($id) . "',";
     }
-    $cs_ids = substr($cs_ids, 0, -1); /* remove last comma */
+    $cs_ids = substr($cs_ids, 0, -1); /* eliminar la última coma */
      
-    /* retrieve the records and display mail labels */
+    /* recuperar los registros y mostrar las etiquetas de correo */
     $eo = ['silentErrors' => true];
     $res = sql("select * from customers " .
                "where CustomerID in ({$cs_ids})", $eo);
@@ -169,16 +168,14 @@ Finally, let's write the server-side `mail-labels.php` script. Based on the code
     }
 ```
 
-Here is a sample of the output from the above script. 
+Aquí hay una muestra de la salida del script anterior.
 
-![Sample mail labels](https://cdn.bigprof.com/appgini-desktop/wp-content/uploads/sample-output-from-mail-labels.png)
+![Muestra de etiquetas de correo](https://cdn.bigprof.com/appgini-desktop/wp-content/uploads/sample-output-from-mail-labels.png)
 
-We chose to implement the action handling using a javascript function to allow a lot of flexibility for customizations. In the above example, we prepared some parameters and opened a new page. You might instead wish to do something in the background by using an Ajax request without opening a new page. It's all up to you. 
+Elegimos implementar el manejo de acciones usando una función javascript para permitir mucha flexibilidad para las personalizaciones. En el ejemplo anterior, preparamos algunos parámetros y abrimos una nueva página. En su lugar, es posible que desee hacer algo en segundo plano utilizando una solicitud Ajax sin abrir una nueva página. Todo depende de usted.
 
- Note: The above example used the Northwind project, which is the same one used for our [online demo](https://northwind.demos.appgini.com/). You can [download the Northwind project file, application files and the sample data](https://github.com/bigprof-software/northwind-demo/releases/latest) to experiment on your own.
+Nota: El ejemplo anterior utilizó el proyecto Northwind, que es el mismo que se utilizó para nuestra [demostración en línea](https://northwind.demos.appgini.com/). Puede [descargar el archivo del proyecto Northwind, los archivos de la aplicación y los datos de muestra](https://github.com/bigprof-software/northwind-demo/releases/latest) para experimentar por su cuenta.
 
-> **TIP!**
-> 
-> Don't have the time or programming knowledge to write your own batch actions? We have a plugin for that now! Check our [Mass Update plugin](/appgini/applications/mass-update-plugin). This plugin allows you to add as many batch actions as you want in a very short time, without writing a single line of code.
-
-
+> **¡CONSEJO!**
+>
+> ¿No tiene el tiempo o los conocimientos de programación para escribir sus propias acciones por lotes? ¡Ahora tenemos un complemento para eso! Consulte nuestro [complemento de Actualización masiva](/appgini/applications/mass-update-plugin). Este complemento le permite agregar tantas acciones por lotes como desee en muy poco tiempo, sin escribir una sola línea de código.

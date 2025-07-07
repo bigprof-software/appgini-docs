@@ -1,61 +1,60 @@
 ---
-title: AppGini projects
-description: Learn how to work with AppGini projects, create new projects, and save them.
-keywords: appgini projects, appgini project window, appgini new project, appgini project browser, appgini project properties, working with projects
-linkTitle: Working with projects
+title: Proyectos de AppGini
+description: Aprenda a trabajar con proyectos de AppGini, crear nuevos proyectos y guardarlos.
+keywords: proyectos de appgini, ventana de proyecto de appgini, nuevo proyecto de appgini, explorador de proyectos de appgini, propiedades de proyecto de appgini, trabajar con proyectos
+linkTitle: Trabajar con proyectos
 slug: help/working-with-projects
 ---
 
-# AppGini projects
+# Proyectos de AppGini
 
-## What is an AppGini project?
+## ¿Qué es un proyecto de AppGini?
 
-To create a web database application using AppGini, you start by creating a project. In the project, you define your database tables and fields, and configure your application's appearance and behavior. Once you have finished working on your project, you can generate the PHP code for your application by clicking the "Generate" button on the toolbar or pressing F5. AppGini will then save the generated code to a folder of your choice. Finally, you can deploy the generated files to your web server.
+Para crear una aplicación de base de datos web con AppGini, comienza creando un proyecto. En el proyecto, define sus tablas y campos de base de datos, y configura la apariencia y el comportamiento de su aplicación. Una vez que haya terminado de trabajar en su proyecto, puede generar el código PHP para su aplicación haciendo clic en el botón "Generar" en la barra de herramientas o presionando F5. AppGini luego guardará el código generado en una carpeta de su elección. Finalmente, puede implementar los archivos generados en su servidor web.
 
-![The Generate button on the toolbar.](https://cdn.bigprof.com/appgini-desktop/help/magic-stick.png)
+![El botón Generar en la barra de herramientas.](https://cdn.bigprof.com/appgini-desktop/help/magic-stick.png)
 
-## How do I start a new project?
+## ¿Cómo inicio un nuevo proyecto?
 
-To start a new project in AppGini, follow these steps:
+Para iniciar un nuevo proyecto en AppGini, siga estos pasos:
 
-1. Launch AppGini.
-2. From the File menu, select New, or click the 'New Project' icon on the toolbar.
-3. A new project window will appear, as shown below.
-4. By default, the project is named 'new_db'. To change the name, click on the project name at the top of the left section (the project browser pane), then press **` F2 `** and type the new name.
+1. Inicie AppGini.
+2. En el menú Archivo, seleccione Nuevo, o haga clic en el icono 'Nuevo proyecto' en la barra de herramientas.
+3. Aparecerá una nueva ventana de proyecto, como se muestra a continuación.
+4. De forma predeterminada, el proyecto se llama 'new_db'. Para cambiar el nombre, haga clic en el nombre del proyecto en la parte superior de la sección izquierda (el panel del explorador de proyectos), luego presione **` F2 `** y escriba el nuevo nombre.
 
-### The project name
+### El nombre del proyecto
 
-Note that the project name you specify in AppGini doesn't have to match the name of the database on your server. It's used only for display purposes and will be used as the basis for the application title, which is displayed at the top of the project properties pane (see the screenshot below) and in the generated application's title bar.
+Tenga en cuenta que el nombre del proyecto que especifique en AppGini no tiene que coincidir con el nombre de la base de datos en su servidor. Se usa solo con fines de visualización y se usará como base para el título de la aplicación, que se muestra en la parte superior del panel de propiedades del proyecto (vea la captura de pantalla a continuación) y en la barra de título de la aplicación generada.
 
-> You can configure the actual database name and credentials during the generated application setup, which is explained in detail [here](/appgini/help/working-with-generated-web-database-application/setup/).
+> Puede configurar el nombre real de la base de datos y las credenciales durante la configuración de la aplicación generada, lo que se explica en detalle [aquí](/appgini/help/working-with-generated-web-database-application/setup/).
 
-## The project window
+## La ventana del proyecto
 
-![New project window](https://cdn.bigprof.com/appgini-desktop/help/appgini-new-project-24.12.png)
+![Nueva ventana de proyecto](https://cdn.bigprof.com/appgini-desktop/help/appgini-new-project-24.12.png)
 
-This is your working area. This window has two sections: the project browser pane at the left lets you view your project components (the project, tables and fields) in an easy to navigate hierarchical manner. The right section is the properties pane. When you click on any item in the project browser, its properties are displayed in the properties pane.
+Esta es su área de trabajo. Esta ventana tiene dos secciones: el panel del explorador de proyectos a la izquierda le permite ver los componentes de su proyecto (el proyecto, las tablas y los campos) de una manera jerárquica fácil de navegar. La sección derecha es el panel de propiedades. Cuando hace clic en cualquier elemento en el explorador de proyectos, sus propiedades se muestran en el panel de propiedades.
 
-At the bottom of the project window, you'll find the project search box. You can use this box to quickly find any item in your project by typing a few characters of its name.
+En la parte inferior de la ventana del proyecto, encontrará el cuadro de búsqueda del proyecto. Puede usar este cuadro para encontrar rápidamente cualquier elemento en su proyecto escribiendo algunos caracteres de su nombre.
 
-## How do I save a project?
+## ¿Cómo guardo un proyecto?
 
-In the professional version of AppGini, projects can be saved as project files, with the extension `.axp`. You can open them later to continue working on your project or modify it. The freeware version can open project files but can not save changes to them.
+En la versión profesional de AppGini, los proyectos se pueden guardar como archivos de proyecto, con la extensión `.axp`. Puede abrirlos más tarde para continuar trabajando en su proyecto o modificarlo. La versión gratuita puede abrir archivos de proyecto pero no puede guardar cambios en ellos.
 
-To save a project, click the 'Save' icon on the toolbar or press **` Ctrl `** + **` S `**. You'll be prompted to choose a location to save your project file if you haven't saved it before. You can also save your project by selecting 'Save' from the File menu.
+Para guardar un proyecto, haga clic en el icono 'Guardar' en la barra de herramientas o presione **` Ctrl `** + **` S `**. Se le pedirá que elija una ubicación para guardar su archivo de proyecto si no lo ha guardado antes. También puede guardar su proyecto seleccionando 'Guardar' en el menú Archivo.
 
-> Note: Saving a project file doesn't save the generated application files. To save the generated application files, you need to click the 'Generate' button on the toolbar or press **` F5 `**.
+> Nota: Guardar un archivo de proyecto no guarda los archivos de la aplicación generada. Para guardar los archivos de la aplicación generada, debe hacer clic en el botón 'Generar' en la barra de herramientas o presionar **` F5 `**.
 
-## Auto save of projects
+## Guardado automático de proyectos
 
-You can configure AppGini to automatically save your project every few minutes. To do this, click the 'AppGini Preferences' icon on the toolbar, then check the 'Auto-save interval (minutes)' option and specify the interval in minutes.
+Puede configurar AppGini para que guarde automáticamente su proyecto cada pocos minutos. Para hacer esto, haga clic en el icono 'Preferencias de AppGini' en la barra de herramientas, luego marque la opción 'Intervalo de guardado automático (minutos)' y especifique el intervalo en minutos.
 
-## Opening an existing project
+## Abrir un proyecto existente
 
-When you launch AppGini, you'll see the 'How do you want to begin?' dialog. You can choose to start a new project, open an existing project, or open last project. If you don't see this dialog, it means you've disabled it before. You can enable it again by checking the 'Show how do you want to begin' option in the 'AppGini Preferences' dialog.
+Cuando inicie AppGini, verá el cuadro de diálogo '¿Cómo desea comenzar?'. Puede elegir iniciar un nuevo proyecto, abrir un proyecto existente o abrir el último proyecto. Si no ve este cuadro de diálogo, significa que lo deshabilitó antes. Puede habilitarlo nuevamente marcando la opción 'Mostrar cómo desea comenzar' en el cuadro de diálogo 'Preferencias de AppGini'.
 
-You can also open an existing project by selecting 'Open' from the File menu or clicking the 'Open Project' icon on the toolbar. Then, navigate to the location of your project file and select it.
+También puede abrir un proyecto existente seleccionando 'Abrir' en el menú Archivo o haciendo clic en el icono 'Abrir proyecto' en la barra de herramientas. Luego, navegue a la ubicación de su archivo de proyecto y selecciónelo.
 
-## Advanced: The project file format
+## Avanzado: El formato del archivo de proyecto
 
-AppGini project files have the extension `.axp`. They are XML files that store all the information about your project, including the tables, fields, and their properties, as well as the project settings. You can open an `.axp` file in a text/code editor to see its contents. You can also make modifications to the file, but be careful not to corrupt it, as this may prevent you from opening the project in AppGini.
-
+Los archivos de proyecto de AppGini tienen la extensión `.axp`. Son archivos XML que almacenan toda la información sobre su proyecto, incluidas las tablas, los campos y sus propiedades, así como la configuración del proyecto. Puede abrir un archivo `.axp` en un editor de texto/código para ver su contenido. También puede realizar modificaciones en el archivo, pero tenga cuidado de no dañarlo, ya que esto podría impedirle abrir el proyecto en AppGini.

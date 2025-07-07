@@ -1,244 +1,242 @@
 ---
-title: Calculated fields
-linkTitle: Calculated fields
+title: Campos calculados
+linkTitle: Campos calculados
 slug: help/calculated-fields
-description: Learn how to configure calculated fields in your AppGini app. Calculated fields are read-only fields that get populated automatically with a value calculated from an SQL SELECT query.
-keywords: calculated fields, read-only fields, SQL query, MySQL, AppGini, automatic calculations, batch updates, command line
+description: Aprenda a configurar campos calculados en su aplicación AppGini. Los campos calculados son campos de solo lectura que se rellenan automáticamente con un valor calculado a partir de una consulta SQL SELECT.
+keywords: campos calculados, campos de solo lectura, consulta SQL, MySQL, AppGini, cálculos automáticos, actualizaciones por lotes, línea de comandos
 ---
 
-# Calculated fields
+# Campos calculados
 
-> Calculated fields feature is available in AppGini 5.80 and above.
+> La función de campos calculados está disponible en AppGini 5.80 y versiones posteriores.
 
-## What are calculated fields?
+## ¿Qué son los campos calculados?
 
-As of AppGini 5.80, you can now configure one or more fields in your app as _calculated fields_. Calculated fields are read-only fields that get populated automatically with a value calculated from any formula you specify. The formula for a calculated field must be a MySQL-compatible SQL query that returns a single value. The value returned from the SQL query is saved to the calculated field whenever the record containing that field is accessed by users.
+A partir de AppGini 5.80, ahora puede configurar uno o más campos en su aplicación como _campos calculados_. Los campos calculados son campos de solo lectura que se rellenan automáticamente con un valor calculado a partir de cualquier fórmula que especifique. La fórmula para un campo calculado debe ser una consulta SQL compatible con MySQL que devuelva un solo valor. El valor devuelto por la consulta SQL se guarda en el campo calculado cada vez que los usuarios acceden al registro que contiene ese campo.
 
-Calculated fields can be very helpful in numerous scenarios. For example, to automatically calculate and update the subtotal and total of an invoice, number of students enrolled to a course, average score of course, due date of an invoice (for example if you want to set a business rule to set a due date of an invoice to 15 days after issue date), most recent status of a shipment, flag overdue tasks, indicate if prospect customer should be contacted today ... etc. There are endless possibilities to applying calculated fields.
+Los campos calculados pueden ser muy útiles en numerosos escenarios. Por ejemplo, para calcular y actualizar automáticamente el subtotal y el total de una factura, el número de estudiantes inscritos en un curso, la puntuación promedio del curso, la fecha de vencimiento de una factura (por ejemplo, si desea establecer una regla comercial para establecer una fecha de vencimiento de una factura a 15 días después de la fecha de emisión), el estado más reciente de un envío, marcar tareas vencidas, indicar si se debe contactar hoy a un cliente potencial, etc. Hay infinitas posibilidades para aplicar campos calculados.
 
-## Conditions for a field to become a calculated field
+## Condiciones para que un campo se convierta en un campo calculado
 
-If you are trying to set a field as a calculated field, it must **NOT** meet any of the following conditions
+Si está intentando establecer un campo como un campo calculado, **NO** debe cumplir ninguna de las siguientes condiciones:
 
-* Fields not set as read only
-* Primary key fields
-* Required fields
-* Text area and rich (HTML) area fields
-* Auto-increment fields
-* Unique fields
-* Web/email link fields
-* Image/file upload fields
-* Map/video fields
-* Lookup fields
-* Options list fields
-* Fields that have a data format specified (you can apply a data format in the calculation instead)
-* Fields with default values (you can apply a default value in the calculation instead)
+* Campos no establecidos como de solo lectura
+* Campos de clave principal
+* Campos obligatorios
+* Campos de área de texto y área enriquecida (HTML)
+* Campos de incremento automático
+* Campos únicos
+* Campos de enlace web/correo electrónico
+* Campos de carga de imagen/archivo
+* Campos de mapa/video
+* Campos de búsqueda
+* Campos de lista de opciones
+* Campos que tienen un formato de datos especificado (puede aplicar un formato de datos en el cálculo en su lugar)
+* Campos con valores predeterminados (puede aplicar un valor predeterminado en el cálculo en su lugar)
 
-You'll see a clear error message in AppGini explaining why a field can't be set as a calculated field if any of the above conditions apply to that field.
+Verá un mensaje de error claro en AppGini que explica por qué un campo no se puede establecer como un campo calculado si alguna de las condiciones anteriores se aplica a ese campo.
 
-![Calculated field error in AppGini.](https://cdn.bigprof.com/appgini-desktop/help/calculated-field-error-message-for-non-read-only-field.png)
+![Error de campo calculado en AppGini.](https://cdn.bigprof.com/appgini-desktop/help/calculated-field-error-message-for-non-read-only-field.png)
 
-Also, if you set a field as a calculated field, and later on make some changes to the field that prevent it from being a calculated field, you'll see a warning when generating the app that the calculation will be skipped, along with reason for skipping:
+Además, si establece un campo como un campo calculado y luego realiza algunos cambios en el campo que impiden que sea un campo calculado, verá una advertencia al generar la aplicación de que se omitirá el cálculo, junto con el motivo de la omisión:
 
-![Calculated field skipped when generating an AppGini app](https://cdn.bigprof.com/screencasts/skipping-calculated-field-on-app-generation.png)
+![Campo calculado omitido al generar una aplicación AppGini](https://cdn.bigprof.com/screencasts/skipping-calculated-field-on-app-generation.png)
 
-## How to configure a calculated field
+## Cómo configurar un campo calculado
 
-The basic steps are:
+Los pasos básicos son:
 
-1. Create the field (if it already exists, make sure it meets the conditions above).
-2. Set the field as read-only.
-3. Navidate to the _Calculated field_ tab and check the option _Automatically calculate the value of this field using the following SQL query_
-4. Type the SQL query for calculating the field value.
+1. Cree el campo (si ya existe, asegúrese de que cumpla las condiciones anteriores).
+2. Establezca el campo como de solo lectura.
+3. Vaya a la pestaña _Campo calculado_ y marque la opción _Calcular automáticamente el valor de este campo utilizando la siguiente consulta SQL_
+4. Escriba la consulta SQL para calcular el valor del campo.
 
 ![](https://cdn.bigprof.com/screencasts/configure-calculated-field.gif)
 
-**Important note**:
+**Nota importante**:
 
-Valid SQL queries for calculated fields must be `SELECT` queries that return a single value. The returned value should be of the same data type as the calculated field.
-For example, this is a valid query to calculate the subtotal of an invoice line by multiplying the unit price by the quantity:
+Las consultas SQL válidas para campos calculados deben ser consultas `SELECT` que devuelvan un solo valor. El valor devuelto debe ser del mismo tipo de datos que el campo calculado.
+Por ejemplo, esta es una consulta válida para calcular el subtotal de una línea de factura multiplicando el precio unitario por la cantidad:
 
 ```sql
-SELECT quantity * unit_price FROM invoice_items WHERE id='%ID%'
+SELECT cantidad * precio_unitario FROM items_factura WHERE id='%ID%'
 ```
 
-## Special variables for use in calculated field queries
+## Variables especiales para usar en consultas de campos calculados
 
-In the above query, we're using the special variable `%ID%`. When executing the query, this would be replaced by the primary key value of the current record. The following variables can be used in queries:
+En la consulta anterior, estamos utilizando la variable especial `%ID%`. Al ejecutar la consulta, esto se reemplazaría por el valor de la clave principal del registro actual. Se pueden utilizar las siguientes variables en las consultas:
 
-* `%ID%` Will be replaced with the ID (primary key) value of the current record before executing the query.
-* `%USERNAME%` Will be replaced with the currently logged username before executing the query.
-* `%GROUPID%` Will be replaced with the group ID of the currently logged username before executing the query.
-* `%GROUP%` Will be replaced with the group name of the currently logged username before executing the query.
-* `%TABLENAME%` Will be replaced with the name of the table containing the calculated field before executing the query.
-* `%PKFIELD%` Will be replaced with the name of the primary key field of the table containing the calculated field before executing the query.
+* `%ID%` Se reemplazará con el valor de ID (clave principal) del registro actual antes de ejecutar la consulta.
+* `%USERNAME%` Se reemplazará con el nombre de usuario actualmente conectado antes de ejecutar la consulta.
+* `%GROUPID%` Se reemplazará con el ID de grupo del nombre de usuario actualmente conectado antes de ejecutar la consulta.
+* `%GROUP%` Se reemplazará con el nombre de grupo del nombre de usuario actualmente conectado antes de ejecutar la consulta.
+* `%TABLENAME%` Se reemplazará con el nombre de la tabla que contiene el campo calculado antes de ejecutar la consulta.
+* `%PKFIELD%` Se reemplazará con el nombre del campo de clave principal de la tabla que contiene el campo calculado antes de ejecutar la consulta.
 
-Please make sure to use single quotes around the above variables when using them in queries. You don't have to manually type the variable into the query in AppGini; you can place the cursor at the location where you want to insert the variable, and then click the desired variable at the right as shown in this screenshot:
+Asegúrese de utilizar comillas simples alrededor de las variables anteriores cuando las utilice en las consultas. No tiene que escribir manualmente la variable en la consulta en AppGini; puede colocar el cursor en la ubicación donde desea insertar la variable y luego hacer clic en la variable deseada a la derecha como se muestra en esta captura de pantalla:
 
 ![](https://cdn.bigprof.com/screencasts/inserting-placeholders-into-queries-for-calculated-fields-24.12.png)
 
-The above special variables make it easy to write flexible queries that depend on the current user, group, or record. For example, you can use `%USERNAME%` to calculate the total sales made by the currently logged user, or use `%GROUP%` to calculate the total sales made by the group of the currently logged user. `%TABLENAME%` and `%PKFIELD%` can be used to write generic queries that can be copied and pasted to other tables without modification.
+Las variables especiales anteriores facilitan la escritura de consultas flexibles que dependen del usuario, grupo o registro actual. Por ejemplo, puede usar `%USERNAME%` para calcular las ventas totales realizadas por el usuario actualmente conectado, o usar `%GROUP%` para calcular las ventas totales realizadas por el grupo del usuario actualmente conectado. `%TABLENAME%` y `%PKFIELD%` se pueden usar para escribir consultas genéricas que se pueden copiar y pegar en otras tablas sin modificaciones.
 
-## The query helper
+## El ayudante de consultas
 
-For quicker and more precise query entry, we recommend using the _query helper_. Click the _Query helper_ button below the query box to launch the query helper window, which looks like this:
+Para una entrada de consultas más rápida y precisa, recomendamos utilizar el _ayudante de consultas_. Haga clic en el botón _Ayudante de consultas_ debajo del cuadro de consulta para iniciar la ventana del ayudante de consultas, que se ve así:
 
 ![](https://cdn.bigprof.com/screencasts/calculated-field-query-helper.png)
 
-The query helper window allows you to quickly insert various special code pieces into your SQL query. Just place the cursor at the position where you want to insert the piece of code, then choose the code you want to insert from the boxes at the right or the bottom of the query box, then click the _Insert_ button.
+La ventana del ayudante de consultas le permite insertar rápidamente varias piezas de código especiales en su consulta SQL. Simplemente coloque el cursor en la posición donde desea insertar la pieza de código, luego elija el código que desea insertar de los cuadros a la derecha o en la parte inferior del cuadro de consulta, luego haga clic en el botón _Insertar_.
 
-You can insert special variables (as explained above), field names, SQL functions, or JOIN statements that join the table of the calculated field with one or more of its parent or child tables. This not only saves you time for manually typing these snippets, but also reduces typos and syntax errors.
+Puede insertar variables especiales (como se explicó anteriormente), nombres de campos, funciones SQL o sentencias JOIN que unen la tabla del campo calculado con una o más de sus tablas principales o secundarias. Esto no solo le ahorra tiempo para escribir manualmente estos fragmentos, sino que también reduce los errores tipográficos y de sintaxis.
 
-Of course, using calculated fields requires some knowledge of SQL language, specifically SQL SELECT statement. There are many great [SQL tutorials](https://www.w3schools.com/sql/sql_select.asp) available online, as well as the [official MySQL reference](https://dev.mysql.com/doc/refman/8.0/en/select.html). We'll also list a few examples below that cover some widely-used scenarios. You can also [ask for help from other users on our forum](https://forums.appgini.com/).
+Por supuesto, el uso de campos calculados requiere cierto conocimiento del lenguaje SQL, específicamente la sentencia SQL SELECT. Hay muchos excelentes [tutoriales de SQL](https://www.w3schools.com/sql/sql_select.asp) disponibles en línea, así como la [referencia oficial de MySQL](https://dev.mysql.com/doc/refman/8.0/en/select.html). También enumeraremos algunos ejemplos a continuación que cubren algunos escenarios ampliamente utilizados. También puede [pedir ayuda a otros usuarios en nuestro foro](https://forums.appgini.com/).
 
-In the screencast below, we create a new 'Sales' field in the clients table, and configure it as a calculated field that displays the total of sales made to each client, by retrieving the sum of her paid invoices total. We use the _Query helper_ window to quickly and precisely write the query, including the join between the clients and invoices tables.
+En el siguiente screencast, creamos un nuevo campo 'Ventas' en la tabla de clientes y lo configuramos como un campo calculado que muestra el total de ventas realizadas a cada cliente, recuperando la suma del total de sus facturas pagadas. Usamos la ventana _Ayudante de consultas_ para escribir la consulta de forma rápida y precisa, incluida la unión entre las tablas de clientes y facturas.
 
 <iframe width="706" height="397" src="https://www.youtube.com/embed/oERXyqM3zew?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
-## Debugging your query
+## Depuración de su consulta
 
-You can easily debug your SQL query using [phpMyAdmin](https://www.phpmyadmin.net/) or any similar MySQL admin utility. Select your database, then go to the SQL tab, where you can type or paste your SQL query. Replace `%ID%` with the primary key value of the record you wish to test. Also replace any other variables with their values, if needed. Then execute the query. The query should return a single value, and that should be the value you expect in your calculated field. If this is not the case, or if you see any error messages, you should edit the query and retry until no errors are shown and the expected value is returned.
+Puede depurar fácilmente su consulta SQL utilizando [phpMyAdmin](https://www.phpmyadmin.net/) o cualquier utilidad de administración de MySQL similar. Seleccione su base de datos, luego vaya a la pestaña SQL, donde puede escribir o pegar su consulta SQL. Reemplace `%ID%` con el valor de la clave principal del registro que desea probar. También reemplace cualquier otra variable con sus valores, si es necesario. Luego ejecute la consulta. La consulta debe devolver un solo valor, y ese debe ser el valor que espera en su campo calculado. Si este no es el caso, o si ve algún mensaje de error, debe editar la consulta y volver a intentarlo hasta que no se muestren errores y se devuelva el valor esperado.
 
-## Batch-updating calculated fields via command line
+## Actualización por lotes de campos calculados mediante la línea de comandos
 
-_Added in AppGini 5.82_
+_Agregado en AppGini 5.82_
 
-As described in the known issues below, calculated fields are normally updated only when users access them via the table or detail view. Sometimes, you want to update a large number of records without having to access each one. So, we added a command line script for doing that.
+Como se describe en los problemas conocidos a continuación, los campos calculados normalmente se actualizan solo cuando los usuarios acceden a ellos a través de la vista de tabla o detallada. A veces, desea actualizar una gran cantidad de registros sin tener que acceder a cada uno. Por lo tanto, agregamos un script de línea de comandos para hacer eso.
 
-Command line means it can't be run from the browser. You can run it only from a terminal window, or [install it to your server's crontab file](https://www.tecmint.com/run-php-script-as-normal-user-via-cron-job-scheduler/) to run it on a schedule.
+Línea de comandos significa que no se puede ejecutar desde el navegador. Solo puede ejecutarlo desde una ventana de terminal, o [instalarlo en el archivo crontab de su servidor](https://www.tecmint.com/run-php-script-as-normal-user-via-cron-job-scheduler/) para ejecutarlo según un cronograma.
 
-If your app is hosted on your local Windows PC (for example using [Xampp](https://bigprof.com/appgini/tips-and-tutorials/installing-local-testing-environment-xampp)), you can open a command line terminal by opening the Windows Start menu and typing `cmd` then pressing Enter.
+Si su aplicación está alojada en su PC local con Windows (por ejemplo, usando [Xampp](https://bigprof.com/appgini/tips-and-tutorials/installing-local-testing-environment-xampp)), puede abrir una terminal de línea de comandos abriendo el menú Inicio de Windows y escribiendo `cmd` y luego presionando Enter.
 
-If your app is hosted remotely on a Linux server, you need to have shell access and connect to your server via an SSH client (for example [PuTTY](https://www.putty.org/))
+Si su aplicación está alojada de forma remota en un servidor Linux, necesita tener acceso a la shell y conectarse a su servidor a través de un cliente SSH (por ejemplo, [PuTTY](https://www.putty.org/))
 
-In both cases (Windows and Linux command line), you should navigate to the folder where your AppGini app is hosted and run this command:
+En ambos casos (línea de comandos de Windows y Linux), debe navegar a la carpeta donde está alojada su aplicación AppGini y ejecutar este comando:
 
 ```bash
 php cli-update-calculated-fields.php
 ```
 
-The above command would update all calculated fields in all tables. However, on large tables, this might take a long time. So, the command line tool provides several options to control its behavior as follows (you can get command line help on the tool by adding `-h` after the above command):
+El comando anterior actualizaría todos los campos calculados en todas las tablas. Sin embargo, en tablas grandes, esto podría llevar mucho tiempo. Por lo tanto, la herramienta de línea de comandos proporciona varias opciones para controlar su comportamiento de la siguiente manera (puede obtener ayuda de la línea de comandos sobre la herramienta agregando `-h` después del comando anterior):
 
 ```
-Supported arguments:
-  -t: comma-separated list of tables to update.
-      all tables will be updated if this argument is not specified
-  -s: comma-separated list of starting record numbers.
-      Default is 0 (beginning of each table)
-  -l: comma-separated list of records count to update in each table.
-      Default is records count - start
-  -x: comma-separated list of tables to exclude from updating,
-      overrides -t
-  -u: username to use in queries that have %USERNAME% placeholder.
-      Default is admin user
-  -h: displays this help message
+Argumentos admitidos:
+  -t: lista de tablas separadas por comas para actualizar.
+      todas las tablas se actualizarán si no se especifica este argumento
+  -s: lista de números de registro iniciales separados por comas.
+      El valor predeterminado es 0 (comienzo de cada tabla)
+  -l: lista de recuentos de registros separados por comas para actualizar en cada tabla.
+      El valor predeterminado es el recuento de registros - inicio
+  -x: lista de tablas separadas por comas para excluir de la actualización,
+      anula -t
+  -u: nombre de usuario para usar en consultas que tienen el marcador de posición %USERNAME%.
+      El valor predeterminado es el usuario administrador
+  -h: muestra este mensaje de ayuda
 
-Examples:
+Ejemplos:
 
 php cli-update-calculated-fields.php
-  Updates all records of all tables. Not recommended for large databases.
+  Actualiza todos los registros de todas las tablas. No recomendado para bases de datos grandes.
 
 php cli-update-calculated-fields.php -s 2000 -l 1000
-  Updates 1000 records starting from rec# 2000 in all tables.
+  Actualiza 1000 registros a partir del registro n.º 2000 en todas las tablas.
 
-php cli-update-calculated-fields.php -t clients,orders -s 100,1000 -l 10,100
-  Updates records 100:110 of clients table and 1000:1100 of orders table.
+php cli-update-calculated-fields.php -t clientes,pedidos -s 100,1000 -l 10,100
+  Actualiza los registros 100:110 de la tabla de clientes y 1000:1100 de la tabla de pedidos.
 
-php cli-update-calculated-fields.php -x clients
-  Updates all records of all tables excluding clients table.
+php cli-update-calculated-fields.php -x clientes
+  Actualiza todos los registros de todas las tablas excluyendo la tabla de clientes.
 
 php cli-update-calculated-fields.php -u bob
-  Updates all records of all tables as user bob.
+  Actualiza todos los registros de todas las tablas como usuario bob.
 ```
 
-## Basic examples of calculated fields
+## Ejemplos básicos de campos calculados
 
-For simple calculations performed on other fields of the same record, we'll list some common examples below.
+Para cálculos simples realizados en otros campos del mismo registro, enumeraremos algunos ejemplos comunes a continuación.
 
-### Calculate subtotal for an invoice line by multiplying unit price and quantity
+### Calcular el subtotal de una línea de factura multiplicando el precio unitario y la cantidad
 
-Let's assume you have an app for managing invoices. The invoice header (invoice number, due date, customer info, ... etc) is stored in the `invoices` table. Invoice lines (item, quantity, unit price, subtotal) are stored in the `invoice_items` table. You'd like to have the subtotal field automatically calculated when adding or editing an invoice line.
+Supongamos que tiene una aplicación para administrar facturas. El encabezado de la factura (número de factura, fecha de vencimiento, información del cliente, etc.) se almacena en la tabla `facturas`. Las líneas de la factura (artículo, cantidad, precio unitario, subtotal) se almacenan en la tabla `items_factura`. Le gustaría que el campo de subtotal se calcule automáticamente al agregar o editar una línea de factura.
 
-To set up this calculation, we'd check the read-only option for the `subtotal` field, then set it as a calculated field, and use this SQL query for calculating its value:
+Para configurar este cálculo, marcaríamos la opción de solo lectura para el campo `subtotal`, luego lo estableceríamos como un campo calculado y usaríamos esta consulta SQL para calcular su valor:
 
 ```sql
 SELECT
-`invoice_items`.`unit_price` * `invoice_items`.`quantity`
-FROM `invoice_items` 
-WHERE `invoice_items`.`id` = '%ID%'
+`items_factura`.`precio_unitario` * `items_factura`.`cantidad`
+FROM `items_factura`
+WHERE `items_factura`.`id` = '%ID%'
 ```
 
-### Automatic code by concatenating 2 or more fields
+### Código automático concatenando 2 o más campos
 
-In some data entry scenarios, it's required to create an automatic code given one or more fields in the record. This is typical for product codes, inventory transaction codes, ... etc.
+En algunos escenarios de entrada de datos, se requiere crear un código automático a partir de uno o más campos del registro. Esto es típico para códigos de productos, códigos de transacciones de inventario, etc.
 
-For example, let's assume we have a `products` table. When defining a new product, we'd like the product code to be the first 5 letters of the product `name` field, capitalized, followed by department ID, `dept_id`, followed by the characters `SN`, followed by the serial number as obtained from the auto-increment primary key field `product_id`. To set up this coding scheme, we'd create a read-only field, `product_code`, set its data type as `VarChar` of a suitable length, 50 or so, set it as a calculated field, and use this SQL query for calculating its value:
+Por ejemplo, supongamos que tenemos una tabla `productos`. Al definir un nuevo producto, nos gustaría que el código del producto sean las primeras 5 letras del campo `nombre` del producto, en mayúsculas, seguido del ID del departamento, `id_dept`, seguido de los caracteres `SN`, seguido del número de serie obtenido del campo de clave principal de incremento automático `id_producto`. Para configurar este esquema de codificación, crearíamos un campo de solo lectura, `codigo_producto`, estableceríamos su tipo de datos como `VarChar` de una longitud adecuada, 50 más o menos, lo estableceríamos como un campo calculado y usaríamos esta consulta SQL para calcular su valor:
 
 ```sql
 SELECT CONCAT(
-    UPPER(SUBSTRING(`products`.`name`, 1, 5)),
-    `products`.`dept_id`,
+    UPPER(SUBSTRING(`productos`.`nombre`, 1, 5)),
+    `productos`.`id_dept`,
     'SN',
-    `products`.`product_id`
-) FROM `products` 
-WHERE `products`.`product_id` = '%ID%'
+    `productos`.`id_producto`
+) FROM `productos`
+WHERE `productos`.`id_producto` = '%ID%'
 ```
 
-When a user defines a new product and saves it, the `product_code` field would be set automatically based on the above query to something like `CELLP22SN302`.
+Cuando un usuario define un nuevo producto y lo guarda, el campo `codigo_producto` se establecería automáticamente según la consulta anterior en algo como `CELLP22SN302`.
 
-## More advanced examples of calculated fields
+## Ejemplos más avanzados de campos calculados
 
-### Updating batch status to 'Consumable', 'Warning' or 'Expired' based on expiry date
+### Actualización del estado del lote a 'Consumible', 'Advertencia' o 'Caducado' según la fecha de caducidad
 
-In this example, let's assume we have an inventory app, and for each batch of items we add to inventory, we have an expiry date. We want to automatically update the `status` field of each batch to `Consumable` if expiry date is 30 days or more ahead, `Warning` if less than 30 days ahead, or `Expired` if expiry date is today or older.
+En este ejemplo, supongamos que tenemos una aplicación de inventario y, para cada lote de artículos que agregamos al inventario, tenemos una fecha de caducidad. Queremos actualizar automáticamente el campo `estado` de cada lote a `Consumible` si la fecha de caducidad es de 30 días o más en el futuro, `Advertencia` si es de menos de 30 días en el futuro, o `Caducado` si la fecha de caducidad es hoy o anterior.
 
-To do so, we should configure the `status` field as read-only, calculated field, and use a query like this for the calculation:
+Para hacerlo, debemos configurar el campo `estado` como de solo lectura, campo calculado, y usar una consulta como esta para el cálculo:
 
 ```sql
 SELECT IF(
-  DATEDIFF(`expiry_date`, NOW()) > 30,
-  'Consumable',
+  DATEDIFF(`fecha_caducidad`, NOW()) > 30,
+  'Consumible',
   IF(
-    DATEDIFF(`expiry_date`, NOW()) > 0,
-    'Warning',
-    'Expired'
+    DATEDIFF(`fecha_caducidad`, NOW()) > 0,
+    'Advertencia',
+    'Caducado'
   )
-) FROM `batches`
+) FROM `lotes`
 WHERE `id` = '%ID%'
 ```
 
-Here is a brief explanation of the above query: The SQL `IF()` function accepts 3 parameters: a condition to check, and a value to return if the condition is true, and a value to return if false. For example, `IF(10 > 1, 'yes', 'no')` checks if 10 is greater than 1, and returns either 'yes' if true or 'no' if false. Of course, this should return 'yes'. In the above query, we _nested_ 2 IF expressions to evaluate 3 cases rather than just 2. `DATE_DIFF()` accepts 2 dates and returns the difference between them in days. `NOW()` returns the current date/time.
+Aquí hay una breve explicación de la consulta anterior: La función SQL `IF()` acepta 3 parámetros: una condición para verificar, y un valor para devolver si la condición es verdadera, y un valor para devolver si es falsa. Por ejemplo, `IF(10 > 1, 'sí', 'no')` comprueba si 10 es mayor que 1 y devuelve 'sí' si es verdadero o 'no' si es falso. Por supuesto, esto debería devolver 'sí'. En la consulta anterior, _anidamos_ 2 expresiones IF para evaluar 3 casos en lugar de solo 2. `DATE_DIFF()` acepta 2 fechas y devuelve la diferencia entre ellas en días. `NOW()` devuelve la fecha/hora actual.
 
-### Invoice subtotal by summing subtotals of invoice items
+### Subtotal de la factura sumando los subtotales de los artículos de la factura
 
-In this example, let's assume we have an `invoices` table that includes a `subtotal` field. We want to calculate the invoice subtotal by summing the subtotals of all lines of the invoice (each line contains a unit price and a quantity that we want to multiply to obtain the line subtotal). We should set the `subtotal` field as read-only calculated field. And here is a query we can use to perform this calculation:
+En este ejemplo, supongamos que tenemos una tabla `facturas` que incluye un campo `subtotal`. Queremos calcular el subtotal de la factura sumando los subtotales de todas las líneas de la factura (cada línea contiene un precio unitario y una cantidad que queremos multiplicar para obtener el subtotal de la línea). Debemos establecer el campo `subtotal` como un campo calculado de solo lectura. Y aquí hay una consulta que podemos usar para realizar este cálculo:
 
 ```sql
 SELECT
-  SUM(`invoice_items`.`unit_price` * `invoice_items`.`quantity`)
+  SUM(`items_factura`.`precio_unitario` * `items_factura`.`cantidad`)
 FROM
-  `invoices` LEFT JOIN
-  `invoice_items` ON `invoices`.`id` = `invoice_items`.`invoice_id`
+  `facturas` LEFT JOIN
+  `items_factura` ON `facturas`.`id` = `items_factura`.`id_factura`
 WHERE
-  `invoices`.`id` = '%ID%'
+  `facturas`.`id` = '%ID%'
 ```
 
-In the above query, we are _joining_ the `invoices` table and the `invoice_items` table. Those 2 tables are linked through the `invoice_id` lookup field in `invoice_items` table. Line 5 above performs this join. Line 2 multiplies each invoice item's quantity by its unit price and returns the sum for all items in the current invoice.
+En la consulta anterior, estamos _uniendo_ la tabla `facturas` y la tabla `items_factura`. Esas 2 tablas están vinculadas a través del campo de búsqueda `id_factura` en la tabla `items_factura`. La línea 5 anterior realiza esta unión. La línea 2 multiplica la cantidad de cada artículo de la factura por su precio unitario y devuelve la suma de todos los artículos de la factura actual.
 
-## Looking for more help with queries?
+## ¿Busca más ayuda con las consultas?
 
-Calculated fields is a very powerful tool, and there are so many different usage scenarios. We tried to cover some common use cases above, but if you need more help, feel free to post your usage case on our [forum](https://forums.appgini.com/). We'll be frequently updating this page with more usage cases, so try also checking it later.
+Los campos calculados son una herramienta muy poderosa y existen muchos escenarios de uso diferentes. Intentamos cubrir algunos casos de uso comunes anteriormente, pero si necesita más ayuda, no dude en publicar su caso de uso en nuestro [foro](https://forums.appgini.com/). Actualizaremos con frecuencia esta página con más casos de uso, así que intente consultarla también más tarde.
 
-Please see [this forum topic](https://forums.appgini.com/phpbb/viewtopic.php?f=2&t=4266#p17008) for some excellent notes on calculated fields by Jan from bizzworxx (thanks Jan!).
+Consulte [este tema del foro](https://forums.appgini.com/phpbb/viewtopic.php?f=2&t=4266#p17008) para obtener algunas notas excelentes sobre campos calculados de Jan de bizzworxx (¡gracias Jan!).
 
-## Known issues
+## Problemas conocidos
 
-The following limitations apply to calculated fields:
+Las siguientes limitaciones se aplican a los campos calculados:
 
-* Calculated fields are re-evaluated every time the record or its child records are accessed in the table view, the detail view, the print preview or the child table view. This could cause some performance issues for complex queries. This can be resolved using [MySQL query caching](https://dev.mysql.com/doc/refman/5.7/en/query-cache.html).
-* Calculated fields are evaluated only when their records/child records are accessed. If data that affects the calculation is changed, and you then retrieve the value stored in the calculated field through a third-party app, it won't reflect the changes until it's accessed through your AppGini app itself.
-* Similarly, if the calculated field is used as a parent caption field for a lookup field in another table, the lookup drop-down might not display the most up-to-date calculated values until the records of the calculated field are accessed in your AppGini app.
+* Los campos calculados se reevalúan cada vez que se accede al registro o a sus registros secundarios en la vista de tabla, la vista detallada, la vista previa de impresión o la vista de tabla secundaria. Esto podría causar algunos problemas de rendimiento para consultas complejas. Esto se puede resolver usando [el almacenamiento en caché de consultas de MySQL](https://dev.mysql.com/doc/refman/5.7/en/query-cache.html).
+* Los campos calculados se evalúan solo cuando se accede a sus registros/registros secundarios. Si se modifican los datos que afectan el cálculo y luego recupera el valor almacenado en el campo calculado a través de una aplicación de terceros, no reflejará los cambios hasta que se acceda a él a través de su propia aplicación AppGini.
+* Del mismo modo, si el campo calculado se utiliza como un campo de título principal para un campo de búsqueda en otra tabla, es posible que el menú desplegable de búsqueda no muestre los valores calculados más actualizados hasta que se acceda a los registros del campo calculado en su aplicación AppGini.
 
-The simple work-around for the second and third issues above is to access the record(s) containing the calculated field in the table view in your AppGini app to update them.
-
-
+La solución simple para el segundo y tercer problema anteriores es acceder al registro(s) que contiene el campo calculado en la vista de tabla en su aplicación AppGini para actualizarlos.

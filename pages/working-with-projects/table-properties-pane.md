@@ -1,10 +1,10 @@
 ---
-title: Table properties pane
-linkTitle: Table properties
+title: Panel de propiedades de la tabla
+linkTitle: Propiedades de la tabla
 slug: help/working-with-projects/table-properties-pane
 ---
 
-# Table properties pane
+# Panel de propiedades de la tabla
 
 <div style=" width: 100%; overflow-y: auto;" id="map-link">
 	<img src="https://cdn.bigprof.com/appgini-desktop/help/appgini-table-properties-pane.png" usemap="#map" id="map-image" style="width: 100%; max-width: 1135px;" />
@@ -74,375 +74,374 @@ slug: help/working-with-projects/table-properties-pane
 	</map>
 </div>
 
-## Toolbar > New project
+## Barra de herramientas > Nuevo proyecto
 
-Click on this icon to start a new empty project. This is the starting point for any AppGini application. You will have an empty project that contains only an empty database and predefined default styles.
+Haga clic en este icono para iniciar un nuevo proyecto vacío. Este es el punto de partida para cualquier aplicación AppGini. Tendrá un proyecto vacío que solo contiene una base de datos vacía y estilos predefinidos predeterminados.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Table properties > Table view title
+## Propiedades de la tabla > Título de la vista de tabla
 
-The table view title is the title of the table as it will appear in the pages of the generated PHP application.
+El título de la vista de tabla es el título de la tabla tal como aparecerá en las páginas de la aplicación PHP generada.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Toolbar > Open Project
+## Barra de herramientas > Abrir proyecto
 
-Click on this icon to open a previously saved project.
+Haga clic en este icono para abrir un proyecto guardado anteriormente.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Toolbar > Save Project
+## Barra de herramientas > Guardar proyecto
 
-Click on this icon to save the currently open project. If you haven't saved your project before, you'll be prompted for a file name and location.
+Haga clic en este icono para guardar el proyecto actualmente abierto. Si no ha guardado su proyecto antes, se le pedirá un nombre de archivo y una ubicación.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Toolbar > Project Properties
+## Barra de herramientas > Propiedades del proyecto
 
-Click on this icon to bring the Project Properties area where you can specify the database connection parameters.
+Haga clic en este icono para abrir el área de Propiedades del proyecto, donde puede especificar los parámetros de conexión de la base de datos.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Toolbar > Application Theme
+## Barra de herramientas > Tema de la aplicación
 
-Click on this icon to preview (and edit) the theme of your application.
+Haga clic en este icono para obtener una vista previa (y editar) el tema de su aplicación.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Toolbar > New Table
+## Barra de herramientas > Nueva tabla
 
-Click on this icon to add a new table to your database.
+Haga clic en este icono para agregar una nueva tabla a su base de datos.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Toolbar > New Field
+## Barra de herramientas > Nuevo campo
 
-Click on this icon to add a new field to the current table.
+Haga clic en este icono para agregar un nuevo campo a la tabla actual.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Toolbar > Delete Selected Table/Field
+## Barra de herramientas > Eliminar tabla/campo seleccionado
 
-Click on this icon to remove the highlighted field or table from your database.
+Haga clic en este icono para eliminar el campo o la tabla resaltada de su base de datos.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Toolbar > Move Table/Field up
+## Barra de herramientas > Mover tabla/campo hacia arriba
 
-Click on this icon to move the highlighted field down/up in the current table.
+Haga clic en este icono para mover el campo resaltado hacia abajo/arriba en la tabla actual.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Toolbar > Move Table/Field down
+## Barra de herramientas > Mover tabla/campo hacia abajo
 
-Click on this icon to move the highlighted field down/up in the current table.
+Haga clic en este icono para mover el campo resaltado hacia abajo/arriba en la tabla actual.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Toolbar > Generate PHP Code
+## Barra de herramientas > Generar código PHP
 
-Click on this icon to let AppGini generate the PHP code for your web database application based on the database, tables and fields you defined in your project. You'll be prompted for a location to save the generated files.
+Haga clic en este icono para permitir que AppGini genere el código PHP para su aplicación de base de datos web en función de la base de datos, las tablas y los campos que definió en su proyecto. Se le pedirá una ubicación para guardar los archivos generados.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Toolbar > Preferences
+## Barra de herramientas > Preferencias
 
-Click on this icon to open the preferences window, where you can set various AppGini options.
+Haga clic en este icono para abrir la ventana de preferencias, donde puede establecer varias opciones de AppGini.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Toolbar > Help
+## Barra de herramientas > Ayuda
 
-Click on this icon to view the online help.
+Haga clic en este icono para ver la ayuda en línea.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Toolbar > About AppGini
+## Barra de herramientas > Acerca de AppGini
 
-Click on this icon to view version and contact information for AppGini
+Haga clic en este icono para ver la información de la versión y de contacto de AppGini.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Toolbar > Ideas and tips on our Twitter page
+## Barra de herramientas > Ideas y consejos en nuestra página de Twitter
 
-Click on this icon to visit (and optionally subscribe to) our Twitter feed, which includes a lot of helpful resources and tips to get the most out of AppGini.
+Haga clic en este icono para visitar (y opcionalmente suscribirse a) nuestro feed de Twitter, que incluye muchos recursos y consejos útiles para aprovechar al máximo AppGini.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Toolbar > Learn to use Appgini through our YouTube playlist
+## Barra de herramientas > Aprenda a usar Appgini a través de nuestra lista de reproducción de YouTube
 
-Click on this icon to visit (and optionally subscribe to) our Youtube channel where you can watch many short video tutorials explaining various features of AppGini.
+Haga clic en este icono para visitar (y opcionalmente suscribirse a) nuestro canal de YouTube, donde puede ver muchos tutoriales en video cortos que explican varias funciones de AppGini.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Toolbar > Exit
+## Barra de herramientas > Salir
 
-Click on this icon to quit the program. If you have an open project, you'll be asked to save your work first.
+Haga clic en este icono para salir del programa. Si tiene un proyecto abierto, se le pedirá que guarde su trabajo primero.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Project Browser Window
+## Ventana del explorador de proyectos
 
-This is the project browser window where you can see a list of the database, table and field names in the current project arranged in a hierarchical view. Click on any item on the window to view and edit its properties in the Properties window.
+Esta es la ventana del explorador de proyectos donde puede ver una lista de los nombres de la base de datos, la tabla y los campos del proyecto actual organizados en una vista jerárquica. Haga clic en cualquier elemento de la ventana para ver y editar sus propiedades en la ventana Propiedades.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Table properties > Table view title
+## Propiedades de la tabla > Título de la vista de tabla
 
-The table view title is the title of the table as it will appear in the pages of the generated PHP application.
+El título de la vista de tabla es el título de la tabla tal como aparecerá en las páginas de la aplicación PHP generada.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Table properties > Description
+## Propiedades de la tabla > Descripción
 
-If you provide a description for the table, this description will be displayed in the home page of the generated application. You can use HTML code in this description.
+Si proporciona una descripción para la tabla, esta descripción se mostrará en la página de inicio de la aplicación generada. Puede usar código HTML en esta descripción.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Table properties > Records per page
+## Propiedades de la tabla > Registros por página
 
-The number of records that appear on one page in the generated PHP application. Records are displayed as horizontal rows of a table. If you put a large number here, your application user might have to scroll down the page to view records.
+El número de registros que aparecen en una página en la aplicación PHP generada. Los registros se muestran como filas horizontales de una tabla. Si ingresa un número grande aquí, es posible que el usuario de su aplicación deba desplazarse hacia abajo en la página para ver los registros.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Table properties > Show quick search box
+## Propiedades de la tabla > Mostrar cuadro de búsqueda rápida
 
-If you want to display a quick search box above the table view, check this option. When the user enters a word in that search box and clicks the search button or presses Enter key, the table is searched for matches in any field. This is much easier than the advanced filters if you want a simple search technique.
+Si desea mostrar un cuadro de búsqueda rápida sobre la vista de tabla, marque esta opción. Cuando el usuario ingresa una palabra en ese cuadro de búsqueda y hace clic en el botón de búsqueda o presiona la tecla Intro, la tabla se busca en busca de coincidencias en cualquier campo. Esto es mucho más fácil que los filtros avanzados si desea una técnica de búsqueda simple.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Table properties > Default sort by,Descendingly
+## Propiedades de la tabla > Ordenar por defecto, Descendentemente
 
-If you'd like records in the table view sorted by default, select the field that you want to sort by from the 'Default sort by' drop down. The default sorting direction is ascendingly (A-Z, 0-9) unless you check the 'Descendingly' option. If you don't want any default sorting, select 'None' from the 'Default sort by' drop down.
+Si desea que los registros de la vista de tabla se ordenen de forma predeterminada, seleccione el campo por el que desea ordenar en el menú desplegable 'Ordenar por defecto'. La dirección de ordenación predeterminada es ascendente (A-Z, 0-9) a menos que marque la opción 'Descendentemente'. Si no desea ninguna ordenación predeterminada, seleccione 'Ninguno' en el menú desplegable 'Ordenar por defecto'.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Table properties > Allow sorting
+## Propiedades de la tabla > Permitir ordenación
 
-This option controls whether users are allowed to sort records in the table or not. Note that this doesn't affect the table in the database, only the query that displays data to the user.
+Esta opción controla si los usuarios pueden ordenar los registros de la tabla o no. Tenga en cuenta que esto no afecta a la tabla de la base de datos, solo a la consulta que muestra los datos al usuario.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Table properties > Allow filters
+## Propiedades de la tabla > Permitir filtros
 
-This option controls whether users are allowed to filter records in the table or not. Note that this doesn't affect the table in the database, only the query that displays data to the user.
+Esta opción controla si los usuarios pueden filtrar los registros de la tabla o no. Tenga en cuenta que esto no afecta a la tabla de la base de datos, solo a la consulta que muestra los datos al usuario.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Table properties > Allow saving data to CSV files
+## Propiedades de la tabla > Permitir guardar datos en archivos CSV
 
-If you check this option, users will see a Save button above the table view that allows them to save data as a CSV file (Comma-Separated values).
+Si marca esta opción, los usuarios verán un botón Guardar sobre la vista de tabla que les permite guardar datos como un archivo CSV (valores separados por comas).
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Table properties > Allow print-view
+## Propiedades de la tabla > Permitir vista de impresión
 
-This option controls whether users are allowed to view the table data as a printer-friendly page.
+Esta opción controla si los usuarios pueden ver los datos de la tabla como una página imprimible.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Table properties > Allow users to save filters
+## Propiedades de la tabla > Permitir a los usuarios guardar filtros
 
-If you check this option, users will see a Save button in the filters page. If they click this Save button, they will view some HTML code that they can copy and paste to any external web page. This HTML code creates a button linking users to the filtered table view (without having to redefine filters). TIP: Usually, you would want to allow this option temporarily till all users have determined which preset filters they want to save. Later on, you can disable this option and regenerate the code.
+Si marca esta opción, los usuarios verán un botón Guardar en la página de filtros. Si hacen clic en este botón Guardar, verán un código HTML que pueden copiar y pegar en cualquier página web externa. Este código HTML crea un botón que enlaza a los usuarios con la vista de tabla filtrada (sin tener que redefinir los filtros). CONSEJO: Por lo general, querrá permitir esta opción temporalmente hasta que todos los usuarios hayan determinado qué filtros preestablecidos desean guardar. Más tarde, puede deshabilitar esta opción y regenerar el código.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Table properties > Hide link in homepage
+## Propiedades de la tabla > Ocultar enlace en la página de inicio
 
-If checked, this table will not have a link to it in the homepage of the generated application. Usually used with the option 'Hide link in navigation menu' checked as well. This is useful for example if this is a child table and you want users to access it only from its parent table rather than directly through a link.
+Si está marcada, esta tabla no tendrá un enlace a ella en la página de inicio de la aplicación generada. Generalmente se usa también con la opción 'Ocultar enlace en el menú de navegación' marcada. Esto es útil, por ejemplo, si se trata de una tabla secundaria y desea que los usuarios accedan a ella solo desde su tabla principal en lugar de directamente a través de un enlace.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Table properties > Allow mass delete
+## Propiedades de la tabla > Permitir eliminación masiva
 
-This option controls whether users who have permission to delete records can delete multiple records at once.
+Esta opción controla si los usuarios que tienen permiso para eliminar registros pueden eliminar varios registros a la vez.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Table properties > Filter before showing table view
+## Propiedades de la tabla > Filtrar antes de mostrar la vista de tabla
 
-When this option is checked, users see the filters page first before seeing the table data. This is useful if you want users to search the table and display the search results to them.
+Cuando esta opción está marcada, los usuarios ven primero la página de filtros antes de ver los datos de la tabla. Esto es útil si desea que los usuarios busquen en la tabla y les muestren los resultados de la búsqueda.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Table properties > Hide link in navigation menu
+## Propiedades de la tabla > Ocultar enlace en el menú de navegación
 
-If checked, this table will not have a link to it in the navigation menu of the generated application. Usually used with the option 'Hide link in homepage' checked as well. This is useful for example if this is a child table and you want users to access it only from its parent table rather than directly through a link.
+Si está marcada, esta tabla no tendrá un enlace a ella en el menú de navegación de la aplicación generada. Generalmente se usa también con la opción 'Ocultar enlace en la página de inicio' marcada. Esto es útil, por ejemplo, si se trata de una tabla secundaria y desea que los usuarios accedan a ella solo desde su tabla principal en lugar de directamente a través de un enlace.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Table properties > Show record count in Homepage
+## Propiedades de la tabla > Mostrar recuento de registros en la página de inicio
 
-Check this option to display the count of accessible records of this table in the application homepage.
+Marque esta opción para mostrar el recuento de registros accesibles de esta tabla en la página de inicio de la aplicación.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Table properties > Table group
+## Propiedades de la tabla > Grupo de tablas
 
-Click this button to open the Table group dialog, where you can group tables for easier navigation.
+Haga clic en este botón para abrir el cuadro de diálogo Grupo de tablas, donde puede agrupar tablas para facilitar la navegación.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Table properties > Table template
+## Propiedades de la tabla > Plantilla de tabla
 
-Click this button to open the Table view template dialog, where you can configure layout options of the table view for this table.
+Haga clic en este botón para abrir el cuadro de diálogo Plantilla de vista de tabla, donde puede configurar las opciones de diseño de la vista de tabla para esta tabla.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Table properties > Detail view title
+## Propiedades de la tabla > Título de la vista detallada
 
-The title of the detail view form. The detail view form is where users can edit and add data to the table.
+El título del formulario de vista detallada. El formulario de vista detallada es donde los usuarios pueden editar y agregar datos a la tabla.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Table properties > Redirect after insert
+## Propiedades de la tabla > Redirigir después de insertar
 
-If you type a web address here, users will be sent to that address after they insert a new record. If you leave this box empty, users will be sent to the table view page. If you add the characters #ID# as part of the web address, they will get replaced by the primary key value of the newly inserted record. For example, these are valid addresses that you can put into the box: thanks.html
+Si escribe una dirección web aquí, los usuarios serán enviados a esa dirección después de insertar un nuevo registro. Si deja este cuadro vacío, los usuarios serán enviados a la página de vista de tabla. Si agrega los caracteres #ID# como parte de la dirección web, se reemplazarán por el valor de la clave principal del registro recién insertado. Por ejemplo, estas son direcciones válidas que puede poner en el cuadro: gracias.html
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Table properties > Display a link to children records from
+## Propiedades de la tabla > Mostrar un enlace a los registros secundarios desde
 
-If you have lookup fields in other tables whose parent table is set to the current table, you'll find them listed here as children tables. If you check any of the children tables listed here, users will see a link to that table displayed in the detail view when a record is selected from the current (parent) table. This link displays records of the child table related to the current parent record. For example, you may have an artists table, and a songs table. The songs table has an 'Artist' field whose parent table is the artists table. Using this feature, users who select an artist from the artists table will see a 'songs' link in the detail view of the selected artist. Clicking on that songs link, users will see all the songs that belong to the selected artist.
+Si tiene campos de búsqueda en otras tablas cuya tabla principal está configurada como la tabla actual, los encontrará enumerados aquí como tablas secundarias. Si marca alguna de las tablas secundarias enumeradas aquí, los usuarios verán un enlace a esa tabla que se muestra en la vista detallada cuando se selecciona un registro de la tabla principal actual. Este enlace muestra los registros de la tabla secundaria relacionados con el registro principal actual. Por ejemplo, puede tener una tabla de artistas y una tabla de canciones. La tabla de canciones tiene un campo 'Artista' cuya tabla principal es la tabla de artistas. Con esta función, los usuarios que seleccionen un artista de la tabla de artistas verán un enlace 'canciones' en la vista detallada del artista seleccionado. Al hacer clic en ese enlace de canciones, los usuarios verán todas las canciones que pertenecen al artista seleccionado.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Table properties > Default focus field
+## Propiedades de la tabla > Campo de enfoque predeterminado
 
-Specify which field (if any) is focused by default when the user opens the detail view.
+Especifique qué campo (si corresponde) se enfoca de forma predeterminada cuando el usuario abre la vista detallada.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Table properties > Enable detail view
+## Propiedades de la tabla > Habilitar vista detallada
 
-Use this option to control whether users can see the detail view or not.
+Utilice esta opción para controlar si los usuarios pueden ver la vista detallada o no.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Table properties > Allow detail print-view
+## Propiedades de la tabla > Permitir vista de impresión detallada
 
-If you check this option, users will see a 'Print preview' button in the detail view when selecting a record. Clicking that button would display a printer-friendly view of the selected record.
+Si marca esta opción, los usuarios verán un botón 'Vista previa de impresión' en la vista detallada al seleccionar un registro. Al hacer clic en ese botón, se mostrará una vista imprimible del registro seleccionado.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Table properties > Hide 'Save As Copy' when editing
+## Propiedades de la tabla > Ocultar 'Guardar como copia' al editar
 
-By default, when a user selects a record for editing, the 'Save As Copy' button is displayed in the detail view so that the user can save a copy of the selected field. Checking this option would disable this behavior and the 'Save As Copy' button won't be displayed.
+De forma predeterminada, cuando un usuario selecciona un registro para editarlo, el botón 'Guardar como copia' se muestra en la vista detallada para que el usuario pueda guardar una copia del campo seleccionado. Marcar esta opción deshabilitaría este comportamiento y el botón 'Guardar como copia' no se mostraría.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Table properties > Allow adding new records from Homepage
+## Propiedades de la tabla > Permitir agregar nuevos registros desde la página de inicio
 
-If you check this option, users with insert permission can directly add records to this table from the homepage, without having to navigate to the table and click the Add new button in there.
+Si marca esta opción, los usuarios con permiso de inserción pueden agregar directamente registros a esta tabla desde la página de inicio, sin tener que navegar a la tabla y hacer clic en el botón Agregar nuevo allí.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Table properties > Delete records even if they have children records
+## Propiedades de la tabla > Eliminar registros incluso si tienen registros secundarios
 
-The default behavior when a user tries to delete a record is that the AppGini-generated code will check to see if this record has one or more child records (records that have lookup fields pointing to the record to be deleted). If one or more children are found, the record is not deleted.
+El comportamiento predeterminado cuando un usuario intenta eliminar un registro es que el código generado por AppGini verificará si este registro tiene uno o más registros secundarios (registros que tienen campos de búsqueda que apuntan al registro que se va a eliminar). Si se encuentran uno o más elementos secundarios, el registro no se elimina.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Table properties > Display detail view in a separate page
+## Propiedades de la tabla > Mostrar vista detallada en una página separada
 
-If you check this option, the detail view (the form where users can add or insert records) will be displayed in a separate page instead of below the table view.
+Si marca esta opción, la vista detallada (el formulario donde los usuarios pueden agregar o insertar registros) se mostrará en una página separada en lugar de debajo de la vista de tabla.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Table properties > Keep action buttons visible while scrolling down
+## Propiedades de la tabla > Mantener visibles los botones de acción al desplazarse hacia abajo
 
-For long detail view forms, we recommend checking this option so that the action buttons (Save changes, Back, Print preview, Delete, .. etc) are always visible to the user, without having to scroll up/down to find them.
+Para formularios de vista detallada largos, recomendamos marcar esta opción para que los botones de acción (Guardar cambios, Atrás, Vista previa de impresión, Eliminar, etc.) estén siempre visibles para el usuario, sin tener que desplazarse hacia arriba/abajo para encontrarlos.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Table properties > Table technical documentation
+## Propiedades de la tabla > Documentación técnica de la tabla
 
-This section is where you can edit and preview the technical documentation of this table. The technical documentation is useful for adding notes and technical descriptions for your project, tables and fields. It's not visible to your app users, but can be viewable in the admin area if the option Show technical documentation page in the admin area under project properties is checked.
+Esta sección es donde puede editar y obtener una vista previa de la documentación técnica de esta tabla. La documentación técnica es útil para agregar notas y descripciones técnicas para su proyecto, tablas y campos. No es visible para los usuarios de su aplicación, pero puede verse en el área de administración si la opción Mostrar página de documentación técnica en el área de administración en las propiedades del proyecto está marcada.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Table properties > Edit Technical Documentation
+## Propiedades de la tabla > Editar documentación técnica
 
-Click this button to open the technical documentation editor for this table.
+Haga clic en este botón para abrir el editor de documentación técnica para esta tabla.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Table properties > Technical documentation preview
+## Propiedades de la tabla > Vista previa de la documentación técnica
 
-Here you can see a preview of the technical documentation for this table.
+Aquí puede ver una vista previa de la documentación técnica para esta tabla.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Table properties > Parent/Children settings
+## Propiedades de la tabla > Configuración de padres/hijos
 
-This feature is enabled only if the current table has children tables. Displays settings for showing the children records in the detail view.
+Esta función solo está habilitada si la tabla actual tiene tablas secundarias. Muestra la configuración para mostrar los registros secundarios en la vista detallada.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Table properties > Table icon
+## Propiedades de la tabla > Icono de tabla
 
-Click this icon to select a new icon for the table. The table icon is displayed in the homepage and the navigation menu of the generated application.
+Haga clic en este icono para seleccionar un nuevo icono para la tabla. El icono de la tabla se muestra en la página de inicio y en el menú de navegación de la aplicación generada.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Search box
+## Cuadro de búsqueda
 
-You can use this box to search for a specific table/field by typing its name or part of it then clicking the lens icon. Click it again to move to the next matching table/field.
+Puede usar este cuadro para buscar una tabla/campo específico escribiendo su nombre o parte de él y luego haciendo clic en el icono de la lente. Vuelva a hacer clic para pasar a la siguiente tabla/campo coincidente.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## File menu
+## Menú Archivo
 
-Includes commands for starting a new project, opening an existing one, importing from an existing MySQL database or a CSV file, and saving current project.
+Incluye comandos para iniciar un nuevo proyecto, abrir uno existente, importar desde una base de datos MySQL existente o un archivo CSV, y guardar el proyecto actual.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Tables menu
+## Menú Tablas
 
-Includes commands for adding and deleting tables and fields from the current project.
+Incluye comandos para agregar y eliminar tablas y campos del proyecto actual.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Project menu
+## Menú Proyecto
 
-Includes commands for generating the web application, and for changing the application theme.
+Incluye comandos para generar la aplicación web y para cambiar el tema de la aplicación.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Add-ons menu
+## Menú Complementos
 
-Open this menu to see a list of available AppGini add-ons and plugins that can enhance your project and add more functions to it.
+Abra este menú para ver una lista de complementos y plugins de AppGini disponibles que pueden mejorar su proyecto y agregarle más funciones.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Help menu
+## Menú Ayuda
 
-Includes various help resources
+Incluye varios recursos de ayuda.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Copy
+## Copiar
 
-Copies the selected table or field to the clipboard
+Copia la tabla o el campo seleccionado al portapapeles.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Paste
+## Pegar
 
-Pastes a copy of the field or table in the clipboard to the project
+Pega una copia del campo o tabla del portapapeles al proyecto.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Toggle Highlight
+## Alternar resaltado
 
-Marks/unmarks the current table or field with a yellow background for easily returning to it later on.
+Marca/desmarca la tabla o campo actual con un fondo amarillo para volver fácilmente a él más tarde.
 
-[back to top](#map-link)
+[volver arriba](#map-link)
 
-## Activate/deactivate help for toolbar icons
+## Activar/desactivar ayuda para los iconos de la barra de herramientas
 
-Click this icon to switch to help mode where clicking any icon would show its help rather than execute its action. Click again to switch to normal mode.
+Haga clic en este icono para cambiar al modo de ayuda, donde al hacer clic en cualquier icono se mostrará su ayuda en lugar de ejecutar su acción. Vuelva a hacer clic para cambiar al modo normal.
 
-[back to top](#map-link)
-
+[volver arriba](#map-link)

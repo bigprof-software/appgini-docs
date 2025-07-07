@@ -1,54 +1,53 @@
 ---
-title: Date and datetime offsets
-linkTitle: Date and datetime offsets
+title: Desplazamientos de fecha y fecha y hora
+linkTitle: Desplazamientos de fecha y fecha y hora
 slug: help/application-features/date-datetime-offsets
-description: Using fixed and relative date and datetime values as default values in date, datetime, and timestamp fields in AppGini.
-keywords: date, datetime, timestamp, default value, relative date, relative datetime, fixed date, fixed datetime
+description: Uso de valores de fecha y fecha y hora fijos y relativos como valores predeterminados en los campos de fecha, fecha y hora y marca de tiempo en AppGini.
+keywords: fecha, fecha y hora, marca de tiempo, valor predeterminado, fecha relativa, fecha y hora relativa, fecha fija, fecha y hora fija
 ---
 
-# Date and datetime offsets
+# Desplazamientos de fecha y fecha y hora
 
-## Setting fixed date and datetime values as default
+## Establecer valores fijos de fecha y fecha y hora como predeterminados
 
-When you set a date or datetime field in AppGini, you can specify a default value for it. This default value can be a fixed date or datetime, or it can be a relative date or datetime. Relative dates and datetimes are calculated based on the current date and time when the record is saved.
+Cuando establece un campo de fecha o fecha y hora en AppGini, puede especificar un valor predeterminado para él. Este valor predeterminado puede ser una fecha o fecha y hora fija, o puede ser una fecha o fecha y hora relativa. Las fechas y fechas y horas relativas se calculan en función de la fecha y hora actuales cuando se guarda el registro.
 
-Specifying a fixed date or datetime is straightforward. You simply enter the desired date or datetime in the field's default value property. For example, you can enter `2020-01-01` to set the default date to January 1, 2020, or `2020-01-01 12:00:00` to set the default datetime to January 1, 2020, 12:00 PM.
+Especificar una fecha o fecha y hora fija es sencillo. Simplemente ingrese la fecha o fecha y hora deseadas en la propiedad de valor predeterminado del campo. Por ejemplo, puede ingresar `2020-01-01` para establecer la fecha predeterminada en el 1 de enero de 2020, o `2020-01-01 12:00:00` para establecer la fecha y hora predeterminada en el 1 de enero de 2020 a las 12:00 PM.
 
-However, this is usually not very useful, as you'd typically want to set the default date or datetime to a value relative to the current date and time. For example, you might want to set the default fulfillment date of an order to 7 days from the current date, or you might want to set the default expiration date of a subscription to 30 days from the current date.
+Sin embargo, esto generalmente no es muy útil, ya que normalmente querrá establecer la fecha o fecha y hora predeterminada en un valor relativo a la fecha y hora actuales. Por ejemplo, es posible que desee establecer la fecha de cumplimiento predeterminada de un pedido en 7 días a partir de la fecha actual, o es posible que desee establecer la fecha de vencimiento predeterminada de una suscripción en 30 días a partir de la fecha actual.
 
-## Relative date offsets
+## Desplazamientos de fecha relativos
 
-For date fields, you can specify a relative date offset in the **Default** property. The offset can be a postive or negative integer. Positive integers represent future dates, with `1` representing today, `2` representing tomorrow, and so on. Negative integers represent past dates, with `-1` representing yesterday, `-2` representing the day before yesterday, and so on.
+Para los campos de fecha, puede especificar un desplazamiento de fecha relativo en la propiedad **Predeterminado**. El desplazamiento puede ser un entero positivo o negativo. Los enteros positivos representan fechas futuras, siendo `1` hoy, `2` mañana, y así sucesivamente. Los enteros negativos representan fechas pasadas, siendo `-1` ayer, `-2` anteayer, y así sucesivamente.
 
-For example, to set the default value of a date field to 7 days from the current date, you can enter `8` in the **Default** property. This is because `1` represents today, and `8` represents 7 days from today.
+Por ejemplo, para establecer el valor predeterminado de un campo de fecha en 7 días a partir de la fecha actual, puede ingresar `8` en la propiedad **Predeterminado**. Esto se debe a que `1` representa hoy, y `8` representa 7 días a partir de hoy.
 
-## Relative datetime offsets
+## Desplazamientos de fecha y hora relativos
 
-> **Note**: This feature is available starting from AppGini 24.14
+> **Nota**: Esta función está disponible a partir de AppGini 24.14
 
-For datetime and timestamp fields, you can specify a relative datetime offset in the **Default** property. The offset can be a postive or negative integer, followed by one of the following characters:
+Para los campos de fecha y hora y marca de tiempo, puede especificar un desplazamiento de fecha y hora relativo en la propiedad **Predeterminado**. El desplazamiento puede ser un entero positivo o negativo, seguido de uno de los siguientes caracteres:
 
-- `s`: seconds, e.g., `+5s` for 5 seconds from now, or `-5s` for 5 seconds ago.
-- `m`: minutes, e.g., `+5m` for 5 minutes from now, or `-5m` for 5 minutes ago.
-- `h`: hours, e.g., `+5h` for 5 hours from now, or `-5h` for 5 hours ago.
-- `d`: days, e.g., `+5d` for 5 days from now, or `-5d` for 5 days ago.
+- `s`: segundos, por ejemplo, `+5s` para 5 segundos a partir de ahora, o `-5s` para hace 5 segundos.
+- `m`: minutos, por ejemplo, `+5m` para 5 minutos a partir de ahora, o `-5m` para hace 5 minutos.
+- `h`: horas, por ejemplo, `+5h` para 5 horas a partir de ahora, o `-5h` para hace 5 horas.
+- `d`: días, por ejemplo, `+5d` para 5 días a partir de ahora, o `-5d` para hace 5 días.
 
-If you want to set the default value of a datetime field to now, you can enter `+0s` in the **Default** property.
+Si desea establecer el valor predeterminado de un campo de fecha y hora en ahora, puede ingresar `+0s` en la propiedad **Predeterminado**.
 
-### Offset to an exact minute, hour, or day
+### Desplazamiento a un minuto, hora o día exactos
 
-If you want to set the default value of a datetime field to an exact minute (setting seconds to `00`),
-hour (setting minutes and seconds to `00:00`), or day (setting hours, minutes, and seconds to `00:00:00`),
-just append a `0` to the offset. 
+Si desea establecer el valor predeterminado de un campo de fecha y hora en un minuto exacto (estableciendo los segundos en `00`),
+hora (estableciendo los minutos y segundos en `00:00`), o día (estableciendo las horas, minutos y segundos en `00:00:00`),
+simplemente agregue un `0` al desplazamiento.
 
-For example, to set the default value of a datetime field to the next
-hour, you can enter `+1h0` in the **Default** property. If the current time is `12:30:15`, this will set the default value to `13:00:00`.
+Por ejemplo, para establecer el valor predeterminado de un campo de fecha y hora en la próxima
+hora, puede ingresar `+1h0` en la propiedad **Predeterminado**. Si la hora actual es `12:30:15`, esto establecerá el valor predeterminado en `13:00:00`.
 
-Similarly, to set the default value of a datetime field to the next day at midnight, you can enter `+1d0` in the **Default** property.
-If the current date and time is `2024-05-15 12:30:15`, this will set the default value to `2024-05-16 00:00:00`.
+Del mismo modo, para establecer el valor predeterminado de un campo de fecha y hora en el día siguiente a la medianoche, puede ingresar `+1d0` en la propiedad **Predeterminado**.
+Si la fecha y hora actuales son `2024-05-15 12:30:15`, esto establecerá el valor predeterminado en `2024-05-16 00:00:00`.
 
-In the example screenshot below, we're setting the default value of the transaction date to `+0m0`, which means the current date and time
-to the minute (with seconds set to `00`).
+En la captura de pantalla de ejemplo a continuación, estamos configurando el valor predeterminado de la fecha de la transacción en `+0m0`, lo que significa la fecha y hora actuales
+al minuto (con los segundos establecidos en `00`).
 
-![Setting default datetime to now](https://cdn.bigprof.com/images/set-default-datetime-to-now.png "Setting default datetime to now, to the minute")
-
+![Establecer fecha y hora predeterminadas en ahora](https://cdn.bigprof.com/images/set-default-datetime-to-now.png "Establecer fecha y hora predeterminadas en ahora, al minuto")

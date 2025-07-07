@@ -1,21 +1,20 @@
 ---
-title: Contribute to AppGini documentation
-linkTitle: Contribute!
+title: Contribuir a la documentación de AppGini
+linkTitle: ¡Contribuya!
 slug: help/contribute
-description: Contribute to AppGini documentation by submitting pull requests to the GitHub repository.
-keywords: contribute, help, documentation, open-source, GitHub, pull requests
+description: Contribuya a la documentación de AppGini enviando pull requests al repositorio de GitHub.
+keywords: contribuir, ayuda, documentación, código abierto, GitHub, pull requests
 ---
 
-# Contribute to AppGini documentation
+# Contribuir a la documentación de AppGini
 
-The content of this documentation is hosted on GitHub and is open-source. This means you can contribute to it by submitting pull requests to the
-[GitHub repository](https://github.com/bigprof-software/appgini-docs). This can be done very easily by clicking the "Edit this page on GitHub" link
-at the top of each page.
+El contenido de esta documentación está alojado en GitHub y es de código abierto. Esto significa que puede contribuir enviando pull requests al
+[repositorio de GitHub](https://github.com/bigprof-software/appgini-docs). Esto se puede hacer muy fácilmente haciendo clic en el enlace "Editar esta página en GitHub"
+en la parte superior de cada página.
 
-The following video shows how to contribute to the documentation. Please note that the video was recorded before updating the documentation theme, so the appearance of the documentation has changed since then. However, the process of contributing is still the same:
+El siguiente video muestra cómo contribuir a la documentación. Tenga en cuenta que el video se grabó antes de actualizar el tema de la documentación, por lo que la apariencia de la documentación ha cambiado desde entonces. Sin embargo, el proceso de contribución sigue siendo el mismo:
 
 <iframe width="700" height="394" src="https://www.youtube.com/embed/Apd5A0wu6qw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-> By contributing to the documentation, you help other users and make AppGini better for everyone. Thank you for your help!
-
+> Al contribuir a la documentación, ayuda a otros usuarios y mejora AppGini para todos. ¡Gracias por su ayuda!

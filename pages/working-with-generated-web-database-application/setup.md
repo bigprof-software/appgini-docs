@@ -1,111 +1,110 @@
 ---
-title: Setup of AppGini-generated applications
-linkTitle: Setup of AppGini-generated applications
-keywords: setup, appgini, generated applications, database, web applications, test connection, admin user, captcha
-description: Learn how to set up your AppGini-generated web database application, including solving the captcha, filling in the database information, and creating the admin user.
+title: Configuración de aplicaciones generadas por AppGini
+linkTitle: Configuración de aplicaciones generadas por AppGini
+keywords: configuración, appgini, aplicaciones generadas, base de datos, aplicaciones web, probar conexión, usuario administrador, captcha
+description: Aprenda cómo configurar su aplicación de base de datos web generada por AppGini, incluyendo la resolución del captcha, el llenado de la información de la base de datos y la creación del usuario administrador.
 slug: help/working-with-generated-web-database-application/setup
 ---
 
-# Setup of AppGini-generated applications
+# Configuración de aplicaciones generadas por AppGini
 
-## Accessing your application
+## Acceso a su aplicación
 
-After [uploading your PHP application files](../application-uploader.md) to your server,
-you can access it by pointing your browser to the application's URL. Depending on your server,
-the URL might look like this if you uploaded the files to the document root:
-
-```plaintext
-https://www.yourserver.com/
-```
-
-Or like this if you uploaded the files to a subfolder named `myapp`:
+Después de [cargar los archivos de su aplicación PHP](../application-uploader.md) a su servidor,
+puede acceder a ella apuntando su navegador a la URL de la aplicación. Dependiendo de su servidor,
+la URL podría verse así si cargó los archivos en la raíz del documento:
 
 ```plaintext
-https://www.yourserver.com/myapp/
+https://www.suserver.com/
 ```
 
-Replace `www.yourserver.com` with your server name 
-(or IP address if you are running the server on an intranet),
-and `myapp` with the path to the folder where you uploaded the files.
+O así si cargó los archivos en una subcarpeta llamada `miapp`:
 
-## Step 1: Solve the captcha
+```plaintext
+https://www.suserver.com/miapp/
+```
 
-The first time you access your application, you'll be presented with a captcha to solve.
-This is a security measure to prevent bots from trying to access your setup page.
+Reemplace `www.suserver.com` con el nombre de su servidor
+(o dirección IP si está ejecutando el servidor en una intranet),
+y `miapp` con la ruta a la carpeta donde cargó los archivos.
 
-![Setup captcha](https://cdn.bigprof.com/images/appgini-setup-01-captcha.png "Setup captcha")
+## Paso 1: Resuelva el captcha
 
-Simply solve the captcha and click the `Submit` button. Please note that this step
-might not be displayed if your server doesn't have the `GD` library installed. In this case,
-just skip to the next step.
+La primera vez que acceda a su aplicación, se le presentará un captcha para resolver.
+Esta es una medida de seguridad para evitar que los bots intenten acceder a su página de configuración.
 
-If you're unable to solve the captcha for any reason, you can disable it by editing the
-generated `definitions.php` file and changing the following line:
+![Captcha de configuración](https://cdn.bigprof.com/images/appgini-setup-01-captcha.png "Captcha de configuración")
+
+Simplemente resuelva el captcha y haga clic en el botón `Enviar`. Tenga en cuenta que este paso
+podría no mostrarse si su servidor no tiene instalada la biblioteca `GD`. En este caso,
+simplemente salte al siguiente paso.
+
+Si no puede resolver el captcha por cualquier motivo, puede deshabilitarlo editando el
+archivo `definitions.php` generado y cambiando la siguiente línea:
 
 ```php
 @define('FORCE_SETUP_CAPTCHA', true);
 ```
 
-to:
+a:
 
 ```php
 @define('FORCE_SETUP_CAPTCHA', false);
 ```
 
-## Step 2: The setup form
+## Paso 2: El formulario de configuración
 
-In the next step, you should see the following intro screen:
+En el siguiente paso, debería ver la siguiente pantalla de introducción:
 
-![Setup intro](https://cdn.bigprof.com/images/appgini-setup-02-setup-intro.png "Setup intro")
+![Introducción a la configuración](https://cdn.bigprof.com/images/appgini-setup-02-setup-intro.png "Introducción a la configuración")
 
-Click 'Continue' to proceed to the setup checklist:
+Haga clic en 'Continuar' para pasar a la lista de verificación de configuración:
 
-![Setup checklist](https://cdn.bigprof.com/images/appgini-setup-03-prepare-db-info.png "Setup checklist")
+![Lista de verificación de configuración](https://cdn.bigprof.com/images/appgini-setup-03-prepare-db-info.png "Lista de verificación de configuración")
 
-This simply lists the required database information you need to have at hand before proceeding.
-Usually, you can retrieve this information from your hosting control panel.
-In some cases, you might need to create a new database and user for your application,
-which you can also do from your hosting control panel, using a tool like phpMyAdmin,
-or through the command line.
+Esto simplemente enumera la información de base de datos requerida que necesita tener a mano antes de continuar.
+Por lo general, puede recuperar esta información de su panel de control de alojamiento.
+En algunos casos, es posible que deba crear una nueva base de datos y un usuario para su aplicación,
+lo que también puede hacer desde su panel de control de alojamiento, utilizando una herramienta como phpMyAdmin,
+o mediante la línea de comandos.
 
-For more details, please refer to [how to create a new MySQL/MariaDB database and user](../create-mysql-database-and-user.md).
+Para obtener más detalles, consulte [cómo crear una nueva base de datos y usuario MySQL/MariaDB](../create-mysql-database-and-user.md).
 
-Once you have the required information, click 'Continue' to proceed to the database setup form:
+Una vez que tenga la información requerida, haga clic en 'Continuar' para pasar al formulario de configuración de la base de datos:
 
-![Database setup form](https://cdn.bigprof.com/images/appgini-setup-04-setup-form.png "Database setup form")
+![Formulario de configuración de la base de datos](https://cdn.bigprof.com/images/appgini-setup-04-setup-form.png "Formulario de configuración de la base de datos")
 
-Fill in the required information:
+Complete la información requerida:
 
-- **MySQL server (host)**: This is usually `localhost`, but it might be different depending on your hosting provider.
-- **Database name**, **MySQL Username**, and **MySQL Password**: These are the database name, username, and password you created earlier.
-- **MySQL port**: This is usually `3306`, but it might be different depending on your hosting provider.
+- **Servidor MySQL (host)**: Suele ser `localhost`, pero podría ser diferente según su proveedor de alojamiento.
+- **Nombre de la base de datos**, **Nombre de usuario de MySQL** y **Contraseña de MySQL**: Estos son el nombre de la base de datos, el nombre de usuario y la contraseña que creó anteriormente.
+- **Puerto MySQL**: Suele ser `3306`, pero podría ser diferente según su proveedor de alojamiento.
 
-After typing in the above information, a connection test will be performed to ensure that the application can connect to the database.
-If the connection test fails, you'd see an error message as below:
+Después de escribir la información anterior, se realizará una prueba de conexión para garantizar que la aplicación pueda conectarse a la base de datos.
+Si la prueba de conexión falla, verá un mensaje de error como el siguiente:
 
-![Database connection error](https://cdn.bigprof.com/images/appgini-setup-05-db-connection-error.png "Database connection error")
+![Error de conexión a la base de datos](https://cdn.bigprof.com/images/appgini-setup-05-db-connection-error.png "Error de conexión a la base de datos")
 
-In that case, double-check the information you entered and make sure it's correct. Then click the 'Retry' button to the right of the error message
-to re-test the connection.
+En ese caso, verifique la información que ingresó y asegúrese de que sea correcta. Luego haga clic en el botón 'Reintentar' a la derecha del mensaje de error
+para volver a probar la conexión.
 
-If the connection test succeeds, you'll see a success message as below:
+Si la prueba de conexión tiene éxito, verá un mensaje de éxito como el siguiente:
 
-![Database connection success](https://cdn.bigprof.com/images/appgini-setup-06-db-connection-success.png "Database connection success")
+![Éxito de la conexión a la base de datos](https://cdn.bigprof.com/images/appgini-setup-06-db-connection-success.png "Éxito de la conexión a la base de datos")
 
-Next, provide the desired admin username, email, and password for your application.
-This will be the username and password you'll use to log in to your application's [admin area](the-admin-interface.md), where
-you can manage your application's settings, users, groups, and more.
+A continuación, proporcione el nombre de usuario, el correo electrónico y la contraseña de administrador deseados para su aplicación.
+Este será el nombre de usuario y la contraseña que utilizará para iniciar sesión en el [área de administración](the-admin-interface.md) de su aplicación, donde
+podrá administrar la configuración, los usuarios, los grupos y más de su aplicación.
 
-After filling in the admin information, click 'Submit' to proceed to the final step.
+Después de completar la información del administrador, haga clic en 'Enviar' para pasar al paso final.
 
-## Step 3: Finalizing the setup
+## Paso 3: Finalización de la configuración
 
-Your AppGini-generated application will next attempt to create the necessary database tables and populate them with initial data.
-If the setup process completes successfully, you'll see a success message as below:
+Su aplicación generada por AppGini intentará a continuación crear las tablas de base de datos necesarias y poblarlas con datos iniciales.
+Si el proceso de configuración se completa con éxito, verá un mensaje de éxito como el siguiente:
 
-![Setup success](https://cdn.bigprof.com/images/appgini-setup-07-success.png "Setup success")
+![Éxito de la configuración](https://cdn.bigprof.com/images/appgini-setup-07-success.png "Éxito de la configuración")
 
-Depending on what you want to do next, click one of the options provided.
+Dependiendo de lo que quiera hacer a continuación, haga clic en una de las opciones proporcionadas.
 
-That's it! You've successfully set up your AppGini-generated application.
-
+¡Eso es todo! Ha configurado correctamente su aplicación generada por AppGini.

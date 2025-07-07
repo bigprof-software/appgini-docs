@@ -1,267 +1,263 @@
 ---
-title: Field properties pane
-linkTitle: Field properties
+title: Panel de propiedades del campo
+linkTitle: Propiedades del campo
 slug: help/working-with-projects/field-properties-pane
-description: The field properties pane in AppGini allows you to configure the properties of fields in your tables.
-keywords: field properties, field properties pane, appgini field properties, appgini field properties pane, media tab, lookup field, options list, calculated field, data format, technical documentation
+description: El panel de propiedades del campo en AppGini le permite configurar las propiedades de los campos en sus tablas.
+keywords: propiedades del campo, panel de propiedades del campo, propiedades del campo de appgini, panel de propiedades del campo de appgini, pestaña de medios, campo de búsqueda, lista de opciones, campo calculado, formato de datos, documentación técnica
 ---
 
-# Field properties pane
+# Panel de propiedades del campo
 
-![Field properties pane](https://cdn.bigprof.com/images/appgini-new-field-24.15.png)
+![Panel de propiedades del campo](https://cdn.bigprof.com/images/appgini-new-field-24.15.png)
 
 
-### Caption 
-The field caption is the title of the field as it would appear in the table view and the detail view of its table in the generated web application.
+### Título
+El título del campo es el título del campo tal como aparecería en la vista de tabla y la vista detallada de su tabla en la aplicación web generada.
 
-### Description 
-This section allows you to provide an optional description for the field. 
+### Descripción
+Esta sección le permite proporcionar una descripción opcional para el campo.
 
-### Data Type
-(Dropdown menu) This menu allows you to choose the type of data the field will store in your application's database.
+### Tipo de datos
+(Menú desplegable) Este menú le permite elegir el tipo de datos que el campo almacenará en la base de datos de su aplicación.
 
-### Length
-Specifies the maximum size of data that can be stored in this field. The way Length property works depends on the data type you choose for the field. 
-Please read the data type guidelines displayed at the bottom of the Properties window for more information.
+### Longitud
+Especifica el tamaño máximo de datos que se pueden almacenar en este campo. La forma en que funciona la propiedad Longitud depende del tipo de datos que elija para el campo.
+Lea las directrices sobre tipos de datos que se muestran en la parte inferior de la ventana Propiedades para obtener más información.
 
-### Precision
-This property works with decimal data types only (e.g. Float, Double and Decimal). It specifies how many digits
-to display after the decimal point.
+### Precisión
+Esta propiedad solo funciona con tipos de datos decimales (por ejemplo, Float, Double y Decimal). Especifica cuántos dígitos
+mostrar después del punto decimal.
 
-###  Max characters in table view
-Applicable for textual data types only. Specifies the number of characters to display in the table view for that field. If zero or empty, the entire
-field value is displayed. This is very useful when you have a long field and you don't want to display all of its contents on the table view to
-prevent the table view from becoming too wide. Thus you can set it to display just the first 40 characters for example. 
-When users select the record, the full field contents will be displayed in the detail view.
+###  Caracteres máximos en la vista de tabla
+Aplicable solo para tipos de datos textuales. Especifica el número de caracteres que se mostrarán en la vista de tabla para ese campo. Si es cero o está vacío, se muestra todo el
+valor del campo. Esto es muy útil cuando tiene un campo largo y no desea mostrar todo su contenido en la vista de tabla para
+evitar que la vista de tabla se vuelva demasiado ancha. Por lo tanto, puede configurarlo para que muestre solo los primeros 40 caracteres, por ejemplo.
+Cuando los usuarios seleccionen el registro, el contenido completo del campo se mostrará en la vista detallada.
 
 ![AppGini_scNVswME9v](https://github.com/bigprof-software/appgini-docs/assets/168858457/7ad719c6-dcbd-4ac4-964d-fdd92179efe5)
 
 
-### Default
-If you specify a default value, it will be placed in any records that the user creates while leaving this field empty
-(if the user does want an empty field, she can delete the default value after the record has been added and then update the record).
-If you click the 'Automatic Value' button at the right of the 'Default' box, you can select an automatic value to be
-inserted into the field when the record is created or changed. This works only if the field is set as read-only.
+### Predeterminado
+Si especifica un valor predeterminado, se colocará en cualquier registro que el usuario cree mientras deja este campo vacío
+(si el usuario desea un campo vacío, puede eliminar el valor predeterminado después de que se haya agregado el registro y luego actualizar el registro).
+Si hace clic en el botón 'Valor automático' a la derecha del cuadro 'Predeterminado', puede seleccionar un valor automático para que se
+inserte en el campo cuando se cree o cambie el registro. Esto solo funciona si el campo está configurado como de solo lectura.
 
-### Automatic value
-You can set a field to contain one or more automatic values by specifying them from the drop-down menu. 
-The field will be read-only and its value set automatically by the app.
+### Valor automático
+Puede configurar un campo para que contenga uno o más valores automáticos especificándolos en el menú desplegable.
+El campo será de solo lectura y su valor se establecerá automáticamente por la aplicación.
 
 ![AppGini_rR91bDhpWk](https://github.com/bigprof-software/appgini-docs/assets/168858457/7244f2d8-665b-46a9-b972-ea8abf88865a)
 
-### Read Only
-If checked, this field will be displayed in the detail view but not editable.
-This is useful in many scenarios, including forcing a default value (or automatic value), calculated fields, fields that are populated using custom code or a third party app, .. etc.
+### Solo lectura
+Si está marcado, este campo se mostrará en la vista detallada pero no será editable.
+Esto es útil en muchos escenarios, incluido forzar un valor predeterminado (o valor automático), campos calculados, campos que se completan mediante código personalizado o una aplicación de terceros, etc.
 
 ![AppGini_rlaTzMBsVl](https://github.com/bigprof-software/appgini-docs/assets/168858457/781c5ba8-d657-426c-a6b7-65e74ae2e713)
 
-### Primary key
-If you check this option, the current field will be the primary key of the current table.
-In AppGini, Every table must have a single primary key field in order to uniquely identify records of the table (multi-field primary keys are not supported by AppGini).
+### Clave principal
+Si marca esta opción, el campo actual será la clave principal de la tabla actual.
+En AppGini, cada tabla debe tener un solo campo de clave principal para identificar de forma única los registros de la tabla (AppGini no admite claves principales de varios campos).
 
 ![AppGini_bI8MW1vvBU](https://github.com/bigprof-software/appgini-docs/assets/168858457/2f3e5609-4633-42ef-a93c-6cb138acef64)
 
-### Zero Fill
-Check this property to left-pad numeric data types with zeros when they are displayed, so that the total number of digits matches the field's 'Length' property.
-For example, if the field length is 5 and is set as zero-fill, a field value of 22 would be displayed as 00022.
+### Relleno con ceros
+Marque esta propiedad para rellenar a la izquierda los tipos de datos numéricos con ceros cuando se muestren, de modo que el número total de dígitos coincida con la propiedad 'Longitud' del campo.
+Por ejemplo, si la longitud del campo es 5 y está configurado como relleno con ceros, un valor de campo de 22 se mostraría como 00022.
 
-### Required
-If you check this property, users must provide a value for this field before submitting the form.
-If a user attempts to submit a record while leaving a required field empty, they'd see an error message similar to the one below.
-If you set the field as read-only, auto-increment or hidden in detail view, this property will be ignored.
+### Obligatorio
+Si marca esta propiedad, los usuarios deben proporcionar un valor para este campo antes de enviar el formulario.
+Si un usuario intenta enviar un registro mientras deja un campo obligatorio vacío, verá un mensaje de error similar al siguiente.
+Si configura el campo como de solo lectura, de incremento automático u oculto en la vista detallada, esta propiedad se ignorará.
 
 ![AppGini_jCaXOiKufz](https://github.com/bigprof-software/appgini-docs/assets/168858457/0aa74d48-01c1-438d-8f7b-76e7c12f46ab)
 
-### Rich (HTML) area 
-If checked, this field will be displayed as a rich area in the detail view. A rich area provides advanced formatting features not available in a normal text area. For example, you can change the font/font size, colors, add links, add photos, ... etc.
+### Área enriquecida (HTML)
+Si está marcado, este campo se mostrará como un área enriquecida en la vista detallada. Un área enriquecida proporciona funciones de formato avanzadas que no están disponibles en un área de texto normal. Por ejemplo, puede cambiar la fuente/tamaño de fuente, los colores, agregar enlaces, agregar fotos, etc.
 
 ![AppGini_BNj6i82r3r](https://github.com/bigprof-software/appgini-docs/assets/168858457/3e5ee5eb-79b7-4bf9-833b-97d3f2e1e7f6)
 
-### Auto increment
-While defining the properties for the ID field (likely named "id"), look for an option labeled "Auto Increment". This option appear as a checkbox with an "Auto Increment" selection.
+### Incremento automático
+Al definir las propiedades del campo ID (probablemente llamado "id"), busque una opción etiquetada como "Incremento automático". Esta opción aparece como una casilla de verificación con una selección de "Incremento automático".
 
-### Unique
-The data values in this field cannot be repeated if you check this property. This is similar to the Primary key property except that unique fields can be empty (null).
-If a user tries to enter a value that already exists into a unique field, they'll see an error message like the one below.
+### Único
+Los valores de datos en este campo no se pueden repetir si marca esta propiedad. Esto es similar a la propiedad Clave principal, excepto que los campos únicos pueden estar vacíos (nulos).
+Si un usuario intenta ingresar un valor que ya existe en un campo único, verá un mensaje de error como el siguiente.
 
 ![AppGini_d3pskp8FXm](https://github.com/bigprof-software/appgini-docs/assets/168858457/3e5f90a8-6750-4f47-9eb8-cf9ba275d2ac)
 
-### Show column sum
-This option is enabled only for numeric fields. Currently, lookup fields are not supported (even if their parents are numeric).
-If you check this option, the generated table view will include a calculated sum of the values stored in this field for all records.
-If a filter is applied to the table view, the sum will be calculated only for filtered records rather than all records.
+### Mostrar suma de columna
+Esta opción solo está habilitada para campos numéricos. Actualmente, los campos de búsqueda no son compatibles (incluso si sus padres son numéricos).
+Si marca esta opción, la vista de tabla generada incluirá una suma calculada de los valores almacenados en este campo para todos los registros.
+Si se aplica un filtro a la vista de tabla, la suma se calculará solo para los registros filtrados en lugar de todos los registros.
 
 ![AppGini_mV8EBJjSMN](https://github.com/bigprof-software/appgini-docs/assets/168858457/284d849d-4cfe-4a45-bae5-531fb0ad8198)
 
-### Text area
-If checked, this field will be displayed as a text area in the detail view. This is useful if you want to allow multiple lines in a field, for example to enter addresses or notes.
+### Área de texto
+Si está marcado, este campo se mostrará como un área de texto en la vista detallada. Esto es útil si desea permitir varias líneas en un campo, por ejemplo, para ingresar direcciones o notas.
 
 ![AppGini_NVMbCU6ZpJ](https://github.com/bigprof-software/appgini-docs/assets/168858457/730161c5-eb3d-40ae-b3b7-54cbe0016bbc)
 
-### Unsigned
-This property works for numerical data types only. If you check it, the field will not accept negative data values.
+### Sin signo
+Esta propiedad solo funciona para tipos de datos numéricos. Si la marca, el campo no aceptará valores de datos negativos.
 
-### Do not filter
-If checked, the current field is not displayed in the filters page. Thus, users will not be able to use this field to filter data.
+### No filtrar
+Si está marcado, el campo actual no se muestra en la página de filtros. Por lo tanto, los usuarios no podrán usar este campo para filtrar datos.
 
 ![AppGini_at2OowSjus](https://github.com/bigprof-software/appgini-docs/assets/168858457/78582b1d-f4d3-45e8-9fdd-52c2f99915dd)
 
-### Binary
-This property works only with Char and VarChar data types. It forces the field to behave like a binary value rather than the default text behavior. 
-For example, the list (a,G,x,E,A,g) is sorted as (a,A,E,g,G,x) if it is treated as text values, and (A,E,G,a,g,x) if it is treated as binary values.
+### Binario
+Esta propiedad solo funciona con los tipos de datos Char y VarChar. Obliga al campo a comportarse como un valor binario en lugar del comportamiento de texto predeterminado.
+Por ejemplo, la lista (a,G,x,E,A,g) se ordena como (a,A,E,g,G,x) si se trata como valores de texto, y (A,E,G,a,g,x) si se trata como valores binarios.
 
-### Check box
-If you check this property, the field will be displayed as a check box, where users can either check or uncheck it.
+### Casilla de verificación
+Si marca esta propiedad, el campo se mostrará como una casilla de verificación, donde los usuarios pueden marcarla o desmarcarla.
 
 ![AppGini_lPMFSpxirq](https://github.com/bigprof-software/appgini-docs/assets/168858457/9fba7e3a-764d-44f2-85a0-b4b99df7b8f9)
 
-### Hide in table view
-If checked, the current field is not displayed in the table view. This may be useful if you want to hide some fields or to decrease the width of tables.
+### Ocultar en la vista de tabla
+Si está marcado, el campo actual no se muestra en la vista de tabla. Esto puede ser útil si desea ocultar algunos campos o disminuir el ancho de las tablas.
 
 ![AppGini_ZTILEBmhaK](https://github.com/bigprof-software/appgini-docs/assets/168858457/3785b553-b15e-4035-ad53-03f16185543c)
 
-### Hide in detail view
-If checked, this field will not be displayed in the detail view.
+### Ocultar en la vista detallada
+Si está marcado, este campo no se mostrará en la vista detallada.
 
 ![AppGini_o49PVvFmMq](https://github.com/bigprof-software/appgini-docs/assets/168858457/ad747138-1d45-43e1-a334-c6066902f034)
 
-### Alignment
-Specifies the alignment of the field in the table view.
+### Alineación
+Especifica la alineación del campo en la vista de tabla.
 
 ![AppGini_lJl6g3oWof](https://github.com/bigprof-software/appgini-docs/assets/168858457/00189a6e-9851-48e8-932a-496f4d9a1ce9)
 
-### Column width (pixels)
-Specifies the width in pixels of the column that will display data from this field in the table view.
-Please note that the width specified is the minimum (rather than exact) width. If the total width of all columns in the table view is less than the page width, each column would expand based on the ratio of its specified width to the total table width.
+### Ancho de columna (píxeles)
+Especifica el ancho en píxeles de la columna que mostrará los datos de este campo en la vista de tabla.
+Tenga en cuenta que el ancho especificado es el ancho mínimo (en lugar de exacto). Si el ancho total de todas las columnas en la vista de tabla es menor que el ancho de la página, cada columna se expandirá según la proporción de su ancho especificado con respecto al ancho total de la tabla.
 
-
-### Media, Lookup field, Options list...etc
-The various options in these tabs specify the behavior and appearance of the current field.
+### Medios, Campo de búsqueda, Lista de opciones... etc.
+Las diversas opciones en estas pestañas especifican el comportamiento y la apariencia del campo actual.
 
 ![AppGini_YJdwqUy65o](https://github.com/bigprof-software/appgini-docs/assets/168858457/67b09a66-a71b-43fa-9db9-f794b2b7f9da)
 
-### Media tab > Link
-Configures this field as a link to the detail view (the default behavior), a link to a URL, an email link, or no link. Click the 'Configure' button to change the link behavior.
+### Pestaña Medios > Enlace
+Configura este campo como un enlace a la vista detallada (el comportamiento predeterminado), un enlace a una URL, un enlace de correo electrónico o ningún enlace. Haga clic en el botón 'Configurar' para cambiar el comportamiento del enlace.
 
 ![AppGini_u1ZN8jSNjt](https://github.com/bigprof-software/appgini-docs/assets/168858457/137d8285-4874-4772-b9f6-5b4b3896e39e)
 
-### Media tab > Image
-Image Configures this field to accept an image upload and display as a full-size image or a thumbnail.
+### Pestaña Medios > Imagen
+Imagen Configura este campo para aceptar una carga de imagen y mostrarla como una imagen de tamaño completo o una miniatura.
 
-his works only if the field has a textual data type (Char, Varchar, Text, ..etc). This is because the field actually stores the image file name, while the image itself is uploaded to the storage of the server running your AppGini app.
+Esto solo funciona si el campo tiene un tipo de datos textual (Char, Varchar, Text, etc.). Esto se debe a que el campo en realidad almacena el nombre del archivo de imagen, mientras que la imagen en sí se carga en el almacenamiento del servidor que ejecuta su aplicación AppGini.
 
 ![AppGini_gG1TJkJGDp](https://github.com/bigprof-software/appgini-docs/assets/168858457/20dbc750-eb05-428c-bdbb-1e4ce7d358a4)
 
-### Media tab > File upload
-Configures this field as a file upload field. This works only if the field has a textual data type (Char, Varchar, Text, ..etc). 
-This is because the field actually stores the file name, while the file itself is uploaded to the storage of the server running your AppGini app.
-In the configuration window, you can specify the maximum file size in KB that users are allowed to upload. Also, you can specify whether you want to delete the file from the server if the record is deleted. You can also configure how the field is displayed to users.
+### Pestaña Medios > Carga de archivos
+Configura este campo como un campo de carga de archivos. Esto solo funciona si el campo tiene un tipo de datos textual (Char, Varchar, Text, etc.).
+Esto se debe a que el campo en realidad almacena el nombre del archivo, mientras que el archivo en sí se carga en el almacenamiento del servidor que ejecuta su aplicación AppGini.
+En la ventana de configuración, puede especificar el tamaño máximo de archivo en KB que los usuarios pueden cargar. Además, puede especificar si desea eliminar el archivo del servidor si se elimina el registro. También puede configurar cómo se muestra el campo a los usuarios.
 
 ![AppGini_TNckzO2MHt](https://github.com/bigprof-software/appgini-docs/assets/168858457/c7f6e8b7-910f-4d02-b09c-5b3a478c6c64)
 
-### Media tab > Google map
-When enabled, this link would accept a Google maps link and would display the related map embedded in the page.
+### Pestaña Medios > Mapa de Google
+Cuando está habilitado, este enlace aceptaría un enlace de Google Maps y mostraría el mapa relacionado incrustado en la página.
 
 ![AppGini_yitzk1mLH7](https://github.com/bigprof-software/appgini-docs/assets/168858457/2fbe19f3-70bb-4e82-8d8c-0b3bf038d8c7)
 
-### Media tab > Youtube video
-When enabled, this link would accept a Youtube link and would display the related video embedded in the page.
+### Pestaña Medios > Video de Youtube
+Cuando está habilitado, este enlace aceptaría un enlace de Youtube y mostraría el video relacionado incrustado en la página.
 
 ![AppGini_3ff5I6qgqx](https://github.com/bigprof-software/appgini-docs/assets/168858457/d2ab79f7-593f-4aac-ac8e-7a835b7c9973)
 
-### Lookup field > Parent table
-If you want to set this field as a lookup field (foreign key), select its parent table from this menu. A parent table is the table which has the field containing the source data for the lookup field.
-For more information about lookup fields, refer to the section 'Understanding lookup fields' in the online help.
+### Campo de búsqueda > Tabla principal
+Si desea establecer este campo como un campo de búsqueda (clave externa), seleccione su tabla principal en este menú. Una tabla principal es la tabla que tiene el campo que contiene los datos de origen para el campo de búsqueda.
+Para obtener más información sobre los campos de búsqueda, consulte la sección 'Comprensión de los campos de búsqueda' en la ayuda en línea.
 
 ![AppGini_jNsUIjNBmK](https://github.com/bigprof-software/appgini-docs/assets/168858457/9d32f830-ff2d-4d4f-a252-6fc4e75a5370)
 
-### Lookup field > Advanced ...
-The advanced window allows you to specify a custom SQL query for populating the lookup drop-down.
-You can use this typically to filter the possible values for this lookup field. For example, you can display products that are not discontinued rather than all products by adding a WHERE condition in the SQL query.
+### Campo de búsqueda > Avanzado...
+La ventana avanzada le permite especificar una consulta SQL personalizada para completar el menú desplegable de búsqueda.
+Normalmente, puede usar esto para filtrar los posibles valores para este campo de búsqueda. Por ejemplo, puede mostrar productos que no están descontinuados en lugar de todos los productos agregando una condición WHERE en la consulta SQL.
 
-### Lookup field > Parent caption field 1
-If this is a lookup field (foreign key), select the field to be used as the first part of the caption from this menu. A parent caption is the caption or alias that appears to the user in the lookup drop-down.
-For more information about lookup fields, refer to the section 'Understanding lookup fields' in the online help.
+### Campo de búsqueda > Campo de título principal 1
+Si este es un campo de búsqueda (clave externa), seleccione el campo que se utilizará como primera parte del título en este menú. Un título principal es el título o alias que aparece al usuario en el menú desplegable de búsqueda.
+Para obtener más información sobre los campos de búsqueda, consulte la sección 'Comprensión de los campos de búsqueda' en la ayuda en línea.
 
 ![AppGini_BJblHapZLA](https://github.com/bigprof-software/appgini-docs/assets/168858457/379a1be6-425a-4df5-b0f7-9c27f4287d82)
 
-### Lookup field > Separator
-If this is a lookup field (foreign key) and you want its caption to be formed by joining values from 2 caption fields, type a separator here.
-For example, if part 1 of the caption is a field called 'last_name', and part 2 is a field called 'first_name', you should use a command followed by a 
-space ',' as a separator. See the screenshot below
-
+### Campo de búsqueda > Separador
+Si este es un campo de búsqueda (clave externa) y desea que su título se forme uniendo valores de 2 campos de título, escriba un separador aquí.
+Por ejemplo, si la parte 1 del título es un campo llamado 'apellido', y la parte 2 es un campo llamado 'nombre', debe usar una coma seguida de un
+espacio ',' como separador. Vea la captura de pantalla a continuación.
 
 ![AppGini_jLCg6vx72k](https://github.com/bigprof-software/appgini-docs/assets/168858457/d1361d50-bfbb-42c6-9bce-55b8da4c647f)
 
-### Lookup field > Parent caption field 2
-If this is a lookup field (foreign key), select the field to be used as the second part of the caption from this menu. A parent caption is the caption or alias that appears to the user in the lookup drop-down.
-For more information about lookup fields, refer to the section 'Understanding lookup fields' in the online help.
+### Campo de búsqueda > Campo de título principal 2
+Si este es un campo de búsqueda (clave externa), seleccione el campo que se utilizará como segunda parte del título en este menú. Un título principal es el título o alias que aparece al usuario en el menú desplegable de búsqueda.
+Para obtener más información sobre los campos de búsqueda, consulte la sección 'Comprensión de los campos de búsqueda' en la ayuda en línea.
 
 ![AppGini_2VmbYdPyMx](https://github.com/bigprof-software/appgini-docs/assets/168858457/f4d671ed-b401-4ae5-aefd-e59ede55c11b)
 
-### Field properties > Show as radio buttons
-When this option is checked, the lookup field is displayed as a set of radio buttons rather than a drop down menu. This applies only if the lookup field is not set as 'Auto-fill'.
+### Propiedades del campo > Mostrar como botones de opción
+Cuando esta opción está marcada, el campo de búsqueda se muestra como un conjunto de botones de opción en lugar de un menú desplegable. Esto solo se aplica si el campo de búsqueda no está configurado como 'Autocompletar'.
 
 ![AppGini_WiL0WHggir](https://github.com/bigprof-software/appgini-docs/assets/168858457/375f4ac0-e758-4ae6-be24-d91615224874)
 
-### Field properties > Inherit access permissions
-Check this option to limit the contents of the lookup drop down to only the parent records that the logged member is allowed to view. If not checked, all parent records are listed regardless of the member's permissions.
+### Propiedades del campo > Heredar permisos de acceso
+Marque esta opción para limitar el contenido del menú desplegable de búsqueda solo a los registros principales que el miembro conectado puede ver. Si no está marcada, se enumeran todos los registros principales independientemente de los permisos del miembro.
 
 ![AppGini_nELOWUibN4](https://github.com/bigprof-software/appgini-docs/assets/168858457/0ac007ee-abe3-4259-bc36-28ccde0a5763)
 
-### Field properties > Link to parent record in detail view
-In the detail view, lookup fields can have an adjacent link to the parent record. This drop down specifies whether to show that link, and how the link behaves when clicked.
+### Propiedades del campo > Enlazar al registro principal en la vista detallada
+En la vista detallada, los campos de búsqueda pueden tener un enlace adyacente al registro principal. Este menú desplegable especifica si se debe mostrar ese enlace y cómo se comporta el enlace cuando se hace clic.
 
 ![AppGini_tkO9m89sRq](https://github.com/bigprof-software/appgini-docs/assets/168858457/33d274c9-dee7-4bb0-bd5c-4d8b54cf8fdd)
 
-### Options list > List values
-If you want to limit the possible values for a field to a specific list of values, type the allowable values here, separated by double semi-colons.
-The first screenshot below shows an example of how to specify the list values. The second screenshot below it shows how the field will be displayed to users (options are sorted alphabetically in the drop-down).
+### Lista de opciones > Valores de la lista
+Si desea limitar los posibles valores de un campo a una lista específica de valores, escriba los valores permitidos aquí, separados por dos puntos y coma.
+La primera captura de pantalla a continuación muestra un ejemplo de cómo especificar los valores de la lista. La segunda captura de pantalla debajo muestra cómo se mostrará el campo a los usuarios (las opciones se ordenan alfabéticamente en el menú desplegable).
 
 ![AppGini_P48IuTLrxY](https://github.com/bigprof-software/appgini-docs/assets/168858457/2db1c1e1-ba13-4b90-b693-c1751bb90a0d)
 
-### Options list > Quick list!
-Choose a popular predefined set of options from the quick list instead of having to type them manually.
-To add your own predefined list, create a text file containing the list and save it into the 'add-ons' folder inside your AppGini installation folder. The extension of your list file must be '.Ist'.
+### Lista de opciones > ¡Lista rápida!
+Elija un conjunto popular predefinido de opciones de la lista rápida en lugar de tener que escribirlas manualmente.
+Para agregar su propia lista predefinida, cree un archivo de texto que contenga la lista y guárdelo en la carpeta 'add-ons' dentro de su carpeta de instalación de AppGini. La extensión de su archivo de lista debe ser '.Ist'.
 
 ![AppGini_W4eEPywd51](https://github.com/bigprof-software/appgini-docs/assets/168858457/9b2bc409-720a-4836-a557-b36bf0a10d81)
 
-### Options list > Drop-down list
-If you choose to display an options list as a drop-down list, users can select a value from the drop-down, and can search for values by typing part of their content in the search box.
-Recommended if you have a large number of options.
+### Lista de opciones > Lista desplegable
+Si elige mostrar una lista de opciones como una lista desplegable, los usuarios pueden seleccionar un valor del menú desplegable y pueden buscar valores escribiendo parte de su contenido en el cuadro de búsqueda.
+Recomendado si tiene una gran cantidad de opciones.
 
 ![AppGini_Cc7Gs5XGGu](https://github.com/bigprof-software/appgini-docs/assets/168858457/92808c8d-9234-499d-9a4b-63c911c32911)
 
-### Options list > Multiple-choice list box
-If you choose to display an options list as a multiple-choice list box, users can select one or more values from the drop-down, and can search for values by typing part of their content in the search box.
-To use this option, the field data type must be a TEXT or BLOB type.
-The screenshot below shows an example where the user has selected 2 values form the drop-down.
+### Lista de opciones > Cuadro de lista de selección múltiple
+Si elige mostrar una lista de opciones como un cuadro de lista de selección múltiple, los usuarios pueden seleccionar uno o más valores del menú desplegable y pueden buscar valores escribiendo parte de su contenido en el cuadro de búsqueda.
+Para usar esta opción, el tipo de datos del campo debe ser un tipo TEXT o BLOB.
+La captura de pantalla a continuación muestra un ejemplo en el que el usuario ha seleccionado 2 valores del menú desplegable.
 
 ![AppGini_3IrB4EUtGC](https://github.com/bigprof-software/appgini-docs/assets/168858457/83e87dc4-e240-4260-8c79-78e7cba3c31c)
 
-### Options list > Radio buttons
-If this field is an options list, and you choose to display it as radio buttons, the values of the list are displayed as radio button options, each on a separate line. The advantage of radio buttons is that they are very easy to use and the user can see all the possible options without scrolling.
-Not recommended though if you have a large number of options, as this will cause the form to become too long. Use a drop-down list in this case.
-Options are sorted in the same order you enter them if you choose radio buttons.
-To hide the 'None' option, set the field as required.
+### Lista de opciones > Botones de opción
+Si este campo es una lista de opciones y elige mostrarlo como botones de opción, los valores de la lista se muestran como opciones de botones de opción, cada una en una línea separada. La ventaja de los botones de opción es que son muy fáciles de usar y el usuario puede ver todas las opciones posibles sin desplazarse.
+Sin embargo, no se recomienda si tiene una gran cantidad de opciones, ya que esto hará que el formulario sea demasiado largo. Utilice una lista desplegable en este caso.
+Las opciones se ordenan en el mismo orden en que las ingresa si elige botones de opción.
+Para ocultar la opción 'Ninguno', configure el campo como obligatorio.
 
 ![AppGini_FxCj19ijih](https://github.com/bigprof-software/appgini-docs/assets/168858457/e7079346-61f7-4385-a76e-2edbc0857237)
 
-### Data format > Format this field as
-Use this option if you want to apply a special format to the data stored in this field. 
-Examples of special formats include currency formats, Date/time formats, ... etc.
-You can add or edit data formats by editing the file `C:\Program Files\AppGini\add-ons\dataFormats.cfg` in a text editor.
-Rules: Each data format on a separate line. The line begins with the description of the data format, followed by a semi-colon (;) and a space, followed by the format code (written in MySQL syntax). The description of the data format can't include semi-colons.
+### Formato de datos > Formatear este campo como
+Utilice esta opción si desea aplicar un formato especial a los datos almacenados en este campo.
+Ejemplos de formatos especiales incluyen formatos de moneda, formatos de fecha/hora, etc.
+Puede agregar o editar formatos de datos editando el archivo `C:\Program Files\AppGini\add-ons\dataFormats.cfg` en un editor de texto.
+Reglas: Cada formato de datos en una línea separada. La línea comienza con la descripción del formato de datos, seguida de un punto y coma (;) y un espacio, seguido del código de formato (escrito en sintaxis MySQL). La descripción del formato de datos no puede incluir puntos y comas.
 
 ![AppGini_8lyktlLxci](https://github.com/bigprof-software/appgini-docs/assets/168858457/2358b9fa-2c47-4956-b632-31d568611fb3)
 
-### Calculated field > Automatically calculate the value of this field using the following SQL query
-This is an advanced feature that requires some SQL knowledge.
-Instead of receiving user input, or a default value, calculated fields are populated by running the specified SQL query, and storing the returned value.
-The SQL query should return a single value: single row and single column. Use the 'Query helper' button to open an advanced query editor that makes it much easier to build queries. The list of variables at the right allows you to insert special placeholders in the SQL query, to be replaced by their 
-corresponding values before running the query. For more details and examples, please refer to the online help.
+### Campo calculado > Calcular automáticamente el valor de este campo utilizando la siguiente consulta SQL
+Esta es una función avanzada que requiere algunos conocimientos de SQL.
+En lugar de recibir la entrada del usuario o un valor predeterminado, los campos calculados se completan ejecutando la consulta SQL especificada y almacenando el valor devuelto.
+La consulta SQL debe devolver un solo valor: una sola fila y una sola columna. Utilice el botón 'Ayudante de consulta' para abrir un editor de consultas avanzado que facilita mucho la creación de consultas. La lista de variables a la derecha le permite insertar marcadores de posición especiales en la consulta SQL, para que se reemplacen por sus
+valores correspondientes antes de ejecutar la consulta. Para obtener más detalles y ejemplos, consulte la ayuda en línea.
 
-### Show technical documentation page in the admin area
-Technical documentation is a way of adding comments/documentation to your app. If the option 'Show technical documentation page in the admin area' is checked, the documentation will also be visible to the admin user rather than just in AppGini. Documentation text can optionally include HTML code. Bootstrap CSS classes can also be used.
-
-
+### Mostrar página de documentación técnica en el área de administración
+La documentación técnica es una forma de agregar comentarios/documentación a su aplicación. Si la opción 'Mostrar página de documentación técnica en el área de administración' está marcada, la documentación también será visible para el usuario administrador en lugar de solo en AppGini. El texto de la documentación puede incluir opcionalmente código HTML. También se pueden utilizar clases CSS de Bootstrap.

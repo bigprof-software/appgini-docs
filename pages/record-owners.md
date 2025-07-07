@@ -1,74 +1,71 @@
 ---
-title: Setting the child record owner to match the owner of its parent record
-linkTitle: Record owners
+title: Establecer el propietario del registro secundario para que coincida con el propietario de su registro principal
+linkTitle: Propietarios de registros
 slug: help/record-owners
-keywords: record owner, parent record, child record, owner, automatic, parent table, child table, lookup field, permissions, editing, owner user, Fix record owners, utility
-description: Learn how to set the owner of a child record to match the owner of its parent record in AppGini, and how to update the owner of existing child records.
+keywords: propietario del registro, registro principal, registro secundario, propietario, automático, tabla principal, tabla secundaria, campo de búsqueda, permisos, edición, usuario propietario, Corregir propietarios de registros, utilidad
+description: Aprenda cómo establecer el propietario de un registro secundario para que coincida con el propietario de su registro principal en AppGini, y cómo actualizar el propietario de los registros secundarios existentes.
 ---
 
-# Setting the child record owner to match the owner of its parent record
+# Establecer el propietario del registro secundario para que coincida con el propietario de su registro principal
 
-## About this feature
+## Acerca de esta función
 
-As of AppGini 24.10, you can set the owner of a child record based on the owner of its parent record. This is useful in many scenarios, for example:
+A partir de AppGini 24.10, puede establecer el propietario de un registro secundario en función del propietario de su registro principal. Esto es útil en muchos escenarios, por ejemplo:
 
-*   You have a table of `projects` and another table of `tasks`. Each task belongs to a project. You want to set the owner of each task to the owner of its parent project.
-*   You have a table of `orders` and another table of `order_details`. Each order item belongs to an order. You want to set the owner of each order item to the owner of its parent order.
+*   Tiene una tabla de `proyectos` y otra tabla de `tareas`. Cada tarea pertenece a un proyecto. Desea establecer el propietario de cada tarea como el propietario de su proyecto principal.
+*   Tiene una tabla de `pedidos` y otra tabla de `detalles_pedido`. Cada artículo de pedido pertenece a un pedido. Desea establecer el propietario de cada artículo de pedido como el propietario de su pedido principal.
 
-This is specially useful if you set the permissions of the child table to allow editing only by the owner of the record. If user Bob creates a project, then user Alice adds a task to that project, you might want the task to be owned by Bob so he can edit it.
+Esto es especialmente útil si establece los permisos de la tabla secundaria para permitir la edición solo por parte del propietario del registro. Si el usuario Bob crea un proyecto, y luego la usuaria Alice agrega una tarea a ese proyecto, es posible que desee que la tarea sea propiedad de Bob para que él pueda editarla.
 
-To set the owner of a child record to the owner of its parent record, you need to do the following:
+Para establecer el propietario de un registro secundario como el propietario de su registro principal, debe hacer lo siguiente:
 
-1.  In AppGini, go to the table of the child records (e.g. `tasks` or `order_details` in the above examples).
-    
-2.  Under the **Detail view settings** section, open the **Record owner** dropdown and select the lookup field that points to the parent table (e.g. `ProjectID` or `OrderID` in the above examples).
-    
-    ![Record owner](https://cdn.bigprof.com/images/setting-child-record-owner.png)
-    
-3.  Regenerate and upload your AppGini application.
-    
+1.  En AppGini, vaya a la tabla de los registros secundarios (por ejemplo, `tareas` o `detalles_pedido` en los ejemplos anteriores).
 
-Now, whenever an order item is created or edited, its owner user will be set to the owner of its parent order.
+2.  En la sección **Configuración de la vista detallada**, abra el menú desplegable **Propietario del registro** y seleccione el campo de búsqueda que apunta a la tabla principal (por ejemplo, `IDProyecto` o `IDPedido` en los ejemplos anteriores).
 
-## Updating the owner of existing child records
+    ![Propietario del registro](https://cdn.bigprof.com/images/setting-child-record-owner.png)
 
-If you already have existing child records, the above setting will not apply to them unless you update each record manually. This can be a pain if you have many records. That's why we've also added a utility to mass update the owner of existing child records.
+3.  Regenere y cargue su aplicación AppGini.
 
-To use this utility, follow these steps:
+Ahora, cada vez que se cree o edite un artículo de pedido, su usuario propietario se establecerá como el propietario de su pedido principal.
 
-1.  Sign in as an administrator to your AppGini application.
-    
-2.  Go to the admin area and open the **Utilities** menu.
-    
-3.  Click on **Fix record owners**.
-    
-    ![Utilties /> Fix record owners](https://cdn.bigprof.com/images/utilties-fix-record-owners.png)
-    
-4.  This would open a page that lists all tables where the owner of child records can be updated. Click the **Start** button above the list of tables.
-    
-    ![Fix record owners page](https://cdn.bigprof.com/images/admin-area-fix-record-owners-page.png)
-    
-5.  Leave the page open until the process is complete. This might take a while if you have many records.
-    
-6.  Once the process is complete, the button would display the message **Done**. You can now close the page or navigate to another page.
-    
-    ![Fix record owners page done](https://cdn.bigprof.com/images/admin-area-fix-record-owners-page-done.png)
-    
+## Actualización del propietario de los registros secundarios existentes
 
-## A practical example: Set the country sales manager as the owner of all orders and order items of that country
+Si ya tiene registros secundarios existentes, la configuración anterior no se aplicará a ellos a menos que actualice cada registro manualmente. Esto puede ser un problema si tiene muchos registros. Es por eso que también hemos agregado una utilidad para actualizar masivamente el propietario de los registros secundarios existentes.
+
+Para utilizar esta utilidad, siga estos pasos:
+
+1.  Inicie sesión como administrador en su aplicación AppGini.
+
+2.  Vaya al área de administración y abra el menú **Utilidades**.
+
+3.  Haga clic en **Corregir propietarios de registros**.
+
+    ![Utilidades /> Corregir propietarios de registros](https://cdn.bigprof.com/images/utilties-fix-record-owners.png)
+
+4.  Esto abrirá una página que enumera todas las tablas donde se puede actualizar el propietario de los registros secundarios. Haga clic en el botón **Iniciar** sobre la lista de tablas.
+
+    ![Página Corregir propietarios de registros](https://cdn.bigprof.com/images/admin-area-fix-record-owners-page.png)
+
+5.  Deje la página abierta hasta que se complete el proceso. Esto puede llevar un tiempo si tiene muchos registros.
+
+6.  Una vez que se complete el proceso, el botón mostrará el mensaje **Hecho**. Ahora puede cerrar la página o navegar a otra página.
+
+    ![Página Corregir propietarios de registros hecha](https://cdn.bigprof.com/images/admin-area-fix-record-owners-page-done.png)
+
+## Un ejemplo práctico: Establecer el gerente de ventas del país como propietario de todos los pedidos y artículos de pedido de ese país
 
 <video style="width: 100%; height: auto;" controls>
 <source src="https://cdn.bigprof.com/screencasts/setting-automatic-record-owners-based-on-parent-table.mp4" type="video/mp4">
-<a href="https://cdn.bigprof.com/screencasts/setting-automatic-record-owners-based-on-parent-table.mp4">Watch the video screencast</a>
+<a href="https://cdn.bigprof.com/screencasts/setting-automatic-record-owners-based-on-parent-table.mp4">Ver el vídeo de demostración</a>
 </video>
 
-In this screencast, we are using the Northwind sample application. We configure the record owner of the `orders` table to be the `CustomerID` field, which is a lookup field pointing to the `customers` table. This means that the owner of each order would be the same as the owner of the customer record it belongs to.
+En esta demostración, estamos utilizando la aplicación de ejemplo Northwind. Configuramos el propietario del registro de la tabla `orders` para que sea el campo `CustomerID`, que es un campo de búsqueda que apunta a la tabla `customers`. Esto significa que el propietario de cada pedido sería el mismo que el propietario del registro del cliente al que pertenece.
 
-We also configure the record owner of the `order_details` table to be the `OrderID` field, which in turn is a lookup field pointing to the `orders` table. This means that the owner of each order item would be the same as the owner of the order it belongs to.
+También configuramos el propietario del registro de la tabla `order_details` para que sea el campo `OrderID`, que a su vez es un campo de búsqueda que apunta a la tabla `orders`. Esto significa que el propietario de cada artículo de pedido sería el mismo que el propietario del pedido al que pertenece.
 
-This way, the owner of the customer record would be the owner of all orders and order items belonging to that customer. We'll then list all customers from Germany and set the sales manager of Germany as the owner of all German customers' records.
+De esta manera, el propietario del registro del cliente sería el propietario de todos los pedidos y artículos de pedido pertenecientes a ese cliente. Luego, enumeraremos todos los clientes de Alemania y estableceremos al gerente de ventas de Alemania como propietario de todos los registros de los clientes alemanes.
 
-If a sales person creates an order for a German customer, the sales manager of Germany would become the owner of that order and all order items belonging to that order.
+Si un vendedor crea un pedido para un cliente alemán, el gerente de ventas de Alemania se convertiría en el propietario de ese pedido y de todos los artículos de pedido pertenecientes a ese pedido.
 
-To apply this to existing German orders and order items, we use the **Fix record owners** utility to update the owner of all existing orders and order items.
-
+Para aplicar esto a los pedidos y artículos de pedido alemanes existentes, utilizamos la utilidad **Corregir propietarios de registros** para actualizar el propietario de todos los pedidos y artículos de pedido existentes.
