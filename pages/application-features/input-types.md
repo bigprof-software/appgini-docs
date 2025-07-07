@@ -1,299 +1,298 @@
 ---
-title: Input types supported by AppGini
-linkTitle: Input types
+title: Tipos de entrada compatibles con AppGini
+linkTitle: Tipos de entrada
 slug: help/application-features/input-types
-description: Learn about the different input types supported by AppGini, and how to create fields of each type.
-keywords: input types, textbox, text area, rich area, checkbox, radio buttons, drop-down list, multi-select list, date, date and time, time, file upload, image upload, google map, youtube video, read-only
+description: Obtenga información sobre los diferentes tipos de entrada compatibles con AppGini y cómo crear campos de cada tipo.
+keywords: tipos de entrada, cuadro de texto, área de texto, área enriquecida, casilla de verificación, botones de opción, lista desplegable, lista de selección múltiple, fecha, fecha y hora, hora, carga de archivos, carga de imágenes, mapa de Google, video de YouTube, solo lectura
 ---
 
-# Input types supported by AppGini
+# Tipos de entrada compatibles con AppGini
 
-AppGini supports a variety of input types for fields in your tables. This page lists the supported input types and provides a brief description of each.
-The screenshot below shows a sample detail view form with fields of different input types:
+AppGini admite una variedad de tipos de entrada para los campos de sus tablas. Esta página enumera los tipos de entrada admitidos y proporciona una breve descripción de cada uno.
+La siguiente captura de pantalla muestra un formulario de vista detallada de ejemplo con campos de diferentes tipos de entrada:
 
-![Sample detail view form with fields of different input types](https://cdn.bigprof.com/images/input-types-dv-3-col.png "Sample detail view form with fields of different input types")
+![Formulario de vista detallada de ejemplo con campos de diferentes tipos de entrada](https://cdn.bigprof.com/images/input-types-dv-3-col.png "Formulario de vista detallada de ejemplo con campos de diferentes tipos de entrada")
 
-And this screenshot shows the corresponding table view:
+Y esta captura de pantalla muestra la vista de tabla correspondiente:
 
-![Sample table view with fields of different input types](https://cdn.bigprof.com/images/input-types-tv.png "Sample table view with fields of different input types")
+![Vista de tabla de ejemplo con campos de diferentes tipos de entrada](https://cdn.bigprof.com/images/input-types-tv.png "Vista de tabla de ejemplo con campos de diferentes tipos de entrada")
 
-Let's now go through the supported input types.
+Repasemos ahora los tipos de entrada admitidos.
 
-## Textbox
+## Cuadro de texto
 
-This is the most common input type. It allows users to enter text, numbers, or any other data. Here is a screenshot of a textbox field in a detail view form:
+Este es el tipo de entrada más común. Permite a los usuarios ingresar texto, números o cualquier otro dato. Aquí hay una captura de pantalla de un campo de cuadro de texto en un formulario de vista detallada:
 
-![Textbox field in a detail view form](https://cdn.bigprof.com/images/input-types-dv-textbox.png "Textbox field in a detail view form")
+![Campo de cuadro de texto en un formulario de vista detallada](https://cdn.bigprof.com/images/input-types-dv-textbox.png "Campo de cuadro de texto en un formulario de vista detallada")
 
-And here is a screenshot of a textbox field in a table view:
+Y aquí hay una captura de pantalla de un campo de cuadro de texto en una vista de tabla:
 
-![Textbox field in a table view](https://cdn.bigprof.com/images/input-types-tv-textbox.png "Textbox field in a table view")
+![Campo de cuadro de texto en una vista de tabla](https://cdn.bigprof.com/images/input-types-tv-textbox.png "Campo de cuadro de texto en una vista de tabla")
 
-To create a textbox field, set the data type of your field to `Char`, `Varchar`, or any numeric type.
-For `Char` and `Varchar` fields, you can specify the maximum length of the text that can be entered in the field.
+Para crear un campo de cuadro de texto, establezca el tipo de datos de su campo en `Char`, `Varchar` o cualquier tipo numérico.
+Para los campos `Char` y `Varchar`, puede especificar la longitud máxima del texto que se puede ingresar en el campo.
 
-## Text area
+## Área de texto
 
-This input type is similar to the textbox, but it allows users to enter multiple lines of text. Here is a screenshot of a textarea field in a detail view form:
+Este tipo de entrada es similar al cuadro de texto, pero permite a los usuarios ingresar varias líneas de texto. Aquí hay una captura de pantalla de un campo de área de texto en un formulario de vista detallada:
 
-![Text area field in a detail view form](https://cdn.bigprof.com/images/input-types-dv-textarea.png "Text area field in a detail view form")
+![Campo de área de texto en un formulario de vista detallada](https://cdn.bigprof.com/images/input-types-dv-textarea.png "Campo de área de texto en un formulario de vista detallada")
 
-And here is a screenshot of a textarea field in a table view:
+Y aquí hay una captura de pantalla de un campo de área de texto en una vista de tabla:
 
-![Text area field in a table view](https://cdn.bigprof.com/images/input-types-tv-textarea.png "Text area field in a table view")
+![Campo de área de texto en una vista de tabla](https://cdn.bigprof.com/images/input-types-tv-textarea.png "Campo de área de texto en una vista de tabla")
 
-To create a textarea field, set the data type of your field to `Text`, `Tiny text`, `Medium text` or `Long text`, and check the **Text area** checkbox in the field properties.
+Para crear un campo de área de texto, establezca el tipo de datos de su campo en `Text`, `Tiny text`, `Medium text` o `Long text`, y marque la casilla de verificación **Área de texto** en las propiedades del campo.
 
-> **Note**: You could also use the `Blob` data type and its variants to store large text data, but this is not recommended for text data, as it's less efficient than using the `Text` data types.
+> **Nota**: También podría usar el tipo de datos `Blob` y sus variantes para almacenar datos de texto grandes, pero esto no se recomienda para datos de texto, ya que es menos eficiente que usar los tipos de datos `Text`.
 
-## Rich (HTML) area
+## Área enriquecida (HTML)
 
-This input type allows users to enter rich text, including formatted text, images, links, etc. Here is a screenshot of a rich area field in a detail view form:
+Este tipo de entrada permite a los usuarios ingresar texto enriquecido, incluido texto formateado, imágenes, enlaces, etc. Aquí hay una captura de pantalla de un campo de área enriquecida en un formulario de vista detallada:
 
-![Rich area field in a detail view form](https://cdn.bigprof.com/images/input-types-dv-richtext.png "Rich area field in a detail view form")
+![Campo de área enriquecida en un formulario de vista detallada](https://cdn.bigprof.com/images/input-types-dv-richtext.png "Campo de área enriquecida en un formulario de vista detallada")
 
-And here is a screenshot of a rich area field in a table view:
+Y aquí hay una captura de pantalla de un campo de área enriquecida en una vista de tabla:
 
-![Rich area field in a table view](https://cdn.bigprof.com/images/input-types-rich-html-area.png "Rich area field in a table view")
+![Campo de área enriquecida en una vista de tabla](https://cdn.bigprof.com/images/input-types-rich-html-area.png "Campo de área enriquecida en una vista de tabla")
 
-To create a rich area field, set the data type of your field to `Text`, `Tiny text`, `Medium text` or `Long text`, and check the **Rich (HTML) area** checkbox in the field properties.
+Para crear un campo de área enriquecida, establezca el tipo de datos de su campo en `Text`, `Tiny text`, `Medium text` o `Long text`, y marque la casilla de verificación **Área enriquecida (HTML)** en las propiedades del campo.
 
-***TIP:*** If you name your field `description`, `comments`, `notes` or `details`, AppGini will automatically set the data type to `Text` and check the **Rich (HTML) area** checkbox for you.
+***CONSEJO:*** Si nombra su campo `description`, `comments`, `notes` o `details`, AppGini establecerá automáticamente el tipo de datos en `Text` y marcará la casilla de verificación **Área enriquecida (HTML)** por usted.
 
-## Checkbox
+## Casilla de verificación
 
-This input type allows users to check or uncheck a box. The text displayed next to the checkbox can be customized by setting the **Caption** property of the field. 
-Here is a screenshot of a checkbox field in a detail view form:
+Este tipo de entrada permite a los usuarios marcar o desmarcar una casilla. El texto que se muestra junto a la casilla de verificación se puede personalizar configurando la propiedad **Título** del campo.
+Aquí hay una captura de pantalla de un campo de casilla de verificación en un formulario de vista detallada:
 
-![Checkbox field in a detail view form](https://cdn.bigprof.com/images/input-types-dv-checkbox.png "Checkbox field in a detail view form")
+![Campo de casilla de verificación en un formulario de vista detallada](https://cdn.bigprof.com/images/input-types-dv-checkbox.png "Campo de casilla de verificación en un formulario de vista detallada")
 
-And here is a screenshot of a checked checkbox field in a table view:
+Y aquí hay una captura de pantalla de un campo de casilla de verificación marcado en una vista de tabla:
 
-![Checked checkbox field in a table view](https://cdn.bigprof.com/images/input-types-tv-checkbox.png "Checked checkbox field in a table view")
+![Campo de casilla de verificación marcado en una vista de tabla](https://cdn.bigprof.com/images/input-types-tv-checkbox.png "Campo de casilla de verificación marcado en una vista de tabla")
 
-To create a checkbox field, check the **Check box** option in the field properties.
+Para crear un campo de casilla de verificación, marque la opción **Casilla de verificación** en las propiedades del campo.
 
-## Radio buttons
+## Botones de opción
 
-This input type allows users to select one option from a list of options.
-Here is a screenshot of a radio buttons field in a detail view form:
+Este tipo de entrada permite a los usuarios seleccionar una opción de una lista de opciones.
+Aquí hay una captura de pantalla de un campo de botones de opción en un formulario de vista detallada:
 
-![Radio buttons field in a detail view form](https://cdn.bigprof.com/images/input-types-dv-radio-buttons.png "Radio buttons field in a detail view form")
+![Campo de botones de opción en un formulario de vista detallada](https://cdn.bigprof.com/images/input-types-dv-radio-buttons.png "Campo de botones de opción en un formulario de vista detallada")
 
-And here is a screenshot of a radio buttons field in a table view:
+Y aquí hay una captura de pantalla de un campo de botones de opción en una vista de tabla:
 
-![Radio buttons field in a table view](https://cdn.bigprof.com/images/input-types-tv-radio-buttons.png "Radio buttons field in a table view")
+![Campo de botones de opción en una vista de tabla](https://cdn.bigprof.com/images/input-types-tv-radio-buttons.png "Campo de botones de opción en una vista de tabla")
 
-Radio buttons can be created in two ways:
+Los botones de opción se pueden crear de dos maneras:
 
-1. Under the **Options list** tab in the field properties, enter the options you want to display as radio buttons in the **List values** box, separated by double semicolons (`;;`).
-   For example, to create a radio buttons field with options `Yes` and `No`, enter `Yes;;No` in the **List values** box. Below the **List values** box, 
-   choose the **Radio buttons** option from the **Display the options as** property.
+1. En la pestaña **Lista de opciones** de las propiedades del campo, ingrese las opciones que desea mostrar como botones de opción en el cuadro **Valores de la lista**, separadas por dos puntos y coma (`;;`).
+   Por ejemplo, para crear un campo de botones de opción con las opciones `Sí` y `No`, ingrese `Sí;;No` en el cuadro **Valores de la lista**. Debajo del cuadro **Valores de la lista**,
+   elija la opción **Botones de opción** de la propiedad **Mostrar las opciones como**.
 
-     **Hint:** The **Quick List** drop-down to the right of the **List values** box allows you to quickly add common options like months, days of the week, US states, etc.
+     **Sugerencia:** El menú desplegable **Lista rápida** a la derecha del cuadro **Valores de la lista** le permite agregar rápidamente opciones comunes como meses, días de la semana, estados de EE. UU., etc.
 
-2. If you have a table in your project that contains the options you want to display as radio buttons, you can link the field to that table. 
-   To do this, go to the **Lookup field** tab in the field properties, and select the parent table and field that contains the options you want to display as radio buttons.
-   Then, check the **Show as radio buttons** option.
+2. Si tiene una tabla en su proyecto que contiene las opciones que desea mostrar como botones de opción, puede vincular el campo a esa tabla.
+   Para hacer esto, vaya a la pestaña **Campo de búsqueda** en las propiedades del campo y seleccione la tabla principal y el campo que contiene las opciones que desea mostrar como botones de opción.
+   Luego, marque la opción **Mostrar como botones de opción**.
 
-   Please beware that this method is not suitable for large tables, as it will load all the records in the parent table to display the radio buttons,
-   which can result in a huge form, as well as performance issues.
+   Tenga en cuenta que este método no es adecuado para tablas grandes, ya que cargará todos los registros de la tabla principal para mostrar los botones de opción,
+   lo que puede resultar en un formulario enorme, así como problemas de rendimiento.
 
-## Drop-down list
+## Lista desplegable
 
-This input type allows users to select one option from a list of options. The list of options can be static (entered manually inside AppGini) or dynamic (fetched from a table in your application).
-Here is a screenshot of a closed drop-down list field in a detail view form:
+Este tipo de entrada permite a los usuarios seleccionar una opción de una lista de opciones. La lista de opciones puede ser estática (ingresada manualmente dentro de AppGini) o dinámica (obtenida de una tabla en su aplicación).
+Aquí hay una captura de pantalla de un campo de lista desplegable cerrado en un formulario de vista detallada:
 
-![Drop-down list field in a detail view form](https://cdn.bigprof.com/images/input-types-dv-drop-down-closed.png "Drop-down list field in a detail view form")
+![Campo de lista desplegable en un formulario de vista detallada](https://cdn.bigprof.com/images/input-types-dv-drop-down-closed.png "Campo de lista desplegable en un formulario de vista detallada")
 
-And here is a screenshot of an open drop-down list field in a detail view form:
+Y aquí hay una captura de pantalla de un campo de lista desplegable abierto en un formulario de vista detallada:
 
-![Drop-down list field in a detail view form](https://cdn.bigprof.com/images/input-types-dv-drop-down-open.png "Drop-down list field in a detail view form")
+![Campo de lista desplegable en un formulario de vista detallada](https://cdn.bigprof.com/images/input-types-dv-drop-down-open.png "Campo de lista desplegable en un formulario de vista detallada")
 
-And here is how the drop-down list field looks in a table view:
+Y así es como se ve el campo de lista desplegable en una vista de tabla:
 
-![Drop-down list field in a table view](https://cdn.bigprof.com/images/input-types-tv-drop-down.png "Drop-down list field in a table view")
+![Campo de lista desplegable en una vista de tabla](https://cdn.bigprof.com/images/input-types-tv-drop-down.png "Campo de lista desplegable en una vista de tabla")
 
-Drop-down list fields can be created in two ways:
+Los campos de lista desplegable se pueden crear de dos maneras:
 
-1. Under the **Options list** tab in the field properties, enter the options you want to display in the drop-down list in the **List values** box, separated by double semicolons (`;;`).
-   For example, to create a drop-down list field with options `Yes` and `No`, enter `Yes;;No` in the **List values** box. Below the **List values** box, 
-   choose the **Drop-down list** option from the **Display the options as** property.
+1. En la pestaña **Lista de opciones** de las propiedades del campo, ingrese las opciones que desea mostrar en la lista desplegable en el cuadro **Valores de la lista**, separadas por dos puntos y coma (`;;`).
+   Por ejemplo, para crear un campo de lista desplegable con las opciones `Sí` y `No`, ingrese `Sí;;No` en el cuadro **Valores de la lista**. Debajo del cuadro **Valores de la lista**,
+   elija la opción **Lista desplegable** de la propiedad **Mostrar las opciones como**.
 
-     **Hint:** The **Quick List** drop-down to the right of the **List values** box allows you to quickly add common options like months, days of the week, US states, etc.
+     **Sugerencia:** El menú desplegable **Lista rápida** a la derecha del cuadro **Valores de la lista** le permite agregar rápidamente opciones comunes como meses, días de la semana, estados de EE. UU., etc.
 
-2. If you have a table in your project that contains the options you want to display in the drop-down list, you can link the field to that table. 
-   To do this, go to the **Lookup field** tab in the field properties, and select the parent table and field that contains the options you want to display in the drop-down list.
-   
-If the drop-down list contains more than a few options, a search box will be displayed at the top of the list to help users quickly find the desired option.
+2. Si tiene una tabla en su proyecto que contiene las opciones que desea mostrar en la lista desplegable, puede vincular el campo a esa tabla.
+   Para hacer esto, vaya a la pestaña **Campo de búsqueda** en las propiedades del campo y seleccione la tabla principal y el campo que contiene las opciones que desea mostrar en la lista desplegable.
 
-## Multi-select list
+Si la lista desplegable contiene más de unas pocas opciones, se mostrará un cuadro de búsqueda en la parte superior de la lista para ayudar a los usuarios a encontrar rápidamente la opción deseada.
 
-This input type allows users to select multiple options from a list of options.
-Here is a screenshot of a closed multi-select list field in a detail view form:
+## Lista de selección múltiple
 
-![Multi-select list field in a detail view form](https://cdn.bigprof.com/images/input-types-dv-multiple-choice-drop-down-closed.png "Multi-select list field in a detail view form")
+Este tipo de entrada permite a los usuarios seleccionar múltiples opciones de una lista de opciones.
+Aquí hay una captura de pantalla de un campo de lista de selección múltiple cerrado en un formulario de vista detallada:
 
-And here is a screenshot of an open multi-select list field in a detail view form:
+![Campo de lista de selección múltiple en un formulario de vista detallada](https://cdn.bigprof.com/images/input-types-dv-multiple-choice-drop-down-closed.png "Campo de lista de selección múltiple en un formulario de vista detallada")
 
-![Multi-select list field in a detail view form](https://cdn.bigprof.com/images/input-types-dv-multiple-choice-drop-down-open.png "Multi-select list field in a detail view form")
+Y aquí hay una captura de pantalla de un campo de lista de selección múltiple abierto en un formulario de vista detallada:
 
-And here is how the multi-select list field looks in a table view:
+![Campo de lista de selección múltiple en un formulario de vista detallada](https://cdn.bigprof.com/images/input-types-dv-multiple-choice-drop-down-open.png "Campo de lista de selección múltiple en un formulario de vista detallada")
 
-![Multi-select list field in a table view](https://cdn.bigprof.com/images/input-types-tv-multiple-choice-drop-down.png "Multi-select list field in a table view")
+Y así es como se ve el campo de lista de selección múltiple en una vista de tabla:
 
-Multi-select list fields can be created under the **Options list** tab in the field properties. Enter
-the options you want to display in the multi-select list in the **List values** box, separated by double semicolons (`;;`).
-Make sure the data type of the field is set to `Text` (or any of its variants).
+![Campo de lista de selección múltiple en una vista de tabla](https://cdn.bigprof.com/images/input-types-tv-multiple-choice-drop-down.png "Campo de lista de selección múltiple en una vista de tabla")
 
-## Date
+Los campos de lista de selección múltiple se pueden crear en la pestaña **Lista de opciones** de las propiedades del campo. Ingrese
+las opciones que desea mostrar en la lista de selección múltiple en el cuadro **Valores de la lista**, separadas por dos puntos y coma (`;;`).
+Asegúrese de que el tipo de datos del campo esté configurado en `Text` (o cualquiera de sus variantes).
 
-This input type allows users to select a date from a calendar. Here is a screenshot of a date field in a detail view form:
+## Fecha
 
-![Date field in a detail view form](https://cdn.bigprof.com/images/input-types-dv-date-pickup-closed.png "Date field in a detail view form")
+Este tipo de entrada permite a los usuarios seleccionar una fecha de un calendario. Aquí hay una captura de pantalla de un campo de fecha en un formulario de vista detallada:
 
-And here is a screenshot of the date picker in an open state:
+![Campo de fecha en un formulario de vista detallada](https://cdn.bigprof.com/images/input-types-dv-date-pickup-closed.png "Campo de fecha en un formulario de vista detallada")
 
-![Date field in a detail view form](https://cdn.bigprof.com/images/input-types-dv-date-pickup-open.png?2 "Date field in a detail view form")
+Y aquí hay una captura de pantalla del selector de fechas en estado abierto:
 
-And here is how the date field looks in a table view:
+![Campo de fecha en un formulario de vista detallada](https://cdn.bigprof.com/images/input-types-dv-date-pickup-open.png?2 "Campo de fecha en un formulario de vista detallada")
 
-![Date field in a table view](https://cdn.bigprof.com/images/input-types-tv-date.png)
+Y así es como se ve el campo de fecha en una vista de tabla:
 
-To create a date field, set the data type of your field to `Date`. If you name a field 
-anything that ends with `date`, it will automatically be set to the `Date` data type.
+![Campo de fecha en una vista de tabla](https://cdn.bigprof.com/images/input-types-tv-date.png)
 
-To set the date format, you can do so under the **Localization settings** in the project properties.
+Para crear un campo de fecha, establezca el tipo de datos de su campo en `Date`. Si nombra un campo
+cualquier cosa que termine con `date`, se establecerá automáticamente en el tipo de datos `Date`.
 
-## Date and time
+Para establecer el formato de fecha, puede hacerlo en **Configuración de localización** en las propiedades del proyecto.
 
-This input type allows users to select a date and time from a calendar. Here is a screenshot of a date and time field in a detail view form:
+## Fecha y hora
 
-![Date and time field in a detail view form](https://cdn.bigprof.com/images/input-types-dv-datetime-pickup-closed.png "Date and time field in a detail view form")
+Este tipo de entrada permite a los usuarios seleccionar una fecha y hora de un calendario. Aquí hay una captura de pantalla de un campo de fecha y hora en un formulario de vista detallada:
 
-And here is a screenshot of the date and time picker in an open state:
+![Campo de fecha y hora en un formulario de vista detallada](https://cdn.bigprof.com/images/input-types-dv-datetime-pickup-closed.png "Campo de fecha y hora en un formulario de vista detallada")
 
-![Date and time field in a detail view form](https://cdn.bigprof.com/images/input-types-dv-datetime-pickup-open.png "Date and time field in a detail view form")
+Y aquí hay una captura de pantalla del selector de fecha y hora en estado abierto:
 
-And here is how the date and time field looks in a table view:
+![Campo de fecha y hora en un formulario de vista detallada](https://cdn.bigprof.com/images/input-types-dv-datetime-pickup-open.png "Campo de fecha y hora en un formulario de vista detallada")
 
-![Date and time field in a table view](https://cdn.bigprof.com/images/input-types-tv-datetime.png "Date and time field in a table view")
+Y así es como se ve el campo de fecha y hora en una vista de tabla:
 
-To create a date and time field, set the data type of your field to `Datetime`.
+![Campo de fecha y hora en una vista de tabla](https://cdn.bigprof.com/images/input-types-tv-datetime.png "Campo de fecha y hora en una vista de tabla")
 
-To set the date and time format, you can do so under the **Localization settings** in the project properties.
+Para crear un campo de fecha y hora, establezca el tipo de datos de su campo en `Datetime`.
 
-## Time
+Para establecer el formato de fecha y hora, puede hacerlo en **Configuración de localización** en las propiedades del proyecto.
 
-This input type allows users to select a time from a dropdown list. Here is a screenshot of a time field in a detail view form:
+## Hora
 
-![Time field in a detail view form](https://cdn.bigprof.com/images/input-types-dv-time-pickup-closed.png "Time field in a detail view form")
+Este tipo de entrada permite a los usuarios seleccionar una hora de una lista desplegable. Aquí hay una captura de pantalla de un campo de hora en un formulario de vista detallada:
 
-And here is a screenshot of the time picker in an open state:
+![Campo de hora en un formulario de vista detallada](https://cdn.bigprof.com/images/input-types-dv-time-pickup-closed.png "Campo de hora en un formulario de vista detallada")
 
-![Time field in a detail view form](https://cdn.bigprof.com/images/input-types-dv-time-pickup-open.png "Time field in a detail view form")
+Y aquí hay una captura de pantalla del selector de hora en estado abierto:
 
-And here is how the time field looks in a table view:
+![Campo de hora en un formulario de vista detallada](https://cdn.bigprof.com/images/input-types-dv-time-pickup-open.png "Campo de hora en un formulario de vista detallada")
 
-![Time field in a table view](https://cdn.bigprof.com/images/input-types-tv-time.png "Time field in a table view")
+Y así es como se ve el campo de hora en una vista de tabla:
 
-To create a time field, set the data type of your field to `Time`. If you name a field
-`time`, it will automatically be set to the `Time` data type.
+![Campo de hora en una vista de tabla](https://cdn.bigprof.com/images/input-types-tv-time.png "Campo de hora en una vista de tabla")
 
-To set the time format, you can do so under the **Localization settings** in the project properties.
+Para crear un campo de hora, establezca el tipo de datos de su campo en `Time`. Si nombra un campo
+`time`, se establecerá automáticamente en el tipo de datos `Time`.
 
-## File upload
+Para establecer el formato de hora, puede hacerlo en **Configuración de localización** en las propiedades del proyecto.
 
-This input type allows users to upload files. Here is a screenshot of a file upload field in a detail view form:
+## Carga de archivos
 
-![File upload field in a detail view form](https://cdn.bigprof.com/images/input-types-dv-file-upload.png "File upload field in a detail view form")
+Este tipo de entrada permite a los usuarios cargar archivos. Aquí hay una captura de pantalla de un campo de carga de archivos en un formulario de vista detallada:
 
-And here is a screenshot of a file upload field in a table view:
+![Campo de carga de archivos en un formulario de vista detallada](https://cdn.bigprof.com/images/input-types-dv-file-upload.png "Campo de carga de archivos en un formulario de vista detallada")
 
-![File upload field in a table view](https://cdn.bigprof.com/images/input-types-tv-file.png "File upload field in a table view")
+Y aquí hay una captura de pantalla de un campo de carga de archivos en una vista de tabla:
 
-To create a file upload field, set the data type of your field to `Varchar` or `Char`. Then, under the **Media** tab in the field properties,
-select the **File upload** option. This should open the **File upload options** dialog (you can open it later by clicking the **Configure** button in the **Media** tab).
+![Campo de carga de archivos en una vista de tabla](https://cdn.bigprof.com/images/input-types-tv-file.png "Campo de carga de archivos en una vista de tabla")
 
-This is how the **File upload options** dialog looks like:
+Para crear un campo de carga de archivos, establezca el tipo de datos de su campo en `Varchar` o `Char`. Luego, en la pestaña **Multimedia** de las propiedades del campo,
+seleccione la opción **Carga de archivos**. Esto debería abrir el cuadro de diálogo **Opciones de carga de archivos** (puede abrirlo más tarde haciendo clic en el botón **Configurar** en la pestaña **Multimedia**).
 
-![File upload options dialog](https://cdn.bigprof.com/images/file-upload-options-dialog.png "File upload options dialog")
+Así es como se ve el cuadro de diálogo **Opciones de carga de archivos**:
 
-In this dialog, you can specify the maximum file size allowed for upload, the allowed file types, and other options.
+![Cuadro de diálogo de opciones de carga de archivos](https://cdn.bigprof.com/images/file-upload-options-dialog.png "Cuadro de diálogo de opciones de carga de archivos")
 
-## Image upload
+En este cuadro de diálogo, puede especificar el tamaño máximo de archivo permitido para la carga, los tipos de archivo permitidos y otras opciones.
 
-This input type allows users to upload images. Here is a screenshot of an image upload field in a detail view form:
+## Carga de imágenes
 
-![Image upload field in a detail view form](https://cdn.bigprof.com/images/input-types-dv-image.png "Image upload field in a detail view form")
+Este tipo de entrada permite a los usuarios cargar imágenes. Aquí hay una captura de pantalla de un campo de carga de imágenes en un formulario de vista detallada:
 
-And here is a screenshot of an image upload field in a table view:
+![Campo de carga de imágenes en un formulario de vista detallada](https://cdn.bigprof.com/images/input-types-dv-image.png "Campo de carga de imágenes en un formulario de vista detallada")
 
-![Image upload field in a table view](https://cdn.bigprof.com/images/input-types-tv-image.png "Image upload field in a table view")
+Y aquí hay una captura de pantalla de un campo de carga de imágenes en una vista de tabla:
 
-To create an image upload field, set the data type of your field to `Varchar` or `Char`. Then, under the **Media** tab in the field properties,
-select the **Image** option. This should open the **Image options** dialog (you can open it later by clicking the **Configure** button in the **Media** tab).
+![Campo de carga de imágenes en una vista de tabla](https://cdn.bigprof.com/images/input-types-tv-image.png "Campo de carga de imágenes en una vista de tabla")
 
-This is how the **Image options** dialog looks like:
+Para crear un campo de carga de imágenes, establezca el tipo de datos de su campo en `Varchar` o `Char`. Luego, en la pestaña **Multimedia** de las propiedades del campo,
+seleccione la opción **Imagen**. Esto debería abrir el cuadro de diálogo **Opciones de imagen** (puede abrirlo más tarde haciendo clic en el botón **Configurar** en la pestaña **Multimedia**).
 
-![Image options dialog](https://cdn.bigprof.com/images/image-options-dialog.png "Image options dialog")
+Así es como se ve el cuadro de diálogo **Opciones de imagen**:
 
-In this dialog, you can specify the maximum file size allowed for upload, thumbnail dimensions, zoom behavior, and other options.
+![Cuadro de diálogo de opciones de imagen](https://cdn.bigprof.com/images/image-options-dialog.png "Cuadro de diálogo de opciones de imagen")
 
-If you name a field `image`, `photo` or `picture`, it will automatically be set as an image upload field.
+En este cuadro de diálogo, puede especificar el tamaño máximo de archivo permitido para la carga, las dimensiones de las miniaturas, el comportamiento del zoom y otras opciones.
 
-## Google Map
+Si nombra un campo `image`, `photo` o `picture`, se establecerá automáticamente como un campo de carga de imágenes.
 
-This input type displays a Google map in the detail view. The map is interactive and allows users to zoom in and out, as well as move around.
-Here is a screenshot of a Google Map field in a detail view form:
+## Mapa de Google
 
-![Google Map field in a detail view form](https://cdn.bigprof.com/images/input-types-dv-google-map-24.18.png "Google Map field in a detail view form")
+Este tipo de entrada muestra un mapa de Google en la vista detallada. El mapa es interactivo y permite a los usuarios acercar y alejar, así como moverse.
+Aquí hay una captura de pantalla de un campo de mapa de Google en un formulario de vista detallada:
 
-In the table view, as well as print view, the Google Map field displays a static map image:
+![Campo de mapa de Google en un formulario de vista detallada](https://cdn.bigprof.com/images/input-types-dv-google-map-24.18.png "Campo de mapa de Google en un formulario de vista detallada")
 
-![Google Map field in a table view](https://cdn.bigprof.com/images/input-types-tv-google-map.png "Google Map field in a table view")
+En la vista de tabla, así como en la vista de impresión, el campo Mapa de Google muestra una imagen de mapa estática:
 
-In AppGini, you can configure the Google Map field to obtain the location from a Google Maps URL provided by the user.
+![Campo de mapa de Google en una vista de tabla](https://cdn.bigprof.com/images/input-types-tv-google-map.png "Campo de mapa de Google en una vista de tabla")
 
-In AppGini 24.18 and later, you can also configure the Google Map field to obtain the location of the user's device using the browser's geolocation API.
-In this case, the field will display a map with a marker at the user's current location:
+En AppGini, puede configurar el campo Mapa de Google para obtener la ubicación de una URL de Google Maps proporcionada por el usuario.
 
-![Google Map field with user's current location](https://cdn.bigprof.com/images/input-types-dv-google-map-with-user-location-24.18.png "Google Map field with user's current location")
+En AppGini 24.18 y versiones posteriores, también puede configurar el campo Mapa de Google para obtener la ubicación del dispositivo del usuario utilizando la API de geolocalización del navegador.
+En este caso, el campo mostrará un mapa con un marcador en la ubicación actual del usuario:
 
-You can configure user location capture to take place automatically when the record is created and/or updated, or manually when the user clicks a button.
+![Campo de mapa de Google con la ubicación actual del usuario](https://cdn.bigprof.com/images/input-types-dv-google-map-with-user-location-24.18.png "Campo de mapa de Google con la ubicación actual del usuario")
 
-[Learn more about configuring Google Map fields in your AppGini project](../working-with-projects/media-tab.md#google-maps).
+Puede configurar la captura de la ubicación del usuario para que tenga lugar automáticamente cuando se crea y/o actualiza el registro, o manualmente cuando el usuario hace clic en un botón.
 
-## YouTube video
+[Obtenga más información sobre la configuración de los campos de mapa de Google en su proyecto AppGini](../working-with-projects/media-tab.md#google-maps).
 
-This input type allows users to paste a YouTube video URL to display the video. Here is a screenshot of a YouTube video field in a detail view form:
+## Video de YouTube
 
-![YouTube video field in a detail view form](https://cdn.bigprof.com/images/input-types-dv-youtube.png "YouTube video field in a detail view form")
+Este tipo de entrada permite a los usuarios pegar una URL de video de YouTube para mostrar el video. Aquí hay una captura de pantalla de un campo de video de YouTube en un formulario de vista detallada:
 
-And here is a screenshot of a YouTube video field in a table view:
+![Campo de video de YouTube en un formulario de vista detallada](https://cdn.bigprof.com/images/input-types-dv-youtube.png "Campo de video de YouTube en un formulario de vista detallada")
 
-![YouTube video field in a table view](https://cdn.bigprof.com/images/input-types-tv-youtube.png "YouTube video field in a table view")
+Y aquí hay una captura de pantalla de un campo de video de YouTube en una vista de tabla:
 
-To create a YouTube video field, set the data type of your field to `Varchar` or `Char` with a length of at least 200 characters. Then, under the **Media** tab in the field properties,
-select the **YouTube video** option. This should open the **YouTube video options** dialog (you can open it later by clicking the **Configure** button in the **Media** tab).
+![Campo de video de YouTube en una vista de tabla](https://cdn.bigprof.com/images/input-types-tv-youtube.png "Campo de video de YouTube en una vista de tabla")
 
-This is how the **YouTube video options** dialog looks like:
+Para crear un campo de video de YouTube, establezca el tipo de datos de su campo en `Varchar` o `Char` con una longitud de al menos 200 caracteres. Luego, en la pestaña **Multimedia** de las propiedades del campo,
+seleccione la opción **Video de YouTube**. Esto debería abrir el cuadro de diálogo **Opciones de video de YouTube** (puede abrirlo más tarde haciendo clic en el botón **Configurar** en la pestaña **Multimedia**).
 
-![YouTube video options dialog](https://cdn.bigprof.com/images/youtube-video-options-dialog.png "YouTube video options dialog")
+Así es como se ve el cuadro de diálogo **Opciones de video de YouTube**:
 
-## Read-only
+![Cuadro de diálogo de opciones de video de YouTube](https://cdn.bigprof.com/images/youtube-video-options-dialog.png "Cuadro de diálogo de opciones de video de YouTube")
 
-This is not exactly an input type, but it allows you to display a field in a read-only mode.
-This is useful when you want to display a field that should not be edited by users. 
+## Solo lectura
 
-To create a read-only field, check the **Read-only** option in the field properties.
+Esto no es exactamente un tipo de entrada, pero le permite mostrar un campo en modo de solo lectura.
+Esto es útil cuando desea mostrar un campo que los usuarios no deben editar.
 
-Here is a screenshot of a read-only field in a detail view form:
+Para crear un campo de solo lectura, marque la opción **Solo lectura** en las propiedades del campo.
 
-![Read-only field in a detail view form](https://cdn.bigprof.com/images/input-types-dv-read-only.png "Read-only field in a detail view form")
+Aquí hay una captura de pantalla de un campo de solo lectura en un formulario de vista detallada:
 
-## Conclusion
+![Campo de solo lectura en un formulario de vista detallada](https://cdn.bigprof.com/images/input-types-dv-read-only.png "Campo de solo lectura en un formulario de vista detallada")
 
-AppGini supports a variety of input types for fields in your tables. This allows you to create rich and interactive forms that meet many different use cases.
-You can mix and match these input types to create forms that are easy to use and provide a great user experience.
+## Conclusión
 
+AppGini admite una variedad de tipos de entrada para los campos de sus tablas. Esto le permite crear formularios ricos e interactivos que satisfacen muchos casos de uso diferentes.
+Puede mezclar y combinar estos tipos de entrada para crear formularios que sean fáciles de usar y brinden una excelente experiencia de usuario.

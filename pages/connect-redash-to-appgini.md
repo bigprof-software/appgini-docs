@@ -1,137 +1,136 @@
 ---
-title: From Data to Dashboards, A Guide to Redash Integration with AppGini
-linkTitle: Redash Integration
+title: De datos a paneles de control, una guía para la integración de Redash con AppGini
+linkTitle: Integración de Redash
 slug: help/connect-redash-to-appgini
-keywords: redash, appgini, integration, dashboard, data visualization, sql, mysql, data source, query, visualization, chart, dashboard, alert, performance, read replica
-description: Learn how to integrate Redash with AppGini to create interactive visualizations, build dynamic dashboards, and share insights with your team.
+keywords: redash, appgini, integración, panel de control, visualización de datos, sql, mysql, fuente de datos, consulta, visualización, gráfico, panel de control, alerta, rendimiento, réplica de lectura
+description: Aprenda a integrar Redash con AppGini para crear visualizaciones interactivas, crear paneles dinámicos y compartir información con su equipo.
 ---
 
-# From Data to Dashboards, A Guide to Redash Integration with AppGini
+# De datos a paneles de control, una guía para la integración de Redash con AppGini
 
-![Redash dashboard example](https://cdn.bigprof.com/images/redash-dashboard-example-2.png)
+![Ejemplo de panel de control de Redash](https://cdn.bigprof.com/images/redash-dashboard-example-2.png)
 
-## What is Redash?
+## ¿Qué es Redash?
 
-[Redash](https://redash.io) is an open-source data visualization and dashboarding tool that allows users to connect to various data sources, create interactive visualizations, and build dynamic dashboards. It provides a user-friendly interface for querying and exploring data, making it easier for non-technical users to access and analyze data.
+[Redash](https://redash.io) es una herramienta de visualización de datos y creación de paneles de control de código abierto que permite a los usuarios conectarse a diversas fuentes de datos, crear visualizaciones interactivas y crear paneles dinámicos. Proporciona una interfaz fácil de usar para consultar y explorar datos, lo que facilita el acceso y el análisis de datos a los usuarios no técnicos.
 
-Redash supports a wide range of data sources, including relational databases (e.g. MySQL databases used in [AppGini applications](https://bigprof.com/appgini/)), NoSQL databases, cloud storage services, and APIs. It allows users to write queries using SQL or other query languages specific to the data source and visualize the results in different chart types such as bar charts, line charts, pie charts, and more.
+Redash admite una amplia gama de fuentes de datos, incluidas bases de datos relacionales (por ejemplo, bases de datos MySQL utilizadas en [aplicaciones AppGini](https://bigprof.com/appgini/)), bases de datos NoSQL, servicios de almacenamiento en la nube y API. Permite a los usuarios escribir consultas utilizando SQL u otros lenguajes de consulta específicos de la fuente de datos y visualizar los resultados en diferentes tipos de gráficos, como gráficos de barras, gráficos de líneas, gráficos circulares y más.
 
-## Installing Redash on your server
+## Instalación de Redash en su servidor
 
-Redash is a stack of several components, including a Python web application, a PostgreSQL database, a Redis server, and several other components. It can be installed on a Linux server using Docker, or on a Windows server using a virtual machine. The installation process is documented in detail in the [Redash documentation](https://redash.io/help/open-source/setup).
+Redash es una pila de varios componentes, que incluye una aplicación web Python, una base de datos PostgreSQL, un servidor Redis y varios otros componentes. Se puede instalar en un servidor Linux usando Docker, o en un servidor Windows usando una máquina virtual. El proceso de instalación está documentado en detalle en la [documentación de Redash](https://redash.io/help/open-source/setup).
 
-Setting up Redash can be a bit challenging, especially if you're not familiar with Docker. If you're not comfortable with the installation process, we can help you set up Redash for a small fee. Please [contact us](https://bigprof.com/appgini/support-request) for details.
+Configurar Redash puede ser un poco desafiante, especialmente si no está familiarizado con Docker. Si no se siente cómodo con el proceso de instalación, podemos ayudarlo a configurar Redash por una pequeña tarifa. [Contáctenos](https://bigprof.com/appgini/support-request) para obtener más detalles.
 
-## Connecting Redash to your AppGini application
+## Conexión de Redash a su aplicación AppGini
 
-Once you have Redash installed and running, you can connect it to your AppGini application. To do this, you'll need to create a MySQL user _with read-only access_ to your AppGini database. Why read-only access? Because Redash will be running read-only queries against your database, and it's a good idea to limit its access to avoid any accidental changes to your data.
+Una vez que tenga Redash instalado y funcionando, puede conectarlo a su aplicación AppGini. Para hacer esto, deberá crear un usuario de MySQL _con acceso de solo lectura_ a su base de datos AppGini. ¿Por qué acceso de solo lectura? Porque Redash ejecutará consultas de solo lectura en su base de datos, y es una buena idea limitar su acceso para evitar cambios accidentales en sus datos.
 
-To create a read-only user, you can use the following SQL query in phpMyAdmin or any other MySQL client:
+Para crear un usuario de solo lectura, puede usar la siguiente consulta SQL en phpMyAdmin o cualquier otro cliente MySQL:
 
 ```sql
-CREATE USER 'redash'@'%' IDENTIFIED BY 'strong-password';
-GRANT SELECT ON `your-database-name`.* TO 'redash'@'%';
+CREATE USER 'redash'@'%' IDENTIFIED BY 'contraseña-segura';
+GRANT SELECT ON `nombre-de-su-base-de-datos`.* TO 'redash'@'%';
 ```
 
-Replace `strong-password` with a strong password of your choice, and `your-database-name` with the name of your AppGini database. If you're not sure about the name of your database, you can find it in the `config.php` file in your AppGini application's folder.
+Reemplace `contraseña-segura` con una contraseña segura de su elección, y `nombre-de-su-base-de-datos` con el nombre de su base de datos AppGini. Si no está seguro del nombre de su base de datos, puede encontrarlo en el archivo `config.php` en la carpeta de su aplicación AppGini.
 
-Once you've created the user, you can connect Redash to your AppGini database by following the steps below:
+Una vez que haya creado el usuario, puede conectar Redash a su base de datos AppGini siguiendo los pasos a continuación:
 
-1.  Log in to Redash as an admin user.
-2.  Click on the "Settings" link in the bottom-left corner of the page.
-3.  Click on "Data Sources" in the left sidebar, then click on the "New Data Source" button.
-4.  In the search box, type "MySQL", then click on the "MySQL" data source.
-5.  You'll be asked to provide a name for the data source. You can use "AppGini" or any other name you like.
-6.  In the "Host" field, enter the IP address or hostname of your MySQL server. If you're running Redash on the same server as your AppGini application, you can usually use `localhost`.
-7.  Leave the "Port" field empty unless you're using a non-standard port for MySQL.
-8.  Provide the username and password you created earlier.
-9.  If your MySQL server is configured to use SSL, you can enable SSL by checking the "Use SSL" checkbox.
-10.  Click on the "Create" button to save the data source.
-11.  Next, click the "Test Connection" button to make sure Redash can connect to your AppGini database.
-12.  If the connection test is successful, click on the "Save" button to save the data source.
+1.  Inicie sesión en Redash como usuario administrador.
+2.  Haga clic en el enlace "Configuración" en la esquina inferior izquierda de la página.
+3.  Haga clic en "Fuentes de datos" en la barra lateral izquierda, luego haga clic en el botón "Nueva fuente de datos".
+4.  En el cuadro de búsqueda, escriba "MySQL", luego haga clic en la fuente de datos "MySQL".
+5.  Se le pedirá que proporcione un nombre para la fuente de datos. Puede usar "AppGini" o cualquier otro nombre que desee.
+6.  En el campo "Host", ingrese la dirección IP o el nombre de host de su servidor MySQL. Si está ejecutando Redash en el mismo servidor que su aplicación AppGini, generalmente puede usar `localhost`.
+7.  Deje el campo "Puerto" vacío a menos que esté utilizando un puerto no estándar para MySQL.
+8.  Proporcione el nombre de usuario y la contraseña que creó anteriormente.
+9.  Si su servidor MySQL está configurado para usar SSL, puede habilitar SSL marcando la casilla de verificación "Usar SSL".
+10. Haga clic en el botón "Crear" para guardar la fuente de datos.
+11. A continuación, haga clic en el botón "Probar conexión" para asegurarse de que Redash pueda conectarse a su base de datos AppGini.
+12. Si la prueba de conexión es exitosa, haga clic en el botón "Guardar" para guardar la fuente de datos.
 
-### Here is a screencast showing the above steps
+### Aquí hay una demostración en video que muestra los pasos anteriores
 
 <video style="width: 100%; height: auto;" controls>
 <source src="https://cdn.bigprof.com/screencasts/redash-add-appgini-mysql-data-source.mp4" type="video/mp4">
-Your browser does not support the video tag.
+Su navegador no admite la etiqueta de video.
 </video>
 
-## Creating a query in Redash
+## Creación de una consulta en Redash
 
-Once you've connected Redash to your AppGini database, you can start creating queries. To create a new query, follow these steps:
+Una vez que haya conectado Redash a su base de datos AppGini, puede comenzar a crear consultas. Para crear una nueva consulta, siga estos pasos:
 
-1.  Click on the "Queries" link in the left sidebar.
-2.  Click on the "New Query" button.
-3.  Select the "AppGini" data source you created earlier from the "Data Source" dropdown at the top left of the page.
-4.  In the "Query" field, enter your SQL query. You can use the "Schema" tree on the left to browse the tables and fields in your database and click the » button next to a table or field to insert it into your query.
-5.  Click on the "Execute" button to run the query and see the results.
-6.  If the query runs successfully, click on the "Save" button to save the query. You should give it a name that describes what the query does.
-7.  You can optionally click on the "Visualize" button to create a visualization of the query results. You can choose from a variety of chart types, including bar charts, line charts, pie charts, and more.
-8.  Once you're done, click on the "Save" button to save the visualization.
-9.  In order to be able to display the query results or visualization in a dashboard, you should click the "Publish" button. This will also make the query or visualization available to other users of Redash.
+1.  Haga clic en el enlace "Consultas" en la barra lateral izquierda.
+2.  Haga clic en el botón "Nueva consulta".
+3.  Seleccione la fuente de datos "AppGini" que creó anteriormente en el menú desplegable "Fuente de datos" en la parte superior izquierda de la página.
+4.  En el campo "Consulta", ingrese su consulta SQL. Puede usar el árbol "Esquema" a la izquierda para explorar las tablas y los campos de su base de datos y hacer clic en el botón » junto a una tabla o campo para insertarlo en su consulta.
+5.  Haga clic en el botón "Ejecutar" para ejecutar la consulta y ver los resultados.
+6.  Si la consulta se ejecuta correctamente, haga clic en el botón "Guardar" para guardar la consulta. Debe darle un nombre que describa lo que hace la consulta.
+7.  Opcionalmente, puede hacer clic en el botón "Visualizar" para crear una visualización de los resultados de la consulta. Puede elegir entre una variedad de tipos de gráficos, incluidos gráficos de barras, gráficos de líneas, gráficos circulares y más.
+8.  Una vez que haya terminado, haga clic en el botón "Guardar" para guardar la visualización.
+9.  Para poder mostrar los resultados de la consulta o la visualización en un panel de control, debe hacer clic en el botón "Publicar". Esto también hará que la consulta o visualización esté disponible para otros usuarios de Redash.
 
-### Here is a screencast showing the above steps
+### Aquí hay una demostración en video que muestra los pasos anteriores
 
 <video style="width: 100%; height: auto;" controls>
 <source src="https://cdn.bigprof.com/screencasts/redash-create-and-publish-query.mp4" type="video/mp4">
-Your browser does not support the video tag.
+Su navegador no admite la etiqueta de video.
 </video>
 
-> **HINT!** You can use the [DataTalk plugin for AppGini](https://bigprof.com/appgini/applications/datatalk-plugin) to create the queries you need in Redash.
+> **¡SUGERENCIA!** Puede usar el [plugin DataTalk para AppGini](https://bigprof.com/appgini/applications/datatalk-plugin) para crear las consultas que necesita en Redash.
 
-The plugin allows you to create queries by just describing them in plain English. Here is a video showing how it works:
+El plugin le permite crear consultas simplemente describiéndolas en lenguaje natural. Aquí hay un video que muestra cómo funciona:
 
 <video style="width: 100%; height: auto;" controls>
 <source src="https://cdn.bigprof.com/screencasts/use-datatalk-plugin-to-create-redash-queries.mp4" type="video/mp4">
-Your browser does not support the video tag.
+Su navegador no admite la etiqueta de video.
 </video>
 
-DataTalk plugin saves you the hassle of writing complex SQL queries. And you don't need to remember the names of tables and fields in your database or even care about misspelling them. Just describe what you need in plain English and the plugin will take care of the rest!
+¡El plugin DataTalk le ahorra la molestia de escribir consultas SQL complejas. Y no necesita recordar los nombres de las tablas y los campos de su base de datos ni preocuparse por escribirlos mal. Simplemente describa lo que necesita en lenguaje natural y el plugin se encargará del resto!
 
-## Creating a dashboard in Redash
+## Creación de un panel de control en Redash
 
-![Redash dashboard example](https://cdn.bigprof.com/images/redash-dashboard-example-2.png)
+![Ejemplo de panel de control de Redash](https://cdn.bigprof.com/images/redash-dashboard-example-2.png)
 
-Dashboards in Redash are made up of widgets. Each widget can display the results of a query or a visualization. To create a dashboard, follow these steps:
+Los paneles de control en Redash se componen de widgets. Cada widget puede mostrar los resultados de una consulta o una visualización. Para crear un panel de control, siga estos pasos:
 
-1.  Click on the "Dashboards" link in the left sidebar.
-2.  Click on the "New Dashboard" button.
-3.  Give your dashboard a name and click on the "Save" button.
-4.  Click on the "Add Widget" button.
-5.  Select the query you want to display in the widget from the "Query" dropdown.
-6.  Select the visualization type you want to use from the "Visualization" dropdown.
-7.  Click on the "Add to Dashboard" button to add the widget to your dashboard.
-8.  You can move and resize the widget to control its position and size on the dashboard.
-9.  Repeat steps 4-8 to add more widgets to your dashboard.
-10.  Finally, click on the "Done Editing" button to save the dashboard.
-11.  If you want to share the dashboard with other Redash users, you can click on the "Publish" button.
+1.  Haga clic en el enlace "Paneles de control" en la barra lateral izquierda.
+2.  Haga clic en el botón "Nuevo panel de control".
+3.  Dé un nombre a su panel de control y haga clic en el botón "Guardar".
+4.  Haga clic en el botón "Agregar widget".
+5.  Seleccione la consulta que desea mostrar en el widget en el menú desplegable "Consulta".
+6.  Seleccione el tipo de visualización que desea utilizar en el menú desplegable "Visualización".
+7.  Haga clic en el botón "Agregar al panel de control" para agregar el widget a su panel de control.
+8.  Puede mover y cambiar el tamaño del widget para controlar su posición y tamaño en el panel de control.
+9.  Repita los pasos 4-8 para agregar más widgets a su panel de control.
+10. Finalmente, haga clic en el botón "Terminar edición" para guardar el panel de control.
+11. Si desea compartir el panel de control con otros usuarios de Redash, puede hacer clic en el botón "Publicar".
 
-## Creating alerts in Redash
+## Creación de alertas en Redash
 
-Redash allows you to create alerts that will be triggered when the results of a query meet certain conditions. For example, you can create an alert that will send an email to a user when the number of orders in the last 24 hours exceeds a certain threshold. To create an alert, you should configure the underlying query to automatically refresh periodically. You also need to configure alert destinations, which can be email addresses, Slack channels, webhooks, or several other destinations.
+Redash le permite crear alertas que se activarán cuando los resultados de una consulta cumplan ciertas condiciones. Por ejemplo, puede crear una alerta que envíe un correo electrónico a un usuario cuando el número de pedidos en las últimas 24 horas supere un cierto umbral. Para crear una alerta, debe configurar la consulta subyacente para que se actualice automáticamente periódicamente. También necesita configurar destinos de alerta, que pueden ser direcciones de correo electrónico, canales de Slack, webhooks o varios otros destinos.
 
-Here is an example of an alert that sends an email to the sales team when the number of orders in the last 7 days is zero:
+Aquí hay un ejemplo de una alerta que envía un correo electrónico al equipo de ventas cuando el número de pedidos en los últimos 7 días es cero:
 
-![Redash alert example](https://cdn.bigprof.com/images/redash-alert-example.png)
+![Ejemplo de alerta de Redash](https://cdn.bigprof.com/images/redash-alert-example.png)
 
-## Dive deeper into Redash
+## Profundice en Redash
 
-Redash has a very informative video playlist on YouTube that goes into more details about creating queries and dashboards. We've included the videos below for your convenience:
+Redash tiene una lista de reproducción de videos muy informativa en YouTube que entra en más detalles sobre la creación de consultas y paneles de control. Hemos incluido los videos a continuación para su conveniencia:
 
 <div style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden;">
-<iframe src="https://www.youtube-nocookie.com/embed/videoseries?si=pjSO5KiJFM2Dx5UD&amp;list=PLMIFYdGfSFcwzkOL7UIN1-Zou5URg2cDE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+<iframe src="https://www.youtube-nocookie.com/embed/videoseries?si=pjSO5KiJFM2Dx5UD&amp;list=PLMIFYdGfSFcwzkOL7UIN1-Zou5URg2cDE" title="Reproductor de video de YouTube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
-## Performance considerations when using Redash
+## Consideraciones de rendimiento al usar Redash
 
-Redash is a great tool for visualizing data from your AppGini application. However, users can create complex queries that can put a heavy load on your database server. Moreover, Redash allows users to create queries and dashboards that auto refresh periodically -- sometimes as frequently as every minute or so. This can put a heavy load on your database server, especially if you have a large number of users.
+Redash es una gran herramienta para visualizar datos de su aplicación AppGini. Sin embargo, los usuarios pueden crear consultas complejas que pueden suponer una gran carga para su servidor de base de datos. Además, Redash permite a los usuarios crear consultas y paneles de control que se actualizan automáticamente periódicamente, a veces con una frecuencia de cada minuto aproximadamente. Esto puede suponer una gran carga para su servidor de base de datos, especialmente si tiene una gran cantidad de usuarios.
 
-One way to avoid this, without limiting the functionality of Redash, is to [set up a separate read replica of your MySQL database](https://www.digitalocean.com/community/tutorials/how-to-set-up-replication-in-mysql) and connect Redash to it instead of the main database. This way, Redash users will be querying the read replica instead of the main database, and this will not affect the performance of your AppGini application.
+Una forma de evitar esto, sin limitar la funcionalidad de Redash, es [configurar una réplica de lectura separada de su base de datos MySQL](https://www.digitalocean.com/community/tutorials/how-to-set-up-replication-in-mysql) y conectar Redash a ella en lugar de a la base de datos principal. De esta manera, los usuarios de Redash consultarán la réplica de lectura en lugar de la base de datos principal, y esto no afectará el rendimiento de su aplicación AppGini.
 
-## Conclusion
+## Conclusión
 
-Throughout this tutorial, we've covered the integration of [Redash](https://redash.io/) with [AppGini](https://bigprof.com/appgini/) to unlock advanced data visualization and dashboarding capabilities. You've learned how to set up Redash on your server, connect it to your AppGini database with enhanced security through read-only access, and utilize the [DataTalk plugin](https://bigprof.com/appgini/applications/datatalk-plugin) to facilitate query creation without deep SQL knowledge. The step-by-step guidance provided should now empower you to create insightful visualizations, build interactive dashboards, and share your findings with ease.
+A lo largo de este tutorial, hemos cubierto la integración de [Redash](https://redash.io/) con [AppGini](https://bigprof.com/appgini/) para desbloquear capacidades avanzadas de visualización de datos y creación de paneles de control. Ha aprendido a configurar Redash en su servidor, conectarlo a su base de datos AppGini con seguridad mejorada a través del acceso de solo lectura y utilizar el [plugin DataTalk](https://bigprof.com/appgini/applications/datatalk-plugin) para facilitar la creación de consultas sin un conocimiento profundo de SQL. La guía paso a paso proporcionada ahora debería permitirle crear visualizaciones perspicaces, crear paneles interactivos y compartir sus hallazgos con facilidad.
 
-As you apply these new skills, keep in mind the performance considerations vital for maintaining your application's responsiveness—especially the strategy of employing a read replica for your database to mitigate the load from complex and frequent queries. With Redash as your tool of choice, you are well-positioned to elevate the data experience for your team and stakeholders, ensuring your data is not just informative but also actionable.
-
+A medida que aplique estas nuevas habilidades, tenga en cuenta las consideraciones de rendimiento vitales para mantener la capacidad de respuesta de su aplicación, especialmente la estrategia de emplear una réplica de lectura para su base de datos para mitigar la carga de consultas complejas y frecuentes. Con Redash como su herramienta de elección, está bien posicionado para elevar la experiencia de datos para su equipo y partes interesadas, asegurando que sus datos no solo sean informativos sino también procesables.

@@ -1,129 +1,127 @@
 ---
-title: Contents of the generated `hooks` folder
-linkTitle: The `hooks` folder
+title: Contenido de la carpeta `hooks` generada
+linkTitle: La carpeta `hooks`
 slug: help/advanced-topics/hooks/folder-contents
-description: The hooks folder is where all your custom-defined code should be placed. AppGini generates the hook files into this folder only if they don't exist. AppGini doesn't overwrite these files later. So, your customized code is retained safely no matter how many times you regenerate your project code.
-keywords: hooks, folder, contents, customizing, code, global hooks, table-specific hooks, links-home, links-navmenu, footer-extras, header-extras
+description: La carpeta hooks es donde debe colocarse todo su código definido por el usuario. AppGini genera los archivos hook en esta carpeta solo si no existen. AppGini no sobrescribe estos archivos más tarde. Por lo tanto, su código personalizado se conserva de forma segura sin importar cuántas veces regenere el código de su proyecto.
+keywords: hooks, carpeta, contenido, personalización, código, hooks globales, hooks específicos de tabla, links-home, links-navmenu, footer-extras, header-extras
 ---
 
-# Contents of the generated `hooks` folder
+# Contenido de la carpeta `hooks` generada
 
-![hooks folder contents](https://cdn.bigprof.com/images/hooks-folder.png "hooks folder contents")
+![contenido de la carpeta hooks](https://cdn.bigprof.com/images/hooks-folder.png "contenido de la carpeta hooks")
 
-The hooks folder is where all your custom-defined code should be placed. AppGini generates the hook files into this folder only if they don't exist. AppGini doesn't overwrite these files later. So, your customized code is retained safely no matter how many times you regenerate your project code.
+La carpeta `hooks` es donde debe colocarse todo su código definido por el usuario. AppGini genera los archivos hook en esta carpeta solo si no existen. AppGini no sobrescribe estos archivos más tarde. Por lo tanto, su código personalizado se conserva de forma segura sin importar cuántas veces regenere el código de su proyecto.
 
-## Contents of the `hooks` folder
+## Contenido de la carpeta `hooks`
 
 ### `__global.php`
 
-This file contains hook functions that get called when a new member signs up, when a member signs in successfully and when a member fails to sign in. [_Read more_](/appgini/help/advanced-topics/hooks/global-hooks/).
+Este archivo contiene funciones hook que se llaman cuando un nuevo miembro se registra, cuando un miembro inicia sesión correctamente y cuando un miembro no puede iniciar sesión. [_Leer más_](/appgini/help/advanced-topics/hooks/global-hooks/).
 
 
 ### `__bootstrap.php`
 
-This file, if present, is included at the very beginning of each page of your application (including the setup page, the admin area and of course the users area). You can use it to define global functions, classes, or constants that you want to be available in all pages of your application.You could also override any of the constants defined in the generated `definitions.php` file here. For example, you can display the navigation menus in the homepage by adding this code to `__bootstrap.php`:
+Este archivo, si está presente, se incluye al principio de cada página de su aplicación (incluida la página de configuración, el área de administración y, por supuesto, el área de usuarios). Puede usarlo para definir funciones, clases o constantes globales que desee que estén disponibles en todas las páginas de su aplicación. También podría anular cualquiera de las constantes definidas en el archivo `definitions.php` generado aquí. Por ejemplo, puede mostrar los menús de navegación en la página de inicio agregando este código a `__bootstrap.php`:
 
 ```php
 define('HOMEPAGE_NAVMENUS', true);
 ```
 
-#### Modifying session behavior via `session_options` function in `__bootstrap.php`
+#### Modificar el comportamiento de la sesión mediante la función `session_options` en `__bootstrap.php`
 
-Another common use case for the `__bootstrap.php` file is to modify the session behavior. To do so, define a function `session_options` in this file like so:
+Otro caso de uso común para el archivo `__bootstrap.php` es modificar el comportamiento de la sesión. Para ello, defina una función `session_options` en este archivo de la siguiente manera:
 
 ```php
 function session_options(&$options) {
-    // change session behavior here
-    // example: set session lifetime to 1 week
-    $options['cookie_lifetime'] = 60 * 60 * 24 * 7; // 1 week
+    // cambiar el comportamiento de la sesión aquí
+    // ejemplo: establecer la vida útil de la sesión en 1 semana
+    $options['cookie_lifetime'] = 60 * 60 * 24 * 7; // 1 semana
 }
 ```
 
-In the above example, we set the session lifetime to 1 week. Other session options you can set are listed and explained at [php.net/manual/en/session.configuration.php](https://www.php.net/manual/en/session.configuration.php). Remove the initial `session.` prefix from the option name when setting it in the `session_options` function. For example, to set the `session.gc_maxlifetime` option, you should set `$options['gc_maxlifetime'] = ...`.
+En el ejemplo anterior, establecemos la vida útil de la sesión en 1 semana. Otras opciones de sesión que puede establecer se enumeran y explican en [php.net/manual/en/session.configuration.php](https://www.php.net/manual/en/session.configuration.php). Elimine el prefijo inicial `session.` del nombre de la opción al configurarla en la función `session_options`. Por ejemplo, para establecer la opción `session.gc_maxlifetime`, debe establecer `$options['gc_maxlifetime'] = ...`.
     
 ### `{tablename}.php`
 
-For each table in your project, a hook file named the same as the table name is created. This file contains hook functions that get called when a new record is added, when a record is edited, when a record is deleted, … etc. These hooks are table-specific. That's why each table in your project has its own hook file. [_Read more_](/appgini/help/advanced-topics/hooks/table-specific-hooks/)
+Para cada tabla de su proyecto, se crea un archivo hook con el mismo nombre que el nombre de la tabla. Este archivo contiene funciones hook que se llaman cuando se agrega un nuevo registro, cuando se edita un registro, cuando se elimina un registro, etc. Estos hooks son específicos de la tabla. Es por eso que cada tabla en su proyecto tiene su propio archivo hook. [_Leer más_](/appgini/help/advanced-topics/hooks/table-specific-hooks/)
       
 
 ### `links-home.php`
 
-You can add custom links in the home page of your application by appending them to this file. The format for each link is:
+Puede agregar enlaces personalizados en la página de inicio de su aplicación agregándolos a este archivo. El formato para cada enlace es:
 
 ```php
 $homeLinks[] = [
-    'url' => 'path/to/link', 
-    'title' => 'Link title', 
-    'description' => 'Link text',
-    'groups' => ['group1', 'group2'],
+    'url' => 'ruta/al/enlace',
+    'title' => 'Título del enlace',
+    'description' => 'Texto del enlace',
+    'groups' => ['grupo1', 'grupo2'],
     'grid_column_classes' => '',
     'panel_classes' => '',
     'link_classes' => '',
-    'icon' => 'path/to/icon',
+    'icon' => 'ruta/al/icono',
     'table_group' => ''
 ];
 ```
 
-*Where:*
+*Donde:*
 
-* `url` is the path to the link. This can be a relative path within your application or an external URL.
-* `title` is the title of the link as it appears in the home page.
-* `description` is the text that appears below the title. HTML is allowed.
-* `groups` defines the groups allowed to see this link. Set to `['*']` if you want to show the link to all groups.
-* `grid_column_classes` (optional) lists CSS classes to apply to the link block to control its width in different screen sizes. Example valid classes: `col-lg-4`, `col-sm-6`, ... etc. See: [getbootstrap.com/css/#grid](https://getbootstrap.com/css/#grid).
-* `panel_classes` (optional) lists CSS classes to apply to the panel. Example valid classes: `panel-warning`, `panel-success`, ... etc. See: [getbootstrap.com/components/#panels](https://getbootstrap.com/components/#panels).
-* `link_classes` (optional) lists CSS classes to apply to link. Example valid classes: `btn-danger`, `btn-primary`, ... etc. See: [getbootstrap.com/css/#buttons](https://getbootstrap.com/css/#buttons).
-* `icon` is the path to an optional icon to use with the link.
-* `table_group` is the ***name*** of the table group you wish to add the link to (if you are using table groups). The value should be set to the exact name of the group. If the table group name contains non-Latin characters, you should convert them to html entities. For example, the character ૫ should be written as `&#2795;`
+* `url` es la ruta al enlace. Puede ser una ruta relativa dentro de su aplicación o una URL externa.
+* `title` es el título del enlace tal como aparece en la página de inicio.
+* `description` es el texto que aparece debajo del título. Se permite HTML.
+* `groups` define los grupos autorizados a ver este enlace. Establezca en `['*']` si desea mostrar el enlace a todos los grupos.
+* `grid_column_classes` (opcional) enumera las clases CSS que se aplicarán al bloque de enlaces para controlar su ancho en diferentes tamaños de pantalla. Clases válidas de ejemplo: `col-lg-4`, `col-sm-6`, ... etc. Ver: [getbootstrap.com/css/#grid](https://getbootstrap.com/css/#grid).
+* `panel_classes` (opcional) enumera las clases CSS que se aplicarán al panel. Clases válidas de ejemplo: `panel-warning`, `panel-success`, ... etc. Ver: [getbootstrap.com/components/#panels](https://getbootstrap.com/components/#panels).
+* `link_classes` (opcional) enumera las clases CSS que se aplicarán al enlace. Clases válidas de ejemplo: `btn-danger`, `btn-primary`, ... etc. Ver: [getbootstrap.com/css/#buttons](https://getbootstrap.com/css/#buttons).
+* `icon` es la ruta a un icono opcional para usar con el enlace.
+* `table_group` es el ***nombre*** del grupo de tablas al que desea agregar el enlace (si está utilizando grupos de tablas). El valor debe establecerse en el nombre exacto del grupo. Si el nombre del grupo de tablas contiene caracteres no latinos, debe convertirlos a entidades html. Por ejemplo, el carácter ૫ debe escribirse como `&#2795;`
 
 ### `links-navmenu.php`
 
-You can add custom links to the navigation menu ("Jump to" menu) of your application by appending them to this file. The format for each link is:
+Puede agregar enlaces personalizados al menú de navegación (menú "Saltar a") de su aplicación agregándolos a este archivo. El formato para cada enlace es:
 
 ```php
 $navLinks[] = [
-    'url' => 'path/to/link', 
-    'title' => 'Link title', 
-    'groups' => ['group1', 'group2'],
-    'icon' => 'path/to/icon',
+    'url' => 'ruta/al/enlace',
+    'title' => 'Título del enlace',
+    'groups' => ['grupo1', 'grupo2'],
+    'icon' => 'ruta/al/icono',
     'table_group' => 0
 ];
 ```
 
-*Where:*
+*Donde:*
 
-*   `groups` defines the groups allowed to see this link. Set to `['*']` if you want to show the link to all groups.
-*   `icon` is the path to an optional icon to use with the link.
-*   `table_group` is the ***index*** of table group, default is `0` (first table group).
+*   `groups` define los grupos autorizados a ver este enlace. Establezca en `['*']` si desea mostrar el enlace a todos los grupos.
+*   `icon` es la ruta a un icono opcional para usar con el enlace.
+*   `table_group` es el ***índice*** del grupo de tablas, el valor predeterminado es `0` (primer grupo de tablas).
 
-### `footer-extras.php` and `header-extras.php`
+### `footer-extras.php` y `header-extras.php`
 
-Both files allow you to insert additional content to the footer and header (respectively) of all user area pages. 
-You can add HTML, CSS, JavaScript and/or PHP code into those two files, provided you wrap each type of code in the appropriate tags.
+Ambos archivos le permiten insertar contenido adicional en el pie de página y el encabezado (respectivamente) de todas las páginas del área de usuario.
+Puede agregar código HTML, CSS, JavaScript y/o PHP en esos dos archivos, siempre que ajuste cada tipo de código en las etiquetas apropiadas.
 
-That is, to add custom CSS, insert it inside `<style>` tags. To add custom JavaScript, insert it inside `<script>` tags.
-To add custom PHP code, insert it inside `<?php ... ?>` tags. For HTML, just insert it as is.
+Es decir, para agregar CSS personalizado, insértelo dentro de las etiquetas `<style>`. Para agregar JavaScript personalizado, insértelo dentro de las etiquetas `<script>`.
+Para agregar código PHP personalizado, insértelo dentro de las etiquetas `<?php ... ?>`. Para HTML, simplemente insértelo tal cual.
 
-> When inserting JavaScript code that makes use of jQuery, make sure to wrap your code in a jQuery `ready` function. For example:
+> Al insertar código JavaScript que utiliza jQuery, asegúrese de envolver su código en una función `ready` de jQuery. Por ejemplo:
 
 ```javascript
 <script>
     $j(() => {
-        // your code here
+        // su código aquí
     });
 </script>
 ```
 
 ### `{tablename}-dv.js`
 
-This file, if present, is included in the detail view of the specified table. You can use it to add custom JavaScript code to the detail view of the specified table.
+Este archivo, si está presente, se incluye en la vista detallada de la tabla especificada. Puede usarlo para agregar código JavaScript personalizado a la vista detallada de la tabla especificada.
 
 ### `{tablename}-tv.js`
 
-This file, if present, is included in the table view of the specified table. You can use it to add custom JavaScript code to the table view of the specified table.
+Este archivo, si está presente, se incluye en la vista de tabla de la tabla especificada. Puede usarlo para agregar código JavaScript personalizado a la vista de tabla de la tabla especificada.
 
 ### `index.html`
 
-This file should not be edited. It just redirects visitors who try to access the hooks folder to the main page.  
-      
-    
+Este archivo no debe editarse. Simplemente redirige a los visitantes que intentan acceder a la carpeta `hooks` a la página principal.

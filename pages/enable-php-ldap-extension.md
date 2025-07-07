@@ -1,73 +1,72 @@
 ---
-title: Enabling LDAP Extension in PHP
-linkTitle: Enable LDAP
+title: Habilitar la extensión LDAP en PHP
+linkTitle: Habilitar LDAP
 slug: help/enable-php-ldap-extension
-keywords: LDAP, PHP, extension, enable, Linux, Windows, Apache, CentOS, Ubuntu, Debian, Red Hat, RHEL
-description: Learn how to enable the LDAP extension in PHP on Linux and Windows systems to configure LDAP settings in your AppGini app.
+keywords: LDAP, PHP, extensión, habilitar, Linux, Windows, Apache, CentOS, Ubuntu, Debian, Red Hat, RHEL
+description: Aprenda cómo habilitar la extensión LDAP en PHP en sistemas Linux y Windows para configurar los ajustes de LDAP en su aplicación AppGini.
 ---
 
-# Enabling LDAP Extension in PHP
+# Habilitar la extensión LDAP en PHP
 
-Before [configuring LDAP settings in your AppGini app](/appgini/help/ldap-authentication/), you need to ensure that the LDAP extension in PHP is enabled. This process varies depending on your operating system.
+Antes de [configurar los ajustes de LDAP en su aplicación AppGini](/appgini/help/ldap-authentication/), debe asegurarse de que la extensión LDAP en PHP esté habilitada. Este proceso varía según su sistema operativo.
 
-### For Linux (Debian/Ubuntu)
+### Para Linux (Debian/Ubuntu)
 
-On Debian-based systems like Ubuntu, you can enable the LDAP extension for PHP by installing the required packages. Open a terminal and run the following commands:
+En sistemas basados en Debian como Ubuntu, puede habilitar la extensión LDAP para PHP instalando los paquetes necesarios. Abra una terminal y ejecute los siguientes comandos:
 
 ```bash
 sudo apt update
 sudo apt install php-ldap
 ```
 
-After installation, restart the Apache server to apply the changes:
+Después de la instalación, reinicie el servidor Apache para aplicar los cambios:
 
 ```bash
 sudo systemctl restart apache2
 ```
 
-### For Linux (CentOS/RHEL)
+### Para Linux (CentOS/RHEL)
 
-For CentOS or Red Hat-based distributions, use the following commands in the terminal:
+Para distribuciones basadas en CentOS o Red Hat, use los siguientes comandos en la terminal:
 
 ```bash
 sudo yum update
 sudo yum install php-ldap
 ```
 
-Then, restart the Apache server:
+Luego, reinicie el servidor Apache:
 
 ```bash
 sudo systemctl restart httpd
 ```
 
-### For Windows
+### Para Windows
 
-Enabling the LDAP extension in Windows is done through the `php.ini` file. Follow these steps:
+Habilitar la extensión LDAP en Windows se realiza a través del archivo `php.ini`. Siga estos pasos:
 
-1.  Locate your `php.ini` file, which is usually found in your PHP installation directory, e.g., `C:\php\php.ini`.
-2.  Open `php.ini` in a text editor with administrative privileges.
-3.  Search for the line `;extension=ldap`. If the line starts with a semicolon (;), it's commented out.
-4.  Remove the semicolon to enable the extension. It should look like this:
-    
+1.  Localice su archivo `php.ini`, que generalmente se encuentra en su directorio de instalación de PHP, por ejemplo, `C:\php\php.ini`.
+2.  Abra `php.ini` en un editor de texto con privilegios administrativos.
+3.  Busque la línea `;extension=ldap`. Si la línea comienza con un punto y coma (;), está comentada.
+4.  Elimine el punto y coma para habilitar la extensión. Debería verse así:
+
     ```
     extension=ldap
     ```
-    
-5.  Save the `php.ini` file and restart your web server for the changes to take effect.
 
-For WAMP, XAMPP, or other integrated server packages, you might be able to enable the LDAP extension through their respective control panels, usually by ticking a checkbox or switching a toggle next to the PHP LDAP extension.
+5.  Guarde el archivo `php.ini` y reinicie su servidor web para que los cambios surtan efecto.
 
-### Verifying LDAP Extension Activation
+Para WAMP, XAMPP u otros paquetes de servidor integrados, es posible que pueda habilitar la extensión LDAP a través de sus respectivos paneles de control, generalmente marcando una casilla de verificación o activando un interruptor junto a la extensión PHP LDAP.
 
-To confirm that the LDAP extension is active, create a PHP file with the following content and navigate to it in your web browser:
+### Verificar la activación de la extensión LDAP
+
+Para confirmar que la extensión LDAP está activa, cree un archivo PHP con el siguiente contenido y navegue hasta él en su navegador web:
 
 ```php
 <?php phpinfo();
 ```
 
-This outputs information about your PHP configuration. Look for a section titled 'ldap'. If it's present, the LDAP extension is enabled and working.
+Esto genera información sobre su configuración de PHP. Busque una sección titulada 'ldap'. Si está presente, la extensión LDAP está habilitada y funcionando.
 
-After enabling the LDAP extension in PHP, a new 'LDAP Settings' tab will become available within the admin settings page of your AppGini application. You can now proceed to configure the LDAP settings as described in the sections above.
+Después de habilitar la extensión LDAP en PHP, una nueva pestaña 'Configuración LDAP' estará disponible dentro de la página de configuración de administración de su aplicación AppGini. Ahora puede proceder a configurar los ajustes de LDAP como se describe en las secciones anteriores.
 
-> Remember to keep your PHP environment secure and up to date, as enabling extensions can expose new vectors for potential vulnerabilities if not managed properly.
-
+> Recuerde mantener su entorno PHP seguro y actualizado, ya que habilitar extensiones puede exponer nuevos vectores para posibles vulnerabilidades si no se administra correctamente.

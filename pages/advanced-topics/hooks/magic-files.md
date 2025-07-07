@@ -1,64 +1,63 @@
 ---
-title: Magic files in the hooks folder
-linkTitle: Magic files
+title: Archivos mágicos en la carpeta hooks
+linkTitle: Archivos mágicos
 slug: help/advanced-topics/hooks/magic-files
-description: Learn about the magic files in the hooks folder that you can create to alter the behavior of your AppGini-generated application.
-keywords: hooks, events, customization, advanced, code, generated, app, persistent, custom code, code generation, insert, delete, edit, select, records, actions, behavior, appearance, DataList object, tablename_init, hook function, table, DataList properties, global hooks, table-specific hooks, links-home, links-navmenu, footer-extras, header-extras, tablename-dv.js, tablename-tv.js, tablename.fieldname.csv
+description: Aprenda sobre los archivos mágicos en la carpeta hooks que puede crear para alterar el comportamiento de su aplicación generada por AppGini.
+keywords: hooks, eventos, personalización, avanzado, código, generado, aplicación, persistente, código personalizado, generación de código, insertar, eliminar, editar, seleccionar, registros, acciones, comportamiento, apariencia, objeto DataList, tablename_init, función hook, tabla, propiedades DataList, hooks globales, hooks específicos de tabla, links-home, links-navmenu, footer-extras, header-extras, tablename-dv.js, tablename-tv.js, tablename.fieldname.csv
 ---
 
-# Magic files in the hooks folder
+# Archivos mágicos en la carpeta `hooks`
 
-You can create some files with specific names inside the hooks folder that your AppGini-generated application would use to perform a specific task. These files are optional, meaning that if they exist, your application will automatically use them to alter a default behavior. But if they don't exist, the default behavior will apply.
+Puede crear algunos archivos con nombres específicos dentro de la carpeta `hooks` que su aplicación generada por AppGini usaría para realizar una tarea específica. Estos archivos son opcionales, lo que significa que si existen, su aplicación los usará automáticamente para alterar un comportamiento predeterminado. Pero si no existen, se aplicará el comportamiento predeterminado.
 
-## `tablename-dv.js`: modifying the behavior of the detail view through JavaScript
+## `tablename-dv.js`: modificar el comportamiento de la vista detallada a través de JavaScript
 
-If you create a file in the hooks folder and name it `tablename-dv.js` (where *`tablename`* is the name of a table in your application), AppGini will automatically load that file and execute it as a JavaScript file in the browser whenever the detail view of the specified table is displayed. This is very useful to execute JavaScript code in the detail view.
+Si crea un archivo en la carpeta `hooks` y lo nombra `tablename-dv.js` (donde *`tablename`* es el nombre de una tabla en su aplicación), AppGini cargará automáticamente ese archivo y lo ejecutará como un archivo JavaScript en el navegador cada vez que se muestre la vista detallada de la tabla especificada. Esto es muy útil para ejecutar código JavaScript en la vista detallada.
 
-For example, let's assume we have an *exams* table, and a score field in that table. We want to limit the contents of that field to a certain range of numbers, and warn the user if he enters a number outside that range. To do so, we could add some javascript code like the following in the magic `hooks/exams-dv.js` file.
+Por ejemplo, supongamos que tenemos una tabla *exams* y un campo de puntuación en esa tabla. Queremos limitar el contenido de ese campo a un cierto rango de números y advertir al usuario si ingresa un número fuera de ese rango. Para hacerlo, podríamos agregar un código JavaScript como el siguiente en el archivo mágico `hooks/exams-dv.js`.
 
 ```javascript
 $j(function() { 
     $j('#score').on('change', function() {
         var score = parseInt($j('score').val());
         if(isNaN(score) || score > 100 || score < 0){
-            alert('Score must be between 0 and 100!');
+            alert('¡La puntuación debe estar entre 0 y 100!');
             $j('#score').focus();
         }
     });
 });
 ```
 
-Line 1 in the code above makes sure this code won't be executed until the page content and jQuery are loaded to avoid triggering an error.
+La línea 1 en el código anterior se asegura de que este código no se ejecute hasta que el contenido de la página y jQuery se carguen para evitar activar un error.
 
-## `tablename-tv.js`: modifying the behavior of a specific table through JavaScript
+## `tablename-tv.js`: modificar el comportamiento de una tabla específica a través de JavaScript
 
-If you create a file in the hooks folder and name it `tablename-tv.js` (where *`tablename`* is the name of a table in your application), AppGini will automatically load that file and execute it as a JavaScript file in the browser whenever the specified table is displayed. This is very useful to modify the page content/layout or add custom behavior.
+Si crea un archivo en la carpeta `hooks` y lo nombra `tablename-tv.js` (donde *`tablename`* es el nombre de una tabla en su aplicación), AppGini cargará automáticamente ese archivo y lo ejecutará como un archivo JavaScript en el navegador cada vez que se muestre la tabla especificada. Esto es muy útil para modificar el contenido/diseño de la página o agregar un comportamiento personalizado.
 
-For an example of how this can be used to add new batch actions, please see the [`batch_actions()` hook documentation](/appgini/help/advanced-topics/hooks/multiple-record-batch-actions/).
+Para ver un ejemplo de cómo se puede usar esto para agregar nuevas acciones por lotes, consulte la [documentación del hook `batch_actions()`](/appgini/help/advanced-topics/hooks/multiple-record-batch-actions/).
 
-Please note that despite the `-tv` suffix, this file is always loaded when the specific table is being viewed, whether the table view is being displayed or not. If you want to execute code *only if* the table view is visible, you can perform this check in the `tablename-tv.js` file:
+Tenga en cuenta que, a pesar del sufijo `-tv`, este archivo siempre se carga cuando se visualiza la tabla específica, ya sea que se muestre la vista de tabla o no. Si desea ejecutar código *solo si* la vista de tabla está visible, puede realizar esta verificación en el archivo `tablename-tv.js`:
 
 ```javascript
 $j(() => {
   if(!$j('.table_view').length) return;
       
-  // any code added below will be executed only in table view
+  // cualquier código agregado a continuación se ejecutará solo en la vista de tabla
 });
 ```
 
-## `tablename.fieldname.csv`: changing the contents of options lists
+## `tablename.fieldname.csv`: cambiar el contenido de las listas de opciones
 
-![Option list example in an AppGini-generated application](https://cdn.bigprof.com/appgini-desktop/help/options-list-in-detail-view.png)
+![Ejemplo de lista de opciones en una aplicación generada por AppGini](https://cdn.bigprof.com/appgini-desktop/help/options-list-in-detail-view.png)
 
-In AppGini, you can define a field as an options list so that your application users can select the value of the field from a set of options. For example, the Country field in the screenshot to the left is an options list.
+En AppGini, puede definir un campo como una lista de opciones para que los usuarios de su aplicación puedan seleccionar el valor del campo de un conjunto de opciones. Por ejemplo, el campo País en la captura de pantalla de la izquierda es una lista de opciones.
 
-Now, what happens if you want to modify the contents of that options list, for example to limit the list to some countries and remove the others? Normally, you would have to open your project in AppGini, go to the Country field, modify the list contents, regenerate your application, and upload it. That's a long way to go.
+Ahora, ¿qué sucede si desea modificar el contenido de esa lista de opciones, por ejemplo, para limitar la lista a algunos países y eliminar los demás? Normalmente, tendría que abrir su proyecto en AppGini, ir al campo País, modificar el contenido de la lista, regenerar su aplicación y cargarla. Es un camino largo.
 
-So, we provide an easier method that doesn't involve regenerating the application. Simply, create a text file in the generated hooks folder and name it like this pattern: `tablename.fieldname.csv` .. For example, for the Countries list in the screenshot, the file should be named `customers.Country.csv`. Next, fill this file with all the options you want the user to be able to choose from, separated by double semi-colons. Here are the file contents for a choice of just 3 countries as an example:
+Por lo tanto, proporcionamos un método más fácil que no implica regenerar la aplicación. Simplemente, cree un archivo de texto en la carpeta `hooks` generada y nómbrelo con este patrón: `tablename.fieldname.csv`. Por ejemplo, para la lista de Países en la captura de pantalla, el archivo debe llamarse `customers.Country.csv`. A continuación, complete este archivo con todas las opciones que desea que el usuario pueda elegir, separadas por dos puntos y coma. Aquí están los contenidos del archivo para una selección de solo 3 países como ejemplo:
 
 ```
-United States;;United Kingdom;;France
+Estados Unidos;;Reino Unido;;Francia
 ```
 
-It's now very easy to edit this file using any text editor to add/remove/modify options, without having to regenerate your application. However, please beware that this file takes precedence over the options provided in your AppGini project. So, if you decide later to modify the options in your project file and regenerate your application, you should either delete the `tablename.fieldname.csv` hook file or update it with the new options.
-
+Ahora es muy fácil editar este archivo usando cualquier editor de texto para agregar/eliminar/modificar opciones, sin tener que regenerar su aplicación. Sin embargo, tenga en cuenta que este archivo tiene prioridad sobre las opciones proporcionadas en su proyecto AppGini. Por lo tanto, si decide más tarde modificar las opciones en su archivo de proyecto y regenerar su aplicación, debe eliminar el archivo hook `tablename.fieldname.csv` o actualizarlo con las nuevas opciones.

@@ -1,72 +1,72 @@
 ---
-title: Command-line parameters
-linkTitle: Command-line parameters
+title: Parámetros de línea de comandos
+linkTitle: Parámetros de línea de comandos
 slug: help/advanced-topics/command-line-parameters
-description: Command-line parameters to automate AppGini, including generating apps from project files, specifying output paths, and uploading apps to servers.
-keywords: command-line parameters, generate, output, upload, log, CI/CD, deployment
+description: Parámetros de línea de comandos para automatizar AppGini, incluyendo la generación de aplicaciones a partir de archivos de proyecto, la especificación de rutas de salida y la carga de aplicaciones a servidores.
+keywords: parámetros de línea de comandos, generar, salida, cargar, log, CI/CD, despliegue
 ---
 
-# Command-line parameters
+# Parámetros de línea de comandos
 
-> **Command-line parameters work only with [AppGini Pro](https://bigprof.com/appgini/order).**
+> **Los parámetros de línea de comandos solo funcionan con [AppGini Pro](https://bigprof.com/appgini/order).**
 
-You can use command-line parameters to automate AppGini. For example, you can add a command to generate an AppGini application as part of your deployment workflow in a batch/script file. Currently, the following parameters are supported:
+Puede utilizar parámetros de línea de comandos para automatizar AppGini. Por ejemplo, puede agregar un comando para generar una aplicación AppGini como parte de su flujo de trabajo de despliegue en un archivo de procesamiento por lotes/script. Actualmente, se admiten los siguientes parámetros:
 
 ## `--generate`
 
-**Usage:** `--generate "path\to\project\file"`
+**Uso:** `--generate "ruta\al\archivo\de\proyecto"`
 
-(Added in AppGini 5.11). Generates application from provided AXP project file, using the output path and file overwriting settings stored in the project file, then quits. If the path to the project file contains spaces, use double-quotes around the project path.
+(Añadido en AppGini 5.11). Genera la aplicación a partir del archivo de proyecto AXP proporcionado, utilizando la ruta de salida y la configuración de sobrescritura de archivos almacenada en el archivo de proyecto, y luego sale. Si la ruta al archivo de proyecto contiene espacios, utilice comillas dobles alrededor de la ruta del proyecto.
 
 ## `--log`  
 
-**Usage:** `--log "path\to\log\file"`
+**Uso:** `--log "ruta\al\archivo\de\registro"`
 
-(Added in AppGini 5.81). Specifies a path to a log file to save the output log to when generating an app. If the log file path contains spaces, use double-quotes around it.
+(Añadido en AppGini 5.81). Especifica una ruta a un archivo de registro para guardar el registro de salida al generar una aplicación. Si la ruta del archivo de registro contiene espacios, utilice comillas dobles alrededor de ella.
 
 ## `--open`
 
-**Usage:** `--open "path\to\project\file"`
+**Uso:** `--open "ruta\al\archivo\de\proyecto"`
 
-(Added in AppGini 5.73). Opens the specified project file in AppGini. If the path to the project file contains spaces, use double-quotes around the project path.
+(Añadido en AppGini 5.73). Abre el archivo de proyecto especificado en AppGini. Si la ruta al archivo de proyecto contiene espacios, utilice comillas dobles alrededor de la ruta del proyecto.
 
 ## `--output`  
 
-**Usage:** `--output "path\to\ouput\folder"`
+**Uso:** `--output "ruta\a\la\carpeta\de\salida"`
 
-(Added in AppGini 5.73). Specifies output path to use when generating an application, overriding the path stored in the project file. A project file must be specified using `--generate`. If the output path contains spaces, use double-quotes around the output path.
+(Añadido en AppGini 5.73). Especifica la ruta de salida a utilizar al generar una aplicación, sobrescribiendo la ruta almacenada في el archivo de proyecto. Se debe especificar un archivo de proyecto utilizando `--generate`. Si la ruta de salida contiene espacios, utilice comillas dobles alrededor de la ruta de salida.
 
 ## `--upload`
 
-**Usage:** `--upload "URL"`
+**Uso:** `--upload "URL"`
 
-(Added in AppGini 24.19). Uploads the generated app to the specified URL. The URL should point to the root of the AppGini app on the server. If the URL is not provided, the app will be uploaded to application URL specified in the project file. This option must be combined with `--generate` or `--open` to specify the project file. If combined with `--generate`, the app will be generated first then uploaded. If combined with `--open`, the app will be uploaded without generating it. For more information on uploading apps, see [Uploading AppGini apps](../application-uploader.md).
+(Añadido en AppGini 24.19). Sube la aplicación generada a la URL especificada. La URL debe apuntar a la raíz de la aplicación AppGini en el servidor. Si no se proporciona la URL, la aplicación se subirá a la URL de la aplicación especificada en el archivo de proyecto. Esta opción debe combinarse con `--generate` o `--open` para especificar el archivo de proyecto. Si se combina con `--generate`, la aplicación se generará primero y luego se subirá. Si se combina con `--open`, la aplicación se subirá sin generarla. Para obtener más información sobre la carga de aplicaciones, consulte [Carga de aplicaciones AppGini](../application-uploader.md).
 
-This feature is great for automating deployment of AppGini apps, and can be used as part of a CI/CD (Continuous Integration/Continuous Deployment) pipeline. See the example in [Deploying one app to multiple servers](#deploying-one-app-to-multiple-servers) below.
+Esta característica es ideal para automatizar el despliegue de aplicaciones AppGini y se puede utilizar como parte de un pipeline de CI/CD (Integración Continua/Despliegue Continuo). Consulte el ejemplo en [Despliegue de una aplicación en múltiples servidores](#despliegue-de-una-aplicación-en-múltiples-servidores) a continuación.
 
-## Examples
+## Ejemplos
 
-This following command would launch AppGini and generate an application from myapp.axp to the folder stored in the project file.
+El siguiente comando iniciaría AppGini y generaría una aplicación a partir de `myapp.axp` en la carpeta almacenada en el archivo de proyecto.
 
 ```batch
 "C:\Program Files\AppGini\AppGini" --generate C:\projects\myapp.axp
 ```
 
-This following command would launch AppGini and generate an application from myapp.axp to the folder `C:\xampp\htdocs\myapp2` -- overriding the folder stored in the project file if different. If the specified folder doesn't exist, AppGini will attempt to create it.
+El siguiente comando iniciaría AppGini y generaría una aplicación a partir de `myapp.axp` en la carpeta `C:\xampp\htdocs\myapp2`, sobrescribiendo la carpeta almacenada en el archivo de proyecto si es diferente. Si la carpeta especificada no existe, AppGini intentará crearla.
 
 ```batch
 "C:\Program Files\AppGini\AppGini" --generate C:\projects\myapp.axp --output C:\xampp\htdocs\myapp2
 ```
 
-This following command would launch AppGini, generate an application from myapp.axp, and save output log to `C:\logs\myapp.log`.
+El siguiente comando iniciaría AppGini, generaría una aplicación a partir de `myapp.axp` y guardaría el registro de salida en `C:\logs\myapp.log`.
 
 ```batch
 "C:\Program Files\AppGini\AppGini" --generate C:\projects\myapp.axp --log C:\logs\myapp.log
 ```
 
-## Deploying one app to multiple servers
+## Despliegue de una aplicación en múltiples servidores
 
-You can use the `--generate` and `--upload` parameters to deploy the same app to multiple servers. For example, the following batch file would generate an app from `myapp.axp` and upload it to three different servers:
+Puede utilizar los parámetros `--generate` y `--upload` para desplegar la misma aplicación en múltiples servidores. Por ejemplo, el siguiente archivo de procesamiento por lotes generaría una aplicación a partir de `myapp.axp` y la subiría a tres servidores diferentes:
 
 ```batch
 "C:\Program Files\AppGini\AppGini" --generate C:\projects\myapp.axp --upload https://server1.com/myapp
@@ -74,5 +74,4 @@ You can use the `--generate` and `--upload` parameters to deploy the same app to
 "C:\Program Files\AppGini\AppGini" --open C:\projects\myapp.axp --upload https://server3.com/myapp
 ```
 
-We only need to generate the app once, then open the project file and upload it to each server.
-
+Solo necesitamos generar la aplicación una vez, luego abrir el archivo de proyecto y subirlo a cada servidor.

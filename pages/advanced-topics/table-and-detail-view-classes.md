@@ -1,37 +1,32 @@
 ---
-title: Table and detail view classes
-linkTitle: Table and detail view classes
+title: Clases de vista de tabla y detallada
+linkTitle: Clases de vista de tabla y detallada
 slug: help/advanced-topics/table-and-detail-view-classes
 ---
 
-# Table and detail view classes
+# Clases de vista de tabla y detallada
 
-As of AppGini 5.60, a new advanced option was added to allow you to
-specify one or more space-separated CSS class names to apply to the
-table view and the detail view of a table. This option can be found by
-selecting a table in your project, then clicking the **Template**
-button in the table properties pane. This would open a dialog as shown below.
+A partir de AppGini 5.60, se agregó una nueva opción avanzada para permitirle
+especificar uno o más nombres de clases CSS separados por espacios para aplicar a la
+vista de tabla y la vista detallada de una tabla. Esta opción se puede encontrar
+seleccionando una tabla en su proyecto, luego haciendo clic en el botón **Plantilla**
+en el panel de propiedades de la tabla. Esto abriría un cuadro de diálogo como se muestra a continuación.
 
-![How to open the template window in AppGini 5.60 and higher.](https://cdn.bigprof.com/images/table-view-template-dialog.png "How to open the template window in AppGini 5.60 and higher.")
+![Cómo abrir la ventana de plantilla en AppGini 5.60 y superior.](https://cdn.bigprof.com/images/table-view-template-dialog.png "Cómo abrir la ventana de plantilla en AppGini 5.60 y superior.")
 
-Clicking the **Advanced** button will reveal even more options.
+Al hacer clic en el botón **Avanzado** se revelarán aún más opciones.
 
-![](https://cdn.bigprof.com/images/table-view-template-dialog-advanced.png "The 'Advanced' button reveals options for changing table and detail view classes.")
+![](https://cdn.bigprof.com/images/table-view-template-dialog-advanced.png "El botón 'Avanzado' revela opciones para cambiar las clases de vista de tabla y detallada.")
 
-You can specify CSS classes to apply to the table view and the detail
-view. Most of the time, these would be [Bootstrap grid
-classes](https://getbootstrap.com/css/#grid) . You could also select
-classes form the drop-down at the right. For example, to set the table
-view to display on the left part of the page, while the detail view on
-the right part, you could use the class `col-md-6` for each. The result
-would look something like this when you generate your application.
+Puede especificar clases CSS para aplicar a la vista de tabla y la vista
+detallada. La mayoría de las veces, estas serían [clases de cuadrícula de Bootstrap](https://getbootstrap.com/css/#grid). También podría seleccionar
+clases del menú desplegable a la derecha. Por ejemplo, para configurar la vista de tabla
+para que se muestre en la parte izquierda de la página, mientras que la vista detallada en
+la parte derecha, podría usar la clase `col-md-6` para cada una. El resultado
+se vería algo así cuando genere su aplicación.
 
-> TODO: Add a screenshot here.
+> TODO: Añadir una captura de pantalla aquí.
 
-Of course, to display the table and detail view on the same page, the
-option **Display detail view in a separate page** must be *unchecked*
-for that table.
-
-
-
-
+Por supuesto, para mostrar la tabla y la vista detallada en la misma página, la
+opción **Mostrar vista detallada en una página separada** debe estar *desmarcada*
+para esa tabla.

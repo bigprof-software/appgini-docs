@@ -1,12 +1,11 @@
 ---
-title: Project properties pane
-linkTitle: Project properties
+title: Panel de propiedades del proyecto
+linkTitle: Propiedades del proyecto
 slug: help/working-with-projects/Project-properties-pane
 ---
 
-# Project properties pane
+# Panel de propiedades del proyecto
 
-![Project properties pane](https://cdn.bigprof.com/images/appgini-project-properties-pane.png)
+![Panel de propiedades del proyecto](https://cdn.bigprof.com/images/appgini-project-properties-pane.png)
 
-> *TODO: Add description of each property in the project properties pane.*
-
+> *POR HACER: Agregar descripción de cada propiedad en el panel de propiedades del proyecto.*

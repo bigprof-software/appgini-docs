@@ -1,124 +1,112 @@
 ---
-title: Working with the generated web database application
-linkTitle: Working with generated web app
+title: Trabajar con la aplicación de base de datos web generada
+linkTitle: Trabajar con la aplicación web generada
 slug: help/working-with-generated-web-database-application
-description: Learn how to work with the generated web database application.
-keywords: working with generated web app, generated web app, generated web database application
+description: Aprenda a trabajar con la aplicación de base de datos web generada.
+keywords: trabajar con aplicación web generada, aplicación web generada, aplicación de base de datos web generada
 ---
 
-# Working with the generated web database application
+# Trabajar con la aplicación de base de datos web generada
 
+Después de generar la aplicación PHP basada en su proyecto, el siguiente
+paso es cargar los archivos a su servidor y configurar la base de datos. Los
+archivos generados se guardan en una carpeta que usted especifique. A continuación se muestra una captura de pantalla
+de una carpeta que contiene archivos generados a partir de un proyecto.
 
+![Una carpeta que contiene archivos generados a partir de un proyecto de AppGini](https://cdn.bigprof.com/appgini-desktop/help/working-with-generated-web-app.png "Una carpeta que contiene archivos generados a partir de un proyecto de AppGini")
 
-After generating the PHP application based on your project, the next
-step is to upload the files to your server and set up the database. The
-generated files are saved to a folder you specify. Below is a screenshot
-of a folder containing files generated from a project.
+Para cargar los archivos generados, debe utilizar un cliente FTP. Un programa muy bueno
+(y de código abierto) es
+[FileZilla](https://filezilla-project.org/download.php).
 
+Debe cargar toda la carpeta a su servidor web. Asegúrese de que
+su servidor web esté configurado correctamente para ejecutar archivos .php como scripts PHP
+(de lo contrario, probablemente se tratarán como archivos de texto y todo su
+código fuente se mostrará en los navegadores de los visitantes).
 
-![A folder containing files generated from an AppGini project](https://cdn.bigprof.com/appgini-desktop/help/working-with-generated-web-app.png "A folder containing files generated from an AppGini project")
+Después de cargar los archivos, está listo para configurar la base de datos. ¡Continuemos!
 
+> **¡Nota de seguridad IMPORTANTE!**
+Su base de datos contiene información importante que no desea que ninguna
+persona no autorizada manipule... Por lo tanto, solo los usuarios autorizados deben
+tener acceso a su base de datos.
 
-To upload the generated files, you should use an FTP client. A very good
-(and open source) program is
-[FileZilla](https://filezilla-project.org/download.php) .
+La aplicación AppGini generada implementa un sistema de gestión de usuarios avanzado,
+pero intuitivo. Este sistema permite a los usuarios iniciar sesión en
+la aplicación generada y tener permisos limitados de los que usted (el
+administrador) tiene control total.
 
-You should upload the entire folder to your web server. Make sure that
-your web server is properly configured to run .php files as PHP scripts
-(otherwise, they will probably be treated as text files and their entire
-source code will be displayed in the visitors' browsers.)
+El administrador tiene acceso a un [área de
+administración](/appgini/help/working-with-generated-web-database-application/the-admin-interface/)
+donde puede definir grupos. Cada grupo tiene sus propios permisos sobre cada
+tabla de su aplicación.
 
-After you upload the files, you are ready to set up the database. Let's
-move on!
+Por ejemplo, digamos que ha creado una aplicación para almacenar
+contactos de clientes, contactos de proveedores y contactos de empleados. El
+administrador puede definir un grupo llamado 'RRHH' que puede ver y editar solo los
+contactos de los empleados, un grupo llamado 'Ventas' que puede ver y editar
+solo los contactos de los clientes, y un grupo llamado 'Adquisiciones' que
+puede ver y editar solo los contactos de los proveedores. Cada grupo puede tener uno
+o más miembros, y cada miembro hereda los permisos de su grupo. El
+siguiente diagrama explica esto gráficamente.
 
-> **IMPORTANT Security note!**
-Your database contains important information that you do not want any
-unauthorized person to mangle with \... So, only authorized users should
-have access to your database.
+![Grupos de usuarios y permisos en AppGini](https://cdn.bigprof.com/images/group.gif "Grupos de usuarios y permisos en AppGini")
 
-The genrated AppGini app implements an advanced, yet
-intuitive, user management system. This system allows users to log into
-the generated application and have limited permissions that you (the
-admin) have full control of.
+Si un usuario del grupo Ventas intenta acceder a la tabla Proveedores, no
+se le permitirá. Si un usuario anónimo intenta acceder a cualquier tabla, no
+se le permitirá. Si el administrador cambia los permisos de acceso de un
+grupo, a todos los miembros de ese grupo se les otorgarán instantáneamente los nuevos
+permisos (y se les denegarán los antiguos).
 
-The admin has access to an [admin
-area](/appgini/help/working-with-generated-web-database-application/the-admin-interface/)
-where he can define groups. Each group has its own permissions over each
-table in your application.
+Puede establecer los permisos de los usuarios anónimos en AppGini antes de la generación de
+archivos. Y puede cambiarlos más tarde desde el [área de
+administración](/appgini/help/working-with-generated-web-database-application/the-admin-interface/).
+Tenga mucho cuidado al establecer los permisos anónimos para evitar
+comprometer sus datos.
 
-For example, let's say that you have created an application for storing
-clients' contacts, vendors' contacts, and employees' contacts. The
-admin can define a group called 'HR' which can view and edit only the
-employees' contacts, a group called 'Sales' which can view and edit
-only the clients' contacts, and a group called 'Procurement' which
-can view and edit only the vendors' contacts. Each group can have one
-or more members, and each member inherits his group's permissions. The
-following diagram explains this graphically.
+## Un resumen de los archivos generados
 
+Para cada tabla de su proyecto, AppGini generará varios archivos. Por
+ejemplo, en la lista de archivos anterior, la tabla "categorías" tiene estos
+archivos:
 
-![User groups and permissions in AppGini](https://cdn.bigprof.com/images/group.gif "User groups and permissions in AppGini")
+-   `templates/categories_templateDV.html` Este archivo contiene la
+    plantilla que controla el diseño del formulario de vista detallada de la
+    tabla. Este formulario es donde los usuarios pueden ingresar nuevos registros o editar
+    los existentes.
 
+-   `templates/categories_templateDVP.html` Este archivo contiene la
+    plantilla que controla el diseño del formulario de vista detallada imprimible
+    de la tabla.
 
+-   `templates/categories_templateTV.html` Este archivo contiene la
+    plantilla para mostrar cada registro en la vista de tabla. La vista de tabla
+    es una lista de los registros de la tabla.
 
-If a user of the Sales group tries to access the Vendors table, he will
-not be permitted. If an anonymous user tries to access any table, he
-will not be permitted. If the admin changes the access permissions of a
-group, all members of that group will instantly be granted the new
-permissions (and denied the old ones.)
+-   `templates/categories_templateTVS.html` Es lo mismo que
+    `categories_templateTV.html`, excepto que controla la plantilla
+    solo para el registro seleccionado. Cuando los usuarios hacen clic en un registro en la
+    vista de tabla para seleccionarlo, el registro seleccionado se resalta en la
+    vista de tabla y su contenido se muestra en la vista detallada para
+    editarlo o eliminarlo.
 
-You can set the permissions of anonymous users in AppGini before file
-generation. And you can change them later from the [admin
-area](/appgini/help/working-with-generated-web-database-application/the-admin-interface/)
-. Please be very careful with setting the anonymous permissions to avoid
-compromising your data.
+-   `templates/children-categories.php` Si la tabla de categorías se
+    muestra como secundaria de otra tabla, este es el archivo utilizado para
+    formatear la vista secundaria.
 
-## A briefing of the generated files
+-   `categories_dml.php` Este archivo contiene el código que controla
+    lo que sucede al insertar un nuevo registro en la tabla, editar un
+    registro existente o eliminar un registro.
 
-For each table in your project, AppGini will generate several files. For
-example, in the above file list, the \"categories\" table has these
-files:
+    Este archivo también contiene la función `form()` que controla la
+    visualización de la vista detallada, utilizando el archivo de plantilla `categories_templateDV.html`.
 
--   `templates/categories_templateDV.html` This file contains the
-    template that controls the layout of the detail view form of the
-    table. This form is where users can enter new records or edit
-    existing ones.
-    
--   `templates/categories_templateDVP.html` This file contains the
-    template that controls the layout of the printer-friendly detail
-    view form of the table.
-    
--   `templates/categories_templateTV.html` This file contains the
-    template for displaying each record in the table view. The table
-    view is a list of the records in the table.
-    
--   `templates/categories_templateTVS.html` This is the same as the
-    `categories_templateTV.html`, except that it controls the template
-    for the selected record only. When users click on a record in the
-    table view to select it, the selected record is highlighted in the
-    table view, and its contents are displayed in the detail view for
-    editing or deleting.
-    
--   `templates/children-categories.php` If categories table is
-    displayed as a child of another table, this is the file used to
-    format the child view.
-    
--   `categories_dml.php` This file contains the code that controls
-    what happens on inserting a new record into the table, editing an
-    existing record, or deleting a record.
-    
-    This file also contains the `form()` function which controls the
-    display of the detail view, using the `categories_templateDV.html`
-    template file.
-    
--   `categories_autofill.php` If you have [auto-fill lookup
-    fields](/appgini/help/working-with-projects/understanding-lookup-fields/)
-    in your table, this file contains the code to populate these
-    autofill fields. This file is called through an ajax request and
-    sends javascript code to the browser.
-    
--   `categories_view.php` This is the controller page that welds all
-    the above files together into a single page. You can control several
-    display options and permissions in this page.
+-   `categories_autofill.php` Si tiene [campos de búsqueda de
+    autocompletar](/appgini/help/working-with-projects/understanding-lookup-fields/)
+    en su tabla, este archivo contiene el código para completar estos
+    campos de autocompletar. Este archivo se llama a través de una solicitud ajax y
+    envía código javascript al navegador.
 
-
-
+-   `categories_view.php` Esta es la página controladora que une todos
+    los archivos anteriores en una sola página. Puede controlar varias
+    opciones de visualización y permisos en esta página.

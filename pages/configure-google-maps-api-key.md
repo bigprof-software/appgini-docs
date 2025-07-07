@@ -1,71 +1,70 @@
 ---
-title: How to obtain a Google Maps API key?
-linkTitle: Google Maps API key
+title: ¿Cómo obtener una clave API de Google Maps?
+linkTitle: Clave API de Google Maps
 slug: help/configure-google-maps-api-key
-description: Learn how to obtain a Google Maps API key to enable Google Maps support in your AppGini apps.
-keywords: google maps, api key, appgini, google cloud console
+description: Aprenda cómo obtener una clave API de Google Maps para habilitar la compatibilidad con Google Maps en sus aplicaciones AppGini.
+keywords: google maps, clave api, appgini, google cloud console
 ---
 
-# How to obtain a Google Maps API key?
+# ¿Cómo obtener una clave API de Google Maps?
 
-> **TLDR;** To enable [Google Maps support](application-features/input-types.md#google-map) in your AppGini apps, you need to enable Maps Embed API and Maps 
-> Static API in your Google Cloud console, create an API key and copy it to AppGini. You should also 
-> [restrict the key](https://developers.google.com/maps/documentation/javascript/get-api-key#restrict_key) to your server IP/domain to avoid abuse.
+> **TLDR;** Para habilitar la [compatibilidad con Google Maps](application-features/input-types.md#google-map) en sus aplicaciones AppGini, necesita habilitar Maps Embed API y Maps
+> Static API en su consola de Google Cloud, crear una clave API y copiarla en AppGini. También debería
+> [restringir la clave](https://developers.google.com/maps/documentation/javascript/get-api-key#restrict_key) a la IP/dominio de su servidor para evitar abusos.
 
-Obtaining a Google API key can be quite challenging due to the complex, ever-changing interface of 
-Google Cloud console. So, we are listing the specific steps in detail to get you started quickly.
+Obtener una clave API de Google puede ser bastante desafiante debido a la interfaz compleja y en constante cambio de
+la consola de Google Cloud. Por lo tanto, enumeramos los pasos específicos en detalle para que pueda comenzar rápidamente.
 
-Following are the steps to obtain a Google Maps API key (last updated October 22, 2019).
+A continuación se detallan los pasos para obtener una clave API de Google Maps (última actualización el 22 de octubre de 2019).
 
-> **Note:** You need a Google account to proceed. If you don't have one, you should create one first (it's free).
+> **Nota:** Necesita una cuenta de Google para continuar. Si no tiene una, primero debe crear una (es gratis).
 
-1. Go to [Google Cloud Console dashboard](https://console.cloud.google.com/home/dashboard) and sign in with your Google credentials if needed.
+1. Vaya al [panel de control de Google Cloud Console](https://console.cloud.google.com/home/dashboard) e inicie sesión con sus credenciales de Google si es necesario.
 
-2. Select the default project or a different one from the drop-down on the top left (or create a new one). 
-     ![Select project](https://cdn.bigprof.com/screencasts/google-cloud-platform-dashboard-with-default-project-selected.png "Select project")
+2. Seleccione el proyecto predeterminado u otro diferente del menú desplegable en la parte superior izquierda (o cree uno nuevo).
+     ![Seleccionar proyecto](https://cdn.bigprof.com/screencasts/google-cloud-platform-dashboard-with-default-project-selected.png "Seleccionar proyecto")
 
-3. Open **APIs & Services** menu on the left and click on **Library**. 
+3. Abra el menú **API y servicios** a la izquierda y haga clic en **Biblioteca**.
 
-    ![APIs & Services -> Library](https://cdn.bigprof.com/screencasts/gcp-apis-and-services-menu-library.png "APIs & Services -> Library")
+    ![API y servicios -> Biblioteca](https://cdn.bigprof.com/screencasts/gcp-apis-and-services-menu-library.png "API y servicios -> Biblioteca")
 
-4. In the next page, type *maps embed* in the search box. This should display some results like so: 
+4. En la página siguiente, escriba *maps embed* en el cuadro de búsqueda. Esto debería mostrar algunos resultados como este:
 
-	![Search for Maps Embed API](https://cdn.bigprof.com/screencasts/gcp-api-library-search-for-maps-embed.png "Search for Maps Embed API")
+	![Buscar Maps Embed API](https://cdn.bigprof.com/screencasts/gcp-api-library-search-for-maps-embed.png "Buscar Maps Embed API")
 
-5. Click on **Maps Embed API** and then click **Enable** button: 
+5. Haga clic en **Maps Embed API** y luego haga clic en el botón **Habilitar**:
 
-	![Enable Maps Embed API](https://cdn.bigprof.com/screencasts/gcp-api-library-maps-embed-api-enable.png "Enable Maps Embed API")
+	![Habilitar Maps Embed API](https://cdn.bigprof.com/screencasts/gcp-api-library-maps-embed-api-enable.png "Habilitar Maps Embed API")
 
-6. If all goes fine, you should see the **Maps Embed API** metrics page: 
+6. Si todo va bien, debería ver la página de métricas de **Maps Embed API**:
 
-    ![Maps Embed API metrics](https://cdn.bigprof.com/screencasts/gcp-maps-embed-api-metrics.png "Maps Embed API metrics")
+    ![Métricas de Maps Embed API](https://cdn.bigprof.com/screencasts/gcp-maps-embed-api-metrics.png "Métricas de Maps Embed API")
 
-7. Click the "hamburger" button at the top left of the page to open the left navigation menu. From there, open **APIs & Services** and click **Library**: 
+7. Haga clic en el botón de "hamburguesa" en la parte superior izquierda de la página para abrir el menú de navegación izquierdo. Desde allí, abra **API y servicios** y haga clic en **Biblioteca**:
 
-	![APIs & Services -> Library](https://cdn.bigprof.com/screencasts/gcp-maps-embed-api-navmenu-apis-and-services-library.png "APIs & Services -> Library")
+	![API y servicios -> Biblioteca](https://cdn.bigprof.com/screencasts/gcp-maps-embed-api-navmenu-apis-and-services-library.png "API y servicios -> Biblioteca")
 
-8.  This should re-open the API search page. Type *maps static* in the search box, then click **Maps Static API** and enable it.
+8.  Esto debería volver a abrir la página de búsqueda de API. Escriba *maps static* en el cuadro de búsqueda, luego haga clic en **Maps Static API** y habilítela.
 
-9.  Next, open the navigation menu » **APIs & Services** » **Credentials**: 
+9.  A continuación, abra el menú de navegación » **API y servicios** » **Credenciales**:
 
-	![APIs & Services -> Credentials](https://cdn.bigprof.com/screencasts/gcp-apis-and-services-credentials-menu.png "APIs & Services -> Credentials")
+	![API y servicios -> Credenciales](https://cdn.bigprof.com/screencasts/gcp-apis-and-services-credentials-menu.png "API y servicios -> Credenciales")
 
-10.  In the credentials page, click the button **Create credentials** and select **API key** from the menu: 
+10. En la página de credenciales, haga clic en el botón **Crear credenciales** y seleccione **Clave API** del menú:
 
-	![Create API key](https://cdn.bigprof.com/screencasts/gcp-apis-and-services-credentials-create-api-key.png "Create API key")
+	![Crear clave API](https://cdn.bigprof.com/screencasts/gcp-apis-and-services-credentials-create-api-key.png "Crear clave API")
 
-11.  You should see a dialog containing your API key, similar to this: 
-    
-	![API key dialog](https://cdn.bigprof.com/screencasts/gcp-apis-and-services-api-key-created.png "API key dialog")
+11. Debería ver un cuadro de diálogo que contiene su clave API, similar a este:
 
-12. Google allows a free usage quota that is generous enough for most small apps. We highly recommend that you choose 
-    [**Restrict key**](https://developers.google.com/maps/documentation/javascript/get-api-key#restrict_key)
-	and follow the instructions to limit key usage to your server IP/domain to avoid someone stealing 
-	and abusing your key, causing unnecessary costs.
+	![Cuadro de diálogo de clave API](https://cdn.bigprof.com/screencasts/gcp-apis-and-services-api-key-created.png "Cuadro de diálogo de clave API")
 
-Your API key is finally ready to copy and use in your AppGini apps. To do so, sign in to your AppGini app as the super admin, 
-then go to the **Admin Area** » **Utilities** menu » **Admin settings**. Under the **Application** tab, paste your API key in the
-**Google Maps API key** field and save the settings.
+12. Google permite una cuota de uso gratuito que es lo suficientemente generosa para la mayoría de las aplicaciones pequeñas. Le recomendamos encarecidamente que elija
+    [**Restringir clave**](https://developers.google.com/maps/documentation/javascript/get-api-key#restrict_key)
+	y siga las instrucciones para limitar el uso de la clave a la IP/dominio de su servidor para evitar que alguien robe
+	y abuse de su clave, causando costos innecesarios.
 
-![Paste API key in AppGini](https://cdn.bigprof.com/images/google-maps-api-key-setting.png "Paste API key in AppGini")
+Su clave API finalmente está lista para copiar y usar en sus aplicaciones AppGini. Para hacerlo, inicie sesión en su aplicación AppGini como superadministrador,
+luego vaya al **Área de administración** » menú **Utilidades** » **Configuración de administración**. En la pestaña **Aplicación**, pegue su clave API en el
+campo **Clave API de Google Maps** y guarde la configuración.
 
+![Pegar clave API en AppGini](https://cdn.bigprof.com/images/google-maps-api-key-setting.png "Pegar clave API en AppGini")

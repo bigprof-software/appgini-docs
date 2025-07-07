@@ -1,17 +1,16 @@
 ---
-title: Troubleshooting guides for AppGini and generated applications
-linkTitle: Troubleshooting
+title: Guías de solución de problemas para AppGini y aplicaciones generadas
+linkTitle: Solución de problemas
 slug: help/troubleshooting
-description: A listing of troubleshooting guides for common issues encountered while using AppGini and generated applications.
-keywords: troubleshooting, help, support, issues, problems, errors
+description: Una lista de guías de solución de problemas para problemas comunes encontrados al usar AppGini y aplicaciones generadas.
+keywords: solución de problemas, ayuda, soporte, problemas, errores
 ---
 
-# Troubleshooting guides for AppGini and generated applications
+# Guías de solución de problemas para AppGini y aplicaciones generadas
 
-The following section provides a compilation of troubleshooting guides for common issues encountered while using AppGini and generated applications. If you're facing an issue that's not covered here, please feel free to ask for help in the [AppGini forums](https://forums.appgini.com), or [submit a support request](https://bigprof.com/appgini/support-request).
+La siguiente sección proporciona una compilación de guías de solución de problemas para problemas comunes encontrados al usar AppGini y aplicaciones generadas. Si se enfrenta a un problema que no está cubierto aquí, no dude en pedir ayuda en los [foros de AppGini](https://forums.appgini.com) o [enviar una solicitud de soporte](https://bigprof.com/appgini/support-request).
 
-## List of troubleshooting guides
+## Lista de guías de solución de problemas
 
-- [I see an error message or a blank page in my AppGini-generated app](../advanced-topics/troubleshooting-errors-and-blank-pages.md)
-- [I can't upload large files in my AppGini app](configuring-file-upload-size.md)
-
+- [Veo un mensaje de error o una página en blanco en mi aplicación generada por AppGini](../advanced-topics/troubleshooting-errors-and-blank-pages.md)
+- [No puedo cargar archivos grandes en mi aplicación AppGini](configuring-file-upload-size.md)

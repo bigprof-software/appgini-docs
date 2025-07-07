@@ -1,176 +1,171 @@
 ---
-title: Using lookup fields in calculations
-linkTitle: Using lookup fields in calculations
+title: Uso de campos de búsqueda en cálculos
+linkTitle: Uso de campos de búsqueda en cálculos
 slug: help/advanced-topics/hooks/using-lookup-fields-in-calculations
 ---
 
-# Using lookup fields in calculations
+# Uso de campos de búsqueda en cálculos
 
-When customizing the [`before_insert`, `after_insert`, `before_update` or
-`after_update`
-hooks](/appgini/help/advanced-topics/hooks/table-specific-hooks/) to make
-a calculation, you might encounter a case where one or more fields in
-the formula you're calculating is a [lookup field (foreign
-key)](/appgini/help/working-with-projects/understanding-lookup-fields/) .
-In this case, the value of `$data['fieldname']` (where `fieldname`
-is the name of the concerned lookup field) is probably NOT the value
-you'd like to use for your calculation.
+Al personalizar los hooks [`before_insert`, `after_insert`, `before_update` o
+`after_update`](/appgini/help/advanced-topics/hooks/table-specific-hooks/) para realizar
+un cálculo, es posible que se encuentre con un caso en el que uno o más campos de
+la fórmula que está calculando sea un [campo de búsqueda (clave externa)](/appgini/help/working-with-projects/understanding-lookup-fields/).
+En este caso, el valor de `$data['nombrecampo']` (donde `nombrecampo`
+es el nombre del campo de búsqueda en cuestión) probablemente NO sea el valor
+que le gustaría usar para su cálculo.
 
-To explain that, let's have a brief look at how lookup fields work. A
-lookup field is a way of referencing a value from one table in another
-table. For example, we might be storing product unit price in the
-`products` table and want to use that same unit price in the
-`order_items` table without having to manually re-type the price ...
-this is important not just to save a few keystrokes during data entry,
-but to also ensure referential integrity ... If you throw the same
-product price into every table in your database, it will be a nightmare
-to update the price later and make sure all tables see the updated
-price.
+Para explicar esto, echemos un vistazo breve a cómo funcionan los campos de búsqueda. Un
+campo de búsqueda es una forma de hacer referencia a un valor de una tabla en otra
+tabla. Por ejemplo, podríamos estar almacenando el precio unitario del producto en la
+tabla `productos` y querer usar ese mismo precio unitario en la
+tabla `items_pedido` sin tener que volver a escribir manualmente el precio...
+esto es importante no solo para ahorrar algunas pulsaciones de teclas durante la entrada de datos,
+sino también para garantizar la integridad referencial... Si introduce el mismo
+precio del producto en todas las tablas de su base de datos, será una pesadilla
+actualizar el precio más tarde y asegurarse de que todas las tablas vean el precio actualizado.
 
-To avoid that mess, we use lookup fields. A unit price lookup field in
-the `order_items` table doesn't store the actual price value but
-rather a reference value that points to the location of the unit price
-in the `products` table. The best possible reference to use is the
-primary key of the product. Let's have an example with numbers to see
-this in action.
+Para evitar ese desorden, usamos campos de búsqueda. Un campo de búsqueda de precio unitario en
+la tabla `items_pedido` no almacena el valor real del precio, sino
+un valor de referencia que apunta a la ubicación del precio unitario
+en la tabla `productos`. La mejor referencia posible a utilizar es la
+clave principal del producto. Veamos un ejemplo con números para ver
+esto en acción.
 
-### Products table
+### Tabla de productos
 
- | ID   | Product                       | Unit price   |
- | ---- | ----------------------------- | ------------ |
- | 15   | Lindt HELLO Crunchy Nougat    | 2.05         |
- | 16   | Lindt CREATION Crème Brûlée   | 2.35         |
- | 18   | Lindt EXCELLENCE Mint         | 3.25         |
- | 19   | Lindt CREATION Pistachio      | 3.25         |
+ | ID   | Producto                      | Precio unitario |
+ | ---- | ----------------------------- | --------------- |
+ | 15   | Lindt HELLO Crunchy Nougat    | 2.05            |
+ | 16   | Lindt CREATION Crème Brûlée   | 2.35            |
+ | 18   | Lindt EXCELLENCE Menta        | 3.25            |
+ | 19   | Lindt CREATION Pistacho     | 3.25            |
 
-That was yummy! Each entry in the above table has a primary key `ID`
-value, which doesn't tell much about the item itself but is used as a
-reference to it. So, if we talk about product #18, we know we are
-referring to *Lindt EXCELLENCE Mint* priced at $3.25. Primary key
-fields are usually (but not necessarily) named `ID`.
+¡Eso estuvo delicioso! Cada entrada en la tabla anterior tiene un valor de clave principal `ID`,
+que no dice mucho sobre el artículo en sí, pero se usa como
+referencia a él. Entonces, si hablamos del producto n.º 18, sabemos que nos estamos
+refiriendo a *Lindt EXCELLENCE Menta* con un precio de 3,25 $. Los campos de clave principal
+generalmente (pero no necesariamente) se denominan `ID`.
 
-Let's now have a look at some data from the `order_items` table.
+Echemos ahora un vistazo a algunos datos de la tabla `items_pedido`.
 
-### Order Items table
+### Tabla de artículos de pedido
 
-  | ID   | Order ID | Product | Unit price | Quantity | Subtotal |
-  | ---- | -------- | ------- | ---------- | -------- | -------- |
-  | 2024 | 305      | 15      | 15         | 1        |          |
-  | 2025 | 305      | 18      | 18         | 3        |          |
-  | 2026 | 306      | 18      | 18         | 1        |          |
-  | 2027 | 307      | 19      | 19         | 2        |          |
+  | ID   | ID de pedido | Producto | Precio unitario | Cantidad | Subtotal |
+  | ---- | ----------- | -------- | --------------- | -------- | -------- |
+  | 2024 | 305         | 15       | 15              | 1        |          |
+  | 2025 | 305         | 18       | 18              | 3        |          |
+  | 2026 | 306         | 18       | 18              | 1        |          |
+  | 2027 | 307         | 19       | 19              | 2        |          |
 
-Similar to the `products` table, the `ID` column above is the
-primary key field of the `order_items` table, a way of uniquely
-identifying each row. `OrderID` is a lookup field to the orders table
-(not shown here as it's irrelevant to our discussion). `Product` and
-'Unit Price' are both lookup fields to the products table. To
-understand this with an example, order item #2024 is an order for
-product #15, which is *Lindt HELLO Crunchy Nougat* and its price is of
-course that of product #15 which is $2.05. And the quantity of *Lindt
-HELLO Crunchy Nougat* ordered in this record is 1.
+Al igual que en la tabla `productos`, la columna `ID` anterior es el
+campo de clave principal de la tabla `items_pedido`, una forma de identificar
+de forma única cada fila. `IDPedido` es un campo de búsqueda de la tabla de pedidos
+(no se muestra aquí ya que es irrelevante para nuestra discusión). `Producto` y
+'Precio unitario' son ambos campos de búsqueda de la tabla de productos. Para
+entender esto con un ejemplo, el artículo de pedido n.º 2024 es un pedido del
+producto n.º 15, que es *Lindt HELLO Crunchy Nougat* y su precio es,
+por supuesto, el del producto n.º 15, que es 2,05 $. Y la cantidad de *Lindt
+HELLO Crunchy Nougat* pedida en este registro es 1.
 
-When your AppGini application displays the `order_items` table, it
-doesn't display reference values like the above. It automatically
-*joins* both tables and displays more human-readable results like the
-ones below
+Cuando su aplicación AppGini muestra la tabla `items_pedido`, no
+muestra valores de referencia como los anteriores. Automáticamente
+*une* ambas tablas y muestra resultados más legibles para humanos como los
+siguientes
 
-### Order Items table joined with Products table
+### Tabla de artículos de pedido unida con la tabla de productos
 
-  | ID   | Order ID | Product                      | Unit price   | Quantity | Subtotal |
-  | ---- | -------- | ---------------------------- | ------------ | -------- | -------- |
-  | 2024 | 305      | Lindt HELLO Crunchy Nougat   | 2.05         | 1        |          |
-  | 2025 | 305      | Lindt EXCELLENCE Mint        | 3.25         | 3        |          |
-  | 2026 | 306      | Lindt EXCELLENCE Mint        | 3.25         | 1        |          |
-  | 2027 | 307      | Lindt CREATION Pistachio     | 3.25         | 2        |          |
+  | ID   | ID de pedido | Producto                     | Precio unitario | Cantidad | Subtotal |
+  | ---- | ----------- | ---------------------------- | --------------- | -------- | -------- |
+  | 2024 | 305         | Lindt HELLO Crunchy Nougat   | 2.05            | 1        |          |
+  | 2025 | 305         | Lindt EXCELLENCE Menta       | 3.25            | 3        |          |
+  | 2026 | 306         | Lindt EXCELLENCE Menta       | 3.25            | 1        |          |
+  | 2027 | 307         | Lindt CREATION Pistacho    | 3.25            | 2        |          |
 
-If we later make any modifications to any product in the `products`
-table, like changing its name or unit price, the changes are
-automatically reflected in the `order_items` table without having to
-perform any manual data entry.
+Si más tarde realizamos alguna modificación en cualquier producto de la tabla `productos`,
+como cambiar su nombre o precio unitario, los cambios se
+reflejan automáticamente en la tabla `items_pedido` sin tener que
+realizar ninguna entrada manual de datos.
 
-What remains now is to write code for calculating the subtotal column of
-the `order_items` table. We want this calculation to be applied
-whenever we add a new order item and also whenever we make changes to
-any existing order item. Therefore, we should perform the calculation in
-both the before_insert and before_update hook functions.
+Lo que queda ahora es escribir el código para calcular la columna de subtotal de
+la tabla `items_pedido`. Queremos que este cálculo se aplique
+cada vez que agreguemos un nuevo artículo de pedido y también cada vez que realicemos cambios en
+cualquier artículo de pedido existente. Por lo tanto, debemos realizar el cálculo en
+las funciones hook before_insert y before_update.
 
-The initial code I see many AppGini users write usually looks something
-like this:
+El código inicial que veo que muchos usuarios de AppGini escriben generalmente se parece a
+esto:
 
 ```php
-$data['Subtotal'] = $data['UnitPrice'] * $data['Quantity'];
+$data['Subtotal'] = $data['PrecioUnitario'] * $data['Cantidad'];
 ```
 
-The problem with the above code is that `$data['UnitPrice']`
-stores the primary key of the parent product (the value of the `ID`
-field from the parent record in `products`). For example, if we're
-calculating the subtotal of order item #2025, the above code would
-display a subtotal of 18 x 3 = $54. This is of course not correct, as
-the unit price for *Lindt EXCELLENCE Mint* is $3.25 and we have a
-quantity of 3 units. Therefore, the correct subtotal should be $3.25 x
-3 = $9.75.
+El problema con el código anterior es que `$data['PrecioUnitario']`
+almacena la clave principal del producto principal (el valor del campo `ID`
+del registro principal en `productos`). Por ejemplo, si estamos
+calculando el subtotal del artículo de pedido n.º 2025, el código anterior mostraría
+un subtotal de 18 x 3 = 54 $. Esto, por supuesto, no es correcto, ya que
+el precio unitario de *Lindt EXCELLENCE Menta* es 3,25 $ y tenemos una
+cantidad de 3 unidades. Por lo tanto, el subtotal correcto debería ser 3,25 $ x
+3 = 9,75 $.
 
-What's wrong with the above code is that we didn't take into
-consideration the fact that `UnitPrice` field in `order_items` is
-actually a lookup field. The stored value is not the unit price but
-rather the primary key value of the parent product. Accordingly, we
-should retrieve the actual unit price from the products table using this
-code:
-
-```php
-$UnitPrice = sqlValue(
-   "SELECT UnitPrice FROM products where ID='{$data['UnitPrice']}'"
-); 
-```
-
-The above code retrieves the unit price from the products table given
-the primary key value stored in the child `order_items` table,
-`$data['UnitPrice']` , and stores the actual unit price in
-`$UnitPrice` . We can now perform the calculation as follows:
+Lo que está mal con el código anterior es que no tuvimos en
+cuenta el hecho de que el campo `PrecioUnitario` en `items_pedido` es
+en realidad un campo de búsqueda. El valor almacenado no es el precio unitario, sino
+el valor de la clave principal del producto principal. En consecuencia, deberíamos
+recuperar el precio unitario real de la tabla de productos usando este
+código:
 
 ```php
-$data['Subtotal'] = $UnitPrice * $data['Quantity'];
-```
-
-Putting it all together, whenever we are performing calculations that
-involve lookup fields, we should first retrieve the actual values from
-the parent table and use those retrieved values in the calculation
-formula. It's very easy to write once we understand how it works. To
-sum up, here is our subtotal code:
-
-```php
-$UnitPrice = sqlValue(
-  "SELECT UnitPrice FROM products where ID='{$data['UnitPrice']}'"
+$PrecioUnitario = sqlValue(
+   "SELECT PrecioUnitario FROM productos where ID='{$data['PrecioUnitario']}'"
 );
-$data['Subtotal'] = $UnitPrice * $data['Quantity'];
 ```
 
-One final note ... some tables contain non-numeric primary key values.
-For example, if the above `products` table stores primary keys as
-`LHCN01`, `LEM01` ... etc rather than `18`, `19` and so on,
-then we should escape those primary keys first to avoid query errors and 
-protect against SQL injection attacks:
+El código anterior recupera el precio unitario de la tabla de productos dado
+el valor de la clave principal almacenado en la tabla secundaria `items_pedido`,
+`$data['PrecioUnitario']`, y almacena el precio unitario real en
+`$PrecioUnitario`. Ahora podemos realizar el cálculo de la siguiente manera:
 
 ```php
-/* Escape non-numeric lookup values before using them in SQL queries */
-$SafeUnitPriceLookup = makeSafe($data['UnitPrice']);
+$data['Subtotal'] = $PrecioUnitario * $data['Cantidad'];
+```
+
+Poniéndolo todo junto, cada vez que realicemos cálculos que
+involucren campos de búsqueda, primero debemos recuperar los valores reales de
+la tabla principal y usar esos valores recuperados en la fórmula de cálculo.
+Es muy fácil de escribir una vez que entendemos cómo funciona. Para
+resumir, aquí está nuestro código de subtotal:
+
+```php
+$PrecioUnitario = sqlValue(
+  "SELECT PrecioUnitario FROM productos where ID='{$data['PrecioUnitario']}'"
+);
+$data['Subtotal'] = $PrecioUnitario * $data['Cantidad'];
+```
+
+Una nota final... algunas tablas contienen valores de clave principal no numéricos.
+Por ejemplo, si la tabla `productos` anterior almacena claves principales como
+`LHCN01`, `LEM01`... etc. en lugar de `18`, `19`, etc.,
+entonces primero debemos escapar esas claves principales para evitar errores de consulta y
+proteger contra ataques de inyección SQL:
+
+```php
+/* Escapar valores de búsqueda no numéricos antes de usarlos en consultas SQL */
+$SafeUnitPriceLookup = makeSafe($data['PrecioUnitario']);
 
 /*
-  Now it's safe to use $SafeUnitPriceLookup to
-  retrieve our unit price
+  Ahora es seguro usar $SafeUnitPriceLookup para
+  recuperar nuestro precio unitario
 */
-$UnitPrice = sqlValue(
-  "SELECT UnitPrice FROM products where ID='{$SafeUnitPriceLookup}'"
+$PrecioUnitario = sqlValue(
+  "SELECT PrecioUnitario FROM productos where ID='{$SafeUnitPriceLookup}'"
 );
 
-/* And here is our calculation */
-$data['Subtotal'] = $UnitPrice * $data['Quantity'];
+/* Y aquí está nuestro cálculo */
+$data['Subtotal'] = $PrecioUnitario * $data['Cantidad'];
 ```
 
-To summarize, whenever you are working with lookup fields in your
-calculations, you should first retrieve the actual values from the parent
-table and then use those values in your calculations. This is a simple
-concept that can save you a lot of time and headaches in the future.
-
-
+En resumen, cada vez que trabaje con campos de búsqueda en sus
+cálculos, primero debe recuperar los valores reales de la tabla principal
+y luego usar esos valores en sus cálculos. Este es un concepto simple
+que puede ahorrarle mucho tiempo y dolores de cabeza en el futuro.

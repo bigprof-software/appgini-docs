@@ -1,139 +1,136 @@
 ---
-title: The Media Tab
-linkTitle: The Media Tab
+title: La pestaña Medios
+linkTitle: La pestaña Medios
 slug: help/working-with-projects/media-tab
-description: Learn how to configure your field to be displayed as a web-link, an image, a file, a google map or even a YouTube video.
-keywords: media tab, link, image, file upload, google map, youtube video, geolocation, google maps api key
+description: Aprenda a configurar su campo para que se muestre como un enlace web, una imagen, un archivo, un mapa de Google o incluso un video de YouTube.
+keywords: pestaña de medios, enlace, imagen, carga de archivos, mapa de google, video de youtube, geolocalización, clave api de google maps
 ---
 
-# The Media Tab
+# La pestaña Medios
 
-This tab allows you to configure your field to be displayed as a web-link, an image, a file, a Google map or even a YouTube video.
+Esta pestaña le permite configurar su campo para que se muestre como un enlace web, una imagen, un archivo, un mapa de Google o incluso un video de YouTube.
 
-## Link option
+## Opción de enlace
 
-Configure the way your field behaves when clicked. It can be configured to open the detail view of the current record, a URL, an email link, or not be clickable at all.
+Configure la forma en que se comporta su campo cuando se hace clic en él. Se puede configurar para abrir la vista detallada del registro actual, una URL, un enlace de correo electrónico o para que no se pueda hacer clic en absoluto.
 
-![Link option](https://cdn.bigprof.com/appgini-desktop/help/appgini-5.40/link_appgini.png)
+![Opción de enlace](https://cdn.bigprof.com/appgini-desktop/help/appgini-5.40/link_appgini.png)
 
-If you configure the field to display as a web-link and the user clicks that field, the link is opened in a new window.
+Si configura el campo para que se muestre como un enlace web y el usuario hace clic en ese campo, el enlace se abre en una nueva ventana.
 
-![Link as displayed in the table view](https://cdn.bigprof.com/appgini-desktop/help/appgini-5.40/link-browser.png)
+![Enlace como se muestra en la vista de tabla](https://cdn.bigprof.com/appgini-desktop/help/appgini-5.40/link-browser.png)
 
-## The Image option
+## La opción Imagen
 
-This option allows you to configure the field to be displayed as an image. You can allow users to upload jpg, jpeg, gif and png images. You can also configure the maximum allowed file size.
+Esta opción le permite configurar el campo para que se muestre como una imagen. Puede permitir a los usuarios cargar imágenes jpg, jpeg, gif y png. También puede configurar el tamaño máximo de archivo permitido.
 
-![Image option](https://cdn.bigprof.com/appgini-desktop/help/appgini-5.40/image_appgini.png)
+![Opción de imagen](https://cdn.bigprof.com/appgini-desktop/help/appgini-5.40/image_appgini.png)
 
-You can choose how to display the image. It can be displayed as a zoomable thumbnail image in the table and detail view. You can also configure the thumbnail size.
+Puede elegir cómo mostrar la imagen. Se puede mostrar como una imagen en miniatura ampliable en la vista de tabla y en la vista detallada. También puede configurar el tamaño de la miniatura.
 
-This is an example of how the image is displayed in the detail view.
+Este es un ejemplo de cómo se muestra la imagen en la vista detallada.
 
-![Image thumbnail in the detail view](https://cdn.bigprof.com/appgini-desktop/help/appgini-5.40/image_detail_view.png)
+![Miniatura de imagen en la vista detallada](https://cdn.bigprof.com/appgini-desktop/help/appgini-5.40/image_detail_view.png)
 
-And this is how the image is displayed in the table view.
+Y así es como se muestra la imagen en la vista de tabla.
 
-![Image thumbnail in the table view](https://cdn.bigprof.com/appgini-desktop/help/appgini-5.40/image_field_tv.png)
+![Miniatura de imagen en la vista de tabla](https://cdn.bigprof.com/appgini-desktop/help/appgini-5.40/image_field_tv.png)
 
-## The File upload option
+## La opción Carga de archivos
 
-This option allows the user to upload many different file types. You can configure the field to be displayed as the field content, clickable icon or contents of another page.
+Esta opción permite al usuario cargar muchos tipos de archivos diferentes. Puede configurar el campo para que se muestre como el contenido del campo, un icono en el que se puede hacer clic o el contenido de otra página.
 
-![File upload option](https://cdn.bigprof.com/appgini-desktop/help/appgini-5.40/file_upload_appgini.png)
+![Opción de carga de archivos](https://cdn.bigprof.com/appgini-desktop/help/appgini-5.40/file_upload_appgini.png)
 
-This is how the file upload field is displayed in the detail view.
+Así es como se muestra el campo de carga de archivos en la vista detallada.
 
-![File upload field in the detail view](https://cdn.bigprof.com/appgini-desktop/help/appgini-5.40/file_upload_dv.png)
+![Campo de carga de archivos en la vista detallada](https://cdn.bigprof.com/appgini-desktop/help/appgini-5.40/file_upload_dv.png)
 
-You can configure the field to be displayed as the field content, clickable icon or contents of another field.
+Puede configurar el campo para que se muestre como el contenido del campo, un icono en el que se puede hacer clic o el contenido de otro campo.
 
-![File upload field in the table view](https://cdn.bigprof.com/appgini-desktop/help/appgini-5.40/file_upload_browser.png)
+![Campo de carga de archivos en la vista de tabla](https://cdn.bigprof.com/appgini-desktop/help/appgini-5.40/file_upload_browser.png)
 
-## Google maps
+## Mapas de Google
 
-Google map fields allow you to display a Google map in your application.
+Los campos de mapa de Google le permiten mostrar un mapa de Google en su aplicación.
 
-![Google map field in a detail view form](https://cdn.bigprof.com/images/input-types-dv-google-map-24.18.png "Google map field in a detail view form")
+![Campo de mapa de Google en un formulario de vista detallada](https://cdn.bigprof.com/images/input-types-dv-google-map-24.18.png "Campo de mapa de Google en un formulario de vista detallada")
 
+Para crear un campo de mapa de Google, establezca el tipo de datos de su campo en `Varchar` o `Char` con una longitud de al menos 200 caracteres. Luego, en la pestaña **Medios** de las propiedades del campo, seleccione la opción **Mapa de Google**. Esto debería abrir el cuadro de diálogo **Opciones de mapa de Google** (puede abrirlo más tarde haciendo clic en el botón **Configurar** en la pestaña **Medios**).
 
-To create a Google map field, set the data type of your field to `Varchar` or `Char` with a length of at least 200 characters. Then, under the **Media** tab in the field properties, select the **Google map** option. This should open the **Google map options** dialog (you can open it later by clicking the **Configure** button in the **Media** tab).
+![Cuadro de diálogo de opciones de mapa de Google](https://cdn.bigprof.com/images/google-map-dialog-24.18.png "Cuadro de diálogo de opciones de mapa de Google")
 
-![Google map options dialog](https://cdn.bigprof.com/images/google-map-dialog-24.18.png "Google map options dialog")
+### Clave API de Google
 
-### Google API key
+Los campos de mapa de Google requieren una [clave API de Google](../configure-google-maps-api-key.md) para funcionar correctamente. Puede ingresar su clave API de Google en la página **Configuración de administrador** de su aplicación siguiendo los pasos a continuación:
 
-Google map fields require a [Google API key](../configure-google-maps-api-key.md) to work correctly. You can enter your Google API key in the **Admin settings** page of your application by following the steps below:
+1. Inicie sesión en su aplicación como superadministrador.
+2. Vaya al **Área de administración** » menú **Utilidades** » **Configuración de administrador**.
+3. En la pestaña **Aplicación**, ingrese su clave API de Google Maps en el campo **Clave API de Google**.
 
-1. Sign in to your application as the super admin.
-2. Go to the **Admin area** » **Utilities** menu » **Admin settings**.
-3. Under the **Application** tab, enter your Google maps API key in the **Google API key** field.
+   ![Configuración de la clave API de Google Maps](https://cdn.bigprof.com/images/google-maps-api-key-setting-24.18.png "Configuración de la clave API de Google Maps")
 
-   ![Google maps API key setting](https://cdn.bigprof.com/images/google-maps-api-key-setting-24.18.png "Google maps API key setting")
+Si, en lugar del mapa de Google, ve un mensaje de error como *`Google maps Platform rechazó su solicitud...`*, debe proporcionar una [clave API de Google Maps configurada correctamente](../configure-google-maps-api-key.md).
 
-If, instead of the Google map, you see an error message like *`Google maps Platform rejected your request...`*, you need to provide a [correctly configured Google maps API key](../configure-google-maps-api-key.md).
+### Opciones de comportamiento y ubicación del mapa
 
-### Map behavior and location options
+Al configurar un campo para mostrar un mapa de Google, están disponibles las siguientes opciones para configurar el comportamiento y la ubicación del mapa:
 
-When configuring a field to display a Google map, the following options are available for setting up map behavior and location:
+#### 1. Mapa desde URL
 
-#### 1. Map from URL
+Muestra un mapa utilizando una URL proporcionada por el usuario.
 
-Displays a map using a user-provided URL.
+![Campo de mapa de Google en un formulario de vista detallada, basado en una URL proporcionada por el usuario](https://cdn.bigprof.com/images/input-types-dv-google-map-24.18.png "Campo de mapa de Google en un formulario de vista detallada, basado en una URL proporcionada por el usuario")
 
-![Google map field in a detail view form, based on a user-provided URL](https://cdn.bigprof.com/images/input-types-dv-google-map-24.18.png "Google map field in a detail view form, based on a user-provided URL")
+#### 2. Mapa con un marcador de la ubicación del usuario en el momento de guardar un nuevo registro
 
-#### 2. Map with a pin of the user location at the time of saving a new record
+Fija automáticamente la ubicación del usuario cuando se guarda un nuevo registro.
 
-Automatically pins the user's location when a new record is saved.
+![Campo de mapa de Google con la ubicación actual del usuario](https://cdn.bigprof.com/images/input-types-dv-google-map-with-user-location-24.18.png "Campo de mapa de Google con la ubicación actual del usuario")
 
-![Google map field with user's current location](https://cdn.bigprof.com/images/input-types-dv-google-map-with-user-location-24.18.png "Google map field with user's current location")
+#### 3. Mapa con un marcador de la ubicación del usuario en el momento de guardar un registro nuevo o existente
 
-#### 3. Map with a pin of the user location at the time of saving a new or existing record
+Igual que la opción anterior, pero también muestra la ubicación del usuario al guardar un registro existente.
 
-Same as the previous option, but also shows the user's location when saving an existing record.
+#### 4. Mapa con un marcador de la ubicación del usuario solo si el usuario hace clic en *Capturar mi ubicación*
 
-#### 4. Map with a pin of the user location only if the user clicks *Capture my location*
+Muestra un marcador solo cuando el usuario elige capturar su ubicación manualmente.
 
-Shows a pin only when the user chooses to capture their location manually.
-   
-![Google map field with user's current location, captured manually](https://cdn.bigprof.com/images/input-types-dv-google-map-with-user-location-manual-24.18.png "Google map field with user's current location, captured manually")
+![Campo de mapa de Google con la ubicación actual del usuario, capturada manualmente](https://cdn.bigprof.com/images/input-types-dv-google-map-with-user-location-manual-24.18.png "Campo de mapa de Google con la ubicación actual del usuario, capturada manualmente")
 
-> Options 2, 3, and 4 were introduced in AppGini 24.18. They require the user's consent to access their location. If the user denies access, the map will not show their location.
+> Las opciones 2, 3 y 4 se introdujeron en AppGini 24.18. Requieren el consentimiento del usuario para acceder a su ubicación. Si el usuario niega el acceso, el mapa no mostrará su ubicación.
 
-### Map View Configuration
+### Configuración de la vista del mapa
 
-#### Table View (Thumbnail)
+#### Vista de tabla (Miniatura)
 
-In the table view, the map field is displayed as a thumbnail image (static map). For [option 1](#1-map-from-url) above, the thumbnail map is generated from the URL provided by the user, without a pin/marker. For [options 2 and 3](#2-map-with-a-pin-of-the-user-location-at-the-time-of-saving-a-new-record), the thumbnail map shows the user's location at the time of saving the record, with a pin/marker. And for [option 4](#4-map-with-a-pin-of-the-user-location-only-if-the-user-clicks-capture-my-location), the thumbnail map shows the user's locationat the time when they click the *Capture my location* button.
+En la vista de tabla, el campo del mapa se muestra como una imagen en miniatura (mapa estático). Para la [opción 1](#1-mapa-desde-url) anterior, el mapa en miniatura se genera a partir de la URL proporcionada por el usuario, sin un marcador. Para las [opciones 2 y 3](#2-mapa-con-un-marcador-de-la-ubicación-del-usuario-en-el-momento-de-guardar-un-nuevo-registro), el mapa en miniatura muestra la ubicación del usuario en el momento de guardar el registro, con un marcador. Y para la [opción 4](#4-mapa-con-un-marcador-de-la-ubicación-del-usuario-solo-si-el-usuario-hace-clic-en-capturar-mi-ubicación), el mapa en miniatura muestra la ubicación del usuario en el momento en que hace clic en el botón *Capturar mi ubicación*.
 
-![Google map field in the table view, showing a thumbnail map](https://cdn.bigprof.com/images/input-types-tv-google-map-24.18.png "Google map field in the table view, showing a thumbnail map")
+![Campo de mapa de Google en la vista de tabla, que muestra un mapa en miniatura](https://cdn.bigprof.com/images/input-types-tv-google-map-24.18.png "Campo de mapa de Google en la vista de tabla, que muestra un mapa en miniatura")
 
-- **Width in pixels**: Set the width of the thumbnail map shown in the table view. Default is `50` pixels.
-- **Height in pixels**: Set the height of the thumbnail map in the table view. Default is `50` pixels.
+- **Ancho en píxeles**: Establezca el ancho del mapa en miniatura que se muestra en la vista de tabla. El valor predeterminado es `50` píxeles.
+- **Alto en píxeles**: Establezca el alto del mapa en miniatura en la vista de tabla. El valor predeterminado es `50` píxeles.
 
-#### Detail View (Interactive Map)
+#### Vista detallada (Mapa interactivo)
 
-- **Width**: Width is set automatically for the interactive map in the detail view to fit the available space.
-- **Height in pixels**: Set the height of the interactive map shown in the detailed record view. Default is `360` pixels.
+- **Ancho**: El ancho se establece automáticamente para el mapa interactivo en la vista detallada para que se ajuste al espacio disponible.
+- **Alto en píxeles**: Establezca el alto del mapa interactivo que se muestra en la vista detallada del registro. El valor predeterminado es `360` píxeles.
 
-### Forcing the capture of the user's location
+### Forzar la captura de la ubicación del usuario
 
-If you want to force the capture of the user's location when saving a new or existing record, set the Google map field as **Required** in AppGini. This will ensure that the user's location is captured before the record is saved.
-If the user denies access to their location, an error message will be displayed, and the record will not be saved.
+Si desea forzar la captura de la ubicación del usuario al guardar un registro nuevo o existente, establezca el campo Mapa de Google como **Obligatorio** en AppGini. Esto garantizará que se capture la ubicación del usuario antes de guardar el registro.
+Si el usuario niega el acceso a su ubicación, se mostrará un mensaje de error y el registro no se guardará.
 
-## YouTube video
+## Video de YouTube
 
-This field accepts a YouTube URL and displays it as a movie in the detail view.
+Este campo acepta una URL de YouTube y la muestra como una película en la vista detallada.
 
-![YouTube video option](https://cdn.bigprof.com/appgini-desktop/help/appgini-5.40/youtube_field_appgini.png)
+![Opción de video de YouTube](https://cdn.bigprof.com/appgini-desktop/help/appgini-5.40/youtube_field_appgini.png)
 
-You can configure how to display the YouTube video in the detail view and the table view. Here is an example of how the YouTube video is displayed in the detail view.
+Puede configurar cómo mostrar el video de YouTube en la vista detallada y en la vista de tabla. Aquí hay un ejemplo de cómo se muestra el video de YouTube en la vista detallada.
 
-![YouTube video in the detail view](https://cdn.bigprof.com/appgini-desktop/help/appgini-5.40/youtube_field_dv.png)
+![Video de YouTube en la vista detallada](https://cdn.bigprof.com/appgini-desktop/help/appgini-5.40/youtube_field_dv.png)
 
-And this is how the YouTube video is displayed in the table view.
+Y así es como se muestra el video de YouTube en la vista de tabla.
 
-![YouTube video in the table view](https://cdn.bigprof.com/appgini-desktop/help/appgini-5.40/youtube_field_tv.png)
-
-
+![Video de YouTube en la vista de tabla](https://cdn.bigprof.com/appgini-desktop/help/appgini-5.40/youtube_field_tv.png)

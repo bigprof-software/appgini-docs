@@ -1,153 +1,153 @@
 ---
-title: DataList object
-linkTitle: DataList object
+title: Objeto DataList
+linkTitle: Objeto DataList
 slug: help/advanced-topics/hooks/DataList-object
-description: The DataList object is passed to the tablename_init hook function and exposes many options that you can control to affect the behavior and appearance of each of the AppGini-generated table pages that users see.
-keywords: DataList object, tablename_init, hook function, table, appearance, behavior, DataList properties
+description: El objeto DataList se pasa a la función hook tablename_init y expone muchas opciones que puede controlar para afectar el comportamiento y la apariencia de cada una de las páginas de tabla generadas por AppGini que ven los usuarios.
+keywords: Objeto DataList, tablename_init, función hook, tabla, apariencia, comportamiento, propiedades de DataList
 ---
 
-# DataList object
+# Objeto DataList
 
-The `DataList` object exposes many options that you can control to affect the behavior and appearance of each of the AppGini-generated table pages that users see.  
-  
-`DataList` object is passed to the [`tablename_init`](/appgini/help/advanced-topics/hooks/table-specific-hooks/#tablename_init) hook function. This hook function is called before displaying data to users. So, you can control the various appearance and behavior options by modifying this object inside that hook function.  
-  
-## Here is a list of the editable properties of the `DataList` object
+El objeto `DataList` expone muchas opciones que puede controlar para afectar el comportamiento y la apariencia de cada una de las páginas de tabla generadas por AppGini que ven los usuarios.
+
+El objeto `DataList` se pasa a la función hook [`tablename_init`](/appgini/help/advanced-topics/hooks/table-specific-hooks/#tablename_init). Esta función hook se llama antes de mostrar los datos a los usuarios. Por lo tanto, puede controlar las diversas opciones de apariencia y comportamiento modificando este objeto dentro de esa función hook.
+
+## Aquí hay una lista de las propiedades editables del objeto `DataList`
 
 ### `AllowCSV`
 
-Setting this property to `1` allows users to download table records as a CSV file. Setting it to `0` disables this.
+Establecer esta propiedad en `1` permite a los usuarios descargar registros de tabla como un archivo CSV. Establecerlo en `0` deshabilita esto.
 
 ### `AllowDeleteOfParents`
 
-Setting this property to `1` allows users who have delete permissions to delete a record even if it has child records in other tables. Setting it to `0` disables this.
+Establecer esta propiedad en `1` permite a los usuarios que tienen permisos de eliminación eliminar un registro incluso si tiene registros secundarios en otras tablas. Establecerlo en `0` deshabilita esto.
 
 ### `AllowFilters`
 
-Setting this property to `1` allows users to access the filters page to view and modify filters. Setting it to `0` disables this.
+Establecer esta propiedad en `1` permite a los usuarios acceder a la página de filtros para ver y modificar filtros. Establecerlo en `0` deshabilita esto.
 
 ### `AllowPrinting`
 
-Setting this property to `1` allows users to access the 'Print preview' page. Setting it to `0` disables this.
+Establecer esta propiedad en `1` permite a los usuarios acceder a la página 'Vista previa de impresión'. Establecerlo en `0` deshabilita esto.
 
 ### `AllowSavingFilters`
 
-Setting this property to `1` allows users to save filters as HTML code to access them quickly later. Setting it to `0` disables this.
+Establecer esta propiedad en `1` permite a los usuarios guardar filtros como código HTML para acceder a ellos rápidamente más tarde. Establecerlo en `0` deshabilita esto.
 
 ### `AllowSorting`
 
-Setting this property to `1` allows users to sort table records. Setting it to `0` disables this.
+Establecer esta propiedad en `1` permite a los usuarios ordenar los registros de la tabla. Establecerlo en `0` deshabilita esto.
 
 ### `CSVSeparator`
 
-Specifies the field separator to use when downloading data as a CSV file. The default is comma (,).
+Especifica el separador de campos a utilizar al descargar datos como un archivo CSV. El valor predeterminado es coma (,).
 
 ### `ColCaption`
 
-An array that specifies the titles of columns displayed in the table view.
+Una matriz que especifica los títulos de las columnas que se muestran en la vista de tabla.
 
 ### `ColNumber`
 
-An array that specifies which fields to use in the table view. It works by selecting some (or all) of the fields listed in the `QueryFieldsTV` property explained below.
+Una matriz que especifica qué campos usar en la vista de tabla. Funciona seleccionando algunos (o todos) los campos enumerados en la propiedad `QueryFieldsTV` que se explica a continuación.
 
 ### `ColWidth`
 
-An array that specifies the width of each column in the table view. If the `ShowTableHeader` property (explained below) is set to `1`, the `ColWidth` property is overridden by the width values specified in the table view template file (`templates/tablename_templateTV.html`).
+Una matriz que especifica el ancho de cada columna en la vista de tabla. Si la propiedad `ShowTableHeader` (explicada a continuación) se establece en `1`, la propiedad `ColWidth` se anula con los valores de ancho especificados en el archivo de plantilla de la vista de tabla (`templates/tablename_templateTV.html`).
 
 ### `DefaultSortDirection`
 
-A string that can be set to `'asc'` or `'desc'`. Please see the `DefaultSortField` property below.
+Una cadena que se puede establecer en `'asc'` o `'desc'`. Consulte la propiedad `DefaultSortField` a continuación.
 
 ### `DefaultSortField`
 
-Specifies the field to use for default sorting of the table view records. This property can be set to a number to specify which field to sort by from the `QueryFieldsTV` property explained below. Alternatively, it can be set to a string specifying an explicit field name or MySQL expression to use for default sorting.
+Especifica el campo que se utilizará para la ordenación predeterminada de los registros de la vista de tabla. Esta propiedad se puede establecer en un número para especificar qué campo ordenar de la propiedad `QueryFieldsTV` que se explica a continuación. Alternativamente, se puede establecer en una cadena que especifique un nombre de campo explícito o una expresión MySQL para usar en la ordenación predeterminada.
 
 ### `DVClasses`
 
-Was added in AppGini 5.60. Additional CSS classes to apply to the detail view container (space-separated)
+Se agregó en AppGini 5.60. Clases CSS adicionales para aplicar al contenedor de la vista detallada (separadas por espacios).
 
 ### `FilterPage`
 
-Specifies a custom search page to use when users click on the FILTERS button. If no value is provided, the default filters page is used. You can use this feature to create advanced search forms for your tables. Please see [Creating customized search forms](/appgini/tips-and-tutorials/customized-search-forms) for a detailed example.
+Especifica una página de búsqueda personalizada para usar cuando los usuarios hacen clic en el botón FILTROS. Si no se proporciona ningún valor, se utiliza la página de filtros predeterminada. Puede utilizar esta función para crear formularios de búsqueda avanzada para sus tablas. Consulte [Creación de formularios de búsqueda personalizados](/appgini/tips-and-tutorials/customized-search-forms) para obtener un ejemplo detallado.
 
 ### `PrimaryKey`
 
-A string that specifies the name of the primary key field for the table. You shouldn't change this value.
+Una cadena que especifica el nombre del campo de clave principal de la tabla. No debe cambiar este valor.
 
 ### `QueryFieldsCSV`
 
-An associative array specifying the fields used in the query that fetches data when users request to download a CSV file. The array keys represent the field names or MySQL expressions used in the query. The array values represent the column titles to display in the CSV file.
+Una matriz asociativa que especifica los campos utilizados en la consulta que recupera datos cuando los usuarios solicitan descargar un archivo CSV. Las claves de la matriz representan los nombres de los campos o las expresiones MySQL utilizadas en la consulta. Los valores de la matriz representan los títulos de las columnas que se mostrarán en el archivo CSV.
 
 ### `QueryFieldsFilters`
 
-An associative array specifying the fields used in the filters page. The array keys represent the field names. The array values represent the field titles to display in the filters page.
+Una matriz asociativa que especifica los campos utilizados en la página de filtros. Las claves de la matriz representan los nombres de los campos. Los valores de la matriz representan los títulos de los campos que se mostrarán en la página de filtros.
 
 ### `QueryFieldsTV`
 
-An associative array specifying the fields that can be displayed in the table view. The array keys represent the field names or MySQL expressions used in the query. The array values represent the column titles. The fields actually displayed in the table view are specified in the `ColNumber` array explained above.
+Una matriz asociativa que especifica los campos que se pueden mostrar en la vista de tabla. Las claves de la matriz representan los nombres de los campos o las expresiones MySQL utilizadas en la consulta. Los valores de la matriz representan los títulos de las columnas. Los campos que realmente se muestran en la vista de tabla se especifican en la matriz `ColNumber` explicada anteriormente.
 
 ### `QueryFrom`
 
-A string that specifies the contents of the FROM part of the query used in the table view and the CSV file.
+Una cadena que especifica el contenido de la parte FROM de la consulta utilizada en la vista de tabla y el archivo CSV.
 
 ### `QuickSearch`
 
-A number that specifies how to display the quick search box. It can take any of the following values:
+Un número que especifica cómo mostrar el cuadro de búsqueda rápida. Puede tomar cualquiera de los siguientes valores:
 
-*   `0`: no quick search box shown.
-*   `1`: quick box shown on the top left of the table view.
-*   `2`: quick box shown on the top center of the table view.
-*   `3`: quick box shown on the top right of the table view.
+*   `0`: no se muestra ningún cuadro de búsqueda rápida.
+*   `1`: cuadro rápido que se muestra en la parte superior izquierda de la vista de tabla.
+*   `2`: cuadro rápido que se muestra en la parte superior central de la vista de tabla.
+*   `3`: cuadro rápido que se muestra en la parte superior derecha de la vista de tabla.
 
-**Update:** As of AppGini 5.20 and above, setting this property to `0` hides the quick search box, and setting it to any non-zero value displays the quick search box. The position of the box is determined by the screen size.
+**Actualización:** A partir de AppGini 5.20 y versiones posteriores, establecer esta propiedad en `0` oculta el cuadro de búsqueda rápida, y establecerla en cualquier valor distinto de cero muestra el cuadro de búsqueda rápida. La posición del cuadro está determinada por el tamaño de la pantalla.
 
 ### `QuickSearchText`
 
-A string that specifies the title to display besides the quick search box.
+Una cadena que especifica el título que se mostrará junto al cuadro de búsqueda rápida.
 
 ### `RecordsPerPage`
 
-A number that specifies how many records to show per page in the table view.
+Un número que especifica cuántos registros mostrar por página en la vista de tabla.
 
 ### `RedirectAfterInsert`
 
-If users are allowed to add new records to the table, this property specifies the URL to which users will be redirected after adding the new record.
+Si los usuarios pueden agregar nuevos registros a la tabla, esta propiedad especifica la URL a la que se redirigirá a los usuarios después de agregar el nuevo registro.
 
 ### `SelectedTemplate`
 
-A string that specifies the path to the HTML template file to use for formatting a currently-selected record in the table view.
+Una cadena que especifica la ruta al archivo de plantilla HTML que se utilizará para formatear un registro actualmente seleccionado en la vista de tabla.
 
 ### `SeparateDV`
 
-A number that is set to `1` to display the detail view in a separate page, or `0` to display it below the table view.
+Un número que se establece en `1` para mostrar la vista detallada en una página separada, o `0` para mostrarla debajo de la vista de tabla.
 
 ### `ShowTableHeader`
 
-A number that is set to `1` (the default) to display column titles above the table view. Table titles are specified in the `ColCaption` property explained above. If set to `0`, column titles are not displayed (this is useful if you need to change the horizontal layout of fields in the template file `templates/tablename_templateTV.html` to a different non-horizontal layout).
+Un número que se establece en `1` (el valor predeterminado) para mostrar los títulos de las columnas sobre la vista de tabla. Los títulos de las tablas se especifican en la propiedad `ColCaption` explicada anteriormente. Si se establece en `0`, no se muestran los títulos de las columnas (esto es útil si necesita cambiar el diseño horizontal de los campos en el archivo de plantilla `templates/tablename_templateTV.html` a un diseño no horizontal diferente).
 
 ### `TableTitle`
 
-The title that will be displayed above the table view.
+El título que se mostrará sobre la vista de tabla.
 
 ### `Template`
 
-A string that specifies the path to the HTML template file to use for formatting all records in the table view except the currently-selected one.
+Una cadena que especifica la ruta al archivo de plantilla HTML que se utilizará para formatear todos los registros en la vista de tabla, excepto el actualmente seleccionado.
 
 ### `TemplateDV`
 
-Was added in AppGini 5.61. A string that specifies the path (relative to the main directory of the application) to the HTML template file to use for displaying the detail view.
+Se agregó en AppGini 5.61. Una cadena que especifica la ruta (relativa al directorio principal de la aplicación) al archivo de plantilla HTML que se utilizará para mostrar la vista detallada.
 
 ### `TemplateDVP`
 
-Was added in AppGini 5.61. A string that specifies the path (relative to the main directory of the application) to the HTML template file to use for displaying the print preview of the detail view.
+Se agregó en AppGini 5.61. Una cadena que especifica la ruta (relativa al directorio principal de la aplicación) al archivo de plantilla HTML que se utilizará para mostrar la vista previa de impresión de la vista detallada.
 
 ### `TVClasses`
 
-Was added in AppGini 5.60. Additional CSS classes to apply to the table view container (space-separated)
+Se agregó en AppGini 5.60. Clases CSS adicionales para aplicar al contenedor de la vista de tabla (separadas por espacios).
 
-## Inspecting the `DataList` object
+## Inspeccionar el objeto `DataList`
 
-For debugging purposes, you can inspect the contents of the `DataList` object by adding the following code into the `tablename_init` hook function in the generated `hooks/tablename.php` file (replace `tablename` by the actual name of the concerned table):
+Para fines de depuración, puede inspeccionar el contenido del objeto `DataList` agregando el siguiente código en la función hook `tablename_init` en el archivo generado `hooks/tablename.php` (reemplace `tablename` por el nombre real de la tabla en cuestión):
 
 ```php
 function tablename_init(&$options, $memberInfo, &$args) {
@@ -162,5 +162,4 @@ function tablename_init(&$options, $memberInfo, &$args) {
 }
 ```
 
-The above code will output the contents of the `DataList` object to the browser above the table view. You can use this to inspect, debug and change the various properties. But you should use this carefully in a protected environment for testing purposes only.
-
+El código anterior mostrará el contenido del objeto `DataList` en el navegador sobre la vista de tabla. Puede usar esto para inspeccionar, depurar y cambiar las diversas propiedades. Pero debe usar esto con cuidado en un entorno protegido solo para fines de prueba.

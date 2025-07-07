@@ -1,34 +1,33 @@
 ---
-title: Working with tables
-linkTitle: Working with tables
+title: Trabajar con tablas
+linkTitle: Trabajar con tablas
 slug: help/work-with-projects/working-with-tables
 ---
 
-# Working with tables
+# Trabajar con tablas
 
-## How can I add a table to a project?
+## ¿Cómo puedo agregar una tabla a un proyecto?
 
-Make sure you have an open project, and click on the 'New Table' icon on the tool bar, or from the Tables menu, select New Table. 
+Asegúrese de tener un proyecto abierto y haga clic en el icono 'Nueva tabla' en la barra de herramientas, o en el menú Tablas, seleccione Nueva tabla.
 
-![New Table](https://cdn.bigprof.com/appgini-desktop/help/appgini-new-table.png)
+![Nueva tabla](https://cdn.bigprof.com/appgini-desktop/help/appgini-new-table.png)
 
-## How can I rename a table?
+## ¿Cómo puedo cambiar el nombre de una tabla?
 
-Select the table by clicking on it in the Project Browser (if it is not already highlighted) and click on its name or press F2. A cursor will appear allowing you to rename the table. 
+Seleccione la tabla haciendo clic en ella en el Explorador de proyectos (si aún no está resaltada) y haga clic en su nombre o presione F2. Aparecerá un cursor que le permitirá cambiar el nombre de la tabla.
 
-## How can I delete a table?
+## ¿Cómo puedo eliminar una tabla?
 
-Select the table by clicking on it in the Project Browser and press the Delete button. Please note that deleting a table from AppGini does not delete it from your database if it already exists. This is done to protect your data from getting deleted unintentionally. If you really want to delete (drop) the table from your database, you can do so using phpMyAdmin or a similar MySQL administration utility.
+Seleccione la tabla haciendo clic en ella en el Explorador de proyectos y presione el botón Eliminar. Tenga en cuenta que eliminar una tabla de AppGini no la elimina de su base de datos si ya existe. Esto se hace para proteger sus datos de ser eliminados involuntariamente. Si realmente desea eliminar (soltar) la tabla de su base de datos, puede hacerlo utilizando phpMyAdmin o una utilidad de administración de MySQL similar.
 
-## What about table properties?
+## ¿Qué pasa con las propiedades de la tabla?
 
-Click with the mouse on any property and press F1 to obtain help about its function.
+Haga clic con el mouse en cualquier propiedad y presione F1 para obtener ayuda sobre su función.
 
-## Can I use a table from another AppGini project?
+## ¿Puedo usar una tabla de otro proyecto de AppGini?
 
-Yes, instead of having to recreate a table and all its fields, you can simply copy it from another AppGini project and paste it into your current project. Just use the Copy and Paste icons from the top toolbar.
+Sí, en lugar de tener que recrear una tabla y todos sus campos, simplemente puede copiarla de otro proyecto de AppGini y pegarla en su proyecto actual. Simplemente use los iconos Copiar y Pegar de la barra de herramientas superior.
 
-## Anonymous table permissions
+## Permisos de tabla anónimos
 
-By default, your new table will be accessible only to the admin users after uploading your AppGini application to the server. You can change the table permissions to allow access for anonymous users and/or other groups from the admin area of the generated application.
-
+De forma predeterminada, su nueva tabla solo será accesible para los usuarios administradores después de cargar su aplicación AppGini en el servidor. Puede cambiar los permisos de la tabla para permitir el acceso a usuarios anónimos y/u otros grupos desde el área de administración de la aplicación generada.

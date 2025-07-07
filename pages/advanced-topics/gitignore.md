@@ -1,57 +1,57 @@
 ---
-title: AppGini files to ignore in git repositories
+title: Archivos de AppGini a ignorar en repositorios git
 linkTitle: gitignore
 slug: help/advanced-topics/gitignore
-description: AppGini files to ignore in git repositories to avoid committing unnecessary/unsafe files to your repository.
-keywords: gitignore, git, repository, AppGini, files, folders, ignore
+description: Archivos de AppGini a ignorar en repositorios git para evitar confirmar archivos innecesarios/inseguros en su repositorio.
+keywords: gitignore, git, repositorio, AppGini, archivos, carpetas, ignorar
 ---
 
-# AppGini files to ignore in git repositories
+# Archivos de AppGini a ignorar en repositorios git
 
-If you plan to [use a version control system like git to manage your AppGini application](/appgini/screencasts/how-to-use-git-with-appgini-to-manage-code-changes),
-you should ignore certain files and folders to avoid committing unnecessary/unsafe files
-to your repository.
+Si planea [usar un sistema de control de versiones como git para administrar su aplicación AppGini](/appgini/screencasts/how-to-use-git-with-appgini-to-manage-code-changes),
+debe ignorar ciertos archivos y carpetas para evitar confirmar archivos innecesarios/inseguros
+en su repositorio.
 
-But first, let's discuss the recommended way to set up your repository for an AppGini application.
-The instructions below assume you are using [git](https://git-scm.com/) as your version control system.
-Git is the most popular version control system and is widely used by developers around the world.
+Pero primero, analicemos la forma recomendada de configurar su repositorio para una aplicación AppGini.
+Las siguientes instrucciones asumen que está utilizando [git](https://git-scm.com/) como su sistema de control de versiones.
+Git es el sistema de control de versiones más popular y es ampliamente utilizado por desarrolladores de todo el mundo.
 
-## Recommended repository structure for AppGini applications
+## Estructura de repositorio recomendada para aplicaciones AppGini
 
-When you generate an AppGini application, you are asked to select the output folder for the generated files.
-When the application is generated inside that folder, it will create the following structure:
+Cuando genera una aplicación AppGini, se le pide que seleccione la carpeta de salida para los archivos generados.
+Cuando la aplicación se genera dentro de esa carpeta, creará la siguiente estructura:
 
 ```
-your-app-folder/
+su-carpeta-de-aplicacion/
 	admin/
 	hooks/
 	images/
 	resources/
 	templates/
 	index.php
-	.. # other files
+	.. # otros archivos
 ```
 
-Where `your-app-folder` is the folder you selected when generating the application.
-**We don't recommend creating (initializing) the git repository inside this folder.**
+Donde `su-carpeta-de-aplicacion` es la carpeta que seleccionó al generar la aplicación.
+**No recomendamos crear (inicializar) el repositorio git dentro de esta carpeta.**
 
-The reason is that the repository data is stored in a `.git` folder inside the repository root folder.
-This folder might get uploaded to your server when you deploy your application, leading to exposing
-your repository data to the public. This is a security risk.
+La razón es que los datos del repositorio se almacenan en una carpeta `.git` dentro de la carpeta raíz del repositorio.
+Esta carpeta podría cargarse en su servidor cuando implemente su aplicación, lo que provocaría la exposición
+de los datos de su repositorio al público. Esto es un riesgo de seguridad.
 
-Instead, we recommend setting the folder structure as follows before generating the application:
+En su lugar, recomendamos configurar la estructura de carpetas de la siguiente manera antes de generar la aplicación:
 
 ```
-your-app-folder/
+su-carpeta-de-aplicacion/
 	app/
 ```
 
-Then, generate the application inside the `app` folder. This way, the repository root folder will be
-`your-app-folder`, and the `.git` folder will be at the root level, not inside the application folder.
-Your folder structure after generating the application will look like this:
+Luego, genere la aplicación dentro de la carpeta `app`. De esta manera, la carpeta raíz del repositorio será
+`su-carpeta-de-aplicacion`, y la carpeta `.git` estará en el nivel raíz, no dentro de la carpeta de la aplicación.
+Su estructura de carpetas después de generar la aplicación se verá así:
 
 ```
-your-app-folder/
+su-carpeta-de-aplicacion/
 	app/
 		admin/
 		hooks/
@@ -59,14 +59,14 @@ your-app-folder/
 		resources/
 		templates/
 		index.php
-		.. # other files
+		.. # otros archivos
 ```
 
-After initializing the git repository in `your-app-folder` using the command `git init`, your
-folder structure will look like this:
+Después de inicializar el repositorio git en `su-carpeta-de-aplicacion` usando el comando `git init`, su
+estructura de carpetas se verá así:
 
 ```
-your-app-folder/
+su-carpeta-de-aplicacion/
 	.git/
 	app/
 		admin/
@@ -75,29 +75,29 @@ your-app-folder/
 		resources/
 		templates/
 		index.php
-		.. # other files
+		.. # otros archivos
 ```
 
-You can then safely upload the contents of the `app` folder to your server, without exposing your
-repository data.
+Luego puede cargar de forma segura el contenido de la carpeta `app` en su servidor, sin exponer los
+datos de su repositorio.
 
-## Files and folders to ignore in your git repository
+## Archivos y carpetas a ignorar en su repositorio git
 
-Some files and folders generated by AppGini are not meant to be committed to your repository.
-This is either because they are generated dynamically by your AppGini application, or because they contain sensitive
-information like database connection details.
+Algunos archivos y carpetas generados por AppGini no están destinados a ser confirmados en su repositorio.
+Esto se debe a que son generados dinámicamente por su aplicación AppGini, o porque contienen información confidencial
+como los detalles de conexión a la base de datos.
 
-To ignore these files and folders, you should create a `.gitignore` file in the root of your repository
-and add the following lines to it:
+Para ignorar estos archivos y carpetas, debe crear un archivo `.gitignore` en la raíz de su repositorio
+y agregarle las siguientes líneas:
 
 ```
-# ignore files containing sensitive information
+# ignorar archivos que contienen información confidencial
 app/config.php
 app/config.bak.php
 app/file-uploader.php
 app/admin/backups
 
-# ignore files generated dynamically by AppGini application
+# ignorar archivos generados dinámicamente por la aplicación AppGini
 app/setup.md5
 app/tmp
 app/admin/tmp
@@ -106,30 +106,30 @@ app/import-csv
 !app/import-csv/index.html
 !app/import-csv/.htaccess
 
-# ignore user-uploaded files
+# ignorar archivos cargados por el usuario
 app/images
 !app/images/index.html
 !app/images/blank.gif
 
-# ignore other common artifacts
+# ignorar otros artefactos comunes
 *.log
 *.cache
 *.zip
 ```
 
-This will tell git to ignore the listed files and folders when committing changes to your repository.
+Esto le dirá a git que ignore los archivos y carpetas enumerados al confirmar cambios en su repositorio.
 
-## TIP: Store your project file inside your repository
+## CONSEJO: Almacene su archivo de proyecto dentro de su repositorio
 
-Another advantage of setting up your repository as described above is that you can store your AppGini
-project file (the `.axp` file) inside your repository. This way, you can easily keep track of changes
-to your project file and revert to previous versions if needed.
+Otra ventaja de configurar su repositorio como se describe anteriormente es que puede almacenar su archivo de proyecto AppGini
+(el archivo `.axp`) dentro de su repositorio. De esta manera, puede realizar un seguimiento fácil de los cambios
+en su archivo de proyecto y revertir a versiones anteriores si es necesario.
 
-To do this, simply copy your `.axp` file to the root of your repository and commit it to your repository.
-The folder structure of your repository will look like this:
+Para hacer esto, simplemente copie su archivo `.axp` a la raíz de su repositorio y confírmelo en su repositorio.
+La estructura de carpetas de su repositorio se verá así:
 
 ```
-your-app-folder/
+su-carpeta-de-aplicacion/
 	.git/
 	app/
 		admin/
@@ -138,16 +138,15 @@ your-app-folder/
 		resources/
 		templates/
 		index.php
-		.. # other files
-	your-app.axp
+		.. # otros archivos
+	su-aplicacion.axp
 ```
 
-Where `your-app.axp` is your AppGini project file. Please note that in the above example, the project file
-is stored in the root of the repository, outside the `app` folder. This is recommended to avoid exposing
-your project file to the public. The project file contains your entire database structure and settings,
-so it's important to keep it secure.
+Donde `su-aplicacion.axp` es su archivo de proyecto AppGini. Tenga en cuenta que en el ejemplo anterior, el archivo de proyecto
+se almacena en la raíz del repositorio, fuera de la carpeta `app`. Esto se recomienda para evitar exponer
+su archivo de proyecto al público. El archivo de proyecto contiene toda la estructura y configuración de su base de datos,
+por lo que es importante mantenerlo seguro.
 
-## Related topics
+## Temas relacionados
 
-* [Using git with AppGini to manage code changes](/appgini/screencasts/how-to-use-git-with-appgini-to-manage-code-changes)
-
+* [Uso de git con AppGini para administrar cambios de código](/appgini/screencasts/how-to-use-git-with-appgini-to-manage-code-changes)

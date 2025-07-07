@@ -1,20 +1,19 @@
 ---
-title: Hooks (AKA events)
-linkTitle: Hooks/events
+title: Hooks (también conocidos como eventos)
+linkTitle: Hooks/eventos
 slug: help/advanced-topics/hooks
-description: Hooks (events) are means of advanced customization of AppGini-generated apps. They allow you to customize your application behavior in a way that is separate from the generated code. This way, your custom code doesn't get overwritten if you regenerate your app later, and your project is ready for use directly after code generation without any further modifications.
-keywords: hooks, events, customization, advanced, code, generated, app, persistent, custom code, code generation, insert, delete, edit, select, records, actions, behavior, appearance, DataList object, tablename_init, hook function, table, DataList properties, global hooks, table-specific hooks, links-home, links-navmenu, footer-extras, header-extras
+description: Los hooks (eventos) son medios de personalización avanzada de las aplicaciones generadas por AppGini. Le permiten personalizar el comportamiento de su aplicación de una manera que está separada del código generado. De esta manera, su código personalizado no se sobrescribe si regenera su aplicación más tarde, y su proyecto está listo para usar directamente después de la generación del código sin ninguna modificación adicional.
+keywords: hooks, eventos, personalización, avanzado, código, generado, aplicación, persistente, código personalizado, generación de código, insertar, eliminar, editar, seleccionar, registros, acciones, comportamiento, apariencia, objeto DataList, tablename_init, función hook, tabla, propiedades de DataList, hooks globales, hooks específicos de tabla, links-home, links-navmenu, footer-extras, header-extras
 ---
 
-# Hooks (AKA events)
+# Hooks (también conocidos como eventos)
 
-AppGini Hooks (events) are means of advanced customization of AppGini-generated apps. They allow you to customize your application behavior in a way that is separate from the generated code. This way, your custom code doesn't get overwritten if you regenerate your app later, and your project is ready for use directly after code generation without any further modifications.
+Los Hooks (eventos) de AppGini son medios de personalización avanzada de las aplicaciones generadas por AppGini. Le permiten personalizar el comportamiento de su aplicación de una manera que está separada del código generado. De esta manera, su código personalizado no se sobrescribe si regenera su aplicación más tarde, y su proyecto está listo para usar directamente después de la generación del código sin ninguna modificación adicional.
 
-> ***Hooks work by intercepting users' actions (inserts, deletes, edits, selection of records, ... etc), and controlling what happens before and after these actions.***
+> ***Los hooks funcionan interceptando las acciones de los usuarios (inserciones, eliminaciones, ediciones, selección de registros, etc.) y controlando lo que sucede antes y después de estas acciones.***
 
-## How do hooks work?
+## ¿Cómo funcionan los hooks?
 
-To use hooks, you should place your code modifications in the generated `hooks` folder. This folder contains a set of files that AppGini creates only once and they don't get overwritten later. These files contain hook functions that you can define. Your AppGini app calls these functions when performing specific tasks and executes the code you define in them.
+Para utilizar los hooks, debe colocar las modificaciones de su código en la carpeta `hooks` generada. Esta carpeta contiene un conjunto de archivos que AppGini crea solo una vez y que no se sobrescriben más tarde. Estos archivos contienen funciones hook que puede definir. Su aplicación AppGini llama a estas funciones al realizar tareas específicas y ejecuta el código que usted define en ellas.
 
-For example, to send a notification email when a new order is added to the `orders` table, you should add the mail sending code in the `orders_after_insert()` function inside the `hooks/orders.php` file. This function is automatically called by the AppGini-generated application whenever a new record is created in the `orders` table. Any code you place inside that function is executed when a new record is added to that table through the AppGini-generated interface.
-
+Por ejemplo, para enviar un correo electrónico de notificación cuando se agrega un nuevo pedido a la tabla `orders`, debe agregar el código de envío de correo en la función `orders_after_insert()` dentro del archivo `hooks/orders.php`. Esta función es llamada automáticamente por la aplicación generada por AppGini cada vez que se crea un nuevo registro en la tabla `orders`. Cualquier código que coloque dentro de esa función se ejecuta cuando se agrega un nuevo registro a esa tabla a través de la interfaz generada por AppGini.

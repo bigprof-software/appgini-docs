@@ -1,37 +1,35 @@
 ---
-title: Working with table fields
-linkTitle: Working with fields
+title: Trabajar con campos de tabla
+linkTitle: Trabajar con campos
 slug: help/working-with-projects/working-with-table-fields
 ---
 
-# Working with table fields
+# Trabajar con campos de tabla
 
-## How can I add a field to a project?
+## ¿Cómo puedo agregar un campo a un proyecto?
 
-Each table in your AppGini project would include at least one field. To create a new field, select a table from the Project Browser and then click the 'New Field' tool bar icon or open the Tables menu > Fields > New Field. You might also use CTRL + F keyboard shortcut.
+Cada tabla en su proyecto AppGini incluiría al menos un campo. Para crear un nuevo campo, seleccione una tabla del Explorador de proyectos y luego haga clic en el icono de la barra de herramientas 'Nuevo campo' o abra el menú Tablas > Campos > Nuevo campo. También puede usar el atajo de teclado CTRL + F.
 
-![New Field](https://cdn.bigprof.com/appgini-desktop/help/appgini-new-field.png)
+![Nuevo campo](https://cdn.bigprof.com/appgini-desktop/help/appgini-new-field.png)
 
-## How can I rename a field?
+## ¿Cómo puedo cambiar el nombre de un campo?
 
-Select the field by clicking on it in the Project Browser (if it is not already highlighted) and click on its name or press F2. A cursor will appear allowing you to rename the field.
+Seleccione el campo haciendo clic en él en el Explorador de proyectos (si aún no está resaltado) y haga clic en su nombre o presione F2. Aparecerá un cursor que le permitirá cambiar el nombre del campo.
 
-> **Tip:** AppGini handles some field names in a special manner. For example, if you name your field "id", AppGini will automatically set it as an auto-increment primary key integer field. If you name it "comments", AppGini will set it as a text field that is editable in a rich text box. Special names also include "date", "*_date" (that is any name ending in "_date"), "description", "photo", "image" and "email".
+> **Consejo:** AppGini maneja algunos nombres de campo de manera especial. Por ejemplo, si nombra su campo "id", AppGini lo establecerá automáticamente como un campo entero de clave principal de incremento automático. Si lo nombra "comentarios", AppGini lo establecerá como un campo de texto que se puede editar en un cuadro de texto enriquecido. Los nombres especiales también incluyen "fecha", "*_fecha" (es decir, cualquier nombre que termine en "_fecha"), "descripción", "foto", "imagen" y "correo electrónico".
 
-## Can I change the order of fields in a table?
+## ¿Puedo cambiar el orden de los campos en una tabla?
 
-Yes. Click on a field in the left panel, and then click on the down or up arrow in the toolbar to move the field up or down. If you prefer to use the keyboard, select the field and press Ctrl+u (move the field up) or Ctrl+d (move the field down).
+Sí. Haga clic en un campo en el panel izquierdo y luego haga clic en la flecha hacia abajo o hacia arriba en la barra de herramientas para mover el campo hacia arriba o hacia abajo. Si prefiere usar el teclado, seleccione el campo y presione Ctrl+u (mover el campo hacia arriba) o Ctrl+d (mover el campo hacia abajo).
 
-## Can I clone/copy a field?
+## ¿Puedo clonar/copiar un campo?
 
-You can copy a field from another AppGini project or from the same project using the Copy and Paste icons from the top toolbar.
+Puede copiar un campo de otro proyecto de AppGini o del mismo proyecto utilizando los iconos Copiar y Pegar de la barra de herramientas superior.
 
-## How can I delete a field?
+## ¿Cómo puedo eliminar un campo?
 
-Select the field by clicking on it in the Project Browser and press the Delete button.
+Seleccione el campo haciendo clic en él en el Explorador de proyectos y presione el botón Eliminar.
 
-## What about field properties?
+## ¿Qué pasa con las propiedades del campo?
 
-In AppGini, click with the mouse on any property and press F1 to view context help explaining the property.
-
-
+En AppGini, haga clic con el mouse en cualquier propiedad y presione F1 para ver la ayuda contextual que explica la propiedad.

@@ -1,16 +1,16 @@
 ---
-title: Global hooks
-linkTitle: Global hooks
+title: Hooks globales
+linkTitle: Hooks globales
 slug: help/advanced-topics/hooks/global-hooks
-description: Global hook functions are defined in the generated `hooks/__global.php` file. This file contains hook functions that get called when a new member signs up, when a member signs in successfully and when a member fails to sign in. You could also define your own PHP functions here and they'll be visible to all your AppGini application pages.
-keywords: global hooks, login_ok, login_failed, member_activity, sendmail_handler, child_records_config
+description: Las funciones de hook globales se definen en el archivo `hooks/__global.php` generado. Este archivo contiene funciones de hook que se llaman cuando un nuevo miembro se registra, cuando un miembro inicia sesión correctamente y cuando un miembro no puede iniciar sesión. También podría definir sus propias funciones PHP aquí y serán visibles para todas las páginas de su aplicación AppGini.
+keywords: hooks globales, login_ok, login_failed, member_activity, sendmail_handler, child_records_config
 ---
 
-# Global hooks
+# Hooks globales
 
-Global hook functions are defined in the generated `hooks/__global.php` file. This file contains hook functions that get called when a new member signs up, when a member signs in successfully and when a member fails to sign in. You could also define your own PHP functions here and they'll be visible to all your AppGini application pages.  
-  
-_The following hook functions are defined in this file:_
+Las funciones de hook globales se definen en el archivo `hooks/__global.php` generado. Este archivo contiene funciones de hook que se llaman cuando un nuevo miembro se registra, cuando un miembro inicia sesión correctamente y cuando un miembro no puede iniciar sesión. También podría definir sus propias funciones PHP aquí y serán visibles para todas las páginas de su aplicación AppGini.
+
+_Las siguientes funciones de hook se definen en este archivo:_
 
 * [`login_ok()`](#login_ok)
 * [`login_failed()`](#login_failed)
@@ -20,7 +20,7 @@ _The following hook functions are defined in this file:_
 
 ## `login_ok()`
 
-This hook function is called when a member successfully signs in. It can be used for example to redirect members to specific pages rather than the home page, or to save a log of members' activity, … etc. If you open the generated `hooks/__global.php` file in a text editor, you can see this function defined as follows:
+Esta función de hook se llama cuando un miembro inicia sesión correctamente. Se puede usar, por ejemplo, para redirigir a los miembros a páginas específicas en lugar de la página de inicio, o para guardar un registro de la actividad de los miembros, etc. Si abre el archivo `hooks/__global.php` generado en un editor de texto, puede ver esta función definida de la siguiente manera:
 
 ```php
 function login_ok($memberInfo, &$args) {
@@ -29,33 +29,32 @@ function login_ok($memberInfo, &$args) {
 }
 ```
 
-### Parameters:  
+### Parámetros:
 
-*   `$memberInfo` is an array containing details of the member who signed in. Please refer to [`memberInfo`](/appgini/help/advanced-topics/hooks/memberInfo-array/) for more details.
-*   `$args` is currently not implemented but is reserved for future use.
+*   `$memberInfo` es una matriz que contiene detalles del miembro que inició sesión. Consulte [`memberInfo`](/appgini/help/advanced-topics/hooks/memberInfo-array/) para obtener más detalles.
+*   `$args` actualmente no está implementado pero está reservado para uso futuro.
 
-  
-### Return value:  
+### Valor devuelto:
 
-A string containing the URL to redirect the member to. It can be a relative or absolute URL. If the return string is empty, the member is redirected to the homepage (`index.php`), which is the default behavior.  
-  
-  
-### Example:  
+Una cadena que contiene la URL a la que redirigir al miembro. Puede ser una URL relativa o absoluta. Si la cadena de devolución está vacía, el miembro es redirigido a la página de inicio (`index.php`), que es el comportamiento predeterminado.
 
-Let's add code to save a log of members' login activity. Each time a member signs in, we'll record his username, IP address, login date and time into a log file. Here's how the hook function looks like after adding this code:
+
+### Ejemplo:
+
+Agreguemos código para guardar un registro de la actividad de inicio de sesión de los miembros. Cada vez que un miembro inicia sesión, registraremos su nombre de usuario, dirección IP, fecha y hora de inicio de sesión en un archivo de registro. Así es como se ve la función de hook después de agregar este código:
 
 ```php
 function login_ok($memberInfo, &$args) {
-    // the log file where we'll save member activity
+    // el archivo de registro donde guardaremos la actividad de los miembros
     $logFile = 'members.log';
  
-    // the member details we'll be saving into the file
+    // los detalles del miembro que guardaremos en el archivo
     $username = $memberInfo['username'];
     $ip = $memberInfo['IP'];
     $date = date('m/d/Y');
     $time = date('h:i:s a');
  
-    // open the log file and append member login details
+    // abrir el archivo de registro y agregar los detalles de inicio de sesión del miembro
     file_put_contents($logFile, "$date,$time,$username,$ip\n", FILE_APPEND);
  
     return '';
@@ -64,7 +63,7 @@ function login_ok($memberInfo, &$args) {
 
 ## `login_failed()`
 
-This hook function is called when a login attempt fails. It can be used for example to log login errors. If you open the generated `hooks/__global.php` file in a text editor, you can see this function defined as follows:
+Esta función de hook se llama cuando falla un intento de inicio de sesión. Se puede usar, por ejemplo, para registrar errores de inicio de sesión. Si abre el archivo `hooks/__global.php` generado en un editor de texto, puede ver esta función definida de la siguiente manera:
 
 ```php
 function login_failed($attempt, &$args) {
@@ -72,36 +71,36 @@ function login_failed($attempt, &$args) {
 }
 ```
 
-### Parameters:
+### Parámetros:
 
-*   `$attempt` is an associative array containing details of the failed login attempt. It contains the following keys:
-    * `username`: the username entered during the login attempt.
-    * `password`: the password entered during the login attempt.
-    * `IP`: the IP address of the client attempting to log in.
-*   `$args` is currently not implemented but is reserved for future use.
+*   `$attempt` es una matriz asociativa que contiene detalles del intento de inicio de sesión fallido. Contiene las siguientes claves:
+    * `username`: el nombre de usuario ingresado durante el intento de inicio de sesión.
+    * `password`: la contraseña ingresada durante el intento de inicio de sesión.
+    * `IP`: la dirección IP del cliente que intenta iniciar sesión.
+*   `$args` actualmente no está implementado pero está reservado para uso futuro.
 
-### Return value:
+### Valor devuelto:
 
-None.
+Ninguno.
 
-### Example:
+### Ejemplo:
 
-To notify the admin when a user fails to log in, we can add this code into the `login_failed()` function:
+Para notificar al administrador cuando un usuario no puede iniciar sesión, podemos agregar este código a la función `login_failed()`:
 
 ```php
 function login_failed($attempt, &$args){
-    // email of admin
+    // correo electrónico del administrador
     $adminEmail = 'admin@domain.com';
  
-    // someone trying to log as admin?
+    // ¿alguien intenta iniciar sesión como administrador?
     if($attempt['username'] == 'admin'){
  
-        // send the email
+        // enviar el correo electrónico
         @mail(
-            $adminEmail, // email recipient
-            "Failed login attempt", // email subject
-            "Someone from {$attempt['IP']} tried to log in ".
-            "as admin using the password {$attempt['password']}.", // message
+            $adminEmail, // destinatario del correo electrónico
+            "Intento de inicio de sesión fallido", // asunto del correo electrónico
+            "Alguien desde {$attempt['IP']} intentó iniciar sesión ".
+            "como administrador usando la contraseña {$attempt['password']}.", // mensaje
             "From: $adminEmail"
         );
     }
@@ -110,7 +109,7 @@ function login_failed($attempt, &$args){
 
 ## `member_activity()`
 
-This hook function is called when a new member signs up. If you open the generated `hooks/__global.php` file in a text editor, you can see this function defined as follows:
+Esta función de hook se llama cuando un nuevo miembro se registra. Si abre el archivo `hooks/__global.php` generado en un editor de texto, puede ver esta función definida de la siguiente manera:
 
 ```php
 function member_activity($memberInfo, $activity, &$args){
@@ -131,53 +130,53 @@ function member_activity($memberInfo, $activity, &$args){
 }
 ```
 
-### Parameters:
+### Parámetros:
 
-*   `$memberInfo` is an associative array containing details of the member who signed up. Please refer to [`memberInfo`](/appgini/help/advanced-topics/hooks/memberInfo-array/) for more details.
-*   `$activity` is a string indicating the type of activity. It can be one of the following values:
-    * `pending`: the member signed up but his account is pending approval by the admin.
-    * `automatic`: the member signed up and his account is automatically approved.
-    * `profile`: the member updated his profile.
-    * `password`: the member changed his password.
-*   `$args` is currently not implemented but is reserved for future use.
+*   `$memberInfo` es una matriz asociativa que contiene detalles del miembro que se registró. Consulte [`memberInfo`](/appgini/help/advanced-topics/hooks/memberInfo-array/) para obtener más detalles.
+*   `$activity` es una cadena que indica el tipo de actividad. Puede ser uno de los siguientes valores:
+    * `pending`: el miembro se registró pero su cuenta está pendiente de aprobación por parte del administrador.
+    * `automatic`: el miembro se registró y su cuenta se aprueba automáticamente.
+    * `profile`: el miembro actualizó su perfil.
+    * `password`: el miembro cambió su contraseña.
+*   `$args` actualmente no está implementado pero está reservado para uso futuro.
 
-### Return value:
+### Valor devuelto:
 
-None.
+Ninguno.
 
-### Example:
+### Ejemplo:
 
-This example sends a welcome email to new users who were automatically approved, and a 'please wait' email for new users pending approval. 
+Este ejemplo envía un correo electrónico de bienvenida a los nuevos usuarios que fueron aprobados automáticamente y un correo electrónico de "espere por favor" para los nuevos usuarios pendientes de aprobación.
 
 ```php
 function member_activity($memberInfo, $activity, &$args){
     switch($activity){
         case 'pending':
-            // send 'please wait' email to new user
+            // enviar correo electrónico de "espere por favor" al nuevo usuario
             @mail(
-                $memberInfo['email'], // email recipient
-                "Thank you for signing up at our website!", // subject
+                $memberInfo['email'], // destinatario del correo electrónico
+                "¡Gracias por registrarse en nuestro sitio web!", // asunto
                  
-                "Dear {$memberInfo['username']}, \n\n".
-                "We'll review and approve your new account within a few hours.\n\n".
-                "Thank you.", // message
+                "Estimado {$memberInfo['username']}, \n\n".
+                "Revisaremos y aprobaremos su nueva cuenta en unas pocas horas.\n\n".
+                "Gracias.", // mensaje
  
-                "From: support@domain.com" // the "From" address the user will see
+                "From: support@domain.com" // la dirección "De" que verá el usuario
             );
             break;
  
         case 'automatic':
-            // send 'welcome' email to new user
+            // enviar correo electrónico de "bienvenida" al nuevo usuario
             @mail(
-                $memberInfo['email'], // email recipient
-                "Thank you for signing up at our website!", // subject
+                $memberInfo['email'], // destinatario del correo electrónico
+                "¡Gracias por registrarse en nuestro sitio web!", // asunto
                  
-                "Dear {$memberInfo['username']}, \n\n".
-                "You can now log into our website from this page:\n".
+                "Estimado {$memberInfo['username']}, \n\n".
+                "Ahora puede iniciar sesión en nuestro sitio web desde esta página:\n".
                 "http://www.domain.com/appgini\n\n".
-                "Thank you.", // message
+                "Gracias.", // mensaje
  
-                "From: support@domain.com" // the "From" address the user will see
+                "From: support@domain.com" // la dirección "De" que verá el usuario
             );
             break;
  
@@ -193,7 +192,7 @@ function member_activity($memberInfo, $activity, &$args){
 
 ## `sendmail_handler()`
 
-This hook function is called when AppGini sends an email using the `sendmail()` function. It can be used to modify the email before it's sent. If you open the generated `hooks/__global.php` file in a text editor, you can see this function defined as follows:
+Esta función de hook se llama cuando AppGini envía un correo electrónico utilizando la función `sendmail()`. Se puede utilizar para modificar el correo electrónico antes de que se envíe. Si abre el archivo `hooks/__global.php` generado en un editor de texto, puede ver esta función definida de la siguiente manera:
 
 ```php
 function sendmail_handler(&$pm) {
@@ -201,20 +200,20 @@ function sendmail_handler(&$pm) {
 }
 ```
 
-### Parameters:
+### Parámetros:
 
-*   `$pm` is a PHPMailer object, passed by reference. Please refer to [PHPMailer project on Github](https://github.com/PHPMailer/PHPMailer) for more details.
+*   `$pm` es un objeto PHPMailer, pasado por referencia. Consulte el [proyecto PHPMailer en Github](https://github.com/PHPMailer/PHPMailer) para obtener más detalles.
 
-### Return value:
+### Valor devuelto:
 
-None.
+Ninguno.
 
 ## `child_records_config()`
 
-This hook function was added in AppGini 22.14, and can be used to modify the default configuration of
-the [child records section in the detail view](/appgini/help/working-with-projects/understanding-lookup-fields/#parent-children-settings).
+Esta función de hook se agregó en AppGini 22.14 y se puede usar para modificar la configuración predeterminada de
+la [sección de registros secundarios en la vista detallada](/appgini/help/working-with-projects/understanding-lookup-fields/#parent-children-settings).
 
-If you open the generated `hooks/__global.php` file in a text editor, you can see this function defined as follows:
+Si abre el archivo `hooks/__global.php` generado en un editor de texto, puede ver esta función definida de la siguiente manera:
 
 ```php
 function child_records_config($childTable, $childLookupField, &$config) {
@@ -222,13 +221,12 @@ function child_records_config($childTable, $childLookupField, &$config) {
 }
 ```
 
-### Parameters:
+### Parámetros:
 
-*   `$childTable` is the name of the child table.
-*   `$childLookupField` is the name of the lookup field in the child table.
-*   `$config` is an associative array containing the configuration for displaying child records for the current user, passed by reference. The default configuration, is stored in the `$pcConfig` array defined in the generated `parent-children.php` file.
+*   `$childTable` es el nombre de la tabla secundaria.
+*   `$childLookupField` es el nombre del campo de búsqueda en la tabla secundaria.
+*   `$config` es una matriz asociativa que contiene la configuración para mostrar los registros secundarios del usuario actual, pasada por referencia. La configuración predeterminada se almacena en la matriz `$pcConfig` definida en el archivo `parent-children.php` generado.
 
-### Return value:
+### Valor devuelto:
 
-None.
-
+Ninguno.
