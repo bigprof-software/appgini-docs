@@ -33,15 +33,16 @@ First of all, let's create a new file in the `hooks` folder inside your AppGini-
 ```php
 <?php
     define('PREPEND_PATH', '../');
-    $hooks_dir = __DIR__;
-    include("$hooks_dir/../lib.php");
+    define('APP_ROOT', __DIR__ . '/' . PREPEND_PATH);
+
+    include(APP_ROOT . 'lib.php');
 ```
 
 The above code allows you to use the functions provided by AppGini in your custom page, including the function [`getMemberInfo()`](/appgini/help/advanced-topics/hooks/memberInfo-array/) which you can use for checking permissions. Let's see how to implement each of the above access methods.
 
 #### Where to place your custom pages
 
-**We highly recommend placing your custom pages in the `hooks` folder or a subfolder of it. Placing your custom files outside the `hooks` folder, in the main application folder, would make it harder to maintain your custom files when you regenerate your application using AppGini.** 
+> **We highly recommend placing your custom pages in the `hooks` folder or a subfolder of it. Placing your custom files outside the `hooks` folder, in the main application folder, would make it harder to maintain your custom files when you regenerate your application using AppGini.** 
 
 In some cases, however, you might need to place your custom files outside the main application folder. For example, you might want to create a public-facing page that doesn't require authentication, without exposing your entire application to the public. In this case, you should modify the session cookie path to include the folder containing your custom files. This is important to allow custom pages outside the main application folder to share the same session with the rest of the application. Otherwise, users accessing the custom pages would be considered as guest users.
 
@@ -49,10 +50,10 @@ Let's take an example to illustrate this. Suppose you have a custom page called 
 
 ```
 /var/www/html/
-    myapp/
-        hooks/
-        ...
-    custom-page.php
+    ├── myapp
+    │   ├── hooks
+    │   │...
+    └── custom-page.php
 ```
 
 To allow `custom-page.php` to share the same session with the rest of the application, you should create a file called `__bootstrap.php` in the `myapp/hooks` folder if it doesn't already exist. Add the following code to `__bootstrap.php`:
@@ -61,10 +62,10 @@ To allow `custom-page.php` to share the same session with the rest of the applic
 <?php // if you don't have this line already, add it at the top of the file
 
 function session_options(&$options) {
-	$cookie_path = '/' . trim(config('appURI'), '/');
-	// remove the last subdir from the cookie path
-	$cookie_path = substr($cookie_path, 0, strrpos($cookie_path, '/'));
-	$options['cookie_path'] = $cookie_path;
+    $cookie_path = '/' . trim(config('appURI'), '/');
+    // remove the last subdir from the cookie path
+    $cookie_path = substr($cookie_path, 0, strrpos($cookie_path, '/'));
+    $options['cookie_path'] = $cookie_path;
 }
 ```
 
@@ -77,14 +78,14 @@ In case you want all the users that belong to the "Admins" and "Data entry" grou
 ```php
 <?php
     define('PREPEND_PATH', '../');
-    $hooks_dir = __DIR__;
-    include("$hooks_dir/../lib.php");
+    define('APP_ROOT', __DIR__ . '/' . PREPEND_PATH);
+
+    include(APP_ROOT . 'lib.php');
      
     /* grant access to the groups 'Admins' and 'Data entry' */
     $mi = getMemberInfo();
     if(!in_array($mi['group'], ['Admins', 'Data entry'])) {
-        echo "Access denied";
-        exit;
+        die("Access denied");
     }
  
     echo "You can access this page!";
@@ -99,14 +100,14 @@ Another case is when you want one or more specific users, rather than a whole gr
 ```php
 <?php
     define('PREPEND_PATH', '../');
-    $hooks_dir = __DIR__;
-    include("$hooks_dir/../lib.php");
+    define('APP_ROOT', __DIR__ . '/' . PREPEND_PATH);
+
+    include(APP_ROOT . 'lib.php');
      
     /* grant access to the groups 'Admins' and 'Data entry' */
     $mi = getMemberInfo();
     if(!in_array($mi['username'], ['john.doe', 'jane.doe'])) {
-        echo "Access denied";
-        exit;
+        die("Access denied");
     }
  
     echo "You can access this page!";
@@ -121,20 +122,17 @@ Another case is to grant access to your page to all logged users. Here is the co
 ```php
 <?php
     define('PREPEND_PATH', '../');
-    $hooks_dir = __DIR__;
-    include("$hooks_dir/../lib.php");
+    define('APP_ROOT', __DIR__ . '/' . PREPEND_PATH);
+
+    include(APP_ROOT . 'lib.php');
      
     /* grant access to all logged users */
-    $mi = getMemberInfo();
-    if(!$mi['username'] || $mi['username'] == 'guest') {
-        echo "Access denied";
-        exit;
-    }
+    if(Authentication::isGuest()) die("Access denied");
  
     echo "You can access this page!";
 ```
 
-The above will deny access to anonymous users and allow access to any logged user. If you've changed the default anonymous username of 'guest' in the admin area, you should update it in line 9 above.
+The above will deny access to anonymous users and allow access to any logged user.
 
 #### Integrate the page appearance into your AppGini application
 
@@ -143,21 +141,17 @@ After controlling access to your custom page, the next step is to customize its 
 ```php
 <?php
     define('PREPEND_PATH', '../');
-    $hooks_dir = __DIR__;
-    include("$hooks_dir/../lib.php");
- 
-    include_once("$hooks_dir/../header.php");
+    define('APP_ROOT', __DIR__ . '/' . PREPEND_PATH);
+
+    include(APP_ROOT . 'lib.php');
+    include_once(APP_ROOT . 'header.php');
  
     /* grant access to all logged users */
-    $mi = getMemberInfo();
-    if(!$mi['username'] || $mi['username'] == 'guest') {
-        echo "Access denied";
-        exit;
-    }
- 
+    if(Authentication::isGuest()) die("Access denied");
+
     echo "You can access this page!";
- 
-    include_once("$hooks_dir/../footer.php");
+
+    include_once(APP_ROOT . 'footer.php');
 ```
 
 #### Useful functions to use in your custom pages
@@ -175,14 +169,14 @@ Finally, you want users to be able to easily reach your page. AppGini makes it e
 If you're using AppGini versions earlier than 5.90, you need to `include` language files when creating a custom page. In all of the above code snippets, change this part of the code:
 
 ```php
-include("$hooks_dir/../lib.php");
+include(APP_ROOT . 'lib.php');
 ```
 
 to:
 
 ```php
-include("$hooks_dir/../defaultLang.php");
-include("$hooks_dir/../language.php");
-include("$hooks_dir/../lib.php");
+include(APP_ROOT . 'defaultLang.php');
+include(APP_ROOT . 'language.php');
+include(APP_ROOT . 'lib.php');
 ```
 
