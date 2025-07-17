@@ -8,6 +8,8 @@ keywords: keyboard shortcuts, AppGini, project, table, field, application, theme
 
 # Keyboard shortcuts in AppGini
 
+![Keyboard shortcuts](https://cdn.bigprof.com/images/keyboard-shortcuts.webp "Keyboard shortcuts help you speed up your work with AppGini projects")
+
 There are several keyboard shortcuts in AppGini that will help you work even faster with projects. Here is a list of them. 
 
 * **` Ctrl `** + **` N `**: Create a new project.
