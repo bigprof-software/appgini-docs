@@ -22,6 +22,7 @@ To back up your AppGini database, follow these steps:
       ![Create Backup File button](https://cdn.bigprof.com/images/create-backup-file-button.png)
 
 5. A confirmation dialog will appear, informing you that the application will be set to *maintenance mode* during the backup process. Click **OK** to proceed.
+
       > Usually the backup process takes only a few seconds, but it may take longer for larger databases. During this time, the application will be in maintenance mode, and users will not be able to access it.
 
       ![Backup confirmation dialog](https://cdn.bigprof.com/images/backup-confirmation-dialog.png)
@@ -41,6 +42,7 @@ To restore your AppGini database from a backup file, follow these steps:
       ![Restore backup button](https://cdn.bigprof.com/images/restore-backup-button.png)
 
 6. A confirmation dialog will appear, informing you that the application will be set to *maintenance mode* during the restore process, and that all data in the current database will be **replaced** with the data from the backup file. This includes user accounts, settings, and all data in the database. Click **OK** to proceed.
+
       > Restoring a backup takes a few seconds, but it may take longer for larger databases. During this time, the application will be in maintenance mode, and users will not be able to access it.
 
       ![Restore confirmation dialog](https://cdn.bigprof.com/images/restore-confirmation-dialog.png)
@@ -72,4 +74,19 @@ In some environments, MySQL may be installed on a separate server, and your appl
   ```bash
   brew install mysql
   ```
+
+## Troubleshooting
+
+If you encounter any issues during backup, check the following:
+
+- Ensure that the `mysqldump` utility is installed and accessible from the command line.
+- Make sure the database credentials in your AppGini application have the necessary permissions to perform backups and restores.
+- Make sure the web server user has write permissions to the directory where the backup files are stored, which is the `admin/backups` directory inside your AppGini application directory.
+
+    > To change the permissions, you can use the following command:
+    ```bash
+    sudo chown -R www-data:www-data /path/to/your/appgini/application/admin/backups
+    ```
+
+If you're unable to restore a backup, ensure that the backup file is not corrupted and that the `backup` directory is readable by the web server user.
 
