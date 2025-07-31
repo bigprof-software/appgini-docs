@@ -49,6 +49,29 @@ To restore your AppGini database from a backup file, follow these steps:
 
 7. Once the restore is complete, the application will exit maintenance mode, and you will see a success message indicating that the database has been restored successfully.
 
+## Migrating your AppGini application to a new server
+
+If you are migrating your AppGini application to a new server, you can use the backup and restore feature to transfer your database. Here’s how:
+
+1. **Create a backup** of your AppGini database on the old server by following the steps outlined in the "Backing up your AppGini database" section above.
+2. **Download the backup file** from the `admin/backups` directory of your AppGini application on the old server. 
+     - This file will have a `.sql` extension but would be named as a random string, such as `523f4e5d6b7c8d9e.sql`. 
+     - So if you have multiple backups, you can identify the one you want to restore by its date and time. 
+     - If you are using an FTP client, like [FileZilla](https://filezilla-project.org/), you can navigate to the `admin/backups` directory and look for the most recent backup file.
+     - If you are accessing the server via command line, you can use list the most recent backup file using the following command (assuming you are in the root directory of your AppGini application):
+       ```bash
+       ls -lt admin/backups/*.sql | head -n 1
+       ```
+3. **Upload the backup file** to the `admin/backups` directory of your AppGini application on the new server.
+
+    > Make sure that the web server user has write permissions to this directory. If you are using an FTP client, you can set the permissions to `755` or `775` for the `admin/backups` directory.
+4. **Log in to your AppGini application** on the new server as an administrator.
+     > You still need to set up the application and database connection settings on the new server before you can log in. But once you restore the database, you can log in to the application using the same credentials as on the old server.
+5. **Go to the Admin area** and open the **Utilities** menu, then select **Database backups**.
+6. **Find the backup file** you uploaded in the **Available backups** section.
+7. Click the **Restore** button next to the backup file you want to restore.
+8. Confirm the restore operation in the dialog that appears, and wait for the process to complete.
+
 ## Requirements
 
 To use the backup feature, your server must have the `mysqldump` utility installed. This utility is typically included with MySQL installations, so if you have MySQL installed, you likely have `mysqldump` available.
