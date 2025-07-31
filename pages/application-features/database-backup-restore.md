@@ -19,12 +19,12 @@ To back up your AppGini database, follow these steps:
 3. In the Admin area, open the **Utilities** menu and select **Database backups**.
 4. On the Database backups page, click the **Create Backup File** button.
 
-   ![Create Backup File button](https://cdn.bigprof.com/images/create-backup-file-button.png)
+      ![Create Backup File button](https://cdn.bigprof.com/images/create-backup-file-button.png)
 
 5. A confirmation dialog will appear, informing you that the application will be set to *maintenance mode* during the backup process. Click **OK** to proceed.
-   > Usually the backup process takes only a few seconds, but it may take longer for larger databases. During this time, the application will be in maintenance mode, and users will not be able to access it.
+      > Usually the backup process takes only a few seconds, but it may take longer for larger databases. During this time, the application will be in maintenance mode, and users will not be able to access it.
 
-   ![Backup confirmation dialog](https://cdn.bigprof.com/images/backup-confirmation-dialog.png)
+      ![Backup confirmation dialog](https://cdn.bigprof.com/images/backup-confirmation-dialog.png)
 
 6. Once the backup is complete, it will be listed under the **Available backups** section, showing the date, time and size of the backup file.
 
@@ -38,13 +38,13 @@ To restore your AppGini database from a backup file, follow these steps:
 4. On the Database backups page, find the backup file you want to restore from the **Available backups** section.
 5. Click the **Restore** button next to the backup file you want to restore.
 
-   ![Restore backup button](https://cdn.bigprof.com/images/restore-backup-button.png)
+      ![Restore backup button](https://cdn.bigprof.com/images/restore-backup-button.png)
 
 6. A confirmation dialog will appear, informing you that the application will be set to *maintenance mode* during the restore process, and that all data in the current database will be **replaced** with the data from the backup file. This includes user accounts, settings, and all data in the database. Click **OK** to proceed.
-   > Restoring a backup takes a few seconds, but it may take longer for larger databases. During this time, the application will be in maintenance mode, and users will not be able to access it.
+      > Restoring a backup takes a few seconds, but it may take longer for larger databases. During this time, the application will be in maintenance mode, and users will not be able to access it.
 
-   ![Restore confirmation dialog](https://cdn.bigprof.com/images/restore-confirmation-dialog.png)
-   
+      ![Restore confirmation dialog](https://cdn.bigprof.com/images/restore-confirmation-dialog.png)
+
 7. Once the restore is complete, the application will exit maintenance mode, and you will see a success message indicating that the database has been restored successfully.
 
 ## Requirements
