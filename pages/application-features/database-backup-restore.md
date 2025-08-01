@@ -10,6 +10,8 @@ keywords: backup, restore, database, AppGini, application features, mysql, mysql
 
 It's crucial for any application in production to have a reliable backup and restore mechanism. AppGini applications come with a built-in feature to back up and restore your database.
 
+> Prefer to watch a video tutorial? Check out our [Backing up and restoring your AppGini database](https://www.youtube.com/watch?v=gz75dwoa_Uc) video on YouTube.
+
 ## Backing up your AppGini database
 
 To back up your AppGini database, follow these steps:
