@@ -77,5 +77,5 @@ Based on this, we expanded our troubleshooting. If you encounter a similar issue
 
 In this case, the most likely culprits were hidden Windows permissions or ownership issues on the old folders. Resetting permissions or creating a new folder typically resolves the problem.
 
-We hope this checklist helps if you ever face a similar situation. If you have tips or experiences of your own, please share them in the comments!
+We hope this checklist helps if you ever face a similar situation.
 
