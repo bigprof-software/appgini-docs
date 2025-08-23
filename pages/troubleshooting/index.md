@@ -14,4 +14,5 @@ The following section provides a compilation of troubleshooting guides for commo
 
 - [I see an error message or a blank page in my AppGini-generated app](../advanced-topics/troubleshooting-errors-and-blank-pages.md)
 - [I can't upload large files in my AppGini app](configuring-file-upload-size.md)
+- [Troubleshooting File Permission Issues When Generating Apps with AppGini](appgini-file-write-permission-issues-windows.md)
 
