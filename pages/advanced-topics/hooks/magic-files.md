@@ -18,11 +18,11 @@ For example, let's assume we have an *exams* table, and a score field in that ta
 
 ```javascript
 $j(() => {
-    $j('#score').on('change', function() {
-        var score = parseInt($j(this).val());
+    $j('#score').on('change', () => {
+        const score = parseInt($j('#score').val());
         if(isNaN(score) || score > 100 || score < 0){
             alert('Score must be between 0 and 100!');
-            $j(this).focus();
+            $j('#score').focus();
         }
     });
 });
