@@ -118,19 +118,19 @@ To add custom PHP code, insert it inside `<?php ... ?>` tags. For HTML, just ins
 
 This is a *magic file* that, if present, is included in the detail view of the specified table. You can use it to add custom JavaScript code to the detail view of the specified table.
 
-> More info: [`tablename-dv.js`: modifying the behavior of the detail view through JavaScript](advanced-topics/hooks/magic-files.md#tablename-dvjs-modifying-the-behavior-of-the-detail-view-through-javascript)
+> More info: [`tablename-dv.js`: modifying the behavior of the detail view through JavaScript](/appgini/help/advanced-topics/hooks/magic-files#tablename-dvjs-modifying-the-behavior-of-the-detail-view-through-javascript)
 
 ### `{tablename}-tv.js`
 
 This is a *magic file* that, if present, is included in the table view of the specified table. You can use it to add custom JavaScript code to the table view of the specified table.
 
-> More info: [`tablename-tv.js`: modifying the behavior of a specific table through JavaScript](advanced-topics/hooks/magic-files.md#tablename-tvjs-modifying-the-behavior-of-a-specific-table-through-javascript)
+> More info: [`tablename-tv.js`: modifying the behavior of a specific table through JavaScript](/appgini/help/advanced-topics/hooks/magic-files#tablename-tvjs-modifying-the-behavior-of-a-specific-table-through-javascript)
 
 ### `tablename.fieldname.csv`
 
 This is a *magic file* that, if present, is used to populate the options list of the specified field in the specified table. You can use it to change the contents of an options list without having to modify your project in AppGini and regenerate your application.
 
-> More info: [`tablename.fieldname.csv`: changing the contents of options lists](advanced-topics/hooks/magic-files.md#tablenamefieldnamecsv-changing-the-contents-of-options-lists)
+> More info: [`tablename.fieldname.csv`: changing the contents of options lists](/appgini/help/advanced-topics/hooks/magic-files#tablenamefieldnamecsv-changing-the-contents-of-options-lists)
 
 ### `index.html`
 
