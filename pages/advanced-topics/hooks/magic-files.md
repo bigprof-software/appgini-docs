@@ -17,12 +17,12 @@ If you create a file in the hooks folder and name it `tablename-dv.js` (where *`
 For example, let's assume we have an *exams* table, and a score field in that table. We want to limit the contents of that field to a certain range of numbers, and warn the user if he enters a number outside that range. To do so, we could add some javascript code like the following in the magic `hooks/exams-dv.js` file.
 
 ```javascript
-$j(function() { 
+$j(() => {
     $j('#score').on('change', function() {
-        var score = parseInt($j('score').val());
+        var score = parseInt($j(this).val());
         if(isNaN(score) || score > 100 || score < 0){
             alert('Score must be between 0 and 100!');
-            $j('#score').focus();
+            $j(this).focus();
         }
     });
 });
