@@ -68,7 +68,7 @@ If you're looking for a very easy to use and **highly reliable cloud
 hosting service** , we've been using [Digital
 Ocean](https://m.do.co/c/d30b7a2609f4) for many years and are quite
 content with their simplicity and reliability. This [special
-link](https://m.do.co/c/d30b7a2609f4) provides you with \$100 credit to
+link](https://m.do.co/c/d30b7a2609f4) provides you with **$200 credit, valid for 60 days** to
 try their service.
 
 Digital Ocean however requires some experience managing your server
@@ -107,15 +107,12 @@ code](/appgini/screencasts/how-to-use-git-with-appgini-to-manage-code-changes).
 
 ## Reference material
 
--   [HTML
-    reference](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
--   [CSS
-    reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
--   [Bootstrap 3 reference](https://getbootstrap.com/docs/3.4/css/)
+-   [HTML reference](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
+-   [CSS reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
+-   [Bootstrap 3.4 reference](https://getbootstrap.com/docs/3.4/css/)
 -   [jQuery API reference](https://api.jquery.com/)
 -   [PHP reference](http://www.php.net/manual/en/)
--   [MySQL SQL
-    reference](https://dev.mysql.com/doc/refman/8.0/en/sql-statements.html)
+-   [MySQL SQL reference](https://dev.mysql.com/doc/refman/8.0/en/sql-statements.html)
 
 
 
