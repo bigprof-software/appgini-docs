@@ -49,6 +49,8 @@ uid=USERNAME,ou=people,dc=ldap,dc=example,dc=com
 
 In this example, the username prefix is `uid=`, and the username suffix is `,ou=people,dc=ldap,dc=example,dc=com` (note the initial comma `,`). Adjust the domain components (`dc=`) according to your LDAP server's domain.
 
+Sometimes, the DN pattern might be as simple as `USERNAME@example.com`. In that case, leave the username prefix field empty, and enter `@example.com` in the username suffix field. If you're having trouble configuring the LDAP connection, it's worth trying this and seeing if it resolves the issue.
+
 ### Handling Non-Existent Users
 
 Determine how AppGini should handle login attempts from users who are authenticated through LDAP but do not exist in the AppGini database. You can choose to:
