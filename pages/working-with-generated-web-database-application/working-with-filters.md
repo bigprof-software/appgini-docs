@@ -54,7 +54,7 @@ The filter icon beside the company name and country column headers indicates tha
 Each filter condition is composed of:
 
 * A field (e.g., "Country", "Company Name")
-* A comparison operator (e.g., "equals", "contains", "starts with")
+* A comparison operator (e.g., "Equal to", "Greater than", "Less than")
 
     ![](https://cdn.bigprof.com/appgini-desktop/help/working-with-filters-3.png "Comparison operators")
 
@@ -89,6 +89,16 @@ The **Records to display** panel in the filters page allows users to limit the s
 This panel won't be displayed if the current user's permissions don't allow access to records they do not own.
 
 ![Records to display panel](https://cdn.bigprof.com/images/filters-records-to-display-panel-25.13.png "Records to display panel")
+
+## Filter before showing the table view
+
+You can configure specific tables in your AppGini project to show users the filters page first before displaying the table view. This is useful for ensuring that users can refine their search criteria before viewing potentially large datasets. To configure this option, open your project in AppGini, click on the table you want to modify, and then check the **Filter before showing table view** option under **Table view settings**.
+
+## Excluding fields from filters
+
+You can exclude specific fields from being used in filters. For example, you might want to exclude a field like "Notes" from the filters to simplify the search interface or avoid too many matches for fields that are not relevant to your users search use cases.
+
+To configure this option, open your project in AppGini, navigate to the table you want to modify, then click the field you want to exclude from filters and check the **Do not filter** option.
 
 ## Related screencasts
 
