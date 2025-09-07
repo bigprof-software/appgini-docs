@@ -90,14 +90,20 @@ This panel won't be displayed if the current user's permissions don't allow acce
 
 ![Records to display panel](https://cdn.bigprof.com/images/filters-records-to-display-panel-25.13.png "Records to display panel")
 
-## Simple yet powerful filtering using the [Search Page Maker plugin](https://bigprof.com/appgini/applications/search-page-maker-plugin)
+## Simplified filtering using the [Search Page Maker plugin](https://bigprof.com/appgini/applications/search-page-maker-plugin)
 
 The Search Page Maker plugin enhances the filtering capabilities of your AppGini project by allowing you to build custom search pages with advanced filtering options via a simple drag-and-drop interface. With this plugin, you can:
 
 * Create dedicated search pages for specific tables.
 * Add more friendly filters. For example:
     * Date fields can be easily filtered using a date range picker, saving users the need to manually define 2 filter conditions, and correctly handling date formats.
+
+        ![Date range picker](https://cdn.bigprof.com/images/search-page-maker-date-range-picker.png "Date range picker created with Search Page Maker plugin")
+
     * Lookup and option list fields can be filtered using a dropdown list of available options, making it easier for users to select the desired value.
+
+        ![Dropdown filter for lookup field](https://cdn.bigprof.com/images/search-page-maker-lookup-dropdown.png "Dropdown filter for lookup field created with Search Page Maker plugin")
+
 * Users can still use the standard filters alongside the enhanced ones, providing flexibility in how they search for records.
 
 [**Learn more about the Search Page Maker plugin**](https://bigprof.com/appgini/applications/search-page-maker-plugin)
