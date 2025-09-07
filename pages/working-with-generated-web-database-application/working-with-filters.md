@@ -15,6 +15,10 @@ AppGini applications allow users to search and filter data easily.
 
 Above the table view of each table in your app, you can find the quick search box, which allows you to enter keywords and filter the displayed records accordingly. This is a simple way to find specific records that contain a keyword in any field.
 
+The screenshot below shows the results of a quick search for the word `united`, showing records where *any* field contains the word.
+
+![Quick search results](https://cdn.bigprof.com/images/quick-search-results-25.13.png "Quick search results")
+
 ## Advanced search (filters)
 
 Filters provide a more advanced way to search and filter data by configuring and combining multiple conditions.
