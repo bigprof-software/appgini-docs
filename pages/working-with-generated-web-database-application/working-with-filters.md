@@ -2,25 +2,26 @@
 title: Working with filters
 linkTitle: Working with filters
 slug: help/working-with-generated-web-database-application/working-with-filters
+keywords: filters, data display, advanced search, matching conditions, saving filters
+description: Learn how to effectively use filters in AppGini for advanced data display and search capabilities.
+featured_image: https://cdn.bigprof.com/images/filters-page-blank-25.13.png
 ---
 
 # Working with filters
 
-
-
 Filters allow users to have advanced control over data display. The
-filters button brings a filters page as shown below.
+filters button above the table view brings a filters page as shown below.
 
 
-![Filters page](https://cdn.bigprof.com/appgini-desktop/help/working-with-filters-1.png "Filters page")
+![Filters page](https://cdn.bigprof.com/images/filters-page-blank-25.13.png "Blank filters page")
 
 
 For example, if we wish to find all customers from France, Germany or
-Mexico, whose contact names begin with A, M or P, the filters would look
+Mexico, whose company names begin with A, M or P, the filters would look
 like this:
 
 
-![Filters for customers from France, Germany or Mexico, whose contact names begin with A, M or P](https://cdn.bigprof.com/appgini-desktop/help/northwind-customers.png "Filters for customers from France, Germany or Mexico, whose contact names begin with A, M or P")
+![Filters for customers from France, Germany or Mexico, whose company names begin with A, M or P](https://cdn.bigprof.com/images/advanced-filters-example-25.13.png "Filters for customers from France, Germany or Mexico, whose company names begin with A, M or P")
 
 
 If a filter begins with 'And' it means the condition must be
@@ -37,7 +38,7 @@ following drop-down from the filters page shows them all.
 
 
 To apply filters to the table view after specifying them, simply click
-the \"Apply filters\" button.
+the **Apply filters** button.
 
 ## Related screencasts
 
