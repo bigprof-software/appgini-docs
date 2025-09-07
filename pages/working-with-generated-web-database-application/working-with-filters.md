@@ -48,11 +48,14 @@ The filter icon beside the company name and country column headers indicates tha
 #### Comparison operators
 
 Each filter condition is composed of:
-- A field (e.g., "Country", "Company Name")
-- A comparison operator (e.g., "equals", "contains", "starts with")
-  
+
+* A field (e.g., "Country", "Company Name")
+
+* A comparison operator (e.g., "equals", "contains", "starts with")
+
    ![](https://cdn.bigprof.com/appgini-desktop/help/working-with-filters-3.png "Comparison operators")
-- A value to compare against (e.g., "France", "Acme Corp")
+
+* A value to compare against (e.g., "France", "Acme Corp")
 
 There are several comparison operators available for filters:
 
