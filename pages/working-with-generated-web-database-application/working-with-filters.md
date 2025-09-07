@@ -4,7 +4,7 @@ linkTitle: Searching and filtering data
 slug: help/working-with-generated-web-database-application/working-with-filters
 keywords: filters, data display, advanced search, matching conditions, saving filters
 description: Learn how to effectively use filters in AppGini for advanced data display and search capabilities.
-featured_image: https://cdn.bigprof.com/images/filters-page-blank-25.13.png
+featured_image: https://cdn.bigprof.com/images/advanced-filters-example-25.13.png
 ---
 
 # Searching and filtering data
@@ -57,6 +57,7 @@ Each filter condition is composed of:
 * A comparison operator (e.g., "equals", "contains", "starts with")
 
     ![](https://cdn.bigprof.com/appgini-desktop/help/working-with-filters-3.png "Comparison operators")
+
 * A value to compare against (e.g., "France", "Acme Corp")
 
 There are several comparison operators available for filters:
@@ -74,6 +75,20 @@ There are several comparison operators available for filters:
 | Is empty                 | is empty (i.e., has no value). When this operator is specified, the value box is ignored.
 | Is not empty             | is not empty (i.e., has a value). When this operator is specified, the value box is ignored.
 
+### Sorting search results
+
+You can sort the search results by one or more fields (up to 4) from the **Order by** panel in the filters page.
+The example screenshot below shows the **Order by** panel with several fields selected for sorting: Country (ascending), then Company Name (ascending), then Total Sales (descending).
+
+![Order by panel](https://cdn.bigprof.com/images/filters-order-by-panel-25.13.png "Order by panel")
+
+### Limiting search results by record owner
+
+The **Records to display** panel in the filters page allows users to limit the search results to only those records they own, or to records owned by their group, or to all records. This is a very handy feature to allow users to quickly access their own data without having to sift through records owned by others.
+
+This panel won't be displayed if the current user's permissions don't allow access to records they do not own.
+
+![Records to display panel](https://cdn.bigprof.com/images/filters-records-to-display-panel-25.13.png "Records to display panel")
 
 ## Related screencasts
 
