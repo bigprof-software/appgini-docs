@@ -96,8 +96,8 @@ The Search Page Maker plugin enhances the filtering capabilities of your AppGini
 
 - Create dedicated search pages for specific tables.
 - Add more friendly filters. For example:
-  - Date fields can be easily filtered using a date range picker, saving users the need to manually define 2 filter conditions, and correctly handling date formats.
-  - Lookup and option list fields can be filtered using a dropdown list of available options, making it easier for users to select the desired value.
+    - Date fields can be easily filtered using a date range picker, saving users the need to manually define 2 filter conditions, and correctly handling date formats.
+    - Lookup and option list fields can be filtered using a dropdown list of available options, making it easier for users to select the desired value.
 - Users can still use the standard filters alongside the enhanced ones, providing flexibility in how they search for records.
 
 [**Learn more about the Search Page Maker plugin**](https://bigprof.com/appgini/applications/search-page-maker-plugin)
