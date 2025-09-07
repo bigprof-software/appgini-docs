@@ -100,15 +100,6 @@ You can exclude specific fields from being used in filters. For example, you mig
 
 To configure this option, open your project in AppGini, navigate to the table you want to modify, then click the field you want to exclude from filters and check the **Do not filter** option.
 
-## Related screencasts
-
-#### Saving filters for use later
-
-<iframe width="640" height="390" src="https://www.youtube.com/embed/7gMWoVh62wU" frameborder="0" allowfullscreen=""></iframe>
-
-#### Performing advanced search queries in AppGini using filters
-
-<iframe width="640" height="390" src="https://www.youtube.com/embed/BNSFbWXWBJA" frameborder="0" allowfullscreen=""></iframe>
 
 
 
