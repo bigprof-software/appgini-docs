@@ -20,4 +20,6 @@ This is a work in progress and will be updated regularly.
 - [LDAP authentication](../ldap-authentication.md)
 - [Automated record ownership](../record-owners.md)
 - [Calculated fields](../calculated-fields.md)
+- [Database backup and restore](database-backup-restore.md)
+- [Importing and exporting data](importing-exporting-data.md)
 
