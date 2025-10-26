@@ -11,6 +11,7 @@ slug: help/working-with-generated-web-database-application/deploying-your-applic
 This guide explains how to deploy AppGini-generated applications across shared hosting, VPS/cloud servers, Windows Server, and Docker-based setups. It also covers managed databases and best practices.
 
 **Important context:**
+
 - AppGini apps are lightweight PHP 8+ web apps backed by MySQL/MariaDB.
 - Required PHP extensions: mysqli, gd, iconv, json.
 - AppGini (Windows) [generates your web app files into a folder](../working-with-projects/generating-the-php-application.md).
