@@ -45,10 +45,12 @@ Before uploading the app, create the database and database user.
 
 ### Creating a database and user in cPanel
 
-![cPanel MySQL Databases](https://cdn.bigprof.com/images/cPanel-MySQL-Database-Wizard-button-screenshot.png)
 
 - Log in to cPanel.
-- Open MySQL Databases.
+- Open MySQL Database Wizard.
+
+    ![cPanel MySQL Databases](https://cdn.bigprof.com/images/cPanel-MySQL-Database-Wizard-button-screenshot.png)
+
 - Create a new database (for example, myapp_db).
 - Create a new MySQL user and set a strong password.
 - Add the user to the database and grant ALL PRIVILEGES.
@@ -56,10 +58,12 @@ Before uploading the app, create the database and database user.
 
 ### Creating a database and user in Plesk
 
-![Plesk Add Database](https://cdn.bigprof.com/images/plesk-create-mysql-db-and-user.png)
 
 - Log in to Plesk.
 - Go to Databases > Add Database.
+
+    ![Plesk Add Database](https://cdn.bigprof.com/images/plesk-create-mysql-db-and-user.png)
+
 - Enter a database name and select the related subscription/domain.
 - Create a new database user with a strong password and assign it to the database.
 - Note the DB name, user, password, host (often `localhost` or `127.0.0.1`), and port (3306).
