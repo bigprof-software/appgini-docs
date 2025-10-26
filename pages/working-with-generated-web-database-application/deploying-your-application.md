@@ -67,6 +67,7 @@ Before uploading the app, create the database and database user.
 You can deploy in two ways after DB creation.
 
 ### Upload zip via File Manager, then unzip
+
 - Generate the app in AppGini on your PC and zip the generated app folder.
 - In cPanel: open File Manager and navigate to `public_html` (or a subfolder). In Plesk: navigate to `httpdocs` (or a subfolder).
 - Upload the zip file and extract it into the target folder.
@@ -128,10 +129,12 @@ We can provide you with [hands-on support and consulting for setting up and mana
 ## Deploying to Windows Server (IIS)
 
 Create the database first (local or managed).
+
 - Local option: Install MySQL/MariaDB on your Windows Server; create a database and user with necessary privileges.
 - Managed option: Use Amazon RDS, Azure Database for MySQL, or GCP Cloud SQL; note endpoint, DB name, user, password.
 
 **Steps**
+
 - Install/configure IIS with PHP 8+ (FastCGI) and enable mysqli, gd, iconv, json in `php.ini`.
 - Create a site or application in IIS pointing to your app’s folder.
 - Upload the generated app files (or upload `file-uploader.php` and use AppGini’s automatic uploader over HTTPS).
@@ -139,6 +142,7 @@ Create the database first (local or managed).
 - Browse to the app URL and [run the setup](./setup.md), using the DB credentials created earlier.
 
 **Troubleshooting**
+
 - Verify FastCGI mapping and PHP path.
 - Confirm required PHP extensions are enabled.
 - For the automatic uploader, ensure your PC has curl (available by default on most Windows installations), HTTPS is valid, and no antivirus/firewall is blocking requests.
@@ -148,6 +152,7 @@ Create the database first (local or managed).
 ## Deploying to VPS and cloud instances
 
 **Create or connect a database before or during deployment.**
+
 - Self-managed on the server (example with MySQL/MariaDB on Ubuntu):
     ```bash
     sudo mysql -e "CREATE DATABASE myapp CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
@@ -157,12 +162,14 @@ Create the database first (local or managed).
 - Or managed database: RDS, Cloud SQL, Azure MySQL. Note endpoint, DB name, user, password, and any SSL requirements.
 
 **General prerequisites**
+
 - Linux distro (Ubuntu/Debian recommended).
 - Apache or Nginx + PHP-FPM (PHP 8+ with mysqli, gd, iconv, json).
 - Firewall/security groups allowing access to ports 80/443 to serve HTTP/HTTPS, and port 22 for SSH access.
 - Valid SSL certificate (Let’s Encrypt or managed).
 
 **Deployment workflow**
+
 - Secure the server (sudo user, firewall, updates).
 - Install the web stack and enable required PHP extensions.
 - Create or connect to the database as above.
@@ -272,16 +279,19 @@ Docker simplifies deployment by containerizing the app and its dependencies, mak
 We provide a [ready-to-use Docker Compose setup for AppGini applications](https://github.com/bigprof-software/appgini-on-docker).
 
 **What it provides**
+
 - `docker-compose.yml`: App in Apache+PHP container, MySQL in a separate container, Let’s Encrypt companion for automatic SSL.
 - `example.env` to configure domain and secrets.
 
 **Prerequisites**
+
 - Linux server with root access.
 - Docker Engine + Docker Compose plugin.
 - Domain pointing to server IP.
 - At least 2 GB RAM.
 
 **Steps**
+
 - Access your server via SSH and run:
    ```bash
    git clone https://github.com/bigprof-software/appgini-on-docker.git ~/appgini-on-docker
@@ -295,8 +305,8 @@ We provide a [ready-to-use Docker Compose setup for AppGini applications](https:
     LETSENCRYPT_EMAIL=you@example.com
     ```
 - Prepare your app in the app directory:
-  - Copy the generated app files (exclude `config.php` and `setup.md5`), or
-  - Upload only `file-uploader.php`, then use AppGini’s automatic uploader.
+    - Copy the generated app files (exclude `config.php` and `setup.md5`), or
+    - Upload only `file-uploader.php`, then use AppGini’s automatic uploader.
 - Start:
     ```bash
 	cd ~/appgini-on-docker
@@ -312,6 +322,7 @@ We provide a [ready-to-use Docker Compose setup for AppGini applications](https:
     - Then set the app admin account and finalize.
 
 **Note on database creation with Docker**
+
 - The compose stack brings up MySQL for you; you generally don’t pre-create a DB/user. AppGini setup will create and populate tables using the provided credentials. If you prefer a distinct DB and user, create them inside the DB container after it starts.
 
 For more details, see the [AppGini on Docker GitHub repository](https://github.com/bigprof-software/appgini-on-docker).
