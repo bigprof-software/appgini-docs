@@ -30,6 +30,7 @@ To back up your AppGini database, follow these steps:
       ![Choose what to back up](https://cdn.bigprof.com/images/choose-what-to-backup.png)
 
       You can select which table groups to include in your backup:
+
       - **Data tables** (checked by default): Your application's business data tables
       - **Membership** (checked by default): User accounts, groups, and permissions
       - **Records ownership** (checked by default): User-record association mappings
@@ -98,6 +99,7 @@ This group includes all your application's business data tables - the tables you
 
 ### Membership
 This group contains the following tables related to user management and access control:
+
 - `membership_users` - User accounts
 - `membership_groups` - User groups
 - `membership_grouppermissions` - Group-level permissions
@@ -131,11 +133,15 @@ If you are migrating your AppGini application to a new server, you can use the b
           ```bash
           ls -lt admin/backups/*.sql | head -n 1
           ```
+
 3. **Upload the backup file** to the `admin/backups` directory of your AppGini application on the new server.
 
     > Make sure that the web server user has write permissions to this directory. If you are using an FTP client, you can set the permissions to `755` or `775` for the `admin/backups` directory.
+    
 4. **Log in to your AppGini application** on the new server as an administrator.
+   
      > You still need to set up the application and database connection settings on the new server before you can log in. But once you restore the database, you can log in to the application using the same credentials as on the old server.
+
 5. **Go to the Admin area** and open the **Utilities** menu, then select **Database backups**.
 6. **Find the backup file** you uploaded in the **Available backups** section.
 7. Click the **Restore** button next to the backup file you want to restore.
