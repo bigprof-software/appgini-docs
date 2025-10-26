@@ -55,6 +55,9 @@ Before uploading the app, create the database and database user.
 - Note the DB name, DB user, DB password, host (often `localhost`), and port (usually 3306).
 
 ### Creating a database and user in Plesk
+
+![Plesk Add Database](https://cdn.bigprof.com/images/plesk-create-mysql-db-and-user.png)
+
 - Log in to Plesk.
 - Go to Databases > Add Database.
 - Enter a database name and select the related subscription/domain.
