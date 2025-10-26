@@ -70,6 +70,9 @@ You can deploy in two ways after DB creation.
 - Generate the app in AppGini on your PC and zip the generated app folder.
 - In cPanel: open File Manager and navigate to `public_html` (or a subfolder). In Plesk: navigate to `httpdocs` (or a subfolder).
 - Upload the zip file and extract it into the target folder.
+    
+    ![cPanel File Manager Extract](https://cdn.bigprof.com/images/cpanel-extract-zip-file.png)
+
 - **Important:** Ensure `config.php` and `setup.md5` from your local tests are NOT present on the server before setup (remove if accidentally included).
 - Browse to your site URL (for example, https://yourdomain.com/ or https://yourdomain.com/myapp/).
 - [First-run setup](./setup.md):
