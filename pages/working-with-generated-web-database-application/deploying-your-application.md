@@ -43,6 +43,9 @@ They provide a user-friendly interface to manage files, databases, domains, emai
 Before uploading the app, create the database and database user.
 
 ### Creating a database and user in cPanel
+
+![cPanel MySQL Databases](https://cdn.bigprof.com/images/cPanel-MySQL-Database-Wizard-button-screenshot.png)
+
 - Log in to cPanel.
 - Open MySQL Databases.
 - Create a new database (for example, myapp_db).
