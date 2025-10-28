@@ -91,6 +91,18 @@ If you're having issues with automatic file uploading, please check the followin
        define('UPLOAD_KEY', '2DF5367D046FFE742277D04B107CF46B');
     ```
     
+*   **Disable checking the `images` folder if it has too many files**. If your app has a large number of uploaded files in the `images` folder, the uploader might time out while scanning for changes. You can disable checking the `images` folder by manually editing the `file-uploader.php` file on your server. Open the file in a text editor, and find this line near the top of the file:
+    
+    ```php
+    'images',
+    ```
+    
+    Then, comment it out by adding `//` at the beginning of the line, like so:
+    
+    ```php
+    //'images',
+    ```
+
 *   **Is your antivirus blocking the upload?** Some antivirus software might block the automatic file uploader from working. You can try disabling your antivirus temporarily to see if it's causing the issue. If it is, you can add an exception for AppGini.exe in your antivirus settings.
 *   **Is curl installed on your PC?**. The automatic file uploader uses curl to upload files to your server. Curl is installed by default on modern Windows machines, Linux and MacOS. On older Windows PCs, you can download curl from the [official curl website](https://curl.se/windows/).
 *   **Do you have modsecurity or a similar web application firewall (WAF) installed on your server?** This might prevent the automatic file uploader from working. If you have a WAF installed on your server, you can try adding an exception for the `file-uploader.php` file to the WAF configuration. For modsecurity, you can try adding this code to a new file inside `/etc/apache/mods-enabled/` (maybe name it `appgini.conf`) or similar, then restart apache:
@@ -104,6 +116,9 @@ If you're having issues with automatic file uploading, please check the followin
     _**Hint:**_ Check your server error logs to see if modsecurity is blocking requests to `file-uploader.php` or not.
     
 *   **Are you using Cloudflare?** Cloudflare is a great service for securing your website, but since it also acts as a web application firewall, it might block the automatic file uploader from working. You'll need to add an exception for the `file-uploader.php` file to [Cloudflare's firewall rules](https://developers.cloudflare.com/waf/managed-rules/waf-exceptions/).
+
+        > Please note that if you've enabled the 'I'm under attack' mode in Cloudflare, the automatic file uploader will not work, as Cloudflare will present a challenge page that the uploader cannot handle. You should disable this mode while using the uploader, even if you have added an exception for the `file-uploader.php` file in security rules. Once you're done uploading your app, you can re-enable the 'I'm under attack' mode.
+
 *   **Are folder permissions/ownership set correctly?** Make sure that the folder to which you're uploading your app and any subfolder are writable by the web server software (apache, nginx, .. etc) you're using. For example, on most apache setups on linux, the user that owns the app folders should be `www-data`.
     
     You can set the ownership of the app folder and all its subfolders to `www-data` by running this command on your server:
