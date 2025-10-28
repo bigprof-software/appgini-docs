@@ -117,7 +117,7 @@ If you're having issues with automatic file uploading, please check the followin
     
 *   **Are you using Cloudflare?** Cloudflare is a great service for securing your website, but since it also acts as a web application firewall, it might block the automatic file uploader from working. You'll need to add an exception for the `file-uploader.php` file to [Cloudflare's firewall rules](https://developers.cloudflare.com/waf/managed-rules/waf-exceptions/).
 
-        > Please note that if you've enabled the 'I'm under attack' mode in Cloudflare, the automatic file uploader will not work, as Cloudflare will present a challenge page that the uploader cannot handle. You should disable this mode while using the uploader, even if you have added an exception for the `file-uploader.php` file in security rules. Once you're done uploading your app, you can re-enable the 'I'm under attack' mode.
+    > Please note that if you've enabled the 'I'm under attack' mode in Cloudflare, the automatic file uploader will not work, as Cloudflare will present a challenge page that the uploader cannot handle. You should disable this mode while using the uploader, even if you have added an exception for the `file-uploader.php` file in security rules. Once you're done uploading your app, you can re-enable the 'I'm under attack' mode.
 
 *   **Are folder permissions/ownership set correctly?** Make sure that the folder to which you're uploading your app and any subfolder are writable by the web server software (apache, nginx, .. etc) you're using. For example, on most apache setups on linux, the user that owns the app folders should be `www-data`.
     
