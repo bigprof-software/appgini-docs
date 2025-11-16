@@ -90,6 +90,34 @@ This panel won't be displayed if the current user's permissions don't allow acce
 
 ![Records to display panel](https://cdn.bigprof.com/images/filters-records-to-display-panel-25.13.png "Records to display panel")
 
+### Saving and loading filters
+
+> **Available since AppGini v25.14**
+
+Users can save the filters they create for future use. This is particularly useful for complex queries that users may want to run repeatedly. Saved filters can be easily loaded, allowing users to quickly apply their preferred search criteria without having to redefine them each time.
+
+To allow users to save and load filters, ensure that the **Allow users to save filters** option is enabled for the table in your AppGini project. You can find this option under the **Table view settings** when editing a table in AppGini.
+
+![Allow users to save filters option](https://cdn.bigprof.com/images/allow-users-to-save-filters-option-25.14.png "Allow users to save filters option")
+
+Now, when users create a filter, they will see the **Save and apply filters** button at the bottom of the filters page. Clicking this button will display the filtered results and prompt the user to enter a name for the filter to save it.
+After the filter is saved, users can load it later from the saved filters list at the top of the app (appears in all user area pages). In mobile view, the saved filters list is accessible from the burger menu at the top right corner.
+
+When a saved filter is loaded, users can delete it by clicking the **Delete saved filter** button that appears at the top of the filtered results. Watch the video below to see how saving and loading filters works:
+
+<video src="https://cdn.bigprof.com/screencasts/appgini-25.14-saved-filters.mp4" style="max-width:100%" controls>
+    <img src="https://cdn.bigprof.com/screencasts/appgini-25.14-saved-filters.gif" alt="Saving and loading filters in AppGini" />
+</video>
+
+> **Note**: Saved filters work only for logged users since each user has their own set of saved filters. Guest can't save filters but can copy or bookmark a permalink.
+
+**Programmatic controls of saved filters:**
+
+- To change the maximum number of saved filters per user (default: 100), set the `MAX_FILTER_LINKS_PER_USER` constant in `hooks/__bootstrap.php`.
+- To intercept saved filters functionality, you can redefine the JS functions `AppGini.handleSaveFilters` and `AppGini.handleSavedFiltersList` in `hooks/footer-extras.php`.
+- Saved filters are stored in the `appgini_saved_filters` database table. You can manipulate this table directly if needed.
+
+
 ## Simplified filtering using the [Search Page Maker plugin](https://bigprof.com/appgini/applications/search-page-maker-plugin)
 
 The Search Page Maker plugin enhances the filtering capabilities of your AppGini project by allowing you to build custom search pages with advanced filtering options via a simple drag-and-drop interface. With this plugin, you can:
