@@ -19,11 +19,7 @@ To back up your AppGini database, follow these steps:
 1. Log in to your AppGini application as an administrator.
 2. Click on the **Admin area** link in the top menu.
 3. In the Admin area, open the **Utilities** menu and select **Database backups**.
-4. On the Database backups page, click the **Create Backup File** button.
-
-      ![Create Backup File button](https://cdn.bigprof.com/images/create-backup-file-button.png)
-
-5. **(Optional)** To customize which table groups to include in the backup, click the **Choose what to back up** link to expand the backup options.
+4. **(Optional)** To customize which table groups to include in the backup, click the **Choose what to back up** link to expand the backup options.
 
       > **Note:** This feature was added in AppGini 25.14.
 
@@ -39,11 +35,12 @@ To back up your AppGini database, follow these steps:
 
       > The default selection (Data tables, Membership, and Records ownership) is recommended for most backup scenarios. Query logs and temporary tables are typically optional and can be excluded to reduce backup size.
 
+5. On the Database backups page, click the **Create Backup File** button.
 6. A confirmation dialog will appear, informing you that the application will be set to *maintenance mode* during the backup process. Click **OK** to proceed.
 
       > Usually the backup process takes only a few seconds, but it may take longer for larger databases. During this time, the application will be in maintenance mode, and users will not be able to access it.
 
-      ![Backup confirmation dialog](https://cdn.bigprof.com/images/backup-confirmation-dialog.png)
+      ![Backup confirmation dialog](https://cdn.bigprof.com/images/backup-confirmation-dialog-25.14.png)
 
 7. Once the backup is complete, it will be listed under the **Available backups** section, showing the date, time, size, and included table groups of the backup file.
 
@@ -61,13 +58,13 @@ To restore your AppGini database from a backup file, follow these steps:
 4. On the Database backups page, find the backup file you want to restore from the **Available backups** section.
 5. Click the **Restore** button next to the backup file you want to restore.
 
-      ![Restore backup button](https://cdn.bigprof.com/images/restore-backup-button.png)
+      ![Restore backup button](https://cdn.bigprof.com/images/restore-backup-button-25.14.png)
 
 6. A confirmation dialog will appear, informing you that the application will be set to *maintenance mode* during the restore process, and that all data in the current database will be **replaced** with the data from the backup file. This includes user accounts, settings, and all data in the database. Click **OK** to proceed.
 
       > Restoring a backup takes a few seconds, but it may take longer for larger databases. During this time, the application will be in maintenance mode, and users will not be able to access it.
 
-      ![Restore confirmation dialog](https://cdn.bigprof.com/images/restore-confirmation-dialog.png)
+      ![Restore confirmation dialog](https://cdn.bigprof.com/images/restore-confirmation-dialog-25.14.png)
 
 7. Once the restore is complete, the application will exit maintenance mode, and you will see a success message indicating that the database has been restored successfully.
 
@@ -108,9 +105,9 @@ This group contains the following tables related to user management and access c
 Include this group when you need to preserve user accounts, groups, and their permissions.
 
 ### Records ownership
-This group contains the `membership_userrecords` table, which maps which users own which records in your application. This is important if your application uses owner-based access control.
+This group contains the `membership_userrecords` table, which maps which users own which records in your application. It also includes the `appgini_saved_filters` table, which stores user-specific saved filters.
 
-Include this group when you need to preserve the relationship between users and the records they own.
+Include this group when you need to preserve the relationship between users and the records they own and their saved filters.
 
 ### Query logs
 This group contains tables that store logs of slow and error SQL queries executed by the application. These logs can be useful for debugging and performance analysis. But they are typically not essential for most backup scenarios.
@@ -179,6 +176,7 @@ If you encounter any issues during backup, check the following:
 
 - Ensure that the `mysqldump` utility is installed and accessible from the command line.
 - Make sure the database credentials in your AppGini application have the necessary permissions to perform backups and restores.
+- If your application is stuck in maintenance mode after a failed backup or restore attempt, you can manually exit maintenance mode by deleting the `.maintenance` file located in the `admin` directory of your AppGini application.
 - Make sure the web server user has write permissions to the directory where the backup files are stored, which is the `admin/backups` directory inside your AppGini application directory.
 
     > To change the permissions, you can use the following command:
