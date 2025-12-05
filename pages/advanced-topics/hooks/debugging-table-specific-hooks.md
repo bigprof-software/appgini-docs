@@ -2,8 +2,8 @@
 title: Debugging Table-specific hooks
 linkTitle: Debugging Table hooks
 slug: help/advanced-topics/hooks/debugging-table-specific-hooks
-description: 
-keywords: 
+description: Techniques to debug and troubleshoot AppGini table-specific hooks. Verify hook execution, inspect variables, enable error reporting, and more.
+keywords: debugging, hooks, table-specific hooks, AppGini, troubleshooting, PHP error reporting, sqlValue, sql, makeSafe, die, exit, log file
 ---
 
 # Debugging Table-specific hooks
@@ -14,7 +14,7 @@ When writing custom hooks, it’s very common to face issues such as:
 - Hooks running, but not behaving as expected.
 - Silent failures without visible error messages.
 
-This section shows practical techniques to debug and troubleshoot your table‑specific hooks.
+This section shows practical techniques to debug and troubleshoot your [table‑specific hooks](./table-specific-hooks.md).
 
 ### 1. Verify that your hook is being called
 
@@ -412,6 +412,3 @@ function tablename_after_update($data, $memberInfo, &$args) {
 
 This gives you a single log file to inspect all hook behavior.
 
----
-
-You can add this “Debugging table‑specific hooks” section near the bottom of the page (for example, after `tablename_csv()`), and optionally link to the general **Blank pages and errors** and **Troubleshooting** sections for more information on PHP errors and server‑level issues.
