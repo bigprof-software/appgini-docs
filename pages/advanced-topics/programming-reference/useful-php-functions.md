@@ -27,7 +27,7 @@ $result = sql($query, $options);
 
 - `$query` (string): The SQL query to execute.
 - **`$options`** (array): An associative array of options, passed by reference. This array is used to pass additional options to the function, but can also return error messages if the query fails. The following options are supported:
-  - `silentErrors`: If set to `true`, the function will not display an error message if the query fails. Default is `true`.
+  - `silentErrors`: If set to `true`, the function will not display an error message if the query fails. Default is `false`.
   - `noSlowQueryLog`: If set to `true`, the function will not log slow queries. Default is `false`.
   - `noErrorQueryLog`: If set to `true`, the function will not log errors. Default is `false`.
 
@@ -35,7 +35,7 @@ $result = sql($query, $options);
 
 ### Return value
 
-The function returns a resultset object on success, or `false` on failure. The resultset object can be used to fetch rows returned by the query using the `db_fetch_assoc()`, `db_fetch_row()`, or `db_fetch_array()` functions.
+The function returns a result set object on success, or `false` on failure. The result set object can be used to fetch rows returned by the query using the `db_fetch_assoc()`, `db_fetch_row()`, or `db_fetch_array()` functions.
 
 ### Example
 
