@@ -53,8 +53,7 @@ We prepared a course for power users of AppGini, who'd like to add more
 functionality to their applications by writing custom code. Through 4.5
 hours of video, you'll finish 30 practical examples, featuring more than
 500 lines of code, that cover the most common hook questions we receive
-from users. [Preview the
-course](https://bigrof.com/appgini/udemy-customization-course).
+from users. [Preview the course](https://bigprof.com/appgini/udemy-customization-course).
 
 
 ## Hosting providers
