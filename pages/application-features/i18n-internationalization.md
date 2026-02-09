@@ -2,53 +2,43 @@
 title: Internationalization (i18n) and localizing your AppGini app
 linkTitle: Internationalization (i18n)
 slug: help/application-features/i18n-internationalization
-description: Learn how to localize your AppGini app to any language you want, including translating the app interface, table and field names, and more.
-keywords: internationalization, i18n, localization, language, translate, translation, localizing, localisation, appgini, app, application, table, field, name, title, interface, detail view, home page, group, title, application title, child table, tab, column, programmatically, access, localized, strings
+description: Learn how multilingual support works in AppGini 26.11+, including default and per-user language selection, language file layout, and RTL behavior.
+keywords: internationalization, i18n, localization, multilingual, language, language files, per-user language, default language, rtl, appgini, app, application, interface, defaultLang.php, language.php, definitions.php
 ---
 
 # Internationalization (i18n) and localizing your AppGini app
 
-AppGini applications are internationalization-ready, meaning you can easily localize your app to any language you want. 
-This is done by translating the generated `language.php` file, which contains all the strings used in your app interface.
+> Applies to AppGini 26.11 and above. For older versions, please refer to the [Internationalization in AppGini versions older than 26.11](https://github.com/bigprof-software/appgini-docs/blob/25.15/pages/application-features/i18n-internationalization.md) document.
 
-> AppGini provides a built-in translation tool to help you with this task as we'll see below.
-> So you should not manually edit the `language.php` file.
+AppGini applications are internationalization-ready, meaning you can localize your app to any language you want.
+Starting with AppGini 26.11, apps ship with multi-lingual support out of the box, including 64 built-in languages.
 
 In this page, we'll discuss how to localize your AppGini app to a new language. We'll also discuss how
 to localize able and field names, which are not included in the `language.php` file.
 
-## Localizing your app interface (`language.php`)
+## Localizing your app interface (AppGini 26.11 and above)
 
-### Downloading a pre-translated language file
+### How multi-lingual support works
 
-AppGini users have contributed translations to many languages. 
-These are available for download from the [language files page](https://bigprof.com/appgini/download-language-files).
-check that page to see if a translation for your desired language is already available. If it is, you can download it
-into your application's main directory, replacing the existing `language.php` file.
+Starting with AppGini 26.11, you can set a default language in AppGini under the localization settings. When you
+generate the app, this default language is stored in the generated [definitions.php](definitions.php), and the app UI
+uses it by default.
 
-As we introduce new features and strings in AppGini, the language file might become incomplete,
-so you might need to update it from time to time.
+Each user can then choose their own UI language from their profile page under the **Application preferences** tab.
+This means every user can interact with the app in their preferred language, rather than forcing a single unified
+language for all users.
 
-In case you need to translate your app to a language that is not available in the language files page,
-or if you need to update an existing translation, you can use the built-in translation tool in AppGini.
+### Language files layout
 
-### Using the built-in translation tool
+Under the hood, the English strings are stored in `defaultLang.php`. All other languages are stored in the `language`
+directory, with one subdirectory per language code (for example, `de`, `ar`, and so on). Each language directory
+contains a `language.php` file with the translated strings.
 
-Starting with AppGini 22.11, we've added a built-in translation tool to help you translate your app to any language you want.
-To use this tool, follow these steps:
+### Translation tool (older versions)
 
-1. Sign in to your application as admin.
-2. Click the 'Admin area' link at the top of the page.
-3. Open the 'Utilities' menu and click 'Translation tool'.
-
-Here is a video showing how to use the translation tool:
-
-<video style="width: 100%; height: auto;" controls>
-  <source src="https://cdn.bigprof.com/screencasts/appgini-22.11-translation-tool.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
-In the above video, we're translating the words 'Admin area' into the Arabic words 'منطقة الإدارة'. 
+The built-in translation tool was available in AppGini 22.11 and later, but it is no longer shipped starting with
+AppGini 26.11. If you are using 26.11 or above, the translation tool is not needed because the app includes the
+64 built-in languages and per-user language selection.
 
 ### Language fallback
 
@@ -57,11 +47,9 @@ which is included in the generated `defaultLang.php` file.
 
 ## Right to left (RTL) languages
 
-AppGini supports right-to-left (RTL) languages, such as Arabic and Hebrew. 
-To enable RTL support in your app, open your application's project file in AppGini,
-click the 'Application theme' icon in the toolbar, and check the 'RTL' checkbox.
-
-![Enable RTL support in your app](https://cdn.bigprof.com/images/enable-rtl-layout.png "Enable RTL support in your app")
+AppGini supports right-to-left (RTL) languages, such as Arabic and Hebrew. Starting with AppGini 26.11,
+RTL support is detected automatically based on the applied language, so there is no need to configure it
+inside AppGini.
 
 ## Localizing table and field names
 
@@ -113,14 +101,10 @@ will be replaced with spaces in the displayed title.
 
 Non-Latin characters in the application title would cause an error message and won't be accepted by AppGini.
 As a workaround, you can set the application title to a Latin name, then, after generating the app, you can
-edit the generated `hooks/header-extras.php` or `hooks/footer-extras.php` and add the following code:
+add the following code to `hooks/__bootstrap.php` to change the application title to a localized title:
 
-```html
-<script>
-  const appTitle = 'Διαχειριστής Συντήρησης Ενοικιαζόμενης Περιουσίας';
-  document.querySelector('a.navbar-brand').innerHTML = `<i class="glyphicon glyphicon-home"></i> ${appTitle}`;
-  document.title = appTitle;
-</script>
+```php
+define('APP_TITLE', 'Διαχειριστής Συντήρησης Ενοικιαζόμενης Περιουσίας');
 ```
 
 Replace the Greek text in the `appTitle` variable with your localized application title. Here is the result of the above code:
