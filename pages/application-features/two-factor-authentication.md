@@ -71,7 +71,7 @@ The plugin uses the application's built-in email functionality. Ensure your serv
 
 ### Email Content Customization
 
-The email subject and message as set via the following language strings in the language files:
+The email subject and message are set via the following language strings in the language files:
 
 - `otp_email_subject`: The subject of the OTP email. The english version is "Your One-Time Password (OTP) for {APP_TITLE}".
 - `otp_email_message`: The body of the OTP email. The english version looks like this:
