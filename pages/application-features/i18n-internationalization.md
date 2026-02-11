@@ -14,25 +14,44 @@ AppGini applications are internationalization-ready, meaning you can localize yo
 Starting with AppGini 26.11, apps ship with multi-lingual support out of the box, including 64 built-in languages.
 
 In this page, we'll discuss how to localize your AppGini app to a new language. We'll also discuss how
-to localize able and field names, which are not included in the `language.php` file.
+to localize table and field names, which are not included in the `language.php` file.
 
 ## Localizing your app interface (AppGini 26.11 and above)
 
 ### How multi-lingual support works
 
-Starting with AppGini 26.11, you can set a default language in AppGini under the localization settings. When you
-generate the app, this default language is stored in the generated [definitions.php](definitions.php), and the app UI
-uses it by default.
+Starting with AppGini 26.11, you can set a default language in AppGini under the localization settings.
+
+[![Setting the default language in AppGini](https://cdn.bigprof.com/screencasts/default-language-setting.gif "Setting the default language in AppGini")](https://cdn.bigprof.com/screencasts/default-language-setting.mp4)
+
+When you generate the app, this default language is stored in the generated `definitions.php`, under the `DEFAULT_LANGUAGE` constant,
+and the app UI uses it by default.
 
 Each user can then choose their own UI language from their profile page under the **Application preferences** tab.
 This means every user can interact with the app in their preferred language, rather than forcing a single unified
 language for all users.
 
+![Per-user language selection in the user profile page](https://cdn.bigprof.com/images/per-user-language-selection.png "Per-user language selection in the user profile page")
+
 ### Language files layout
 
 Under the hood, the English strings are stored in `defaultLang.php`. All other languages are stored in the `language`
 directory, with one subdirectory per language code (for example, `de`, `ar`, and so on). Each language directory
-contains a `language.php` file with the translated strings.
+contains a `language.php` file with the translated strings. The app loads the appropriate language file based on the user's language selection, and falls back to English if a string is not found in the selected language.
+
+Here is a partial tree of the generated app showing the language files layout:
+
+```
+app/
+├── definitions.php # defines the default language and other app-wide constants
+├── defaultLang.php # contains the English strings
+├── language/
+│   ├── de/
+│   │   └── language.php # contains the German strings
+│   ├── ar/
+│   │   └── language.php # contains the Arabic strings
+│   └── ... # other languages
+```
 
 ### Translation tool (older versions)
 
@@ -50,6 +69,8 @@ which is included in the generated `defaultLang.php` file.
 AppGini supports right-to-left (RTL) languages, such as Arabic and Hebrew. Starting with AppGini 26.11,
 RTL support is detected automatically based on the applied language, so there is no need to configure it
 inside AppGini.
+
+![RTL support in Arabic](https://cdn.bigprof.com/images/rtl-support-arabic.png "RTL support in Arabic")
 
 ## Localizing table and field names
 
