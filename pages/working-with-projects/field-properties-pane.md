@@ -8,34 +8,33 @@ keywords: field properties, field properties pane, appgini field properties, app
 
 # Field properties pane
 
-![Field properties pane](https://cdn.bigprof.com/images/appgini-new-field-24.15.png)
+![Field properties pane](https://cdn.bigprof.com/images/appgini-new-field-26.12.png)
 
 
 ### Caption 
 The field caption is the title of the field as it would appear in the table view and the detail view of its table in the generated web application.
 
+![Field properties pane - caption](https://cdn.bigprof.com/appgini-desktop/helpImages/20.gif)
+
 ### Description 
 This section allows you to provide an optional description for the field. 
+
+![Field properties pane - description](https://cdn.bigprof.com/appgini-desktop/helpImages/fieldDescription.gif)
 
 ### Data Type
 (Dropdown menu) This menu allows you to choose the type of data the field will store in your application's database.
 
 ### Length
 Specifies the maximum size of data that can be stored in this field. The way Length property works depends on the data type you choose for the field. 
-Please read the data type guidelines displayed at the bottom of the Properties window for more information.
 
 ### Precision
-This property works with decimal data types only (e.g. Float, Double and Decimal). It specifies how many digits
-to display after the decimal point.
+This property works with decimal data types only. It specifies how many digits to display after the decimal point.
 
 ###  Max characters in table view
-Applicable for textual data types only. Specifies the number of characters to display in the table view for that field. If zero or empty, the entire
-field value is displayed. This is very useful when you have a long field and you don't want to display all of its contents on the table view to
-prevent the table view from becoming too wide. Thus you can set it to display just the first 40 characters for example. 
+Applicable for textual data types only. Specifies the number of characters to display in the table view for that field. If zero or empty, the entire field value is displayed. This is very useful when you have a long field and you don't want to display all of its contents on the table view to prevent the table view from becoming too wide. Thus you can set it to display just the first 40 characters for example. 
 When users select the record, the full field contents will be displayed in the detail view.
 
-![AppGini_scNVswME9v](https://github.com/bigprof-software/appgini-docs/assets/168858457/7ad719c6-dcbd-4ac4-964d-fdd92179efe5)
-
+![Field properties pane - max characters in table view](https://cdn.bigprof.com/appgini-desktop/helpImages/numchars.gif)
 
 ### Default
 If you specify a default value, it will be placed in any records that the user creates while leaving this field empty
@@ -47,7 +46,7 @@ inserted into the field when the record is created or changed. This works only i
 You can set a field to contain one or more automatic values by specifying them from the drop-down menu. 
 The field will be read-only and its value set automatically by the app.
 
-![AppGini_rR91bDhpWk](https://github.com/bigprof-software/appgini-docs/assets/168858457/7244f2d8-665b-46a9-b972-ea8abf88865a)
+![Field properties pane - automatic value](https://cdn.bigprof.com/appgini-desktop/helpImages/autoValue.gif)
 
 ### Read Only
 If checked, this field will be displayed in the detail view but not editable.
