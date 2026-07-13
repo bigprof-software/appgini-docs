@@ -23,4 +23,5 @@ This is a work in progress and will be updated regularly.
 - [Database backup and restore](database-backup-restore.md)
 - [Importing and exporting data](importing-exporting-data.md)
 - [Two-Factor Authentication (2FA)](two-factor-authentication.md)
+- [Filters Panel](filters-panel.md)
 
